@@ -55,4 +55,17 @@
     <content><![CDATA[<p>#第一步，右击项目名称<img src="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/20-5-4/1.png" alt=""><br>#第二步，创建setting.xml<img src="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/20-5-4/2.png" alt=""><br>#第三步，填上这些即可<img src="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/20-5-4/3.png" alt=""></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>VMware workstation 不可恢复错误解决</title>
+    <url>/2020/07/03/VMware-workstation-%E4%B8%8D%E5%8F%AF%E6%81%A2%E5%A4%8D%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/</url>
+    <content><![CDATA[<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>由于笔记本关机时，仍然在运行VMware里面的系统并没有正常的关机当再次开机时导致出现了如下错误<br><img src="/images/2020/07/03/7e7008af-facc-4262-8856-a853804d7bb5.png" alt="image.png">虚拟机是一种被挂起的状态，无法恢复到当时电脑关机时的状态。</p>
+<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><p>到虚拟机安装目录下删除掉一个文件即可<br><img src="/images/2020/07/03/5864f3e9-6530-4ada-8a1c-15e9fd6e51eb.png" alt="image.png"></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>虚拟机</tag>
+      </tags>
+  </entry>
 </search>
