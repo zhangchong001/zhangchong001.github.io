@@ -71,7 +71,7 @@
   <entry>
     <title>deepin安装</title>
     <url>/2020/07/04/deepin%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<h1 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h1><p>请确保您的电脑满足以下的配置要求，如果您的电脑配置低于以下要求，将无法完美地体验深度操作系统：</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h1><p>请确保您的电脑满足以下的配置要求，如果您的电脑配置低于以下要求，将无法完美地体验深度操作系统：</p>
 <blockquote>
 <p>段落引用处理器：Intel Pentium IV 2GHz 或更快的处理器<br>内存：至少 2G 内存(RAM)，4G 以上是达到更好性能的推荐值<br>硬盘：至少 25 GB 的空闲空间<br>您还需要一个U盘，或一张光盘以及光驱，然后在深度科技官方网站下载<a href="镜像文件"></a>并<a href="制作启动盘"></a>。</p>
 </blockquote>
@@ -118,13 +118,52 @@
 <p>7、点击 安装。</p>
 <p>8、在弹出的确认安装窗口中，点击 确定。</p>
 <p>9、将开始自动安装深度操作系统。</p>
-<p>视频演示</p>
 ]]></content>
       <categories>
         <category>Linux</category>
       </categories>
       <tags>
         <tag>虚拟机</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hive部署</title>
+    <url>/2020/07/04/Hive%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="1、下载并安装"><a href="#1、下载并安装" class="headerlink" title="1、下载并安装"></a>1、下载并安装</h1><p><img src="/images/2020/07/04/32c23f68-7a62-45ac-a037-45d0637446c9.png" alt="image.png"></p>
+<h1 id="2、设置环境变量"><a href="#2、设置环境变量" class="headerlink" title="2、设置环境变量"></a>2、设置环境变量</h1><p><img src="/images/2020/07/04/b588bf95-83d8-47b1-bac5-35c17b11b09f.png" alt="image.png"></p>
+<h1 id="3、修改配置文件"><a href="#3、修改配置文件" class="headerlink" title="3、修改配置文件"></a>3、修改配置文件</h1><p><img src="/images/2020/07/04/a19daca3-5db6-4f3e-9898-7272f9eb0cc1.png" alt="image.png"></p>
+<p><img src="/images/2020/07/04/6b6ca0f5-17b4-4f60-b32c-f294591618d5.png" alt="image.png"></p>
+<p><img src="/images/2020/07/04/590acc3d-4d5c-4e8d-b5d0-212f37219230.png" alt="image.png"></p>
+<p><img src="/images/2020/07/04/14573a1b-e560-4b9b-a6e6-e5192b1ebf8f.png" alt="image.png"></p>
+<p><img src="/images/2020/07/04/f8ee6630-cf61-4e30-ae2a-a42aa1453d0e.png" alt="image.png"></p>
+<p><img src="/images/2020/07/04/a1bdd668-39a3-4fa5-b720-b95a5b331498.png" alt="image.png"></p>
+<p><img src="/images/2020/07/04/5be6617f-223b-44a0-98d4-7dc47ef5d55b.png" alt="image.png"><br>ive</p>
+<h1 id="4、初始化元数据库"><a href="#4、初始化元数据库" class="headerlink" title="4、初始化元数据库"></a>4、初始化元数据库</h1><p><img src="/images/2020/07/04/845cd393-33cd-4261-8621-6cd22f1b9a9a.png" alt="image.png"></p>
+<h1 id="5、启动Hive"><a href="#5、启动Hive" class="headerlink" title="5、启动Hive"></a>5、启动Hive</h1><p><img src="/images/2020/07/04/d485b0c7-c205-48b2-a8d0-de4cee435270.png" alt="image.png"></p>
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>HIve</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>元数据库安装配置</title>
+    <url>/2020/07/04/%E5%85%83%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="1、下载Mysql-yum-仓库"><a href="#1、下载Mysql-yum-仓库" class="headerlink" title="1、下载Mysql yum 仓库"></a>1、下载Mysql yum 仓库</h1><p><img src="/images/2020/07/04/2f5b1866-edd9-4e32-bff4-8d5464bf4a97.png" alt="image.png"></p>
+<h1 id="2、添加Mysql-yum-仓库"><a href="#2、添加Mysql-yum-仓库" class="headerlink" title="2、添加Mysql yum 仓库"></a>2、添加Mysql yum 仓库</h1><p><img src="/images/2020/07/04/e5596132-16ce-4edc-a81a-dae6715c3173.png" alt="image.png"></p>
+<h1 id="3、让安装包可用"><a href="#3、让安装包可用" class="headerlink" title="3、让安装包可用"></a>3、让安装包可用</h1><p><img src="/images/2020/07/04/466e06c3-1fba-4786-b8b6-1179ca7db91d.png" alt="image.png"></p>
+<h1 id="4、安装Mysql"><a href="#4、安装Mysql" class="headerlink" title="4、安装Mysql"></a>4、安装Mysql</h1><p><img src="/images/2020/07/04/5cd8776c-1cd8-413a-bacf-138f85b63c91.png" alt="image.png"></p>
+<h1 id="5、启动Mysql服务"><a href="#5、启动Mysql服务" class="headerlink" title="5、启动Mysql服务"></a>5、启动Mysql服务</h1><p><img src="/images/2020/07/04/4e17769e-f249-4501-94ff-534e2319ed57.png" alt="image.png"></p>
+<h1 id="6、修改Mysql数据库"><a href="#6、修改Mysql数据库" class="headerlink" title="6、修改Mysql数据库"></a>6、修改Mysql数据库</h1><p><img src="/images/2020/07/04/f3ceef96-7015-4999-8f5e-0a66d4195f01.png" alt="image.png"></p>
+<h1 id="7、设置数据库访问权限"><a href="#7、设置数据库访问权限" class="headerlink" title="7、设置数据库访问权限"></a>7、设置数据库访问权限</h1><p><img src="/images/2020/07/04/c33b7323-7b83-4ac2-af77-c285cab2d029.png" alt="image.png"><br><img src="/images/2020/07/04/980eddfc-3321-48e2-a33e-6bf0ad381013.png" alt="image.png"></p>
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>HIve</tag>
       </tags>
   </entry>
 </search>
