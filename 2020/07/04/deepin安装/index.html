@@ -5,13 +5,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>VMware workstation 不可恢复错误解决 - Hexo</title>
+    <title>deepin安装 - Hexo</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="ZC,"> 
-    <meta name="description" content="问题由于笔记本关机时，仍然在运行VMware里面的系统并没有正常的关机当再次开机时导致出现了如下错误虚拟机是一种被挂起的状态，无法恢复到当时电脑关机时的状态。
-方法到虚拟机安装目录下删除掉一个文件即,"> 
+    <meta name="description" content="安装环境请确保您的电脑满足以下的配置要求，如果您的电脑配置低于以下要求，将无法完美地体验深度操作系统：
+
+段落引用处理器：Intel Pentium IV 2GHz 或更快的处理器内存：至少 2G ,"> 
     <meta name="author" content="ZC"> 
     <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -41,7 +42,7 @@
     <div class="bar" style="width: 0;"></div>
     <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://zc.github.io"></a>
     <div title="播放/暂停" class="iconfont icon-play"></div>
-    <h3 class="subtitle">VMware workstation 不可恢复错误解决</h3>
+    <h3 class="subtitle">deepin安装</h3>
     <div class="social">
         <div>
             <div class="share">
@@ -56,17 +57,63 @@
     <div class="section">
         <div class="article">
     <div class='main'>
-        <h1 class="title">VMware workstation 不可恢复错误解决</h1>
+        <h1 class="title">deepin安装</h1>
         <div class="stuff">
-            <span>七月 03, 2020</span>
+            <span>七月 04, 2020</span>
             
   <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a></li></ul>
 
 
         </div>
         <div class="content markdown">
-            <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>由于笔记本关机时，仍然在运行VMware里面的系统并没有正常的关机当再次开机时导致出现了如下错误<br><img src="/images/2020/07/03/7e7008af-facc-4262-8856-a853804d7bb5.png" alt="image.png">虚拟机是一种被挂起的状态，无法恢复到当时电脑关机时的状态。</p>
-<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><p>到虚拟机安装目录下删除掉一个文件即可<br><img src="/images/2020/07/03/5864f3e9-6530-4ada-8a1c-15e9fd6e51eb.png" alt="image.png"></p>
+            <h1 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h1><p>请确保您的电脑满足以下的配置要求，如果您的电脑配置低于以下要求，将无法完美地体验深度操作系统：</p>
+<blockquote>
+<p>段落引用处理器：Intel Pentium IV 2GHz 或更快的处理器<br>内存：至少 2G 内存(RAM)，4G 以上是达到更好性能的推荐值<br>硬盘：至少 25 GB 的空闲空间<br>您还需要一个U盘，或一张光盘以及光驱，然后在深度科技官方网站下载<a href="镜像文件"></a>并<a href="制作启动盘"></a>。</p>
+</blockquote>
+<h1 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h1><p>一般情况下电脑默认是从硬盘启动，因此，在使用光盘安装系统之前，您需要先进入电脑的BIOS界面将光盘设置为第一启动项。</p>
+<p>台式机一般为 Delete 键、笔记本一般为 F2  或 F10 或 F12 键，即可进入 BIOS 设置界面。</p>
+<p>您只需在享受一杯咖啡的时间，便可完成系统的安装。</p>
+<p>1、将深度操作系统光盘/U盘插入电脑光驱中。</p>
+<p>2、启动电脑，将光盘/U盘设置为第一启动项。</p>
+<p>3、进入安装界面，选择需要安装的语言。</p>
+<p><img src="/images/2020/07/04/629ac412-4e54-4cf6-a353-531630ade225.png" alt="image.png"></p>
+<p>4、进入账户界面，输入系统用户名和密码。</p>
+<p><img src="/images/2020/07/04/4b80ef91-0e2f-4492-a20b-5a305214aa80.png" alt="image.png"></p>
+<p>5、点击 下一步。</p>
+<p>6、选择文件格式、挂载点、分配空间等。</p>
+<p><img src="/images/2020/07/04/d1dbc8e9-d74f-4c5b-8cff-96ca242148ae.png" alt="image.png"></p>
+<table>
+<thead>
+<tr>
+<th>挂载点</th>
+<th>挂载点中文名</th>
+<th>文件系统</th>
+<th>大小</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/</td>
+<td>根分区（必选）</td>
+<td>EXT4（推荐)</td>
+<td>最少10G</td>
+</tr>
+<tr>
+<td>/home</td>
+<td>家目录（推荐）</td>
+<td>EXT4（推荐）</td>
+<td>最少10G</td>
+</tr>
+<tr>
+<td>swap</td>
+<td>交换分区（可选）</td>
+<td>不设置</td>
+<td>4G内存以下分配2G，4G以上可不分配</td>
+</tr>
+</tbody></table>
+<p>7、点击 安装。</p>
+<p>8、在弹出的确认安装窗口中，点击 确定。</p>
+<p>9、将开始自动安装深度操作系统。</p>
+<p>视频演示</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
