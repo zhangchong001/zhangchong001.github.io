@@ -70,8 +70,7 @@
 position: absolute;
 bottom: 40px;
 width: 100%;
-height: 181px;</code></pre><p>}</p>
-<p>就是一个CSS样式。大括号前面是一个CSS选择器，此选择器的意思是首先选中id为head_wrapper且class为s-ps-islite的节点，然后再选中其内部的class为s-p-top的节点。大括号内部写的就是一条条样式规则，例如position指定了这个元素的布局方式为绝对布局，bottom指定元素的下边距为40像素，width指定了宽度为100%占满父元素，height则指定了元素的高度。也就是说，我们将位置、宽度、高度等样式配置统一写成这样的形式，然后用大括号括起来，接着在开头再加上CSS选择器，这就代表这个样式对CSS选择器选中的元素生效，元素就会根据此样式来展示了。<br>在网页中，一般会统一定义整个网页的样式规则，并写入CSS文件中（其后缀为css）。在HTML中，只需要用link标签即可引入写好的CSS文件，这样整个页面就会变得美观、优雅。<br>(3) JavaScript<br>JavaScript，简称JS，是一种脚本语言。HTML和CSS配合使用，提供给用户的只是一种静态信息，缺乏交互性。我们在网页里可能会看到一些交互和动画效果，如下载进度条、提示框、轮播图等，这通常就是JavaScript的功劳。它的出现使得用户与信息之间不只是一种浏览与显示的关系，而是实现了一种实时、动态、交互的页面功能。<br>JavaScript通常也是以单独的文件形式加载的，后缀为js，在HTML中通过script标签即可引入，例如：</p>
+height: 181px;}</code></pre><p>就是一个CSS样式。大括号前面是一个CSS选择器，此选择器的意思是首先选中id为head_wrapper且class为s-ps-islite的节点，然后再选中其内部的class为s-p-top的节点。大括号内部写的就是一条条样式规则，例如position指定了这个元素的布局方式为绝对布局，bottom指定元素的下边距为40像素，width指定了宽度为100%占满父元素，height则指定了元素的高度。也就是说，我们将位置、宽度、高度等样式配置统一写成这样的形式，然后用大括号括起来，接着在开头再加上CSS选择器，这就代表这个样式对CSS选择器选中的元素生效，元素就会根据此样式来展示了。<br>在网页中，一般会统一定义整个网页的样式规则，并写入CSS文件中（其后缀为css）。在HTML中，只需要用link标签即可引入写好的CSS文件，这样整个页面就会变得美观、优雅。<br>(3) JavaScript<br>JavaScript，简称JS，是一种脚本语言。HTML和CSS配合使用，提供给用户的只是一种静态信息，缺乏交互性。我们在网页里可能会看到一些交互和动画效果，如下载进度条、提示框、轮播图等，这通常就是JavaScript的功劳。它的出现使得用户与信息之间不只是一种浏览与显示的关系，而是实现了一种实时、动态、交互的页面功能。<br>JavaScript通常也是以单独的文件形式加载的，后缀为js，在HTML中通过script标签即可引入，例如：</p>
 <pre><code>&lt;script src=&quot;jquery-2.1.0.js&quot;&gt;&lt;/script&gt;</code></pre><p>综上所述，HTML定义了网页的内容和结构，CSS描述了网页的布局，JavaScript定义了网页的行为。</p>
 <h2 id="2-网页的结构"><a href="#2-网页的结构" class="headerlink" title="2. 网页的结构"></a>2. 网页的结构</h2><p>我们首先用例子来感受一下HTML的基本结构。新建一个文本文件，名称可以自取，后缀为html，内容如下：</p>
 <!DOCTYPE html>
