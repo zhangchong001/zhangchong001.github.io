@@ -221,4 +221,44 @@ height: 181px;}</code></pre><p>就是一个CSS样式。大括号前面是一个C
         <tag>网页</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Chrome 浏览器扩展神器暴力猴</title>
+    <url>/2020/07/06/Chrome-%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%A9%E5%B1%95%E7%A5%9E%E5%99%A8%E6%9A%B4%E5%8A%9B%E7%8C%B4/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>我平常工作最常用的浏览器就是 Chrome 了，Google 出品，值得信赖，用 Chrome 就不得不提浏览器扩展了，有了各种 Chrome 扩展，可以让你浏览器网页更方便，工作更高效。<br>Chrome 扩展可以在 Google 应用商店下载<a href="https://chrome.google.com/webstore/category/extensions?hl=zh-CN这里可以搜索安装你喜欢的各种扩展。" target="_blank" rel="noopener">https://chrome.google.com/webstore/category/extensions?hl=zh-CN这里可以搜索安装你喜欢的各种扩展。</a><br><img src="/images/2020/07/06/8524a9de-6cd2-4bd9-8540-939cd94f9e25.png" alt="image.png"><br>比如我装了很多扩展。<img src="/images/2020/07/06/7b140c9e-c0a3-4f05-becc-34c96ffa092d.png" alt="image.png"><br>扩展这么多，其中的油猴<a href="Tampermonkey">Tampermonkey</a> 是必须推荐的一个，它是扩展中的王者，最强大的浏览器扩展。</p>
+<h3 id="安装暴力猴扩展"><a href="#安装暴力猴扩展" class="headerlink" title="安装暴力猴扩展"></a>安装暴力猴扩展</h3><p>可以在谷歌商店直接安装<a href="https://chrome.google.com/webstore/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag?hl=zh-CN" target="_blank" rel="noopener">暴力猴</a><img src="/images/2020/07/06/e9021617-1ff3-495d-b62b-8a872b985f20.png" alt="image.png"><br>也可以再扩展迷下载<a href="https://www.extfans.com/productivity/jinjaccalgkegednnccohejagnlnfdag" target="_blank" rel="noopener">暴力猴</a><br><img src="/images/2020/07/06/7763c5c1-ef7d-4733-b2ca-9e34b81065af.png" alt="image.png"><br>如果上不了Google，可以在国内第三方Chrome 插件网站<br><a href="https://www.crx4chrome.com/" target="_blank" rel="noopener">https://www.crx4chrome.com/</a><br><a href="http://chromecj.com/" target="_blank" rel="noopener">http://chromecj.com/</a><br><a href="http://www.cnplugins.com/" target="_blank" rel="noopener">http://www.cnplugins.com/</a><br><a href="https://www.chromefor.com/" target="_blank" rel="noopener">https://www.chromefor.com/</a><br>等搜索下载。下载的是个 crx 文件，然后打开 Chrome 扩展chrome://extensions/，打开开发者模式，将下载的crx文件拖进去，如果出错提示程序包无效。<br><img src="/images/2020/07/06/3877d52f-f1ad-4602-8f54-5ec4ffd317fd.png" alt="image.png"><br>将 crx 后缀改为 zip 再拖进去就能安装成功了，浏览器右上角可以看到图标。<img src="/images/2020/07/06/c3c6cef5-c7c5-4a2a-8ada-ac6fff1ee0a8.png" alt="image.png"></p>
+<h3 id="脚本网站"><a href="#脚本网站" class="headerlink" title="脚本网站"></a>脚本网站</h3><p>有了暴力猴扩展，还需要配上脚本。<br>安装完扩展后点击图标，选择 获取新脚本<br>会进入网站<a href="https://www.tampermonkey.net/scripts.php" target="_blank" rel="noopener">https://www.tampermonkey.net/scripts.php</a><br>这里可以获取脚本来源，有3个来源网站<br><a href="http://userscripts-mirror.org/" target="_blank" rel="noopener">http://userscripts-mirror.org/</a><br><a href="https://openuserjs.org/" target="_blank" rel="noopener">https://openuserjs.org/</a><br><a href="https://greasyfork.org/" target="_blank" rel="noopener">https://greasyfork.org/</a><br>这里推荐 greasyfork ，因为它支持中文。</p>
+<p>打开网站首页<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">https://greasyfork.org/zh-CN</a> 可以看到很多脚本。<img src="/images/2020/07/06/4307fa08-a4ac-4e5a-a0e2-e7f98cd80765.png" alt="image.png">安装脚本也很简单，找到需要的脚本，进入页面，点击安装，然后管理面板即可看到已安装的脚本。</p>
+<p>下面推荐些实用的脚本，开始打开新世界的大门。</p>
+<h4 id="搜索去广告"><a href="#搜索去广告" class="headerlink" title="搜索去广告"></a>搜索去广告</h4><p>功能介绍：<br>去掉百度、搜狗、谷歌搜索结果的重定向，回归为网站的原始网址—附带有去除百度的广告 包括百度顶部和底部的垃圾广告，脚本地址<a href="https://greasyfork.org/zh-CN/scripts/14178" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/14178</a></p>
+<p>安装脚本前搜索 浏览器 前面3个是广告<img src="/images/2020/07/06/62003585-644d-4bd4-a899-b3821ccfc40b.png" alt="image.png">)安装脚本后的效果，广告没有了，你还可以自定义设置。<img src="/images/2020/07/06/c22f76d3-5a21-43fa-b3cc-7b6b0237e47e.png" alt="image.png"></p>
+<h4 id="知乎网页助手"><a href="#知乎网页助手" class="headerlink" title="知乎网页助手"></a>知乎网页助手</h4><p>功能介绍：<br>1、知乎站外链接直接跳转至目标网址；<br>2、自动展开问题全部信息，同时展示所有回答；<br>3、去除知乎网页中的广告；<br>4、知乎网页中短视频下载；<br>5、解除知乎复制限制-划词复制（鼠标左键划词自动添加到剪切板）</p>
+<p>脚本地址 <a href="https://greasyfork.org/zh-CN/scripts/384172" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/384172</a></p>
+<p>比如这个周杰伦的视频回答 <a href="https://www.zhihu.com/question/35123246/answer/585795363" target="_blank" rel="noopener">https://www.zhihu.com/question/35123246/answer/585795363</a><br>安装脚本前<img src="/images/2020/07/06/f64e33d3-7f79-4570-b208-7a335dc3976a.png" alt="image.png">)安装后视频可以直接下载了。<img src="/images/2020/07/06/17bf28b9-2213-4443-90a5-3805ecd077a2.png" alt="image.png"></p>
+<h4 id="全网VIP视频免费破解"><a href="#全网VIP视频免费破解" class="headerlink" title="全网VIP视频免费破解"></a>全网VIP视频免费破解</h4><p>功能介绍：<br>懒人专用，全网VIP视频免费破解去广告、全网音乐直接下载、百度网盘直接下载、知乎视频下载等多合一版。<br>脚本地址<a href="https://greasyfork.org/zh-CN/scripts/370634" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/370634</a></p>
+<p>打开优酷看《 长安十二时辰》，16集开始需要VIP<a href="https://v.youku.com/v_show/id_XNDI2NTAzNzQzNg==.html![image.png](/images/2020/07/06/8e985a7b-ed25-4744-b70d-0c4d784406ae.png)安装脚本后，点击左侧的VIP可以跳转到VIP解析网站观看。![image.png](/images/2020/07/06/4a667e1e-ef18-483c-baa7-b0821f256fdd.png)![image.png](/images/2020/07/06/3f377402-00cc-4fda-8c52-63070bfb8d1f.png)" target="_blank" rel="noopener">https://v.youku.com/v_show/id_XNDI2NTAzNzQzNg==.html![image.png](/images/2020/07/06/8e985a7b-ed25-4744-b70d-0c4d784406ae.png)安装脚本后，点击左侧的VIP可以跳转到VIP解析网站观看。![image.png](/images/2020/07/06/4a667e1e-ef18-483c-baa7-b0821f256fdd.png)![image.png](/images/2020/07/06/3f377402-00cc-4fda-8c52-63070bfb8d1f.png)</a><br>如果看不了，换接口解析。<img src="/images/2020/07/06/6474c638-585e-41d0-875b-5d30f07683ea.png" alt="image.png"></p>
+<h4 id="豆瓣资源下载大师"><a href="#豆瓣资源下载大师" class="headerlink" title="豆瓣资源下载大师"></a>豆瓣资源下载大师</h4><p>功能介绍：<br>聚合数百家资源网站，通过右侧边栏1秒告诉你哪些网站能下载豆瓣页面上的电影|电视剧|纪录片|综艺|动画|音乐|图书等，有资源的网站显示绿色，没资源的网站显示黄色，就这么直观。</p>
+<p>脚本地址 <a href="https://greasyfork.org/zh-CN/scripts/329484" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/329484</a></p>
+<p>看看最近上映的电影《蜘蛛侠：英雄远征》 <a href="https://movie.douban.com/subject/26931786/?from=showing" target="_blank" rel="noopener">https://movie.douban.com/subject/26931786/?from=showing</a><br>右侧可以看到 中文影视字幕和影视精准匹配，可以到对应网站查看。</p>
+<p><img src="/images/2020/07/06/556df42d-3f60-4f3c-b929-c2b8c97870ed.png" alt="image.png">更多其他脚本自己搜索吧，有什么问题可以评论交流。</p>
+]]></content>
+      <categories>
+        <category>插件</category>
+      </categories>
+      <tags>
+        <tag>暴力猴</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>最强下载神器IDM</title>
+    <url>/2020/07/06/%E6%9C%80%E5%BC%BA%E4%B8%8B%E8%BD%BD%E7%A5%9E%E5%99%A8IDM/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Internet Download Manager，简称 IDM，是国外的一款优秀下载工具。目前凭借着下载计算的速度优势在外媒网站中均受好评，现在已被多数国人熟知。Internet Download Manager 提升你的下载速度最多达5倍，安排下载时程，带有续传功能，可以恢复因为断线、网络问题、计算机当机甚至无预警的停电导致下传到一半的资料。国外的Internet Download Manager简称IDM是一款下载利器，不限速，界面简洁好看，还能自动识别网页视频，无多余菜单弹窗!并且支持IE，Firefox，Chrome等浏览器。<br>IDM具有动态文件分割、多重下载点技术，而且它会重复使用现有的联机，而不需再重新联机登入一遍。智能in-speed技术会动态地将所有设定应用到某种联机类型，以充分利用下载速度。IDM支持下载队列、防火墙、代理服务器和映摄服务器、重新导向、cookies、需要验证的目录，以及各种不同的服务器平台，它紧密地与Internet Explorer和Netscape Communicator结合，自动地处理你的下载需求。此外，IDM还具有下载逻辑最佳化功能、检查病毒，以及多种偏好设定。</p>
+<h2 id="安装方法："><a href="#安装方法：" class="headerlink" title="安装方法："></a>安装方法：</h2><p>下载后解压&gt;找到!绿化卸载.bat&gt;右键以管理员身份运行。<br><img src="/images/2020/07/06/c308e0eb-9028-44a9-a29f-75c3d655b29b.png" alt="image.png"><br>输入1,回车确定安装。<br><img src="/images/2020/07/06/b22014f1-eca2-455f-9453-7b1b75de180a.png" alt="image.png"><br>强烈建议创建快捷方式。<br><img src="/images/2020/07/06/c769bb97-c8c1-4c03-b5b3-3539988b0b68.png" alt="image.png"><br>主界面就是这个样子了，还算简洁，最起码没广告。<br><img src="/images/2020/07/06/e072019d-34b3-4f6f-aeca-80fdf540613e.png" alt="image.png"><br>下面是个人推荐下载地址：<a href="http://soft.ucbug.com/uploads/soft/linshi/wlrj/ucbug.com-idm.rar" target="_blank" rel="noopener">idm下载</a></p>
+]]></content>
+      <categories>
+        <category>插件</category>
+      </categories>
+      <tags>
+        <tag>IDM</tag>
+      </tags>
+  </entry>
 </search>
