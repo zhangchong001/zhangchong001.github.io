@@ -1,0 +1,327 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>虚拟化VMware ESXi 6.7服务器与vCenter的安装与配置 - zc&#39;blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="ZC,"> 
+    <meta name="description" content="vSphere虚拟化架构vSphere是VNware公司在2001年基于云计算推出的一套企业级虚拟化解决方案、核心组件为ESXi。如今，经历了5个版本的改进，已经实现了虚拟化基础架构、高可用性、集中,"> 
+    <meta name="author" content="ZC"> 
+    <link rel="alternative" href="atom.xml" title="zc&#39;blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">zc&#39;blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://zc.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">虚拟化VMware ESXi 6.7服务器与vCenter的安装与配置</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">虚拟化VMware ESXi 6.7服务器与vCenter的安装与配置</h1>
+        <div class="stuff">
+            <span>七月 07, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/" rel="tag">虚拟化</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h2 id="vSphere虚拟化架构"><a href="#vSphere虚拟化架构" class="headerlink" title="vSphere虚拟化架构"></a>vSphere虚拟化架构</h2><p>vSphere是VNware公司在2001年基于云计算推出的一套企业级虚拟化解决方案、核心组件为ESXi。如今，经历了5个版本的改进，已经实现了虚拟化基础架构、高可用性、集中管理、性能监控等一体化解决方案。</p>
+<p><a href="https://baike.baidu.com/item/vSphere" target="_blank" rel="noopener">🔗详情点击</a><br>安装步骤<br>首先打开VMware workstation软件创建新的虚拟机并且采用自定义安装</p>
+<p><img src="/images/2020/07/07/7bcaec75-a70d-4022-8dae-06470eea358e.png" alt="image.png">选择稍后安装一个操作系统</p>
+<p><img src="/images/2020/07/07/ba64b5a3-4c77-4dc0-a5b0-520fd5a019e3.png" alt="image.png"><br>选择操作系统，点击VMware ESX选择版本为VMware ESXI 6.x的那个版本<br><img src="/images/2020/07/07/52325d15-2bb8-4365-a243-bcf2a2c7e94b.png" alt="image.png"></p>
+<p>命名虚拟机名称并且选择虚拟机在自己电脑上的位置</p>
+<p><img src="/images/2020/07/07/4d9bfa35-0585-4084-bd18-8a1f6112f329.png" alt="image.png"></p>
+<p>选择处理器的配置，这里可以根据自己的需求选择</p>
+<p><img src="/images/2020/07/07/582516fd-62d2-4f34-930b-4affae4836bc.png" alt="image.png"></p>
+<p>选择网络类型，这里使用桥接网络</p>
+<p><img src="/images/2020/07/07/40f98f7d-5cb1-480c-990e-6fdf135422ad.png" alt="image.png"></p>
+<p>选择I/O控制器类型，选择为推荐的准虚拟化SCSI<br><img src="/images/2020/07/07/c1eca22a-0cc3-4174-affd-984f151bddd1.png" alt="image.png"></p>
+<p>选择虚拟磁盘类型为SCSI</p>
+<p><img src="/images/2020/07/07/c5389142-35cc-4c6c-a69b-51c5d63367b2.png" alt="image.png"></p>
+<p>选择创建新的虚拟磁盘</p>
+<p><img src="/images/2020/07/07/9640b004-2432-4158-a397-dec33ea63378.png" alt="image.png"></p>
+<p>指定虚拟磁盘的容量大小，在这分配200GB空间具体根据自己需求</p>
+<p><img src="/images/2020/07/07/13b1e0e0-15b4-4421-b092-1771ccd33db9.png" alt="image.png"></p>
+<p>先不要点击完成，因为ESXI的镜像还没有挂载，点击自定义硬件</p>
+<p><img src="/images/2020/07/07/9acb422c-bb75-4641-9cba-368d7d3b08b3.png" alt="image.png"></p>
+<p>选择挂载自己电脑上的ISO镜像文件</p>
+<p><img src="/images/2020/07/07/2f268ad5-32c3-4201-ab25-21d9ef1995b3.png" alt="image.png"></p>
+<p>选择完成后点击关闭然后再点击完成，然后打开虚拟机。会出现如下的界面</p>
+<p><img src="/images/2020/07/07/2721abcb-397e-4de2-a996-417821228115.png" alt="image.png"></p>
+<p>等待片刻，按回车键开始安装</p>
+<p><img src="/images/2020/07/07/684104e1-b05f-4598-9464-a5f5fe68eec8.png" alt="image.png"></p>
+<p>按F11键接受协议并继续</p>
+<p><img src="/images/2020/07/07/acd04bff-ce39-4224-b2c2-1fd8af495b0e.png" alt="image.png"></p>
+<p>选择安装的位置并按回车键继续安装</p>
+<p><img src="/images/2020/07/07/b4fef258-7294-423b-9c21-799f75910d8d.png" alt="image.png"></p>
+<p>选择键盘布局，这里选择使用默认.</p>
+<p><img src="/images/2020/07/07/ed2f25b5-61d0-4356-99d8-4d5e58406a6f.png" alt="image.png"></p>
+<p>为root用户创建密码，需要选择安全性较高的的数字字母字符组合来作为密码</p>
+<p><img src="/images/2020/07/07/0e84667b-7d98-416c-a5f6-5aa007215693.png" alt="image.png"></p>
+<p>按下F11键开始正式的安装</p>
+<p><img src="/images/2020/07/07/cc5559a3-0c8f-44ed-89ba-9d325796711b.png" alt="image.png"></p>
+<p>接下来会进入这个安装进度界面，</p>
+<p><img src="/images/2020/07/07/f93b1b24-bad1-4ee9-9fc8-281e35314a0a.png" alt="image.png"></p>
+<p>等待2-3分钟后，安装完成按回车键重启系统</p>
+<p><img src="/images/2020/07/07/ecf55256-b7fb-4dd9-91dd-a6a7b6be77fa.png" alt="image.png"></p>
+<p>重启完成后界面如下</p>
+<p><img src="/images/2020/07/07/dfd6d466-a9bf-47b3-9b89-aa2e43e81e13.png" alt="image.png"></p>
+<p>对系统进行配置，按F2键然后输入刚才创建的密码进入配置界面。</p>
+<p><img src="/images/2020/07/07/a1911cf5-a23e-4888-949c-fb69d27926c2.png" alt="image.png"></p>
+<p>Configure Managment Network来配置网络。配置静态IPV4地址</p>
+<p><img src="/images/2020/07/07/a2e19773-2470-4510-a3ad-9b8c668ad5b8.png" alt="image.png"></p>
+<p>配置DNS服务器地址</p>
+<p><img src="/images/2020/07/07/afe524fe-8c4d-4b29-a4c2-ee7b78c3fc92.png" alt="image.png"></p>
+<p>按ESC键离开，会提示下面这个界面按Y同意重启网络</p>
+<p><img src="/images/2020/07/07/ba6e1153-bf2a-43fc-9f3a-5b5c5715fd06.png" alt="image.png"></p>
+<p>Troubleshooting Options来开启SSH与Shell</p>
+<p><img src="/images/2020/07/07/e7bf600e-d87d-4925-9416-c9a2b87b4c88.png" alt="image.png"></p>
+<p>到此为止配置上基本完成了，下面在浏览器地址栏中输入刚才配置的IP地址192.168.1.103使用web界面对ESXI进行控制。使用root用户登录</p>
+<p><img src="/images/2020/07/07/805d2a5b-a964-414f-9ea9-a1bd16ea090a.png" alt="image.png"></p>
+<h2 id="vCenter"><a href="#vCenter" class="headerlink" title="vCenter"></a>vCenter</h2><p>Vcenter一般指 VMware vCenter™ Server<br>VMware vCenterServer 提供了一个可伸缩、可扩展的平台，为 虚拟化管理奠定了基础。 VMware vCenter Server（以前称为 VMware VirtualCenter），可集中管理 VMware vSphere 环境，与其他管理平台相比，极大地提高了 IT 管理员对虚拟环境的控制。<br>VMware vCenter Server：提高在虚拟基础架构每个级别上的集中控制和可见性，通过主动管理发挥 vSphere 潜能，是一个具有广泛合作伙伴体系支持的可伸缩、可扩展平台。</p>
+<p><a href="https://baike.baidu.com/item/vCenter" target="_blank" rel="noopener">🔗详情点击</a></p>
+<h2 id="安装vCenter"><a href="#安装vCenter" class="headerlink" title="安装vCenter"></a>安装vCenter</h2><p>vCenter主要有两种:一种是基于Windows的vCenter server它的功能和性能更强大！还有一种就是基于嵌入式linux的vCenter server appliance，使用小的虚拟化环境（主机小于50台，虚拟机少于1000个），使用这个部署起来更简单快捷。当然如果更大的虚拟化环境，就一定需要基于Windows的vCenter server了。随着版本的更迭，vmware去windows化越来越明显了，很多高级功能（跨集群迁移，vcsa ha等等）只有以vcsa方式部署才可能实现了，vcsa部署维护都要比传统windows+vCenterServer+MySQL方便，就是web管理界面还是不如原来的vsphere client好用。</p>
+<p><img src="/images/2020/07/07/94d52b8e-3461-48f4-b2eb-55904c4bcb07.png" alt="image.png"></p>
+<p>安装vCenter server appliance<br>在Windows上装载镜像</p>
+<p><img src="/images/2020/07/07/6802d789-1363-4e95-bbc0-50ce42e61865.png" alt="image.png">vcenter</p>
+<p>然后打开vcsa-ui-installer那个文件夹，在打开下面的那个win32目录，双击installer.exe即可开始安装。</p>
+<p><img src="/images/2020/07/07/09f8bcee-c68a-4ccf-84fd-5044d88f44e1.png" alt="image.png"></p>
+<p>安装分为两个阶段</p>
+<p><img src="/images/2020/07/07/37a72090-47e6-4105-a532-033f3f918931.png" alt="image.png"></p>
+<p>勾选“我接受许可协议条款”</p>
+<p><img src="/images/2020/07/07/8675eb99-4a6b-40c9-ba2d-c3d772a0c3bf.png" alt="image.png"></p>
+<p>选择嵌入式 Platform Services Controller</p>
+<p><img src="/images/2020/07/07/de346651-a018-40c6-becb-e9fa0c4cd9d6.png" alt="image.png"></p>
+<p>指定VCSA 6.7部署到ESXi主机或vCenter Server</p>
+<p><img src="/images/2020/07/07/b5aa3d3f-f48e-4dd7-add0-3ca5526442c2.png" alt="image.png"></p>
+<p>会出现警告直接点是即可，下面配置VCSA 6.7虚拟机名称以及root密码。</p>
+<p><img src="/images/2020/07/07/d80444a6-392b-4d2f-9494-22cbfc09f861.png" alt="image.png"></p>
+<p>选择部署大小</p>
+<p><img src="/images/2020/07/07/982b0164-426e-41ce-9c30-f3d53d4e5611.png" alt="image.png"></p>
+<p>选择VCSA 6.7虚拟机存储<br><img src="/images/2020/07/07/23af1a0c-f0f9-4691-8588-f992f7ddfa27.png" alt="image.png"></p>
+<p>之前的设置部署大小为300GB，可是由于自己电脑没有那么大的存储空间23333。只好这样先装了</p>
+<p>配置VCSA 6.7虚拟机网络</p>
+<p><img src="/images/2020/07/07/5b2ed2da-a716-40ff-af8d-a8d10d689648.png" alt="image.png"></p>
+<p>确认第1阶段参数<br><img src="/images/2020/07/07/24db6c5c-6722-4993-a53c-81b785c5e1c0.png" alt="image.png"></p>
+<p>开始第一阶段部署，部署的时间取决于物理服务器性能</p>
+<p><img src="/images/2020/07/07/bece36f1-bc18-47dc-8405-53040e150d31.png" alt="image.png"></p>
+<p>第一阶段完成，开始第二阶段</p>
+<p><img src="/images/2020/07/07/b5a19232-1905-483a-a025-774640aabf5c.png" alt="image.png">)<img src="/images/2020/07/07/b1a61faa-02c6-4dcf-98e0-914eb7b7b8c2.png" alt="image.png"></p>
+<p>配置系统时间</p>
+<p><img src="/images/2020/07/07/887f5517-f9ab-438a-864e-dd3a25df5a60.png" alt="image.png"></p>
+<p>这里选择跟ESXI主机同步。当然也可以选择和NTP服务器时间相同。根据自己需求选择是否启用SSH</p>
+<p>SSO配置</p>
+<p><img src="/images/2020/07/07/70404f34-797b-40e8-bcf5-0eb919ae80f9.png" alt="image.png"></p>
+<p>确认是否加入CEIP</p>
+<p><img src="/images/2020/07/07/8ef42ed4-fe92-46f9-b779-d664d390fddc.png" alt="image.png"></p>
+<p>确认参数</p>
+<p><img src="/images/2020/07/07/dc757e61-bf85-4c8d-86c3-8b747756bbca.png" alt="image.png"></p>
+<p>点击确定开始第二阶段部署</p>
+<p><img src="/images/2020/07/07/3d2e2f64-798e-49de-a438-10300e20e5e0.png" alt="image.png"></p>
+<p>开始部署</p>
+<p><img src="/images/2020/07/07/c8b3f7ee-4f93-4767-bbe7-9dc1a9769cd9.png" alt="image.png"></p>
+<p>安装完成</p>
+<p><img src="/images/2020/07/07/2b9c0c64-3393-4a03-8698-251a490b39df.png" alt="image.png"></p>
+<p>打开VCSA 6.7控制台界面</p>
+<p><img src="/images/2020/07/07/fc431e8c-134e-4c80-815e-11947dc87f21.png" alt="image.png"></p>
+<p>在浏览器中输入VCSA 6.7的IP地址进行访问，VCSA 6.7提供H5以及FLASH两个选择，从初步使用看，H5功能比VCSA 6.5得到增强</p>
+<p><img src="/images/2020/07/07/60dabf12-51c5-482b-bada-a28431efe7e8.png" alt="image.png"></p>
+<p>输入SSO登录</p>
+<p><img src="/images/2020/07/07/f1bf8161-91af-49c5-bcbc-38266e4e0da8.png" alt="image.png"></p>
+<p>VCSA 6.7 登录成功后界面如下</p>
+<p><img src="/images/2020/07/07/e6ee7699-a220-4c5c-b623-f908d886cb41.png" alt="image.png"></p>
+<p>访问VMware vCenter Server Appliance Web</p>
+<p><img src="/images/2020/07/07/b6aca240-9f68-458e-af9a-152944842c58.png" alt="image.png"><br><img src="/images/2020/07/07/bacd3236-4d20-49ee-9626-92d3659a8197.png" alt="image.png"></p>
+<h3 id="安装vCenter-server"><a href="#安装vCenter-server" class="headerlink" title="安装vCenter server"></a>安装vCenter server</h3><p>当镜像挂载之后打开安装程序<br><img src="/images/2020/07/07/db865e34-e4f3-4f69-84fa-e8c2b4c58b9a.png" alt="image.png"></p>
+<p>点击下一步继续安装<br><img src="/images/2020/07/07/e84fd03e-7965-4c54-b490-4a93597c3554.png" alt="image.png"></p>
+<p>选择接受许可协议条款</p>
+<p><img src="/images/2020/07/07/31fdd3d2-80cb-460a-92d4-3e41f898555a.png" alt="image.png"></p>
+<p>选择部署类型，在这先暂时选择嵌入式部署。在以后会对外部部署进行安装。</p>
+<p><img src="/images/2020/07/07/1883039b-fa49-4e1a-a0a5-de6570885525.png" alt="image.png"></p>
+<p>配置系统网络名称，输入windows server的IP地址</p>
+<p><img src="/images/2020/07/07/8a5cdc57-002d-4176-8c27-831431c6133c.png" alt="image.png"></p>
+<p>vCenter Single Sign-On 配置</p>
+<p><img src="/images/2020/07/07/686dd69f-b8a6-44c2-966e-b786055f1183.png" alt="image.png"></p>
+<p>选择vCenter Server服务账户</p>
+<p><img src="/images/2020/07/07/2ebc8f5a-de2e-4816-b0bf-a6cf3b344d21.png" alt="image.png"></p>
+<p>数据库设置，选择嵌入式数据库</p>
+<p><img src="/images/2020/07/07/36a4cd7e-234e-4925-8bd7-0cfd71769622.png" alt="image.png"></p>
+<p>配置端口</p>
+<p><img src="/images/2020/07/07/8e9f85b8-43ff-4a41-9a1b-b4e15402d5fa.png" alt="image.png"></p>
+<p>选择安装目录</p>
+<p><img src="/images/2020/07/07/508f6244-b468-418a-9c95-742d4abbbc22.png" alt="image.png"></p>
+<p>加入客户体验提升计划</p>
+<p><img src="/images/2020/07/07/19c6e02f-679e-4cab-baa9-f807bdb4da78.png" alt="image.png"></p>
+<p>点击完成开始安装<br><img src="/images/2020/07/07/2084f5c3-1edf-4a35-8c5e-e52fe501833d.png" alt="image.png"></p>
+<p>安装过程时间根据机器性能决定，大概10分钟左右</p>
+<p><img src="/images/2020/07/07/1f1c81e6-2e97-476f-89c0-0b93723ceca4.png" alt="image.png"></p>
+<p>安装完成</p>
+<p><img src="/images/2020/07/07/87be7579-5906-4db4-b081-6576152bcfc1.png" alt="image.png"></p>
+<p>在客户机访问vSphere Web Client</p>
+<p><img src="/images/2020/07/07/f12110f1-5829-4eb9-9aab-720145a342f1.png" alt="image.png"></p>
+<p>输入刚才设置的账号密码，然后登录成功</p>
+<p><img src="/images/2020/07/07/7087312b-e0be-458a-8785-04dae733ff83.png" alt="image.png"></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='https://sharefs.yun.kugou.com/202007061730/0d8ca84ec93d99fbe7c55371e9611feb/G186/M06/0E/09/mpQEAF5fTcmABkSQAD-PumMMF2Q191.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='https://sharefs.yun.kugou.com/202007061729/62c1b3ce6a4decc08dc890a032ec6b45/G205/M04/04/1B/DQ4DAF6MKQyAQ8RXAD8e_lTapgk217.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '171639872', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+</html>
