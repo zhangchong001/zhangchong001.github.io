@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>网页基础 - zc&#39;blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="ZC,"> 
+    <meta name="description" content="1. 网页的组成网页可以分为三大部分——HTML、CSS和JavaScript。如果把网页比作一个人的话，HTML相当于骨架，JavaScript相当于肌肉，CSS相当于皮肤，三者结合起来才能形成一,"> 
+    <meta name="author" content="ZC"> 
+    <link rel="alternative" href="atom.xml" title="zc&#39;blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">zc&#39;blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://zc.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">网页基础</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">网页基础</h1>
+        <div class="stuff">
+            <span>七月 05, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E7%BD%91%E9%A1%B5/" rel="tag">网页</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h2 id="1-网页的组成"><a href="#1-网页的组成" class="headerlink" title="1. 网页的组成"></a>1. 网页的组成</h2><p>网页可以分为三大部分——HTML、CSS和JavaScript。如果把网页比作一个人的话，HTML相当于骨架，JavaScript相当于肌肉，CSS相当于皮肤，三者结合起来才能形成一个完善的网页。下面我们分别来介绍一下这三部分的功能。<br>(1) HTML<br>HTML是用来描述网页的一种语言，其全称叫作Hyper Text Markup Language，即超文本标记语言。网页包括文字、按钮、图片和视频等各种复杂的元素，其基础架构就是HTML。不同类型的文字通过不同类型的标签来表示，如图片用img标签表示，视频用video标签表示，段落用p标签表示，它们之间的布局又常通过布局标签div嵌套组合而成，各种标签通过不同的排列和嵌套才形成了网页的框架。<br>在Chrome浏览器中打开百度，右击并选择“检查”项（或按F12键），打开开发者模式，这时在Elements选项卡中即可看到网页的源代码，如图2-9所示。<br> <img src="/images/2020/07/05/eb2e6bab-77a3-435d-9a73-001dc077439a.png" alt="image.png">图2-9 源代码<br>这就是HTML，整个网页就是由各种标签嵌套组合而成的。这些标签定义的节点元素相互嵌套和组合形成了复杂的层次关系，就形成了网页的架构。<br>(2) CSS<br>HTML定义了网页的结构，但是只有HTML页面的布局并不美观，可能只是简单的节点元素的排列，为了让网页看起来更好看一些，这里借助了CSS。<br>CSS，全称叫作Cascading Style Sheets，即层叠样式表。“层叠”是指当在HTML中引用了数个样式文件，并且样式发生冲突时，浏览器能依据层叠顺序处理。“样式”指网页中文字大小、颜色、元素间距、排列等格式。<br>CSS是目前唯一的网页页面排版样式标准，有了它的帮助，页面才会变得更为美观。<br>图2-9的右侧即为CSS，例如：</p>
+<pre><code>#head_wrapper.s-ps-islite .s-p-top {
+position: absolute;
+bottom: 40px;
+width: 100%;
+height: 181px;}</code></pre><p>就是一个CSS样式。大括号前面是一个CSS选择器，此选择器的意思是首先选中id为head_wrapper且class为s-ps-islite的节点，然后再选中其内部的class为s-p-top的节点。大括号内部写的就是一条条样式规则，例如position指定了这个元素的布局方式为绝对布局，bottom指定元素的下边距为40像素，width指定了宽度为100%占满父元素，height则指定了元素的高度。也就是说，我们将位置、宽度、高度等样式配置统一写成这样的形式，然后用大括号括起来，接着在开头再加上CSS选择器，这就代表这个样式对CSS选择器选中的元素生效，元素就会根据此样式来展示了。<br>在网页中，一般会统一定义整个网页的样式规则，并写入CSS文件中（其后缀为css）。在HTML中，只需要用link标签即可引入写好的CSS文件，这样整个页面就会变得美观、优雅。<br>(3) JavaScript<br>JavaScript，简称JS，是一种脚本语言。HTML和CSS配合使用，提供给用户的只是一种静态信息，缺乏交互性。我们在网页里可能会看到一些交互和动画效果，如下载进度条、提示框、轮播图等，这通常就是JavaScript的功劳。它的出现使得用户与信息之间不只是一种浏览与显示的关系，而是实现了一种实时、动态、交互的页面功能。<br>JavaScript通常也是以单独的文件形式加载的，后缀为js，在HTML中通过script标签即可引入，例如：</p>
+<pre><code>&lt;script src=&quot;jquery-2.1.0.js&quot;&gt;&lt;/script&gt;</code></pre><p>综上所述，HTML定义了网页的内容和结构，CSS描述了网页的布局，JavaScript定义了网页的行为。</p>
+<h2 id="2-网页的结构"><a href="#2-网页的结构" class="headerlink" title="2. 网页的结构"></a>2. 网页的结构</h2><p>我们首先用例子来感受一下HTML的基本结构。新建一个文本文件，名称可以自取，后缀为html，内容如下：</p>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>This is a Demo</title>
+    <meta name="generator" content="Hexo 4.2.1"></head>
+    <body>
+        <div id="container">
+            <div class="wrapper">
+                <h2 class="title">Hello World</h2>
+                <p class="text">Hello, this is a paragraph.</p>
+            </div>
+        </div>
+    </body>
+</html>
+
+<p>这就是一个最简单的HTML实例。开头用DOCTYPE定义了文档类型，其次最外层是html标签，最后还有对应的结束标签来表示闭合，其内部是head标签和body标签，分别代表网页头和网页体，它们也需要结束标签。head标签内定义了一些页面的配置和引用，如：</p>
+<pre><code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code></pre><p>它指定了网页的编码为UTF-8。<br>title标签则定义了网页的标题，会显示在网页的选项卡中，不会显示在正文中。body标签内则是在网页正文中显示的内容。div标签定义了网页中的区块，它的id是container，这是一个非常常用的属性，且id的内容在网页中是唯一的，我们可以通过它来获取这个区块。然后在此区块内又有一个div标签，它的class为wrapper，这也是一个非常常用的属性，经常与CSS配合使用来设定样式。然后此区块内部又有一个h2标签，这代表一个二级标题。另外，还有一个p标签，这代表一个段落。在这两者中直接写入相应的内容即可在网页中呈现出来，它们也有各自的class属性。<br>将代码保存后，在浏览器中打开该文件，可以看到如图2-10所示的内容。<br> <img src="/images/2020/07/05/0f0f252b-4e61-4a92-be73-b14db897e7a4.png" alt="image.png">   图2-10 运行结果<br>可以看到，在选项卡上显示了This is a Demo字样，这是我们在head中的title里定义的文字。而网页正文是body标签内部定义的各个元素生成的，可以看到这里显示了二级标题和段落。<br>这个实例便是网页的一般结构。一个网页的标准形式是html标签内嵌套head和body标签，head内定义网页的配置和引用，body内定义网页的正文。</p>
+<h2 id="3-节点树及节点间的关系"><a href="#3-节点树及节点间的关系" class="headerlink" title="3. 节点树及节点间的关系"></a>3. 节点树及节点间的关系</h2><p>在HTML中，所有标签定义的内容都是节点，它们构成了一个HTML DOM树。<br>我们先看下什么是DOM，DOM是W3C（万维网联盟）的标准，其英文全称Document Object Model，即文档对象模型。它定义了访问HTML和XML文档的标准：<br>W3C文档对象模型（DOM）是中立于平台和语言的接口，它允许程序和脚本动态地访问和更新文档的内容、结构和样式。<br>W3C DOM标准被分为3个不同的部分。<br>•    核心DOM： 针对任何结构化文档的标准模型。<br>•    XML DOM：针对XML文档的标准模型。<br>•    HTML DOM：针对HTML文档的标准模型。<br>根据W3C的HTML DOM标准，HTML文档中的所有内容都是节点。<br>•    整个文档是一个文档节点；<br>•    每个HTML元素是元素节点；<br>•    HTML元素内的文本是文本节点；<br>•    每个HTML属性是属性节点；<br>•    注释是注释节点。<br>HTML DOM将HTML文档视作树结构，这种结构被称为节点树，如图2-11所示。<br><img src="/images/2020/07/05/b93058d4-c3ce-475c-91c2-ff3c37e04702.png" alt="image.png"> 图2-11 节点树<br>通过HTML DOM，树中的所有节点均可通过JavaScript访问，所有HTML节点元素均可被修改，也可以被创建或删除。<br>节点树中的节点彼此拥有层级关系。我们常用父（parent）、子（child）和兄弟（sibling）等术语描述这些关系。父节点拥有子节点，同级的子节点被称为兄弟节点。<br>在节点树中，顶端节点称为根（root）。除了根节点之外，每个节点都有父节点，同时可拥有任意数量的子节点或兄弟节点。图2-12展示了节点树以及节点之间的关系。<img src="/images/2020/07/05/cd6a66aa-25f6-47aa-aa7d-498ef629f263.png" alt="image.png"><br> 图2-12 节点树及节点间的关系<br>本段参考W3SCHOOL，链接：<a href="http://www.w3school.com.cn/htmldom/dom_nodes.asp。" target="_blank" rel="noopener">http://www.w3school.com.cn/htmldom/dom_nodes.asp。</a></p>
+<h2 id="4-选择器"><a href="#4-选择器" class="headerlink" title="4. 选择器"></a>4. 选择器</h2><p>我们知道网页由一个个节点组成，CSS选择器会根据不同的节点设置不同的样式规则，那么怎样来定位节点呢？<br>在CSS中，我们使用CSS选择器来定位节点。例如，上例中div节点的id为container，那么就可以表示为#container，其中#开头代表选择id，其后紧跟id的名称。另外，如果我们想选择class为wrapper的节点，便可以使用.wrapper，这里以点（.）开头代表选择class，其后紧跟class的名称。另外，还有一种选择方式，那就是根据标签名筛选，例如想选择二级标题，直接用h2即可。这是最常用的3种表示，分别是根据id、class、标签名筛选，请牢记它们的写法。<br>另外，CSS选择器还支持嵌套选择，各个选择器之间加上空格分隔开便可以代表嵌套关系，如#container .wrapper p则代表先选择id为container的节点，然后选中其内部的class为wrapper的节点，然后再进一步选中其内部的p节点。另外，如果不加空格，则代表并列关系，如div#container .wrapper p.text代表先选择id为container的div节点，然后选中其内部的class为wrapper的节点，再进一步选中其内部的class为text的p节点。这就是CSS选择器，其筛选功能还是非常强大的。<br>另外，CSS选择器还有一些其他语法规则，具体如表2-4所示。<br>表2-4 CSS选择器的其他语法规则<br><img src="/images/2020/07/05/8bf1bfc8-f09c-4e68-8bbf-2d1834b60323.png" alt="image.png"><br><img src="/images/2020/07/05/5545f3ee-025c-4211-a5f0-430207508533.png" alt="image.png"><br><img src="/images/2020/07/05/74d97db9-d198-4c8b-b0d8-1339287fe2ef.png" alt="image.png"><br><img src="/images/2020/07/05/20d2ccdb-41e5-48af-b32d-fc1529239b6c.png" alt="image.png"><br><img src="/images/2020/07/05/3bbc1032-ae0f-4b4c-bf4d-d402da270711.png" alt="image.png"><br>另外，还有一种比较常用的选择器是XPath，这种选择方式后面会详细介绍。</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='https://sharefs.yun.kugou.com/202007061730/0d8ca84ec93d99fbe7c55371e9611feb/G186/M06/0E/09/mpQEAF5fTcmABkSQAD-PumMMF2Q191.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='https://sharefs.yun.kugou.com/202007061729/62c1b3ce6a4decc08dc890a032ec6b45/G205/M04/04/1B/DQ4DAF6MKQyAQ8RXAD8e_lTapgk217.mp3'></li>
+                        
+                    
+                        
+                            <li title='2' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='3' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-网页的组成"><span class="toc-number">1.</span> <span class="toc-text">1. 网页的组成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-网页的结构"><span class="toc-number">2.</span> <span class="toc-text">2. 网页的结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#container"><span class="toc-number">3.</span> <span class="toc-text">Hello World</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-节点树及节点间的关系"><span class="toc-number">4.</span> <span class="toc-text">3. 节点树及节点间的关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-选择器"><span class="toc-number">5.</span> <span class="toc-text">4. 选择器</span></a></li></ol>	
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '171639872', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+</html>

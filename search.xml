@@ -2,8 +2,8 @@
 <search>
   <entry>
     <title>Chrome 浏览器扩展神器暴力猴</title>
-    <url>/2020/07/06/Chrome-%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%A9%E5%B1%95%E7%A5%9E%E5%99%A8%E6%9A%B4%E5%8A%9B%E7%8C%B4/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>我平常工作最常用的浏览器就是 Chrome 了，Google 出品，值得信赖，用 Chrome 就不得不提浏览器扩展了，有了各种 Chrome 扩展，可以让你浏览器网页更方便，工作更高效。<br>Chrome 扩展可以在 Google 应用商店下载<a href="https://chrome.google.com/webstore/category/extensions?hl=zh-CN这里可以搜索安装你喜欢的各种扩展。" target="_blank" rel="noopener">https://chrome.google.com/webstore/category/extensions?hl=zh-CN这里可以搜索安装你喜欢的各种扩展。</a><br><img src="/images/2020/07/06/8524a9de-6cd2-4bd9-8540-939cd94f9e25.png" alt="image.png"><br>比如我装了很多扩展。<img src="/images/2020/07/06/7b140c9e-c0a3-4f05-becc-34c96ffa092d.png" alt="image.png"><br>扩展这么多，其中的油猴<a href="Tampermonkey">Tampermonkey</a> 是必须推荐的一个，它是扩展中的王者，最强大的浏览器扩展。</p>
+    <url>/Chrome-%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%A9%E5%B1%95%E7%A5%9E%E5%99%A8%E6%9A%B4%E5%8A%9B%E7%8C%B4.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>我平常工作最常用的浏览器就是 Chrome 了，Google 出品，值得信赖，用 Chrome 就不得不提浏览器扩展了，有了各种 Chrome 扩展，可以让你浏览器网页更方便，工作更高效。<br>Chrome 扩展可以在 Google 应用商店下载<a href="https://chrome.google.com/webstore/category/extensions?hl=zh-CN这里可以搜索安装你喜欢的各种扩展。" target="_blank" rel="noopener">https://chrome.google.com/webstore/category/extensions?hl=zh-CN这里可以搜索安装你喜欢的各种扩展。</a><br><img src="/images/2020/07/06/8524a9de-6cd2-4bd9-8540-939cd94f9e25.png" alt="image.png"><br>比如我装了很多扩展。<img src="/images/2020/07/06/7b140c9e-c0a3-4f05-becc-34c96ffa092d.png" alt="image.png"><br>扩展这么多，其中的油猴<a href="Tampermonkey">Tampermonkey</a> 是必须推荐的一个，它是扩展中的王者，最强大的浏览器扩展。</p>
 <h3 id="安装暴力猴扩展"><a href="#安装暴力猴扩展" class="headerlink" title="安装暴力猴扩展"></a>安装暴力猴扩展</h3><p>可以在谷歌商店直接安装<a href="https://chrome.google.com/webstore/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag?hl=zh-CN" target="_blank" rel="noopener">暴力猴</a><img src="/images/2020/07/06/e9021617-1ff3-495d-b62b-8a872b985f20.png" alt="image.png"><br>也可以再扩展迷下载<a href="https://www.extfans.com/productivity/jinjaccalgkegednnccohejagnlnfdag" target="_blank" rel="noopener">暴力猴</a><br><img src="/images/2020/07/06/7763c5c1-ef7d-4733-b2ca-9e34b81065af.png" alt="image.png"><br>如果上不了Google，可以在国内第三方Chrome 插件网站<br><a href="https://www.crx4chrome.com/" target="_blank" rel="noopener">https://www.crx4chrome.com/</a><br><a href="http://chromecj.com/" target="_blank" rel="noopener">http://chromecj.com/</a><br><a href="http://www.cnplugins.com/" target="_blank" rel="noopener">http://www.cnplugins.com/</a><br><a href="https://www.chromefor.com/" target="_blank" rel="noopener">https://www.chromefor.com/</a><br>等搜索下载。下载的是个 crx 文件，然后打开 Chrome 扩展chrome://extensions/，打开开发者模式，将下载的crx文件拖进去，如果出错提示程序包无效。<br><img src="/images/2020/07/06/3877d52f-f1ad-4602-8f54-5ec4ffd317fd.png" alt="image.png"><br>将 crx 后缀改为 zip 再拖进去就能安装成功了，浏览器右上角可以看到图标。<img src="/images/2020/07/06/c3c6cef5-c7c5-4a2a-8ada-ac6fff1ee0a8.png" alt="image.png"></p>
 <h3 id="脚本网站"><a href="#脚本网站" class="headerlink" title="脚本网站"></a>脚本网站</h3><p>有了暴力猴扩展，还需要配上脚本。<br>安装完扩展后点击图标，选择 获取新脚本<br>会进入网站<a href="https://www.tampermonkey.net/scripts.php" target="_blank" rel="noopener">https://www.tampermonkey.net/scripts.php</a><br>这里可以获取脚本来源，有3个来源网站<br><a href="http://userscripts-mirror.org/" target="_blank" rel="noopener">http://userscripts-mirror.org/</a><br><a href="https://openuserjs.org/" target="_blank" rel="noopener">https://openuserjs.org/</a><br><a href="https://greasyfork.org/" target="_blank" rel="noopener">https://greasyfork.org/</a><br>这里推荐 greasyfork ，因为它支持中文。</p>
 <p>打开网站首页<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">https://greasyfork.org/zh-CN</a> 可以看到很多脚本。<img src="/images/2020/07/06/4307fa08-a4ac-4e5a-a0e2-e7f98cd80765.png" alt="image.png">安装脚本也很简单，找到需要的脚本，进入页面，点击安装，然后管理面板即可看到已安装的脚本。</p>
@@ -29,8 +29,8 @@
   </entry>
   <entry>
     <title>Python开发者必备的神器----pycharm</title>
-    <url>/2020/07/06/Python%E5%BC%80%E5%8F%91%E8%80%85%E5%BF%85%E5%A4%87%E7%9A%84%E7%A5%9E%E5%99%A8-pycharm/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>众所周知，Python语言是当下最热门的编程语言，广泛应用于数据分析、爬虫、机器学习等领域，当然了，IDE首选pychram了。Python编程语言是由荷兰计算机程序员von Rosen于1991年设计的。面向对象，解释器，高级和通用这种编程语言的特性是可读性和编写程序从其生产目标中相当好的可读性。JetBrains PyCharm Professional是最好的Python开发环境之一，在编辑，故障排除和纠正，自动完成等方面具有出色的能力和智能。</p>
+    <url>/Python%E5%BC%80%E5%8F%91%E8%80%85%E5%BF%85%E5%A4%87%E7%9A%84%E7%A5%9E%E5%99%A8-pycharm.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>众所周知，Python语言是当下最热门的编程语言，广泛应用于数据分析、爬虫、机器学习等领域，当然了，IDE首选pychram了。Python编程语言是由荷兰计算机程序员von Rosen于1991年设计的。面向对象，解释器，高级和通用这种编程语言的特性是可读性和编写程序从其生产目标中相当好的可读性。JetBrains PyCharm Professional是最好的Python开发环境之一，在编辑，故障排除和纠正，自动完成等方面具有出色的能力和智能。</p>
 <p>不多哔哔了，直接进入主题！<img src="/images/2020/07/06/4b5b7a04-fdb2-47a9-b4c8-7fb0bcd64359.png" alt="image.png"></p>
 <h1 id="主要功能"><a href="#主要功能" class="headerlink" title="主要功能"></a>主要功能</h1><p>1、编码协助<br>PyCharm Pro 2020提供了一个带编码补全，代码片段，支持代码折叠和分割窗口的智能、可配置的编辑器，可帮助用户更快更轻松的完成编码工作。<br>2、项目代码导航<br>该IDE可帮助用户即时从一个文件导航至另一个，从一个方法至其申明或者用法甚至可以穿过类的层次。若用户学会使用其提供的快捷键的话甚至能更快。<br>3、代码分析<br>用户可使用其编码语法，错误高亮，智能检测以及一键式代码快速补全建议，使得编码更优化。<br>4、Python重构<br>有了该功能，用户便能在项目范围内轻松进行重命名，提取方法/超类，导入域/变量/常量，移动和前推/后退重构。<br>5、支持Django<br>有了它自带的HTML,CSS和 JavaScript编辑器 ，用户可以更快速的通过Djang框架进行Web开发。此外，其还能支持CoffeeScript, Mako 和 Jinja2。<br>6、支持Google App引擎<br>用户可选择使用Python 2.5或者2.7运行环境，为Google APp引擎进行应用程序的开发，并执行例行程序部署工作。<br>7、集成版本控制<br>登入，录出，视图拆分与合并–所有这些功能都能在其统一的VCS用户界面(可用于Mercurial, Subversion, Git, Perforce 和其他的 SCM)中得到。<br>8、图形页面调试器<br>用户可以用其自带的功能全面的调试器对Python或者Django应用程序以及测试单元进行调整，该调试器带断点，步进，多画面视图，窗口以及评估表达式。<br>9、集成的单元测试<br>用户可以在一个文件夹运行一个测试文件，单个测试类，一个方法或者所有测试项目。<br>10、可自定义&amp;可扩展<br>可绑定了 Textmate, NetBeans, Eclipse &amp; Emacs 键盘主盘，以及 Vi/Vim仿真插件。</p>
 <h1 id="安装破解教程："><a href="#安装破解教程：" class="headerlink" title="安装破解教程："></a>安装破解教程：</h1><p>1.先下载安装包和破解补丁压缩包，然后安装安装包，启动你的IDE，如果上来就需要注册，选择：试用（Evaluate for free）进入IDE；</p>
@@ -44,9 +44,28 @@
       </tags>
   </entry>
   <entry>
+    <title>VMware workstation 不可恢复错误解决</title>
+    <url>/VMware-workstation-%E4%B8%8D%E5%8F%AF%E6%81%A2%E5%A4%8D%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>由于笔记本关机时，仍然在运行VMware里面的系统并没有正常的关机当再次开机时导致出现了如下错误<br><img src="/images/2020/07/03/7e7008af-facc-4262-8856-a853804d7bb5.png" alt="image.png">虚拟机是一种被挂起的状态，无法恢复到当时电脑关机时的状态。</p>
+<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><p>到虚拟机安装目录下删除掉一个文件即可<br><img src="/images/2020/07/03/5864f3e9-6530-4ada-8a1c-15e9fd6e51eb.png" alt="image.png"></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>虚拟机</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mavern阿里云仓库设置</title>
+    <url>/mavern%E9%98%BF%E9%87%8C%E4%BA%91%E4%BB%93%E5%BA%93%E8%AE%BE%E7%BD%AE.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>#第一步，右击项目名称<img src="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/20-5-4/1.png" alt=""><br>#第二步，创建setting.xml<img src="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/20-5-4/2.png" alt=""><br>#第三步，填上这些即可<img src="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/20-5-4/3.png" alt=""></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Hive部署</title>
-    <url>/2020/07/04/Hive%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="1、下载并安装"><a href="#1、下载并安装" class="headerlink" title="1、下载并安装"></a>1、下载并安装</h1><p><img src="/images/2020/07/04/32c23f68-7a62-45ac-a037-45d0637446c9.png" alt="image.png"></p>
+    <url>/Hive%E9%83%A8%E7%BD%B2.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h1 id="1、下载并安装"><a href="#1、下载并安装" class="headerlink" title="1、下载并安装"></a>1、下载并安装</h1><p><img src="/images/2020/07/04/32c23f68-7a62-45ac-a037-45d0637446c9.png" alt="image.png"></p>
 <h1 id="2、设置环境变量"><a href="#2、设置环境变量" class="headerlink" title="2、设置环境变量"></a>2、设置环境变量</h1><p><img src="/images/2020/07/04/b588bf95-83d8-47b1-bac5-35c17b11b09f.png" alt="image.png"></p>
 <h1 id="3、修改配置文件"><a href="#3、修改配置文件" class="headerlink" title="3、修改配置文件"></a>3、修改配置文件</h1><p><img src="/images/2020/07/04/a19daca3-5db6-4f3e-9898-7272f9eb0cc1.png" alt="image.png"></p>
 <p><img src="/images/2020/07/04/6b6ca0f5-17b4-4f60-b32c-f294591618d5.png" alt="image.png"></p>
@@ -66,28 +85,9 @@
       </tags>
   </entry>
   <entry>
-    <title>VMware workstation 不可恢复错误解决</title>
-    <url>/2020/07/03/VMware-workstation-%E4%B8%8D%E5%8F%AF%E6%81%A2%E5%A4%8D%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>由于笔记本关机时，仍然在运行VMware里面的系统并没有正常的关机当再次开机时导致出现了如下错误<br><img src="/images/2020/07/03/7e7008af-facc-4262-8856-a853804d7bb5.png" alt="image.png">虚拟机是一种被挂起的状态，无法恢复到当时电脑关机时的状态。</p>
-<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><p>到虚拟机安装目录下删除掉一个文件即可<br><img src="/images/2020/07/03/5864f3e9-6530-4ada-8a1c-15e9fd6e51eb.png" alt="image.png"></p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>虚拟机</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>mavern阿里云仓库设置</title>
-    <url>/2020/07/03/mavern%E9%98%BF%E9%87%8C%E4%BA%91%E4%BB%93%E5%BA%93%E8%AE%BE%E7%BD%AE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>#第一步，右击项目名称<img src="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/20-5-4/1.png" alt=""><br>#第二步，创建setting.xml<img src="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/20-5-4/2.png" alt=""><br>#第三步，填上这些即可<img src="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/20-5-4/3.png" alt=""></p>
-]]></content>
-  </entry>
-  <entry>
     <title>deepin安装</title>
-    <url>/2020/07/04/deepin%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h1><p>请确保您的电脑满足以下的配置要求，如果您的电脑配置低于以下要求，将无法完美地体验深度操作系统：</p>
+    <url>/deepin%E5%AE%89%E8%A3%85.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h1 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h1><p>请确保您的电脑满足以下的配置要求，如果您的电脑配置低于以下要求，将无法完美地体验深度操作系统：</p>
 <blockquote>
 <p>段落引用处理器：Intel Pentium IV 2GHz 或更快的处理器<br>内存：至少 2G 内存(RAM)，4G 以上是达到更好性能的推荐值<br>硬盘：至少 25 GB 的空闲空间<br>您还需要一个U盘，或一张光盘以及光驱，然后在深度科技官方网站下载<a href="镜像文件"></a>并<a href="制作启动盘"></a>。</p>
 </blockquote>
@@ -144,8 +144,8 @@
   </entry>
   <entry>
     <title>元数据库安装配置</title>
-    <url>/2020/07/04/%E5%85%83%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="1、下载Mysql-yum-仓库"><a href="#1、下载Mysql-yum-仓库" class="headerlink" title="1、下载Mysql yum 仓库"></a>1、下载Mysql yum 仓库</h1><p><img src="/images/2020/07/04/2f5b1866-edd9-4e32-bff4-8d5464bf4a97.png" alt="image.png"></p>
+    <url>/%E5%85%83%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h1 id="1、下载Mysql-yum-仓库"><a href="#1、下载Mysql-yum-仓库" class="headerlink" title="1、下载Mysql yum 仓库"></a>1、下载Mysql yum 仓库</h1><p><img src="/images/2020/07/04/2f5b1866-edd9-4e32-bff4-8d5464bf4a97.png" alt="image.png"></p>
 <h1 id="2、添加Mysql-yum-仓库"><a href="#2、添加Mysql-yum-仓库" class="headerlink" title="2、添加Mysql yum 仓库"></a>2、添加Mysql yum 仓库</h1><p><img src="/images/2020/07/04/e5596132-16ce-4edc-a81a-dae6715c3173.png" alt="image.png"></p>
 <h1 id="3、让安装包可用"><a href="#3、让安装包可用" class="headerlink" title="3、让安装包可用"></a>3、让安装包可用</h1><p><img src="/images/2020/07/04/466e06c3-1fba-4786-b8b6-1179ca7db91d.png" alt="image.png"></p>
 <h1 id="4、安装Mysql"><a href="#4、安装Mysql" class="headerlink" title="4、安装Mysql"></a>4、安装Mysql</h1><p><img src="/images/2020/07/04/5cd8776c-1cd8-413a-bacf-138f85b63c91.png" alt="image.png"></p>
@@ -161,22 +161,9 @@
       </tags>
   </entry>
   <entry>
-    <title>最强下载神器IDM</title>
-    <url>/2020/07/06/%E6%9C%80%E5%BC%BA%E4%B8%8B%E8%BD%BD%E7%A5%9E%E5%99%A8IDM/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Internet Download Manager，简称 IDM，是国外的一款优秀下载工具。目前凭借着下载计算的速度优势在外媒网站中均受好评，现在已被多数国人熟知。Internet Download Manager 提升你的下载速度最多达5倍，安排下载时程，带有续传功能，可以恢复因为断线、网络问题、计算机当机甚至无预警的停电导致下传到一半的资料。国外的Internet Download Manager简称IDM是一款下载利器，不限速，界面简洁好看，还能自动识别网页视频，无多余菜单弹窗!并且支持IE，Firefox，Chrome等浏览器。<br>IDM具有动态文件分割、多重下载点技术，而且它会重复使用现有的联机，而不需再重新联机登入一遍。智能in-speed技术会动态地将所有设定应用到某种联机类型，以充分利用下载速度。IDM支持下载队列、防火墙、代理服务器和映摄服务器、重新导向、cookies、需要验证的目录，以及各种不同的服务器平台，它紧密地与Internet Explorer和Netscape Communicator结合，自动地处理你的下载需求。此外，IDM还具有下载逻辑最佳化功能、检查病毒，以及多种偏好设定。</p>
-<h2 id="安装方法："><a href="#安装方法：" class="headerlink" title="安装方法："></a>安装方法：</h2><p>下载后解压&gt;找到!绿化卸载.bat&gt;右键以管理员身份运行。<br><img src="/images/2020/07/06/c308e0eb-9028-44a9-a29f-75c3d655b29b.png" alt="image.png"><br>输入1,回车确定安装。<br><img src="/images/2020/07/06/b22014f1-eca2-455f-9453-7b1b75de180a.png" alt="image.png"><br>强烈建议创建快捷方式。<br><img src="/images/2020/07/06/c769bb97-c8c1-4c03-b5b3-3539988b0b68.png" alt="image.png"><br>主界面就是这个样子了，还算简洁，最起码没广告。<br><img src="/images/2020/07/06/e072019d-34b3-4f6f-aeca-80fdf540613e.png" alt="image.png"><br>下面是个人推荐下载地址：<a href="http://soft.ucbug.com/uploads/soft/linshi/wlrj/ucbug.com-idm.rar" target="_blank" rel="noopener">idm下载</a></p>
-]]></content>
-      <categories>
-        <category>插件</category>
-      </categories>
-      <tags>
-        <tag>IDM</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hadoop配置</title>
-    <url>/2020/07/03/Hadoop%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="一、"><a href="#一、" class="headerlink" title="一、"></a>一、<img src="/images/2020/07/03/89c58bcb-7005-4107-963a-4818a9d87378.png" alt="image.png"></h1><p><img src="/images/2020/07/03/f985fbbe-cc19-4f1b-a070-1a3a63e19ff1.png" alt="image.png"></p>
+    <url>/Hadoop%E9%85%8D%E7%BD%AE.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h1 id="一、"><a href="#一、" class="headerlink" title="一、"></a>一、<img src="/images/2020/07/03/89c58bcb-7005-4107-963a-4818a9d87378.png" alt="image.png"></h1><p><img src="/images/2020/07/03/f985fbbe-cc19-4f1b-a070-1a3a63e19ff1.png" alt="image.png"></p>
 <h1 id="二、"><a href="#二、" class="headerlink" title="二、"></a>二、<img src="/images/2020/07/03/27f61d1d-9f53-4e81-8fd0-919147ce889b.png" alt="image.png"></h1><p><img src="/images/2020/07/03/dd0f5b09-389c-4229-a41f-a867c3b300ae.png" alt="image.png"><br><strong>2.关闭防火墙</strong><br><img src="/images/2020/07/03/cb331296-db7d-4d9b-bec1-64a54b42da28.png" alt="image.png"></p>
 <p><img src="/images/2020/07/03/741a605e-d70c-42fc-8d66-5bfe7a9311ed.png" alt="image.png"></p>
 <p><strong>3.配置虚拟机网络环境</strong><br><img src="/images/2020/07/03/65ce14e7-e0b3-4082-be24-e043e7340899.png" alt="image.png"></p>
@@ -223,64 +210,22 @@
       </tags>
   </entry>
   <entry>
-    <title>网页基础</title>
-    <url>/2020/07/05/%E7%BD%91%E9%A1%B5%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="1-网页的组成"><a href="#1-网页的组成" class="headerlink" title="1. 网页的组成"></a>1. 网页的组成</h2><p>网页可以分为三大部分——HTML、CSS和JavaScript。如果把网页比作一个人的话，HTML相当于骨架，JavaScript相当于肌肉，CSS相当于皮肤，三者结合起来才能形成一个完善的网页。下面我们分别来介绍一下这三部分的功能。<br>(1) HTML<br>HTML是用来描述网页的一种语言，其全称叫作Hyper Text Markup Language，即超文本标记语言。网页包括文字、按钮、图片和视频等各种复杂的元素，其基础架构就是HTML。不同类型的文字通过不同类型的标签来表示，如图片用img标签表示，视频用video标签表示，段落用p标签表示，它们之间的布局又常通过布局标签div嵌套组合而成，各种标签通过不同的排列和嵌套才形成了网页的框架。<br>在Chrome浏览器中打开百度，右击并选择“检查”项（或按F12键），打开开发者模式，这时在Elements选项卡中即可看到网页的源代码，如图2-9所示。<br> <img src="/images/2020/07/05/eb2e6bab-77a3-435d-9a73-001dc077439a.png" alt="image.png">图2-9 源代码<br>这就是HTML，整个网页就是由各种标签嵌套组合而成的。这些标签定义的节点元素相互嵌套和组合形成了复杂的层次关系，就形成了网页的架构。<br>(2) CSS<br>HTML定义了网页的结构，但是只有HTML页面的布局并不美观，可能只是简单的节点元素的排列，为了让网页看起来更好看一些，这里借助了CSS。<br>CSS，全称叫作Cascading Style Sheets，即层叠样式表。“层叠”是指当在HTML中引用了数个样式文件，并且样式发生冲突时，浏览器能依据层叠顺序处理。“样式”指网页中文字大小、颜色、元素间距、排列等格式。<br>CSS是目前唯一的网页页面排版样式标准，有了它的帮助，页面才会变得更为美观。<br>图2-9的右侧即为CSS，例如：</p>
-<pre><code>#head_wrapper.s-ps-islite .s-p-top {
-position: absolute;
-bottom: 40px;
-width: 100%;
-height: 181px;}</code></pre><p>就是一个CSS样式。大括号前面是一个CSS选择器，此选择器的意思是首先选中id为head_wrapper且class为s-ps-islite的节点，然后再选中其内部的class为s-p-top的节点。大括号内部写的就是一条条样式规则，例如position指定了这个元素的布局方式为绝对布局，bottom指定元素的下边距为40像素，width指定了宽度为100%占满父元素，height则指定了元素的高度。也就是说，我们将位置、宽度、高度等样式配置统一写成这样的形式，然后用大括号括起来，接着在开头再加上CSS选择器，这就代表这个样式对CSS选择器选中的元素生效，元素就会根据此样式来展示了。<br>在网页中，一般会统一定义整个网页的样式规则，并写入CSS文件中（其后缀为css）。在HTML中，只需要用link标签即可引入写好的CSS文件，这样整个页面就会变得美观、优雅。<br>(3) JavaScript<br>JavaScript，简称JS，是一种脚本语言。HTML和CSS配合使用，提供给用户的只是一种静态信息，缺乏交互性。我们在网页里可能会看到一些交互和动画效果，如下载进度条、提示框、轮播图等，这通常就是JavaScript的功劳。它的出现使得用户与信息之间不只是一种浏览与显示的关系，而是实现了一种实时、动态、交互的页面功能。<br>JavaScript通常也是以单独的文件形式加载的，后缀为js，在HTML中通过script标签即可引入，例如：</p>
-<pre><code>&lt;script src=&quot;jquery-2.1.0.js&quot;&gt;&lt;/script&gt;</code></pre><p>综上所述，HTML定义了网页的内容和结构，CSS描述了网页的布局，JavaScript定义了网页的行为。</p>
-<h2 id="2-网页的结构"><a href="#2-网页的结构" class="headerlink" title="2. 网页的结构"></a>2. 网页的结构</h2><p>我们首先用例子来感受一下HTML的基本结构。新建一个文本文件，名称可以自取，后缀为html，内容如下：</p>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>This is a Demo</title>
-    <meta name="generator" content="Hexo 4.2.1"></head>
-    <body>
-        <div id="container">
-            <div class="wrapper">
-                <h2 class="title">Hello World</h2>
-                <p class="text">Hello, this is a paragraph.</p>
-            </div>
-        </div>
-    </body>
-</html>
-
-<p>这就是一个最简单的HTML实例。开头用DOCTYPE定义了文档类型，其次最外层是html标签，最后还有对应的结束标签来表示闭合，其内部是head标签和body标签，分别代表网页头和网页体，它们也需要结束标签。head标签内定义了一些页面的配置和引用，如：</p>
-<pre><code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code></pre><p>它指定了网页的编码为UTF-8。<br>title标签则定义了网页的标题，会显示在网页的选项卡中，不会显示在正文中。body标签内则是在网页正文中显示的内容。div标签定义了网页中的区块，它的id是container，这是一个非常常用的属性，且id的内容在网页中是唯一的，我们可以通过它来获取这个区块。然后在此区块内又有一个div标签，它的class为wrapper，这也是一个非常常用的属性，经常与CSS配合使用来设定样式。然后此区块内部又有一个h2标签，这代表一个二级标题。另外，还有一个p标签，这代表一个段落。在这两者中直接写入相应的内容即可在网页中呈现出来，它们也有各自的class属性。<br>将代码保存后，在浏览器中打开该文件，可以看到如图2-10所示的内容。<br> <img src="/images/2020/07/05/0f0f252b-4e61-4a92-be73-b14db897e7a4.png" alt="image.png">   图2-10 运行结果<br>可以看到，在选项卡上显示了This is a Demo字样，这是我们在head中的title里定义的文字。而网页正文是body标签内部定义的各个元素生成的，可以看到这里显示了二级标题和段落。<br>这个实例便是网页的一般结构。一个网页的标准形式是html标签内嵌套head和body标签，head内定义网页的配置和引用，body内定义网页的正文。</p>
-<h2 id="3-节点树及节点间的关系"><a href="#3-节点树及节点间的关系" class="headerlink" title="3. 节点树及节点间的关系"></a>3. 节点树及节点间的关系</h2><p>在HTML中，所有标签定义的内容都是节点，它们构成了一个HTML DOM树。<br>我们先看下什么是DOM，DOM是W3C（万维网联盟）的标准，其英文全称Document Object Model，即文档对象模型。它定义了访问HTML和XML文档的标准：<br>W3C文档对象模型（DOM）是中立于平台和语言的接口，它允许程序和脚本动态地访问和更新文档的内容、结构和样式。<br>W3C DOM标准被分为3个不同的部分。<br>•    核心DOM： 针对任何结构化文档的标准模型。<br>•    XML DOM：针对XML文档的标准模型。<br>•    HTML DOM：针对HTML文档的标准模型。<br>根据W3C的HTML DOM标准，HTML文档中的所有内容都是节点。<br>•    整个文档是一个文档节点；<br>•    每个HTML元素是元素节点；<br>•    HTML元素内的文本是文本节点；<br>•    每个HTML属性是属性节点；<br>•    注释是注释节点。<br>HTML DOM将HTML文档视作树结构，这种结构被称为节点树，如图2-11所示。<br><img src="/images/2020/07/05/b93058d4-c3ce-475c-91c2-ff3c37e04702.png" alt="image.png"> 图2-11 节点树<br>通过HTML DOM，树中的所有节点均可通过JavaScript访问，所有HTML节点元素均可被修改，也可以被创建或删除。<br>节点树中的节点彼此拥有层级关系。我们常用父（parent）、子（child）和兄弟（sibling）等术语描述这些关系。父节点拥有子节点，同级的子节点被称为兄弟节点。<br>在节点树中，顶端节点称为根（root）。除了根节点之外，每个节点都有父节点，同时可拥有任意数量的子节点或兄弟节点。图2-12展示了节点树以及节点之间的关系。<img src="/images/2020/07/05/cd6a66aa-25f6-47aa-aa7d-498ef629f263.png" alt="image.png"><br> 图2-12 节点树及节点间的关系<br>本段参考W3SCHOOL，链接：<a href="http://www.w3school.com.cn/htmldom/dom_nodes.asp。" target="_blank" rel="noopener">http://www.w3school.com.cn/htmldom/dom_nodes.asp。</a></p>
-<h2 id="4-选择器"><a href="#4-选择器" class="headerlink" title="4. 选择器"></a>4. 选择器</h2><p>我们知道网页由一个个节点组成，CSS选择器会根据不同的节点设置不同的样式规则，那么怎样来定位节点呢？<br>在CSS中，我们使用CSS选择器来定位节点。例如，上例中div节点的id为container，那么就可以表示为#container，其中#开头代表选择id，其后紧跟id的名称。另外，如果我们想选择class为wrapper的节点，便可以使用.wrapper，这里以点（.）开头代表选择class，其后紧跟class的名称。另外，还有一种选择方式，那就是根据标签名筛选，例如想选择二级标题，直接用h2即可。这是最常用的3种表示，分别是根据id、class、标签名筛选，请牢记它们的写法。<br>另外，CSS选择器还支持嵌套选择，各个选择器之间加上空格分隔开便可以代表嵌套关系，如#container .wrapper p则代表先选择id为container的节点，然后选中其内部的class为wrapper的节点，然后再进一步选中其内部的p节点。另外，如果不加空格，则代表并列关系，如div#container .wrapper p.text代表先选择id为container的div节点，然后选中其内部的class为wrapper的节点，再进一步选中其内部的class为text的p节点。这就是CSS选择器，其筛选功能还是非常强大的。<br>另外，CSS选择器还有一些其他语法规则，具体如表2-4所示。<br>表2-4 CSS选择器的其他语法规则<br><img src="/images/2020/07/05/8bf1bfc8-f09c-4e68-8bbf-2d1834b60323.png" alt="image.png"><br><img src="/images/2020/07/05/5545f3ee-025c-4211-a5f0-430207508533.png" alt="image.png"><br><img src="/images/2020/07/05/74d97db9-d198-4c8b-b0d8-1339287fe2ef.png" alt="image.png"><br><img src="/images/2020/07/05/20d2ccdb-41e5-48af-b32d-fc1529239b6c.png" alt="image.png"><br><img src="/images/2020/07/05/3bbc1032-ae0f-4b4c-bf4d-d402da270711.png" alt="image.png"><br>另外，还有一种比较常用的选择器是XPath，这种选择方式后面会详细介绍。</p>
+    <title>最强下载神器IDM</title>
+    <url>/%E6%9C%80%E5%BC%BA%E4%B8%8B%E8%BD%BD%E7%A5%9E%E5%99%A8IDM.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>Internet Download Manager，简称 IDM，是国外的一款优秀下载工具。目前凭借着下载计算的速度优势在外媒网站中均受好评，现在已被多数国人熟知。Internet Download Manager 提升你的下载速度最多达5倍，安排下载时程，带有续传功能，可以恢复因为断线、网络问题、计算机当机甚至无预警的停电导致下传到一半的资料。国外的Internet Download Manager简称IDM是一款下载利器，不限速，界面简洁好看，还能自动识别网页视频，无多余菜单弹窗!并且支持IE，Firefox，Chrome等浏览器。<br>IDM具有动态文件分割、多重下载点技术，而且它会重复使用现有的联机，而不需再重新联机登入一遍。智能in-speed技术会动态地将所有设定应用到某种联机类型，以充分利用下载速度。IDM支持下载队列、防火墙、代理服务器和映摄服务器、重新导向、cookies、需要验证的目录，以及各种不同的服务器平台，它紧密地与Internet Explorer和Netscape Communicator结合，自动地处理你的下载需求。此外，IDM还具有下载逻辑最佳化功能、检查病毒，以及多种偏好设定。</p>
+<h2 id="安装方法："><a href="#安装方法：" class="headerlink" title="安装方法："></a>安装方法：</h2><p>下载后解压&gt;找到!绿化卸载.bat&gt;右键以管理员身份运行。<br><img src="/images/2020/07/06/c308e0eb-9028-44a9-a29f-75c3d655b29b.png" alt="image.png"><br>输入1,回车确定安装。<br><img src="/images/2020/07/06/b22014f1-eca2-455f-9453-7b1b75de180a.png" alt="image.png"><br>强烈建议创建快捷方式。<br><img src="/images/2020/07/06/c769bb97-c8c1-4c03-b5b3-3539988b0b68.png" alt="image.png"><br>主界面就是这个样子了，还算简洁，最起码没广告。<br><img src="/images/2020/07/06/e072019d-34b3-4f6f-aeca-80fdf540613e.png" alt="image.png"><br>下面是个人推荐下载地址：<a href="http://soft.ucbug.com/uploads/soft/linshi/wlrj/ucbug.com-idm.rar" target="_blank" rel="noopener">idm下载</a></p>
 ]]></content>
       <categories>
-        <category>HTML</category>
+        <category>插件</category>
       </categories>
       <tags>
-        <tag>网页</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>爬虫基本原理</title>
-    <url>/2020/07/05/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>我们可以把互联网比作一张大网，而爬虫（即网络爬虫）便是在网上爬行的蜘蛛。把网的节点比作一个个网页，爬虫爬到这就相当于访问了该页面，获取了其信息。可以把节点间的连线比作网页与网页之间的链接关系，这样蜘蛛通过一个节点后，可以顺着节点连线继续爬行到达下一个节点，即通过一个网页继续获取后续的网页，这样整个网的节点便可以被蜘蛛全部爬行到，网站的数据就可以被抓取下来了。</p>
-<h2 id="1-爬虫概述"><a href="#1-爬虫概述" class="headerlink" title="1. 爬虫概述"></a>1. 爬虫概述</h2><p>简单来说，爬虫就是获取网页并提取和保存信息的自动化程序，下面概要介绍一下。<br>(1) 获取网页<br>爬虫首先要做的工作就是获取网页，这里就是获取网页的源代码。源代码里包含了网页的部分有用信息，所以只要把源代码获取下来，就可以从中提取想要的信息了。<br>前面讲了请求和响应的概念，向网站的服务器发送一个请求，返回的响应体便是网页源代码。所以，最关键的部分就是构造一个请求并发送给服务器，然后接收到响应并将其解析出来，那么这个流程怎样实现呢？总不能手工去截取网页源码吧？<br>不用担心，Python提供了许多库来帮助我们实现这个操作，如urllib、requests等。我们可以用这些库来帮助我们实现HTTP请求操作，请求和响应都可以用类库提供的数据结构来表示，得到响应之后只需要解析数据结构中的Body部分即可，即得到网页的源代码，这样我们可以用程序来实现获取网页的过程了。<br>(2) 提取信息<br>获取网页源代码后，接下来就是分析网页源代码，从中提取我们想要的数据。首先，最通用的方法便是采用正则表达式提取，这是一个万能的方法，但是在构造正则表达式时比较复杂且容易出错。<br>另外，由于网页的结构有一定的规则，所以还有一些根据网页节点属性、CSS选择器或XPath来提取网页信息的库，如Beautiful Soup、pyquery、lxml等。使用这些库，我们可以高效快速地从中提取网页信息，如节点的属性、文本值等。<br>提取信息是爬虫非常重要的部分，它可以使杂乱的数据变得条理清晰，以便我们后续处理和分析数据。<br>(3) 保存数据<br>提取信息后，我们一般会将提取到的数据保存到某处以便后续使用。这里保存形式有多种多样，如可以简单保存为TXT文本或JSON文本，也可以保存到数据库，如MySQL和MongoDB等，也可保存至远程服务器，如借助SFTP进行操作等。<br>(4) 自动化程序<br>说到自动化程序，意思是说爬虫可以代替人来完成这些操作。首先，我们手工当然可以提取这些信息，但是当量特别大或者想快速获取大量数据的话，肯定还是要借助程序。爬虫就是代替我们来完成这份爬取工作的自动化程序，它可以在抓取过程中进行各种异常处理、错误重试等操作，确保爬取持续高效地运行。</p>
-<h2 id="2-能抓怎样的数据"><a href="#2-能抓怎样的数据" class="headerlink" title="2. 能抓怎样的数据"></a>2. 能抓怎样的数据</h2><p>在网页中我们能看到各种各样的信息，最常见的便是常规网页，它们对应着HTML代码，而最常抓取的便是HTML源代码。<br>另外，可能有些网页返回的不是HTML代码，而是一个JSON字符串（其中API接口大多采用这样的形式），这种格式的数据方便传输和解析，它们同样可以抓取，而且数据提取更加方便。<br>此外，我们还可以看到各种二进制数据，如图片、视频和音频等。利用爬虫，我们可以将这些二进制数据抓取下来，然后保存成对应的文件名。<br>另外，还可以看到各种扩展名的文件，如CSS、JavaScript和配置文件等，这些其实也是最普通的文件，只要在浏览器里面可以访问到，就可以将其抓取下来。<br>上述内容其实都对应各自的URL，是基于HTTP或HTTPS协议的，只要是这种数据，爬虫都可以抓取。</p>
-<h2 id="3-JavaScript渲染页面"><a href="#3-JavaScript渲染页面" class="headerlink" title="3. JavaScript渲染页面"></a>3. JavaScript渲染页面</h2><p>有时候，我们在用urllib或requests抓取网页时，得到的源代码实际和浏览器中看到的不一样。<br>这是一个非常常见的问题。现在网页越来越多地采用Ajax、前端模块化工具来构建，整个网页可能都是由JavaScript渲染出来的，也就是说原始的HTML代码就是一个空壳，例如：<br> <figure class="highlight plain"><figcaption><span>html></span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">   &lt;head&gt;</span><br><span class="line">         &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">         &lt;title&gt;This is a Demo&lt;&#x2F;title&gt;</span><br><span class="line">     &lt;&#x2F;head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">         &lt;div id&#x3D;&quot;container&quot;&gt;</span><br><span class="line">       &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;app.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure></p>
-<p>body节点里面只有一个id为container的节点，但是需要注意在body节点后引入了app.js，它便负责整个网站的渲染。<br>在浏览器中打开这个页面时，首先会加载这个HTML内容，接着浏览器会发现其中引入了一个app.js文件，然后便会接着去请求这个文件，获取到该文件后，便会执行其中的JavaScript代码，而JavaScript则会改变HTML中的节点，向其添加内容，最后得到完整的页面。<br>但是在用urllib或requests等库请求当前页面时，我们得到的只是这个HTML代码，它不会帮助我们去继续加载这个JavaScript文件，这样也就看不到浏览器中的内容了。<br>这也解释了为什么有时我们得到的源代码和浏览器中看到的不一样。<br>因此，使用基本HTTP请求库得到的源代码可能跟浏览器中的页面源代码不太一样。对于这样的情况，我们可以分析其后台Ajax接口，也可使用Selenium、Splash这样的库来实现模拟JavaScript渲染。<br>后面，我们会详细介绍如何采集JavaScript渲染的网页。</p>
-]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>爬虫</tag>
+        <tag>IDM</tag>
       </tags>
   </entry>
   <entry>
     <title>虚拟化VMware ESXi 6.7服务器与vCenter的安装与配置</title>
-    <url>/2020/07/07/%E8%99%9A%E6%8B%9F%E5%8C%96VMware-ESXi-6-7%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8EvCenter%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="vSphere虚拟化架构"><a href="#vSphere虚拟化架构" class="headerlink" title="vSphere虚拟化架构"></a>vSphere虚拟化架构</h2><p>vSphere是VNware公司在2001年基于云计算推出的一套企业级虚拟化解决方案、核心组件为ESXi。如今，经历了5个版本的改进，已经实现了虚拟化基础架构、高可用性、集中管理、性能监控等一体化解决方案。</p>
+    <url>/%E8%99%9A%E6%8B%9F%E5%8C%96VMware-ESXi-6-7%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8EvCenter%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h2 id="vSphere虚拟化架构"><a href="#vSphere虚拟化架构" class="headerlink" title="vSphere虚拟化架构"></a>vSphere虚拟化架构</h2><p>vSphere是VNware公司在2001年基于云计算推出的一套企业级虚拟化解决方案、核心组件为ESXi。如今，经历了5个版本的改进，已经实现了虚拟化基础架构、高可用性、集中管理、性能监控等一体化解决方案。</p>
 <p><a href="https://baike.baidu.com/item/vSphere" target="_blank" rel="noopener">🔗详情点击</a><br>安装步骤<br>首先打开VMware workstation软件创建新的虚拟机并且采用自定义安装</p>
 <p><img src="/images/2020/07/07/7bcaec75-a70d-4022-8dae-06470eea358e.png" alt="image.png">选择稍后安装一个操作系统</p>
 <p><img src="/images/2020/07/07/ba64b5a3-4c77-4dc0-a5b0-520fd5a019e3.png" alt="image.png"><br>选择操作系统，点击VMware ESX选择版本为VMware ESXI 6.x的那个版本<br><img src="/images/2020/07/07/52325d15-2bb8-4365-a243-bcf2a2c7e94b.png" alt="image.png"></p>
@@ -422,6 +367,85 @@ height: 181px;}</code></pre><p>就是一个CSS样式。大括号前面是一个C
       </categories>
       <tags>
         <tag>虚拟化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>网页基础</title>
+    <url>/%E7%BD%91%E9%A1%B5%E5%9F%BA%E7%A1%80.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h2 id="1-网页的组成"><a href="#1-网页的组成" class="headerlink" title="1. 网页的组成"></a>1. 网页的组成</h2><p>网页可以分为三大部分——HTML、CSS和JavaScript。如果把网页比作一个人的话，HTML相当于骨架，JavaScript相当于肌肉，CSS相当于皮肤，三者结合起来才能形成一个完善的网页。下面我们分别来介绍一下这三部分的功能。<br>(1) HTML<br>HTML是用来描述网页的一种语言，其全称叫作Hyper Text Markup Language，即超文本标记语言。网页包括文字、按钮、图片和视频等各种复杂的元素，其基础架构就是HTML。不同类型的文字通过不同类型的标签来表示，如图片用img标签表示，视频用video标签表示，段落用p标签表示，它们之间的布局又常通过布局标签div嵌套组合而成，各种标签通过不同的排列和嵌套才形成了网页的框架。<br>在Chrome浏览器中打开百度，右击并选择“检查”项（或按F12键），打开开发者模式，这时在Elements选项卡中即可看到网页的源代码，如图2-9所示。<br> <img src="/images/2020/07/05/eb2e6bab-77a3-435d-9a73-001dc077439a.png" alt="image.png">图2-9 源代码<br>这就是HTML，整个网页就是由各种标签嵌套组合而成的。这些标签定义的节点元素相互嵌套和组合形成了复杂的层次关系，就形成了网页的架构。<br>(2) CSS<br>HTML定义了网页的结构，但是只有HTML页面的布局并不美观，可能只是简单的节点元素的排列，为了让网页看起来更好看一些，这里借助了CSS。<br>CSS，全称叫作Cascading Style Sheets，即层叠样式表。“层叠”是指当在HTML中引用了数个样式文件，并且样式发生冲突时，浏览器能依据层叠顺序处理。“样式”指网页中文字大小、颜色、元素间距、排列等格式。<br>CSS是目前唯一的网页页面排版样式标准，有了它的帮助，页面才会变得更为美观。<br>图2-9的右侧即为CSS，例如：</p>
+<pre><code>#head_wrapper.s-ps-islite .s-p-top {
+position: absolute;
+bottom: 40px;
+width: 100%;
+height: 181px;}</code></pre><p>就是一个CSS样式。大括号前面是一个CSS选择器，此选择器的意思是首先选中id为head_wrapper且class为s-ps-islite的节点，然后再选中其内部的class为s-p-top的节点。大括号内部写的就是一条条样式规则，例如position指定了这个元素的布局方式为绝对布局，bottom指定元素的下边距为40像素，width指定了宽度为100%占满父元素，height则指定了元素的高度。也就是说，我们将位置、宽度、高度等样式配置统一写成这样的形式，然后用大括号括起来，接着在开头再加上CSS选择器，这就代表这个样式对CSS选择器选中的元素生效，元素就会根据此样式来展示了。<br>在网页中，一般会统一定义整个网页的样式规则，并写入CSS文件中（其后缀为css）。在HTML中，只需要用link标签即可引入写好的CSS文件，这样整个页面就会变得美观、优雅。<br>(3) JavaScript<br>JavaScript，简称JS，是一种脚本语言。HTML和CSS配合使用，提供给用户的只是一种静态信息，缺乏交互性。我们在网页里可能会看到一些交互和动画效果，如下载进度条、提示框、轮播图等，这通常就是JavaScript的功劳。它的出现使得用户与信息之间不只是一种浏览与显示的关系，而是实现了一种实时、动态、交互的页面功能。<br>JavaScript通常也是以单独的文件形式加载的，后缀为js，在HTML中通过script标签即可引入，例如：</p>
+<pre><code>&lt;script src=&quot;jquery-2.1.0.js&quot;&gt;&lt;/script&gt;</code></pre><p>综上所述，HTML定义了网页的内容和结构，CSS描述了网页的布局，JavaScript定义了网页的行为。</p>
+<h2 id="2-网页的结构"><a href="#2-网页的结构" class="headerlink" title="2. 网页的结构"></a>2. 网页的结构</h2><p>我们首先用例子来感受一下HTML的基本结构。新建一个文本文件，名称可以自取，后缀为html，内容如下：</p>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>This is a Demo</title>
+    <meta name="generator" content="Hexo 4.2.1"></head>
+    <body>
+        <div id="container">
+            <div class="wrapper">
+                <h2 class="title">Hello World</h2>
+                <p class="text">Hello, this is a paragraph.</p>
+            </div>
+        </div>
+    </body>
+</html>
+
+<p>这就是一个最简单的HTML实例。开头用DOCTYPE定义了文档类型，其次最外层是html标签，最后还有对应的结束标签来表示闭合，其内部是head标签和body标签，分别代表网页头和网页体，它们也需要结束标签。head标签内定义了一些页面的配置和引用，如：</p>
+<pre><code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code></pre><p>它指定了网页的编码为UTF-8。<br>title标签则定义了网页的标题，会显示在网页的选项卡中，不会显示在正文中。body标签内则是在网页正文中显示的内容。div标签定义了网页中的区块，它的id是container，这是一个非常常用的属性，且id的内容在网页中是唯一的，我们可以通过它来获取这个区块。然后在此区块内又有一个div标签，它的class为wrapper，这也是一个非常常用的属性，经常与CSS配合使用来设定样式。然后此区块内部又有一个h2标签，这代表一个二级标题。另外，还有一个p标签，这代表一个段落。在这两者中直接写入相应的内容即可在网页中呈现出来，它们也有各自的class属性。<br>将代码保存后，在浏览器中打开该文件，可以看到如图2-10所示的内容。<br> <img src="/images/2020/07/05/0f0f252b-4e61-4a92-be73-b14db897e7a4.png" alt="image.png">   图2-10 运行结果<br>可以看到，在选项卡上显示了This is a Demo字样，这是我们在head中的title里定义的文字。而网页正文是body标签内部定义的各个元素生成的，可以看到这里显示了二级标题和段落。<br>这个实例便是网页的一般结构。一个网页的标准形式是html标签内嵌套head和body标签，head内定义网页的配置和引用，body内定义网页的正文。</p>
+<h2 id="3-节点树及节点间的关系"><a href="#3-节点树及节点间的关系" class="headerlink" title="3. 节点树及节点间的关系"></a>3. 节点树及节点间的关系</h2><p>在HTML中，所有标签定义的内容都是节点，它们构成了一个HTML DOM树。<br>我们先看下什么是DOM，DOM是W3C（万维网联盟）的标准，其英文全称Document Object Model，即文档对象模型。它定义了访问HTML和XML文档的标准：<br>W3C文档对象模型（DOM）是中立于平台和语言的接口，它允许程序和脚本动态地访问和更新文档的内容、结构和样式。<br>W3C DOM标准被分为3个不同的部分。<br>•    核心DOM： 针对任何结构化文档的标准模型。<br>•    XML DOM：针对XML文档的标准模型。<br>•    HTML DOM：针对HTML文档的标准模型。<br>根据W3C的HTML DOM标准，HTML文档中的所有内容都是节点。<br>•    整个文档是一个文档节点；<br>•    每个HTML元素是元素节点；<br>•    HTML元素内的文本是文本节点；<br>•    每个HTML属性是属性节点；<br>•    注释是注释节点。<br>HTML DOM将HTML文档视作树结构，这种结构被称为节点树，如图2-11所示。<br><img src="/images/2020/07/05/b93058d4-c3ce-475c-91c2-ff3c37e04702.png" alt="image.png"> 图2-11 节点树<br>通过HTML DOM，树中的所有节点均可通过JavaScript访问，所有HTML节点元素均可被修改，也可以被创建或删除。<br>节点树中的节点彼此拥有层级关系。我们常用父（parent）、子（child）和兄弟（sibling）等术语描述这些关系。父节点拥有子节点，同级的子节点被称为兄弟节点。<br>在节点树中，顶端节点称为根（root）。除了根节点之外，每个节点都有父节点，同时可拥有任意数量的子节点或兄弟节点。图2-12展示了节点树以及节点之间的关系。<img src="/images/2020/07/05/cd6a66aa-25f6-47aa-aa7d-498ef629f263.png" alt="image.png"><br> 图2-12 节点树及节点间的关系<br>本段参考W3SCHOOL，链接：<a href="http://www.w3school.com.cn/htmldom/dom_nodes.asp。" target="_blank" rel="noopener">http://www.w3school.com.cn/htmldom/dom_nodes.asp。</a></p>
+<h2 id="4-选择器"><a href="#4-选择器" class="headerlink" title="4. 选择器"></a>4. 选择器</h2><p>我们知道网页由一个个节点组成，CSS选择器会根据不同的节点设置不同的样式规则，那么怎样来定位节点呢？<br>在CSS中，我们使用CSS选择器来定位节点。例如，上例中div节点的id为container，那么就可以表示为#container，其中#开头代表选择id，其后紧跟id的名称。另外，如果我们想选择class为wrapper的节点，便可以使用.wrapper，这里以点（.）开头代表选择class，其后紧跟class的名称。另外，还有一种选择方式，那就是根据标签名筛选，例如想选择二级标题，直接用h2即可。这是最常用的3种表示，分别是根据id、class、标签名筛选，请牢记它们的写法。<br>另外，CSS选择器还支持嵌套选择，各个选择器之间加上空格分隔开便可以代表嵌套关系，如#container .wrapper p则代表先选择id为container的节点，然后选中其内部的class为wrapper的节点，然后再进一步选中其内部的p节点。另外，如果不加空格，则代表并列关系，如div#container .wrapper p.text代表先选择id为container的div节点，然后选中其内部的class为wrapper的节点，再进一步选中其内部的class为text的p节点。这就是CSS选择器，其筛选功能还是非常强大的。<br>另外，CSS选择器还有一些其他语法规则，具体如表2-4所示。<br>表2-4 CSS选择器的其他语法规则<br><img src="/images/2020/07/05/8bf1bfc8-f09c-4e68-8bbf-2d1834b60323.png" alt="image.png"><br><img src="/images/2020/07/05/5545f3ee-025c-4211-a5f0-430207508533.png" alt="image.png"><br><img src="/images/2020/07/05/74d97db9-d198-4c8b-b0d8-1339287fe2ef.png" alt="image.png"><br><img src="/images/2020/07/05/20d2ccdb-41e5-48af-b32d-fc1529239b6c.png" alt="image.png"><br><img src="/images/2020/07/05/3bbc1032-ae0f-4b4c-bf4d-d402da270711.png" alt="image.png"><br>另外，还有一种比较常用的选择器是XPath，这种选择方式后面会详细介绍。</p>
+]]></content>
+      <categories>
+        <category>HTML</category>
+      </categories>
+      <tags>
+        <tag>网页</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>爬虫基本原理</title>
+    <url>/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>我们可以把互联网比作一张大网，而爬虫（即网络爬虫）便是在网上爬行的蜘蛛。把网的节点比作一个个网页，爬虫爬到这就相当于访问了该页面，获取了其信息。可以把节点间的连线比作网页与网页之间的链接关系，这样蜘蛛通过一个节点后，可以顺着节点连线继续爬行到达下一个节点，即通过一个网页继续获取后续的网页，这样整个网的节点便可以被蜘蛛全部爬行到，网站的数据就可以被抓取下来了。</p>
+<h2 id="1-爬虫概述"><a href="#1-爬虫概述" class="headerlink" title="1. 爬虫概述"></a>1. 爬虫概述</h2><p>简单来说，爬虫就是获取网页并提取和保存信息的自动化程序，下面概要介绍一下。<br>(1) 获取网页<br>爬虫首先要做的工作就是获取网页，这里就是获取网页的源代码。源代码里包含了网页的部分有用信息，所以只要把源代码获取下来，就可以从中提取想要的信息了。<br>前面讲了请求和响应的概念，向网站的服务器发送一个请求，返回的响应体便是网页源代码。所以，最关键的部分就是构造一个请求并发送给服务器，然后接收到响应并将其解析出来，那么这个流程怎样实现呢？总不能手工去截取网页源码吧？<br>不用担心，Python提供了许多库来帮助我们实现这个操作，如urllib、requests等。我们可以用这些库来帮助我们实现HTTP请求操作，请求和响应都可以用类库提供的数据结构来表示，得到响应之后只需要解析数据结构中的Body部分即可，即得到网页的源代码，这样我们可以用程序来实现获取网页的过程了。<br>(2) 提取信息<br>获取网页源代码后，接下来就是分析网页源代码，从中提取我们想要的数据。首先，最通用的方法便是采用正则表达式提取，这是一个万能的方法，但是在构造正则表达式时比较复杂且容易出错。<br>另外，由于网页的结构有一定的规则，所以还有一些根据网页节点属性、CSS选择器或XPath来提取网页信息的库，如Beautiful Soup、pyquery、lxml等。使用这些库，我们可以高效快速地从中提取网页信息，如节点的属性、文本值等。<br>提取信息是爬虫非常重要的部分，它可以使杂乱的数据变得条理清晰，以便我们后续处理和分析数据。<br>(3) 保存数据<br>提取信息后，我们一般会将提取到的数据保存到某处以便后续使用。这里保存形式有多种多样，如可以简单保存为TXT文本或JSON文本，也可以保存到数据库，如MySQL和MongoDB等，也可保存至远程服务器，如借助SFTP进行操作等。<br>(4) 自动化程序<br>说到自动化程序，意思是说爬虫可以代替人来完成这些操作。首先，我们手工当然可以提取这些信息，但是当量特别大或者想快速获取大量数据的话，肯定还是要借助程序。爬虫就是代替我们来完成这份爬取工作的自动化程序，它可以在抓取过程中进行各种异常处理、错误重试等操作，确保爬取持续高效地运行。</p>
+<h2 id="2-能抓怎样的数据"><a href="#2-能抓怎样的数据" class="headerlink" title="2. 能抓怎样的数据"></a>2. 能抓怎样的数据</h2><p>在网页中我们能看到各种各样的信息，最常见的便是常规网页，它们对应着HTML代码，而最常抓取的便是HTML源代码。<br>另外，可能有些网页返回的不是HTML代码，而是一个JSON字符串（其中API接口大多采用这样的形式），这种格式的数据方便传输和解析，它们同样可以抓取，而且数据提取更加方便。<br>此外，我们还可以看到各种二进制数据，如图片、视频和音频等。利用爬虫，我们可以将这些二进制数据抓取下来，然后保存成对应的文件名。<br>另外，还可以看到各种扩展名的文件，如CSS、JavaScript和配置文件等，这些其实也是最普通的文件，只要在浏览器里面可以访问到，就可以将其抓取下来。<br>上述内容其实都对应各自的URL，是基于HTTP或HTTPS协议的，只要是这种数据，爬虫都可以抓取。</p>
+<h2 id="3-JavaScript渲染页面"><a href="#3-JavaScript渲染页面" class="headerlink" title="3. JavaScript渲染页面"></a>3. JavaScript渲染页面</h2><p>有时候，我们在用urllib或requests抓取网页时，得到的源代码实际和浏览器中看到的不一样。<br>这是一个非常常见的问题。现在网页越来越多地采用Ajax、前端模块化工具来构建，整个网页可能都是由JavaScript渲染出来的，也就是说原始的HTML代码就是一个空壳，例如：<br> <figure class="highlight plain"><figcaption><span>html></span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">   &lt;head&gt;</span><br><span class="line">         &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">         &lt;title&gt;This is a Demo&lt;&#x2F;title&gt;</span><br><span class="line">     &lt;&#x2F;head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">         &lt;div id&#x3D;&quot;container&quot;&gt;</span><br><span class="line">       &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;app.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>body节点里面只有一个id为container的节点，但是需要注意在body节点后引入了app.js，它便负责整个网站的渲染。<br>在浏览器中打开这个页面时，首先会加载这个HTML内容，接着浏览器会发现其中引入了一个app.js文件，然后便会接着去请求这个文件，获取到该文件后，便会执行其中的JavaScript代码，而JavaScript则会改变HTML中的节点，向其添加内容，最后得到完整的页面。<br>但是在用urllib或requests等库请求当前页面时，我们得到的只是这个HTML代码，它不会帮助我们去继续加载这个JavaScript文件，这样也就看不到浏览器中的内容了。<br>这也解释了为什么有时我们得到的源代码和浏览器中看到的不一样。<br>因此，使用基本HTTP请求库得到的源代码可能跟浏览器中的页面源代码不太一样。对于这样的情况，我们可以分析其后台Ajax接口，也可使用Selenium、Splash这样的库来实现模拟JavaScript渲染。<br>后面，我们会详细介绍如何采集JavaScript渲染的网页。</p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo搭建个人博客</title>
+    <url>/hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>现在随着计算机的飞速发展，拥有一个属于自己的博客，是一件非常平常的事。使用hexo搭建一个属于自己的个人博客，是即快捷又美观的一种方式，也是非常受到人们的喜爱的。接下来我将带领大家一起搭建自己的博客。后续还有hexo的next主题美化，hexo的部署，hexo的百度录入等等，一系列的教程，你可以访问我的<a href="个人博客">个人博客</a>.</p>
+<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><blockquote>
+<p>系统：window10专业版<br>nodejs：下载 <a href="点击这里快捷电梯">点击这里快捷电梯</a><br>git：下载 <a href="点击这里快捷电梯">点击这里快捷电梯</a></p>
+</blockquote>
+<h1 id="安装hexo运行环境"><a href="#安装hexo运行环境" class="headerlink" title="安装hexo运行环境"></a>安装hexo运行环境</h1><blockquote>
+<p>安装是非常简单的，nodejs和git的安装是非常简单的。如果你实在不会就上网搜安装教程，会有很多的。</p>
+</blockquote>
+<p> nodejs安装完成后的检验操作是在das窗口下输入命令 node -v和npm -v这两个命令就是查看版本信息的。如下图所示:<br><img src="/images/2020/07/09/9af42f2f-c976-4c3f-b3a3-b7aec6c00893.png" alt="image.png"><br>​ git安装完成后的检验操作是：鼠标右键 效果如下图所示。<br><img src="/images/2020/07/09/7a8e4e90-a0f7-41ec-9037-bb8ccc0b881a.png" alt="image.png"></p>
+<h1 id="安装hexo基本框架"><a href="#安装hexo基本框架" class="headerlink" title="安装hexo基本框架"></a>安装hexo基本框架</h1><h2 id="第一步：新建文件夹"><a href="#第一步：新建文件夹" class="headerlink" title="第一步：新建文件夹"></a>第一步：新建文件夹</h2><p>​ 这一步是为了给你的博客找一个合适的位置。新建的文件夹的命名是随意的。进入新建的文件夹后，鼠标右键点击Git Bash Here 。如下图。<br><img src="/images/2020/07/09/2d87cd8f-d84b-44cd-b66f-b31529a6ce40.png" alt="image.png"></p>
+<h2 id="第二步：安装hexo基础框架"><a href="#第二步：安装hexo基础框架" class="headerlink" title="第二步：安装hexo基础框架"></a>第二步：安装hexo基础框架</h2><p> 第一步完成后，会出现一个命名窗口。输入如下命令：</p>
+<figure class="highlight plain"><figcaption><span>这是安装hexo的基础框架</span></figcaption><table><tr><td class="code"><pre><span class="line">npm install -g hexo</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;第二条   这是初始化hexo框架 这个可能会比较慢</span><br><span class="line">hexo init</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;第三条 安装所需要的组件</span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;第四条 编译生成静态页面</span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;第五条 启动本地服务</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>第五条命名完成后，可以首次体验一下，如下图<br><img src="/images/2020/07/09/fed0dc4a-81b4-4b1d-8220-f5779b2cc133.png" alt="image.png"><br>浏览器中的效果如下：<img src="/images/2020/07/09/d4c16782-4d0d-42e4-96cc-095b562e8bf3.png" alt="image.png"></p>
+<h1 id="hexo的后续操作"><a href="#hexo的后续操作" class="headerlink" title="hexo的后续操作"></a>hexo的后续操作</h1><p>hexo的next主题美化，hexo的部署，hexo的百度录入等等，一系列的教程，你可以访问<a href="点击这里我的个人博客">点击这里我的个人博客</a>.</p>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
       </tags>
   </entry>
 </search>
