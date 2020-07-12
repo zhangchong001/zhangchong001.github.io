@@ -1,6 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Chrome 浏览器扩展神器暴力猴</title>
+    <url>/Chrome-%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%A9%E5%B1%95%E7%A5%9E%E5%99%A8%E6%9A%B4%E5%8A%9B%E7%8C%B4.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>我平常工作最常用的浏览器就是 Chrome 了，Google 出品，值得信赖，用 Chrome 就不得不提浏览器扩展了，有了各种 Chrome 扩展，可以让你浏览器网页更方便，工作更高效。<br>Chrome 扩展可以在 Google 应用商店下载<a href="https://chrome.google.com/webstore/category/extensions?hl=zh-CN这里可以搜索安装你喜欢的各种扩展。" target="_blank" rel="noopener">https://chrome.google.com/webstore/category/extensions?hl=zh-CN这里可以搜索安装你喜欢的各种扩展。</a><br><img src="/images/2020/07/06/8524a9de-6cd2-4bd9-8540-939cd94f9e25.png" alt="image.png"><br>比如我装了很多扩展。<img src="/images/2020/07/06/7b140c9e-c0a3-4f05-becc-34c96ffa092d.png" alt="image.png"><br>扩展这么多，其中的油猴<a href="Tampermonkey">Tampermonkey</a> 是必须推荐的一个，它是扩展中的王者，最强大的浏览器扩展。</p>
+<h3 id="安装暴力猴扩展"><a href="#安装暴力猴扩展" class="headerlink" title="安装暴力猴扩展"></a>安装暴力猴扩展</h3><p>可以在谷歌商店直接安装<a href="https://chrome.google.com/webstore/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag?hl=zh-CN" target="_blank" rel="noopener">暴力猴</a><img src="/images/2020/07/06/e9021617-1ff3-495d-b62b-8a872b985f20.png" alt="image.png"><br>也可以再扩展迷下载<a href="https://www.extfans.com/productivity/jinjaccalgkegednnccohejagnlnfdag" target="_blank" rel="noopener">暴力猴</a><br><img src="/images/2020/07/06/7763c5c1-ef7d-4733-b2ca-9e34b81065af.png" alt="image.png"><br>如果上不了Google，可以在国内第三方Chrome 插件网站<br><a href="https://www.crx4chrome.com/" target="_blank" rel="noopener">https://www.crx4chrome.com/</a><br><a href="http://chromecj.com/" target="_blank" rel="noopener">http://chromecj.com/</a><br><a href="http://www.cnplugins.com/" target="_blank" rel="noopener">http://www.cnplugins.com/</a><br><a href="https://www.chromefor.com/" target="_blank" rel="noopener">https://www.chromefor.com/</a><br>等搜索下载。下载的是个 crx 文件，然后打开 Chrome 扩展chrome://extensions/，打开开发者模式，将下载的crx文件拖进去，如果出错提示程序包无效。<br><img src="/images/2020/07/06/3877d52f-f1ad-4602-8f54-5ec4ffd317fd.png" alt="image.png"><br>将 crx 后缀改为 zip 再拖进去就能安装成功了，浏览器右上角可以看到图标。<img src="/images/2020/07/06/c3c6cef5-c7c5-4a2a-8ada-ac6fff1ee0a8.png" alt="image.png"></p>
+<h3 id="脚本网站"><a href="#脚本网站" class="headerlink" title="脚本网站"></a>脚本网站</h3><p>有了暴力猴扩展，还需要配上脚本。<br>安装完扩展后点击图标，选择 获取新脚本<br>会进入网站<a href="https://www.tampermonkey.net/scripts.php" target="_blank" rel="noopener">https://www.tampermonkey.net/scripts.php</a><br>这里可以获取脚本来源，有3个来源网站<br><a href="http://userscripts-mirror.org/" target="_blank" rel="noopener">http://userscripts-mirror.org/</a><br><a href="https://openuserjs.org/" target="_blank" rel="noopener">https://openuserjs.org/</a><br><a href="https://greasyfork.org/" target="_blank" rel="noopener">https://greasyfork.org/</a><br>这里推荐 greasyfork ，因为它支持中文。</p>
+<p>打开网站首页<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">https://greasyfork.org/zh-CN</a> 可以看到很多脚本。<img src="/images/2020/07/06/4307fa08-a4ac-4e5a-a0e2-e7f98cd80765.png" alt="image.png">安装脚本也很简单，找到需要的脚本，进入页面，点击安装，然后管理面板即可看到已安装的脚本。</p>
+<p>下面推荐些实用的脚本，开始打开新世界的大门。</p>
+<h4 id="搜索去广告"><a href="#搜索去广告" class="headerlink" title="搜索去广告"></a>搜索去广告</h4><p>功能介绍：<br>去掉百度、搜狗、谷歌搜索结果的重定向，回归为网站的原始网址—附带有去除百度的广告 包括百度顶部和底部的垃圾广告，脚本地址<a href="https://greasyfork.org/zh-CN/scripts/14178" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/14178</a></p>
+<p>安装脚本前搜索 浏览器 前面3个是广告<img src="/images/2020/07/06/62003585-644d-4bd4-a899-b3821ccfc40b.png" alt="image.png">)安装脚本后的效果，广告没有了，你还可以自定义设置。<img src="/images/2020/07/06/c22f76d3-5a21-43fa-b3cc-7b6b0237e47e.png" alt="image.png"></p>
+<h4 id="知乎网页助手"><a href="#知乎网页助手" class="headerlink" title="知乎网页助手"></a>知乎网页助手</h4><p>功能介绍：<br>1、知乎站外链接直接跳转至目标网址；<br>2、自动展开问题全部信息，同时展示所有回答；<br>3、去除知乎网页中的广告；<br>4、知乎网页中短视频下载；<br>5、解除知乎复制限制-划词复制（鼠标左键划词自动添加到剪切板）</p>
+<p>脚本地址 <a href="https://greasyfork.org/zh-CN/scripts/384172" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/384172</a></p>
+<p>比如这个周杰伦的视频回答 <a href="https://www.zhihu.com/question/35123246/answer/585795363" target="_blank" rel="noopener">https://www.zhihu.com/question/35123246/answer/585795363</a><br>安装脚本前<img src="/images/2020/07/06/f64e33d3-7f79-4570-b208-7a335dc3976a.png" alt="image.png">)安装后视频可以直接下载了。<img src="/images/2020/07/06/17bf28b9-2213-4443-90a5-3805ecd077a2.png" alt="image.png"></p>
+<h4 id="全网VIP视频免费破解"><a href="#全网VIP视频免费破解" class="headerlink" title="全网VIP视频免费破解"></a>全网VIP视频免费破解</h4><p>功能介绍：<br>懒人专用，全网VIP视频免费破解去广告、全网音乐直接下载、百度网盘直接下载、知乎视频下载等多合一版。<br>脚本地址<a href="https://greasyfork.org/zh-CN/scripts/370634" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/370634</a></p>
+<p>打开优酷看《 长安十二时辰》，16集开始需要VIP<a href="https://v.youku.com/v_show/id_XNDI2NTAzNzQzNg==.html![image.png](/images/2020/07/06/8e985a7b-ed25-4744-b70d-0c4d784406ae.png)安装脚本后，点击左侧的VIP可以跳转到VIP解析网站观看。![image.png](/images/2020/07/06/4a667e1e-ef18-483c-baa7-b0821f256fdd.png)![image.png](/images/2020/07/06/3f377402-00cc-4fda-8c52-63070bfb8d1f.png)" target="_blank" rel="noopener">https://v.youku.com/v_show/id_XNDI2NTAzNzQzNg==.html![image.png](/images/2020/07/06/8e985a7b-ed25-4744-b70d-0c4d784406ae.png)安装脚本后，点击左侧的VIP可以跳转到VIP解析网站观看。![image.png](/images/2020/07/06/4a667e1e-ef18-483c-baa7-b0821f256fdd.png)![image.png](/images/2020/07/06/3f377402-00cc-4fda-8c52-63070bfb8d1f.png)</a><br>如果看不了，换接口解析。<img src="/images/2020/07/06/6474c638-585e-41d0-875b-5d30f07683ea.png" alt="image.png"></p>
+<h4 id="豆瓣资源下载大师"><a href="#豆瓣资源下载大师" class="headerlink" title="豆瓣资源下载大师"></a>豆瓣资源下载大师</h4><p>功能介绍：<br>聚合数百家资源网站，通过右侧边栏1秒告诉你哪些网站能下载豆瓣页面上的电影|电视剧|纪录片|综艺|动画|音乐|图书等，有资源的网站显示绿色，没资源的网站显示黄色，就这么直观。</p>
+<p>脚本地址 <a href="https://greasyfork.org/zh-CN/scripts/329484" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/329484</a></p>
+<p>看看最近上映的电影《蜘蛛侠：英雄远征》 <a href="https://movie.douban.com/subject/26931786/?from=showing" target="_blank" rel="noopener">https://movie.douban.com/subject/26931786/?from=showing</a><br>右侧可以看到 中文影视字幕和影视精准匹配，可以到对应网站查看。</p>
+<p><img src="/images/2020/07/06/556df42d-3f60-4f3c-b929-c2b8c97870ed.png" alt="image.png">更多其他脚本自己搜索吧，有什么问题可以评论交流。</p>
+]]></content>
+      <categories>
+        <category>插件</category>
+      </categories>
+      <tags>
+        <tag>暴力猴</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hadoop编程入门</title>
+    <url>/Hadoop%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>::: hljs-center</p>
+<p>Hadoop编程入门</p>
+<p>:::</p>
+<p>一、准备软件<br>（1）IntelliJ IDEA Community<br><a href="https://www.jetbrains.com/idea/download/#section=windows" target="_blank" rel="noopener">https://www.jetbrains.com/idea/download/#section=windows</a><br>（2）Hadoop<br><a href="https://hadoop.apache.org/releases.html" target="_blank" rel="noopener">https://hadoop.apache.org/releases.html</a><br>（3）Winutils<br>链接：<a href="https://pan.baidu.com/s/15xizRvY17-m-gqPH5YapXw" target="_blank" rel="noopener">https://pan.baidu.com/s/15xizRvY17-m-gqPH5YapXw</a><br>提取码：qw0j<br>（4）Java JDK 1.8<br>链接：<a href="https://pan.baidu.com/s/1hMad9dATs3MpZka3QXgIZA" target="_blank" rel="noopener">https://pan.baidu.com/s/1hMad9dATs3MpZka3QXgIZA</a><br>提取码：q59l</p>
+<p>二、安装软件<br>（1）IntelliJ IDEA Community</p>
+<p>（2）Hadoop解压到D盘</p>
+<p>并配置环境变量</p>
+<p>（3）将winutils解压后放到hadoop目录中的bin下面</p>
+<p>（4）JDK环境变量配置</p>
+<p>三、创建项目<br>（1）创建maven项目</p>
+<p>为项目起名（mapreduce）</p>
+<p>项目结构</p>
+<p>（2）配置pom文件</p>
+<p>（3）创建WordCount程序</p>
+<p>package com.hmy.mr;</p>
+<p>import org.apache.hadoop.conf.Configuration;<br>import org.apache.hadoop.fs.Path;<br>import org.apache.hadoop.io.IntWritable;<br>import org.apache.hadoop.io.Text;<br>import org.apache.hadoop.mapreduce.Job;<br>import org.apache.hadoop.mapreduce.Mapper;<br>import org.apache.hadoop.mapreduce.Reducer;<br>import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;<br>import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;</p>
+<p>import java.io.IOException;<br>import java.util.StringTokenizer;</p>
+<p>public class WordCount {</p>
+<pre><code>public static void main(String[] args) throws Exception {
+    Configuration conf = new Configuration();
+    Job job = Job.getInstance(conf, &quot;word count&quot;);
+    job.setJarByClass(WordCount.class);
+    job.setMapperClass(TokenizerMapper.class);
+    job.setCombinerClass(IntSumReducer.class);
+    job.setReducerClass(IntSumReducer.class);
+    job.setOutputKeyClass(Text.class);
+    job.setOutputValueClass(IntWritable.class);
+    FileInputFormat.addInputPath(job, new Path(args[0]));
+    FileOutputFormat.setOutputPath(job, new Path(args[1]));
+    System.exit(job.waitForCompletion(true) ? 0 : 1);
+}
+
+public static class TokenizerMapper extends Mapper&lt;Object, Text, Text, IntWritable&gt; {
+    private final static IntWritable one = new IntWritable(1);
+    private Text word = new Text();
+
+    public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
+        StringTokenizer itr = new StringTokenizer(value.toString());
+        while (itr.hasMoreTokens()) {
+            word.set(itr.nextToken());
+            context.write(word, one);
+        }
+    }
+}
+
+public static class IntSumReducer extends Reducer&lt;Text,IntWritable,Text,IntWritable&gt; {
+    private IntWritable result = new IntWritable();
+
+    public void reduce(Text key, Iterable&lt;IntWritable&gt; values, Context context) throws IOException, InterruptedException {
+        int sum = 0;
+        for (IntWritable val : values) {
+            sum += val.get();
+        }
+        result.set(sum);
+        context.write(key, result);
+    }
+}</code></pre><p>}</p>
+<p>四、发布项目<br>（1）打jar包</p>
+<p>五、将jar包传到linux系统</p>
+<p>六、运行hadoop程序<br>（1） 首先在/opt/tools/下创建一个文件t，打开文件，里面任意输入几个单词<br>（2） 在hdfs上创建文件夹，使用此命令<br>hdfs dfs -mkdir /test<br>然后，将文件t上传到hdfs上，使用此命令<br>hdfs  dfs  -put  /opt/tools/t    /test</p>
+<p>（3） 执行hadoop jar /opt/tools/mareduce.jar com.hmy.mr.WordCount /test/t /out/1</p>
+<p>最终结果</p>
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>Hadoop</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hadoop配置</title>
     <url>/Hadoop%E9%85%8D%E7%BD%AE.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h1 id="一、"><a href="#一、" class="headerlink" title="一、"></a>一、<img src="/images/2020/07/03/89c58bcb-7005-4107-963a-4818a9d87378.png" alt="image.png"></h1><p><img src="/images/2020/07/03/f985fbbe-cc19-4f1b-a070-1a3a63e19ff1.png" alt="image.png"></p>
@@ -47,33 +147,6 @@
       </categories>
       <tags>
         <tag>Hadoop</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Chrome 浏览器扩展神器暴力猴</title>
-    <url>/Chrome-%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%A9%E5%B1%95%E7%A5%9E%E5%99%A8%E6%9A%B4%E5%8A%9B%E7%8C%B4.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>我平常工作最常用的浏览器就是 Chrome 了，Google 出品，值得信赖，用 Chrome 就不得不提浏览器扩展了，有了各种 Chrome 扩展，可以让你浏览器网页更方便，工作更高效。<br>Chrome 扩展可以在 Google 应用商店下载<a href="https://chrome.google.com/webstore/category/extensions?hl=zh-CN这里可以搜索安装你喜欢的各种扩展。" target="_blank" rel="noopener">https://chrome.google.com/webstore/category/extensions?hl=zh-CN这里可以搜索安装你喜欢的各种扩展。</a><br><img src="/images/2020/07/06/8524a9de-6cd2-4bd9-8540-939cd94f9e25.png" alt="image.png"><br>比如我装了很多扩展。<img src="/images/2020/07/06/7b140c9e-c0a3-4f05-becc-34c96ffa092d.png" alt="image.png"><br>扩展这么多，其中的油猴<a href="Tampermonkey">Tampermonkey</a> 是必须推荐的一个，它是扩展中的王者，最强大的浏览器扩展。</p>
-<h3 id="安装暴力猴扩展"><a href="#安装暴力猴扩展" class="headerlink" title="安装暴力猴扩展"></a>安装暴力猴扩展</h3><p>可以在谷歌商店直接安装<a href="https://chrome.google.com/webstore/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag?hl=zh-CN" target="_blank" rel="noopener">暴力猴</a><img src="/images/2020/07/06/e9021617-1ff3-495d-b62b-8a872b985f20.png" alt="image.png"><br>也可以再扩展迷下载<a href="https://www.extfans.com/productivity/jinjaccalgkegednnccohejagnlnfdag" target="_blank" rel="noopener">暴力猴</a><br><img src="/images/2020/07/06/7763c5c1-ef7d-4733-b2ca-9e34b81065af.png" alt="image.png"><br>如果上不了Google，可以在国内第三方Chrome 插件网站<br><a href="https://www.crx4chrome.com/" target="_blank" rel="noopener">https://www.crx4chrome.com/</a><br><a href="http://chromecj.com/" target="_blank" rel="noopener">http://chromecj.com/</a><br><a href="http://www.cnplugins.com/" target="_blank" rel="noopener">http://www.cnplugins.com/</a><br><a href="https://www.chromefor.com/" target="_blank" rel="noopener">https://www.chromefor.com/</a><br>等搜索下载。下载的是个 crx 文件，然后打开 Chrome 扩展chrome://extensions/，打开开发者模式，将下载的crx文件拖进去，如果出错提示程序包无效。<br><img src="/images/2020/07/06/3877d52f-f1ad-4602-8f54-5ec4ffd317fd.png" alt="image.png"><br>将 crx 后缀改为 zip 再拖进去就能安装成功了，浏览器右上角可以看到图标。<img src="/images/2020/07/06/c3c6cef5-c7c5-4a2a-8ada-ac6fff1ee0a8.png" alt="image.png"></p>
-<h3 id="脚本网站"><a href="#脚本网站" class="headerlink" title="脚本网站"></a>脚本网站</h3><p>有了暴力猴扩展，还需要配上脚本。<br>安装完扩展后点击图标，选择 获取新脚本<br>会进入网站<a href="https://www.tampermonkey.net/scripts.php" target="_blank" rel="noopener">https://www.tampermonkey.net/scripts.php</a><br>这里可以获取脚本来源，有3个来源网站<br><a href="http://userscripts-mirror.org/" target="_blank" rel="noopener">http://userscripts-mirror.org/</a><br><a href="https://openuserjs.org/" target="_blank" rel="noopener">https://openuserjs.org/</a><br><a href="https://greasyfork.org/" target="_blank" rel="noopener">https://greasyfork.org/</a><br>这里推荐 greasyfork ，因为它支持中文。</p>
-<p>打开网站首页<a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">https://greasyfork.org/zh-CN</a> 可以看到很多脚本。<img src="/images/2020/07/06/4307fa08-a4ac-4e5a-a0e2-e7f98cd80765.png" alt="image.png">安装脚本也很简单，找到需要的脚本，进入页面，点击安装，然后管理面板即可看到已安装的脚本。</p>
-<p>下面推荐些实用的脚本，开始打开新世界的大门。</p>
-<h4 id="搜索去广告"><a href="#搜索去广告" class="headerlink" title="搜索去广告"></a>搜索去广告</h4><p>功能介绍：<br>去掉百度、搜狗、谷歌搜索结果的重定向，回归为网站的原始网址—附带有去除百度的广告 包括百度顶部和底部的垃圾广告，脚本地址<a href="https://greasyfork.org/zh-CN/scripts/14178" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/14178</a></p>
-<p>安装脚本前搜索 浏览器 前面3个是广告<img src="/images/2020/07/06/62003585-644d-4bd4-a899-b3821ccfc40b.png" alt="image.png">)安装脚本后的效果，广告没有了，你还可以自定义设置。<img src="/images/2020/07/06/c22f76d3-5a21-43fa-b3cc-7b6b0237e47e.png" alt="image.png"></p>
-<h4 id="知乎网页助手"><a href="#知乎网页助手" class="headerlink" title="知乎网页助手"></a>知乎网页助手</h4><p>功能介绍：<br>1、知乎站外链接直接跳转至目标网址；<br>2、自动展开问题全部信息，同时展示所有回答；<br>3、去除知乎网页中的广告；<br>4、知乎网页中短视频下载；<br>5、解除知乎复制限制-划词复制（鼠标左键划词自动添加到剪切板）</p>
-<p>脚本地址 <a href="https://greasyfork.org/zh-CN/scripts/384172" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/384172</a></p>
-<p>比如这个周杰伦的视频回答 <a href="https://www.zhihu.com/question/35123246/answer/585795363" target="_blank" rel="noopener">https://www.zhihu.com/question/35123246/answer/585795363</a><br>安装脚本前<img src="/images/2020/07/06/f64e33d3-7f79-4570-b208-7a335dc3976a.png" alt="image.png">)安装后视频可以直接下载了。<img src="/images/2020/07/06/17bf28b9-2213-4443-90a5-3805ecd077a2.png" alt="image.png"></p>
-<h4 id="全网VIP视频免费破解"><a href="#全网VIP视频免费破解" class="headerlink" title="全网VIP视频免费破解"></a>全网VIP视频免费破解</h4><p>功能介绍：<br>懒人专用，全网VIP视频免费破解去广告、全网音乐直接下载、百度网盘直接下载、知乎视频下载等多合一版。<br>脚本地址<a href="https://greasyfork.org/zh-CN/scripts/370634" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/370634</a></p>
-<p>打开优酷看《 长安十二时辰》，16集开始需要VIP<a href="https://v.youku.com/v_show/id_XNDI2NTAzNzQzNg==.html![image.png](/images/2020/07/06/8e985a7b-ed25-4744-b70d-0c4d784406ae.png)安装脚本后，点击左侧的VIP可以跳转到VIP解析网站观看。![image.png](/images/2020/07/06/4a667e1e-ef18-483c-baa7-b0821f256fdd.png)![image.png](/images/2020/07/06/3f377402-00cc-4fda-8c52-63070bfb8d1f.png)" target="_blank" rel="noopener">https://v.youku.com/v_show/id_XNDI2NTAzNzQzNg==.html![image.png](/images/2020/07/06/8e985a7b-ed25-4744-b70d-0c4d784406ae.png)安装脚本后，点击左侧的VIP可以跳转到VIP解析网站观看。![image.png](/images/2020/07/06/4a667e1e-ef18-483c-baa7-b0821f256fdd.png)![image.png](/images/2020/07/06/3f377402-00cc-4fda-8c52-63070bfb8d1f.png)</a><br>如果看不了，换接口解析。<img src="/images/2020/07/06/6474c638-585e-41d0-875b-5d30f07683ea.png" alt="image.png"></p>
-<h4 id="豆瓣资源下载大师"><a href="#豆瓣资源下载大师" class="headerlink" title="豆瓣资源下载大师"></a>豆瓣资源下载大师</h4><p>功能介绍：<br>聚合数百家资源网站，通过右侧边栏1秒告诉你哪些网站能下载豆瓣页面上的电影|电视剧|纪录片|综艺|动画|音乐|图书等，有资源的网站显示绿色，没资源的网站显示黄色，就这么直观。</p>
-<p>脚本地址 <a href="https://greasyfork.org/zh-CN/scripts/329484" target="_blank" rel="noopener">https://greasyfork.org/zh-CN/scripts/329484</a></p>
-<p>看看最近上映的电影《蜘蛛侠：英雄远征》 <a href="https://movie.douban.com/subject/26931786/?from=showing" target="_blank" rel="noopener">https://movie.douban.com/subject/26931786/?from=showing</a><br>右侧可以看到 中文影视字幕和影视精准匹配，可以到对应网站查看。</p>
-<p><img src="/images/2020/07/06/556df42d-3f60-4f3c-b929-c2b8c97870ed.png" alt="image.png">更多其他脚本自己搜索吧，有什么问题可以评论交流。</p>
-]]></content>
-      <categories>
-        <category>插件</category>
-      </categories>
-      <tags>
-        <tag>暴力猴</tag>
       </tags>
   </entry>
   <entry>
@@ -186,12 +259,6 @@
       </tags>
   </entry>
   <entry>
-    <title>mavern阿里云仓库设置</title>
-    <url>/mavern%E9%98%BF%E9%87%8C%E4%BA%91%E4%BB%93%E5%BA%93%E8%AE%BE%E7%BD%AE.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>#第一步，右击项目名称<img src="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/20-5-4/1.png" alt=""><br>#第二步，创建setting.xml<img src="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/20-5-4/2.png" alt=""><br>#第三步，填上这些即可<img src="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/20-5-4/3.png" alt=""></p>
-]]></content>
-  </entry>
-  <entry>
     <title>hexo搭建个人博客</title>
     <url>/hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>现在随着计算机的飞速发展，拥有一个属于自己的博客，是一件非常平常的事。使用hexo搭建一个属于自己的个人博客，是即快捷又美观的一种方式，也是非常受到人们的喜爱的。接下来我将带领大家一起搭建自己的博客。后续还有hexo的next主题美化，hexo的部署，hexo的百度录入等等，一系列的教程，你可以访问我的<a href="个人博客">个人博客</a>.</p>
@@ -216,236 +283,181 @@
       </tags>
   </entry>
   <entry>
-    <title>最强下载神器IDM</title>
-    <url>/%E6%9C%80%E5%BC%BA%E4%B8%8B%E8%BD%BD%E7%A5%9E%E5%99%A8IDM.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>Internet Download Manager，简称 IDM，是国外的一款优秀下载工具。目前凭借着下载计算的速度优势在外媒网站中均受好评，现在已被多数国人熟知。Internet Download Manager 提升你的下载速度最多达5倍，安排下载时程，带有续传功能，可以恢复因为断线、网络问题、计算机当机甚至无预警的停电导致下传到一半的资料。国外的Internet Download Manager简称IDM是一款下载利器，不限速，界面简洁好看，还能自动识别网页视频，无多余菜单弹窗!并且支持IE，Firefox，Chrome等浏览器。<br>IDM具有动态文件分割、多重下载点技术，而且它会重复使用现有的联机，而不需再重新联机登入一遍。智能in-speed技术会动态地将所有设定应用到某种联机类型，以充分利用下载速度。IDM支持下载队列、防火墙、代理服务器和映摄服务器、重新导向、cookies、需要验证的目录，以及各种不同的服务器平台，它紧密地与Internet Explorer和Netscape Communicator结合，自动地处理你的下载需求。此外，IDM还具有下载逻辑最佳化功能、检查病毒，以及多种偏好设定。</p>
-<h2 id="安装方法："><a href="#安装方法：" class="headerlink" title="安装方法："></a>安装方法：</h2><p>下载后解压&gt;找到!绿化卸载.bat&gt;右键以管理员身份运行。<br><img src="/images/2020/07/06/c308e0eb-9028-44a9-a29f-75c3d655b29b.png" alt="image.png"><br>输入1,回车确定安装。<br><img src="/images/2020/07/06/b22014f1-eca2-455f-9453-7b1b75de180a.png" alt="image.png"><br>强烈建议创建快捷方式。<br><img src="/images/2020/07/06/c769bb97-c8c1-4c03-b5b3-3539988b0b68.png" alt="image.png"><br>主界面就是这个样子了，还算简洁，最起码没广告。<br><img src="/images/2020/07/06/e072019d-34b3-4f6f-aeca-80fdf540613e.png" alt="image.png"><br>下面是个人推荐下载地址：<a href="http://soft.ucbug.com/uploads/soft/linshi/wlrj/ucbug.com-idm.rar" target="_blank" rel="noopener">idm下载</a></p>
+    <title>mavern阿里云仓库设置</title>
+    <url>/mavern%E9%98%BF%E9%87%8C%E4%BA%91%E4%BB%93%E5%BA%93%E8%AE%BE%E7%BD%AE.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>#第一步，右击项目名称<img src="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/20-5-4/1.png" alt=""><br>#第二步，创建setting.xml<img src="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/20-5-4/2.png" alt=""><br>#第三步，填上这些即可<img src="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/20-5-4/3.png" alt=""></p>
 ]]></content>
-      <categories>
-        <category>插件</category>
-      </categories>
-      <tags>
-        <tag>IDM</tag>
-      </tags>
   </entry>
   <entry>
-    <title>爬虫基本原理</title>
-    <url>/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>我们可以把互联网比作一张大网，而爬虫（即网络爬虫）便是在网上爬行的蜘蛛。把网的节点比作一个个网页，爬虫爬到这就相当于访问了该页面，获取了其信息。可以把节点间的连线比作网页与网页之间的链接关系，这样蜘蛛通过一个节点后，可以顺着节点连线继续爬行到达下一个节点，即通过一个网页继续获取后续的网页，这样整个网的节点便可以被蜘蛛全部爬行到，网站的数据就可以被抓取下来了。</p>
-<h2 id="1-爬虫概述"><a href="#1-爬虫概述" class="headerlink" title="1. 爬虫概述"></a>1. 爬虫概述</h2><p>简单来说，爬虫就是获取网页并提取和保存信息的自动化程序，下面概要介绍一下。<br>(1) 获取网页<br>爬虫首先要做的工作就是获取网页，这里就是获取网页的源代码。源代码里包含了网页的部分有用信息，所以只要把源代码获取下来，就可以从中提取想要的信息了。<br>前面讲了请求和响应的概念，向网站的服务器发送一个请求，返回的响应体便是网页源代码。所以，最关键的部分就是构造一个请求并发送给服务器，然后接收到响应并将其解析出来，那么这个流程怎样实现呢？总不能手工去截取网页源码吧？<br>不用担心，Python提供了许多库来帮助我们实现这个操作，如urllib、requests等。我们可以用这些库来帮助我们实现HTTP请求操作，请求和响应都可以用类库提供的数据结构来表示，得到响应之后只需要解析数据结构中的Body部分即可，即得到网页的源代码，这样我们可以用程序来实现获取网页的过程了。<br>(2) 提取信息<br>获取网页源代码后，接下来就是分析网页源代码，从中提取我们想要的数据。首先，最通用的方法便是采用正则表达式提取，这是一个万能的方法，但是在构造正则表达式时比较复杂且容易出错。<br>另外，由于网页的结构有一定的规则，所以还有一些根据网页节点属性、CSS选择器或XPath来提取网页信息的库，如Beautiful Soup、pyquery、lxml等。使用这些库，我们可以高效快速地从中提取网页信息，如节点的属性、文本值等。<br>提取信息是爬虫非常重要的部分，它可以使杂乱的数据变得条理清晰，以便我们后续处理和分析数据。<br>(3) 保存数据<br>提取信息后，我们一般会将提取到的数据保存到某处以便后续使用。这里保存形式有多种多样，如可以简单保存为TXT文本或JSON文本，也可以保存到数据库，如MySQL和MongoDB等，也可保存至远程服务器，如借助SFTP进行操作等。<br>(4) 自动化程序<br>说到自动化程序，意思是说爬虫可以代替人来完成这些操作。首先，我们手工当然可以提取这些信息，但是当量特别大或者想快速获取大量数据的话，肯定还是要借助程序。爬虫就是代替我们来完成这份爬取工作的自动化程序，它可以在抓取过程中进行各种异常处理、错误重试等操作，确保爬取持续高效地运行。</p>
-<h2 id="2-能抓怎样的数据"><a href="#2-能抓怎样的数据" class="headerlink" title="2. 能抓怎样的数据"></a>2. 能抓怎样的数据</h2><p>在网页中我们能看到各种各样的信息，最常见的便是常规网页，它们对应着HTML代码，而最常抓取的便是HTML源代码。<br>另外，可能有些网页返回的不是HTML代码，而是一个JSON字符串（其中API接口大多采用这样的形式），这种格式的数据方便传输和解析，它们同样可以抓取，而且数据提取更加方便。<br>此外，我们还可以看到各种二进制数据，如图片、视频和音频等。利用爬虫，我们可以将这些二进制数据抓取下来，然后保存成对应的文件名。<br>另外，还可以看到各种扩展名的文件，如CSS、JavaScript和配置文件等，这些其实也是最普通的文件，只要在浏览器里面可以访问到，就可以将其抓取下来。<br>上述内容其实都对应各自的URL，是基于HTTP或HTTPS协议的，只要是这种数据，爬虫都可以抓取。</p>
-<h2 id="3-JavaScript渲染页面"><a href="#3-JavaScript渲染页面" class="headerlink" title="3. JavaScript渲染页面"></a>3. JavaScript渲染页面</h2><p>有时候，我们在用urllib或requests抓取网页时，得到的源代码实际和浏览器中看到的不一样。<br>这是一个非常常见的问题。现在网页越来越多地采用Ajax、前端模块化工具来构建，整个网页可能都是由JavaScript渲染出来的，也就是说原始的HTML代码就是一个空壳，例如：<br> <figure class="highlight plain"><figcaption><span>html></span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">   &lt;head&gt;</span><br><span class="line">         &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">         &lt;title&gt;This is a Demo&lt;&#x2F;title&gt;</span><br><span class="line">     &lt;&#x2F;head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">         &lt;div id&#x3D;&quot;container&quot;&gt;</span><br><span class="line">       &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;app.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure></p>
-<p>body节点里面只有一个id为container的节点，但是需要注意在body节点后引入了app.js，它便负责整个网站的渲染。<br>在浏览器中打开这个页面时，首先会加载这个HTML内容，接着浏览器会发现其中引入了一个app.js文件，然后便会接着去请求这个文件，获取到该文件后，便会执行其中的JavaScript代码，而JavaScript则会改变HTML中的节点，向其添加内容，最后得到完整的页面。<br>但是在用urllib或requests等库请求当前页面时，我们得到的只是这个HTML代码，它不会帮助我们去继续加载这个JavaScript文件，这样也就看不到浏览器中的内容了。<br>这也解释了为什么有时我们得到的源代码和浏览器中看到的不一样。<br>因此，使用基本HTTP请求库得到的源代码可能跟浏览器中的页面源代码不太一样。对于这样的情况，我们可以分析其后台Ajax接口，也可使用Selenium、Splash这样的库来实现模拟JavaScript渲染。<br>后面，我们会详细介绍如何采集JavaScript渲染的网页。</p>
+    <title>python元组</title>
+    <url>/python%E5%85%83%E7%BB%84.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h1 id="对于元组来说，元组和列表是差不多的"><a href="#对于元组来说，元组和列表是差不多的" class="headerlink" title="对于元组来说，元组和列表是差不多的"></a>对于元组来说，元组和列表是差不多的</h1><h1 id="元组是不能修改的，-比如不能增加元素，不能修改元素，不能删除元素，"><a href="#元组是不能修改的，-比如不能增加元素，不能修改元素，不能删除元素，" class="headerlink" title="元组是不能修改的， 比如不能增加元素，不能修改元素，不能删除元素，"></a>元组是不能修改的， 比如不能增加元素，不能修改元素，不能删除元素，</h1><h1 id="元组遍历"><a href="#元组遍历" class="headerlink" title="元组遍历"></a>元组遍历</h1><p>tu = (1,2,34,5)<br>for index,value in enumerate(tu):<br>    print(index,value)</p>
+<h1 id="返回这个元素在对象中出现的次数"><a href="#返回这个元素在对象中出现的次数" class="headerlink" title="返回这个元素在对象中出现的次数"></a>返回这个元素在对象中出现的次数</h1><p>num = tu.count(2)<br>print(num)</p>
+<h1 id="index-返回的是查找在列表中的下标"><a href="#index-返回的是查找在列表中的下标" class="headerlink" title="index 返回的是查找在列表中的下标"></a>index 返回的是查找在列表中的下标</h1><p>num2 = tu.index(34)<br>print(num2)</p>
+<h1 id="类型相互转换"><a href="#类型相互转换" class="headerlink" title="============类型相互转换=========="></a>============类型相互转换==========</h1><h1 id="1、字典转换成元组"><a href="#1、字典转换成元组" class="headerlink" title="1、字典转换成元组"></a>1、字典转换成元组</h1><p>dict1 = {‘name’:1,”age”:23}</p>
+<h1 id="如果直接tuple-dict1-那么返回的只是字典的keys"><a href="#如果直接tuple-dict1-那么返回的只是字典的keys" class="headerlink" title="如果直接tuple(dict1) 那么返回的只是字典的keys"></a>如果直接tuple(dict1) 那么返回的只是字典的keys</h1><p>tu1 = tuple(dict1.values())<br>print(tu1)</p>
+<h1 id="字典转换成列表-list-dict1-那么返回的只是字典的keys"><a href="#字典转换成列表-list-dict1-那么返回的只是字典的keys" class="headerlink" title="字典转换成列表,list(dict1) 那么返回的只是字典的keys"></a>字典转换成列表,list(dict1) 那么返回的只是字典的keys</h1><p>li = list(dict1)<br>print(li)</p>
+<p>li2 =list(dict1.values())<br>print(li2)</p>
+<h1 id="2、字典转换成字符串"><a href="#2、字典转换成字符串" class="headerlink" title="2、字典转换成字符串"></a>2、字典转换成字符串</h1><p>str1 = str(dict1)<br>print(str1)<br>转字符串需不需要注意返回得是什么内容（关键字？values？）</p>
+<h1 id="元组转换成字符串、列表-注意：元组不可以转为字典"><a href="#元组转换成字符串、列表-注意：元组不可以转为字典" class="headerlink" title="=====元组转换成字符串、列表====注意：元组不可以转为字典"></a>=====元组转换成字符串、列表====注意：元组不可以转为字典</h1><p>tupleExchang = (1,2,3,4,5,”a”)<br>str2 = tupleExchang.<strong>str</strong>()<br>print(type(str2))<br>print(str2)</p>
+<p>list2 = list(tupleExchang)<br>print(list2)</p>
+<h1 id="列表转换成字符串、元组-注意：列表不能转换成字典"><a href="#列表转换成字符串、元组-注意：列表不能转换成字典" class="headerlink" title="=======列表转换成字符串、元组======注意：列表不能转换成字典"></a>=======列表转换成字符串、元组======注意：列表不能转换成字典</h1><p>list3 = [1,2,34,55,6]<br>str3 = str(list3)<br>print(str3)</p>
+<p>tup = tuple(list3)<br>print(tup)</p>
 ]]></content>
       <categories>
         <category>python</category>
       </categories>
       <tags>
-        <tag>爬虫</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
-    <title>元数据库安装配置</title>
-    <url>/%E5%85%83%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h1 id="1、下载Mysql-yum-仓库"><a href="#1、下载Mysql-yum-仓库" class="headerlink" title="1、下载Mysql yum 仓库"></a>1、下载Mysql yum 仓库</h1><p><img src="/images/2020/07/04/2f5b1866-edd9-4e32-bff4-8d5464bf4a97.png" alt="image.png"></p>
-<h1 id="2、添加Mysql-yum-仓库"><a href="#2、添加Mysql-yum-仓库" class="headerlink" title="2、添加Mysql yum 仓库"></a>2、添加Mysql yum 仓库</h1><p><img src="/images/2020/07/04/e5596132-16ce-4edc-a81a-dae6715c3173.png" alt="image.png"></p>
-<h1 id="3、让安装包可用"><a href="#3、让安装包可用" class="headerlink" title="3、让安装包可用"></a>3、让安装包可用</h1><p><img src="/images/2020/07/04/466e06c3-1fba-4786-b8b6-1179ca7db91d.png" alt="image.png"></p>
-<h1 id="4、安装Mysql"><a href="#4、安装Mysql" class="headerlink" title="4、安装Mysql"></a>4、安装Mysql</h1><p><img src="/images/2020/07/04/5cd8776c-1cd8-413a-bacf-138f85b63c91.png" alt="image.png"></p>
-<h1 id="5、启动Mysql服务"><a href="#5、启动Mysql服务" class="headerlink" title="5、启动Mysql服务"></a>5、启动Mysql服务</h1><p><img src="/images/2020/07/04/4e17769e-f249-4501-94ff-534e2319ed57.png" alt="image.png"></p>
-<h1 id="6、修改Mysql数据库"><a href="#6、修改Mysql数据库" class="headerlink" title="6、修改Mysql数据库"></a>6、修改Mysql数据库</h1><p><img src="/images/2020/07/04/f3ceef96-7015-4999-8f5e-0a66d4195f01.png" alt="image.png"></p>
-<h1 id="7、设置数据库访问权限"><a href="#7、设置数据库访问权限" class="headerlink" title="7、设置数据库访问权限"></a>7、设置数据库访问权限</h1><p><img src="/images/2020/07/04/c33b7323-7b83-4ac2-af77-c285cab2d029.png" alt="image.png"><br><img src="/images/2020/07/04/980eddfc-3321-48e2-a33e-6bf0ad381013.png" alt="image.png"></p>
+    <title>python函数</title>
+    <url>/python%E5%87%BD%E6%95%B0.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>1、python3的map函数<br>map()函数接收两个参数，一个是函数，一个是Iterable（可迭代对象），map将传入的函数依次作用到序列的每个元素，并把结果作为新的Iterator（迭代器）返回。<br>举例说明，比如我们有一个函数f(x)=x2，要把这个函数作用在一个list [1, 2, 3, 4, 5, 6, 7, 8, 9]上，就可以用map()实现如下：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>def f(x):<br>     return x * x<br>r = map(f, [1<em>1, 2</em>2, 3<em>3, 4, 5, 6, 7, 8, 9])<br>list(r)<br>[1, 4, 9, 16, 25, 36, 49, 64, 81]<br>上述代码中f是一个map对象，r是一个Iterator，Iterator是惰性序列，因此通过list()函数让它把整个序列都计算出来并返回一个list。<br>不对r进行list函数的话，输出结果如下：<br>def f(n):<br>    return n</em>n<br>r = map(f,[1,2,3])<br>print(r)<br>结果：<br>&lt;map object at 0x000001FB4EC5D240&gt;<br>map()作为高阶函数，事实上它把运算规则抽象了，因此，我们不但可以计算简单的f(x)=x2，还可以计算任意复杂的函数，比如，把这个list所有数字转为字符串：</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>list(map(str, [1, 2, 3, 4, 5, 6, 7, 8, 9]))</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>[‘1’, ‘2’, ‘3’, ‘4’, ‘5’, ‘6’, ‘7’, ‘8’, ‘9’]<br>2、python3的reduce函数<br>reduce把一个函数作用在一个序列[x1, x2, x3, …]上，这个函数必须接收两个参数，reduce把结果继续和序列的下一个元素做累积计算，其效果就是：</p>
+<p>reduce(f, [x1, x2, x3, x4]) = f(f(f(x1, x2), x3), x4)<br>比方说对一个序列求和，就可以用reduce实现：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>from functools import reduce<br>def add(x, y):<br>     return x + y<br>reduce(add, [1, 3, 5, 7, 9])<br>25<br>字符串str也是一个序列，对上面的例子稍加改动，配合map()，我们就可以写出把str转换为int的函数：</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>from functools import reduce<br>def fn(x, y):<br>     return x * 10 + y<br>def char2num(s):<br>…     digits = {‘0’: 0, ‘1’: 1, ‘2’: 2, ‘3’: 3, ‘4’: 4, ‘5’: 5, ‘6’: 6, ‘7’: 7, ‘8’: 8, ‘9’: 9}<br>…     return digits[s]<br>reduce(fn,[1,3,5,7,9])<br>map(char2num, ‘13579’)<br>13579</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>3、python的filter函数<br>Python内建的filter()函数用于过滤序列。<br>和map()类似，filter()也接收一个函数和一个序列。和map()不同的是，filter()把传入的函数依次作用于每个元素，然后根据返回值是True还是False决定保留还是丢弃该元素。<br>例如，在一个list中，删掉偶数，只保留奇数，可以这么写：<br>def is_odd(n):<br>    return n % 2 == 1</p>
+<p>list(filter(is_odd, [1, 2, 4, 5, 6, 9, 10, 15]))</p>
+<h1 id="结果-1-5-9-15"><a href="#结果-1-5-9-15" class="headerlink" title="结果: [1, 5, 9, 15]"></a>结果: [1, 5, 9, 15]</h1><p>把一个序列中的空字符串删掉，可以这么写：<br>def not_empty(s):<br>    return s and s.strip()<br>list(filter(not_empty, [‘A’, ‘’, ‘B’, None, ‘C’, ‘  ‘]))</p>
+<h1 id="结果-‘A’-‘B’-‘C’"><a href="#结果-‘A’-‘B’-‘C’" class="headerlink" title="结果: [‘A’, ‘B’, ‘C’]"></a>结果: [‘A’, ‘B’, ‘C’]</h1><p>可见用filter()这个高阶函数，关键在于正确实现一个“筛选”函数。<br>注意到filter()函数返回的是一个Iterator，也就是一个惰性序列，所以要强迫filter()完成计算结果，需要用list()函数获得所有结果并返回list。<br>4、python的sort函数<br>Python内置的sorted()函数就可以对list进行排序：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>sorted([36, 5, -12, 9, -21])<br>[-21, -12, 5, 9, 36]<br>此外，sorted()函数也是一个高阶函数，它还可以接收一个key函数来实现自定义的排序，例如按绝对值大小排序：<br>sorted([36, 5, -12, 9, -21], key=abs)<br>Key函数放在前面行不行？<br>[5, 9, -12, -21, 36]<br>key指定的函数将作用于list的每一个元素上，并根据key函数返回的结果进行排序。<br>再看一个字符串排序的例子：<br>sorted([‘bob’, ‘about’, ‘Zoo’, ‘Credit’])<br>[‘Credit’, ‘Zoo’, ‘about’, ‘bob’]<br>默认情况下，对字符串排序，是按照ASCII的大小比较的，由于’Z’ &lt; ‘a’，结果，大写字母Z会排在小写字母a的前面。<br>现在，我们提出排序应该忽略大小写，按照字母序排序。要实现这个算法，不必对现有代码大加改动，只要我们能用一个key函数把字符串映射为忽略大小写排序即可。忽略大小写来比较两个字符串，实际上就是先把字符串都变成大写（或者都变成小写），再比较。<br>这样，我们给sorted传入key函数，即可实现忽略大小写的排序：<br>sorted([‘bob’, ‘about’, ‘Zoo’, ‘Credit’], key=str.lower)<br>[‘about’, ‘bob’, ‘Credit’, ‘Zoo’]<br>要进行反向排序，不必改动key函数，可以传入第三个参数reverse=True：</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>sorted([‘bob’, ‘about’, ‘Zoo’, ‘Credit’], key=str.lower, reverse=True)<br>[‘Zoo’, ‘Credit’, ‘bob’, ‘about’]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>5、匿名函数<br>当我们在传入函数时，有些时候，不需要显式地定义函数，直接传入匿名函数更方便。</p>
+<p>在Python中，对匿名函数提供了有限支持。还是以map()函数为例，计算f(x)=x2时，除了定义一个f(x)的函数外，还可以直接传入匿名函数：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>list(map(lambda x: x * x, [1, 2, 3, 4, 5, 6, 7, 8, 9]))<br>[1, 4, 9, 16, 25, 36, 49, 64, 81]<br>通过对比可以看出，匿名函数lambda x: x * x实际上就是：<br>def f(x):<br>    return x * x<br>关键字lambda表示匿名函数，冒号前面的x表示函数参数。<br>（连续使用参数值会不会出现覆盖的情况？）<br>匿名函数有个限制，就是只能有一个表达式，不用写return，返回值就是该表达式的结果。<br>用匿名函数有个好处，因为函数没有名字，不必担心函数名冲突。此外，匿名函数也是一个函数对象，也可以把匿名函数赋值给一个变量，再利用变量来调用该函数：<br>（为什么匿名函数需要通过变量来调用？）<br>f = lambda x: x * x<br>f<br>&lt;function <lambda> at 0x101c6ef28&gt;<br>f(5)<br>25<br>同样，也可以把匿名函数作为返回值返回，比如：</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>def build(x, y):<br>return lambda: x * x + y * y<br>6、装饰器<br>函数也是一个对象，而且函数对象可以被赋值给变量，所以，通过变量也能调用该函数</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>def now():<br>…     print(‘2035-3-25’)<br>…<br>f = now<br>f()<br>2035-3-25<br>函数对象有一个<strong>name</strong>属性，可以拿到函数的名字：</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>now.<strong>name</strong><br>‘now’<br>f.<strong>name</strong><br>‘now’<br>现在，假设我们要增强now()函数的功能，比如，在函数调用前后自动打印日志，但又不希望修改now()函数的定义，这种在代码运行期间动态增加功能的方式，称之为“装饰器”（Decorator）。<br>本质上，decorator就是一个返回函数的高阶函数。所以，我们要定义一个能打印日志的decorator，可以定义如下:</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>def log(func):<br>    def wrapper(<em>args, *</em>kw):<br>        print(‘call %s():’ % func.<strong>name</strong>)<br>        return func(<em>args, *</em>kw)<br>    return wrapper<br>观察上面的log，因为它是一个decorator，所以接受一个函数作为参数，并返回一个函数。我们要借助Python的@语法，把decorator置于函数的定义处：<br>@log<br>def now():<br>    print(‘2015-3-25’)<br>调用now()函数，不仅会运行now()函数本身，还会在运行now()函数前打印一行日志：<br>装饰器如果放在函数后面可不可以？</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>now()<br>call now():<br>2015-3-25<br>把@log放到now()函数的定义处，相当于执行了语句：</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>now = log(now)<br>由于log()是一个decorator，返回一个函数，所以，原来的now()函数仍然存在，只是现在同名的now变量指向了新的函数，于是调用now()将执行新函数，即在log()函数中返回的wrapper()函数。</p>
+<p>那为什么还会调用原来的函数呢？<br>wrapper()函数的参数定义是(<em>args, *</em>kw)，因此，wrapper()函数可以接受任意参数的调用。在wrapper()函数内，首先打印日志，再紧接着调用原始函数。</p>
+<p>如果decorator本身需要传入参数，那就需要编写一个返回decorator的高阶函数，写出来会更复杂。比如，要自定义log的文本：</p>
+<p>def log(text):<br>    def decorator(func):<br>        def wrapper(<em>args, *</em>kw):<br>            print(‘%s %s():’ % (text, func.<strong>name</strong>))<br>            return func(<em>args, *</em>kw)<br>        return wrapper<br>    return decorator<br>这个3层嵌套的decorator用法如下：</p>
+<p>@log(‘execute’)<br>def now():<br>    print(‘2015-3-25’)<br>执行结果如下：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>now()<br>execute now():<br>2015-3-25<br>和两层嵌套的decorator相比，3层嵌套的效果是这样的：</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>now = log(‘execute’)(now)<br>我们来剖析上面的语句，首先执行log(‘execute’)，返回的是decorator函数，再调用返回的函数，参数是now函数，返回值最终是wrapper函数。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>以上两种decorator的定义都没有问题，但还差最后一步。因为我们讲了函数也是对象，它有name等属性，但你去看经过decorator装饰之后的函数，它们的name已经从原来的’now’变成了’wrapper’：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>now.<strong>name</strong><br>‘wrapper’<br>因为返回的那个wrapper()函数名字就是’wrapper’，所以，需要把原始函数的<strong>name</strong>等属性复制到wrapper()函数中，否则，有些依赖函数签名的代码执行就会出错。<br>不需要编写wrapper.<strong>name</strong> = func.<strong>name</strong>这样的代码，Python内置的functools.wraps就是干这个事的，所以，一个完整的decorator的写法如下：</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>import functools</p>
+<p>def log(func):<br>    @functools.wraps(func)<br>    def wrapper(<em>args, *</em>kw):<br>        print(‘call %s():’ % func.<strong>name</strong>)<br>        return func(<em>args, *</em>kw)<br>    return wrapper<br>或者针对带参数的decorator：</p>
+<p>import functools</p>
+<p>def log(text):<br>    def decorator(func):<br>        @functools.wraps(func)<br>        def wrapper(<em>args, *</em>kw):<br>            print(‘%s %s():’ % (text, func.<strong>name</strong>))<br>            return func(<em>args, *</em>kw)<br>        return wrapper<br>    return decorator</p>
 ]]></content>
       <categories>
-        <category>大数据</category>
+        <category>python</category>
       </categories>
       <tags>
-        <tag>HIve</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
-    <title>网页基础</title>
-    <url>/%E7%BD%91%E9%A1%B5%E5%9F%BA%E7%A1%80.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h2 id="1-网页的组成"><a href="#1-网页的组成" class="headerlink" title="1. 网页的组成"></a>1. 网页的组成</h2><p>网页可以分为三大部分——HTML、CSS和JavaScript。如果把网页比作一个人的话，HTML相当于骨架，JavaScript相当于肌肉，CSS相当于皮肤，三者结合起来才能形成一个完善的网页。下面我们分别来介绍一下这三部分的功能。<br>(1) HTML<br>HTML是用来描述网页的一种语言，其全称叫作Hyper Text Markup Language，即超文本标记语言。网页包括文字、按钮、图片和视频等各种复杂的元素，其基础架构就是HTML。不同类型的文字通过不同类型的标签来表示，如图片用img标签表示，视频用video标签表示，段落用p标签表示，它们之间的布局又常通过布局标签div嵌套组合而成，各种标签通过不同的排列和嵌套才形成了网页的框架。<br>在Chrome浏览器中打开百度，右击并选择“检查”项（或按F12键），打开开发者模式，这时在Elements选项卡中即可看到网页的源代码，如图2-9所示。<br> <img src="/images/2020/07/05/eb2e6bab-77a3-435d-9a73-001dc077439a.png" alt="image.png">图2-9 源代码<br>这就是HTML，整个网页就是由各种标签嵌套组合而成的。这些标签定义的节点元素相互嵌套和组合形成了复杂的层次关系，就形成了网页的架构。<br>(2) CSS<br>HTML定义了网页的结构，但是只有HTML页面的布局并不美观，可能只是简单的节点元素的排列，为了让网页看起来更好看一些，这里借助了CSS。<br>CSS，全称叫作Cascading Style Sheets，即层叠样式表。“层叠”是指当在HTML中引用了数个样式文件，并且样式发生冲突时，浏览器能依据层叠顺序处理。“样式”指网页中文字大小、颜色、元素间距、排列等格式。<br>CSS是目前唯一的网页页面排版样式标准，有了它的帮助，页面才会变得更为美观。<br>图2-9的右侧即为CSS，例如：</p>
-<pre><code>#head_wrapper.s-ps-islite .s-p-top {
-position: absolute;
-bottom: 40px;
-width: 100%;
-height: 181px;}</code></pre><p>就是一个CSS样式。大括号前面是一个CSS选择器，此选择器的意思是首先选中id为head_wrapper且class为s-ps-islite的节点，然后再选中其内部的class为s-p-top的节点。大括号内部写的就是一条条样式规则，例如position指定了这个元素的布局方式为绝对布局，bottom指定元素的下边距为40像素，width指定了宽度为100%占满父元素，height则指定了元素的高度。也就是说，我们将位置、宽度、高度等样式配置统一写成这样的形式，然后用大括号括起来，接着在开头再加上CSS选择器，这就代表这个样式对CSS选择器选中的元素生效，元素就会根据此样式来展示了。<br>在网页中，一般会统一定义整个网页的样式规则，并写入CSS文件中（其后缀为css）。在HTML中，只需要用link标签即可引入写好的CSS文件，这样整个页面就会变得美观、优雅。<br>(3) JavaScript<br>JavaScript，简称JS，是一种脚本语言。HTML和CSS配合使用，提供给用户的只是一种静态信息，缺乏交互性。我们在网页里可能会看到一些交互和动画效果，如下载进度条、提示框、轮播图等，这通常就是JavaScript的功劳。它的出现使得用户与信息之间不只是一种浏览与显示的关系，而是实现了一种实时、动态、交互的页面功能。<br>JavaScript通常也是以单独的文件形式加载的，后缀为js，在HTML中通过script标签即可引入，例如：</p>
-<pre><code>&lt;script src=&quot;jquery-2.1.0.js&quot;&gt;&lt;/script&gt;</code></pre><p>综上所述，HTML定义了网页的内容和结构，CSS描述了网页的布局，JavaScript定义了网页的行为。</p>
-<h2 id="2-网页的结构"><a href="#2-网页的结构" class="headerlink" title="2. 网页的结构"></a>2. 网页的结构</h2><p>我们首先用例子来感受一下HTML的基本结构。新建一个文本文件，名称可以自取，后缀为html，内容如下：</p>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>This is a Demo</title>
-    <meta name="generator" content="Hexo 4.2.1"></head>
-    <body>
-        <div id="container">
-            <div class="wrapper">
-                <h2 class="title">Hello World</h2>
-                <p class="text">Hello, this is a paragraph.</p>
-            </div>
-        </div>
-    </body>
-</html>
-
-<p>这就是一个最简单的HTML实例。开头用DOCTYPE定义了文档类型，其次最外层是html标签，最后还有对应的结束标签来表示闭合，其内部是head标签和body标签，分别代表网页头和网页体，它们也需要结束标签。head标签内定义了一些页面的配置和引用，如：</p>
-<pre><code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code></pre><p>它指定了网页的编码为UTF-8。<br>title标签则定义了网页的标题，会显示在网页的选项卡中，不会显示在正文中。body标签内则是在网页正文中显示的内容。div标签定义了网页中的区块，它的id是container，这是一个非常常用的属性，且id的内容在网页中是唯一的，我们可以通过它来获取这个区块。然后在此区块内又有一个div标签，它的class为wrapper，这也是一个非常常用的属性，经常与CSS配合使用来设定样式。然后此区块内部又有一个h2标签，这代表一个二级标题。另外，还有一个p标签，这代表一个段落。在这两者中直接写入相应的内容即可在网页中呈现出来，它们也有各自的class属性。<br>将代码保存后，在浏览器中打开该文件，可以看到如图2-10所示的内容。<br> <img src="/images/2020/07/05/0f0f252b-4e61-4a92-be73-b14db897e7a4.png" alt="image.png">   图2-10 运行结果<br>可以看到，在选项卡上显示了This is a Demo字样，这是我们在head中的title里定义的文字。而网页正文是body标签内部定义的各个元素生成的，可以看到这里显示了二级标题和段落。<br>这个实例便是网页的一般结构。一个网页的标准形式是html标签内嵌套head和body标签，head内定义网页的配置和引用，body内定义网页的正文。</p>
-<h2 id="3-节点树及节点间的关系"><a href="#3-节点树及节点间的关系" class="headerlink" title="3. 节点树及节点间的关系"></a>3. 节点树及节点间的关系</h2><p>在HTML中，所有标签定义的内容都是节点，它们构成了一个HTML DOM树。<br>我们先看下什么是DOM，DOM是W3C（万维网联盟）的标准，其英文全称Document Object Model，即文档对象模型。它定义了访问HTML和XML文档的标准：<br>W3C文档对象模型（DOM）是中立于平台和语言的接口，它允许程序和脚本动态地访问和更新文档的内容、结构和样式。<br>W3C DOM标准被分为3个不同的部分。<br>•    核心DOM： 针对任何结构化文档的标准模型。<br>•    XML DOM：针对XML文档的标准模型。<br>•    HTML DOM：针对HTML文档的标准模型。<br>根据W3C的HTML DOM标准，HTML文档中的所有内容都是节点。<br>•    整个文档是一个文档节点；<br>•    每个HTML元素是元素节点；<br>•    HTML元素内的文本是文本节点；<br>•    每个HTML属性是属性节点；<br>•    注释是注释节点。<br>HTML DOM将HTML文档视作树结构，这种结构被称为节点树，如图2-11所示。<br><img src="/images/2020/07/05/b93058d4-c3ce-475c-91c2-ff3c37e04702.png" alt="image.png"> 图2-11 节点树<br>通过HTML DOM，树中的所有节点均可通过JavaScript访问，所有HTML节点元素均可被修改，也可以被创建或删除。<br>节点树中的节点彼此拥有层级关系。我们常用父（parent）、子（child）和兄弟（sibling）等术语描述这些关系。父节点拥有子节点，同级的子节点被称为兄弟节点。<br>在节点树中，顶端节点称为根（root）。除了根节点之外，每个节点都有父节点，同时可拥有任意数量的子节点或兄弟节点。图2-12展示了节点树以及节点之间的关系。<img src="/images/2020/07/05/cd6a66aa-25f6-47aa-aa7d-498ef629f263.png" alt="image.png"><br> 图2-12 节点树及节点间的关系<br>本段参考W3SCHOOL，链接：<a href="http://www.w3school.com.cn/htmldom/dom_nodes.asp。" target="_blank" rel="noopener">http://www.w3school.com.cn/htmldom/dom_nodes.asp。</a></p>
-<h2 id="4-选择器"><a href="#4-选择器" class="headerlink" title="4. 选择器"></a>4. 选择器</h2><p>我们知道网页由一个个节点组成，CSS选择器会根据不同的节点设置不同的样式规则，那么怎样来定位节点呢？<br>在CSS中，我们使用CSS选择器来定位节点。例如，上例中div节点的id为container，那么就可以表示为#container，其中#开头代表选择id，其后紧跟id的名称。另外，如果我们想选择class为wrapper的节点，便可以使用.wrapper，这里以点（.）开头代表选择class，其后紧跟class的名称。另外，还有一种选择方式，那就是根据标签名筛选，例如想选择二级标题，直接用h2即可。这是最常用的3种表示，分别是根据id、class、标签名筛选，请牢记它们的写法。<br>另外，CSS选择器还支持嵌套选择，各个选择器之间加上空格分隔开便可以代表嵌套关系，如#container .wrapper p则代表先选择id为container的节点，然后选中其内部的class为wrapper的节点，然后再进一步选中其内部的p节点。另外，如果不加空格，则代表并列关系，如div#container .wrapper p.text代表先选择id为container的div节点，然后选中其内部的class为wrapper的节点，再进一步选中其内部的class为text的p节点。这就是CSS选择器，其筛选功能还是非常强大的。<br>另外，CSS选择器还有一些其他语法规则，具体如表2-4所示。<br>表2-4 CSS选择器的其他语法规则<br><img src="/images/2020/07/05/8bf1bfc8-f09c-4e68-8bbf-2d1834b60323.png" alt="image.png"><br><img src="/images/2020/07/05/5545f3ee-025c-4211-a5f0-430207508533.png" alt="image.png"><br><img src="/images/2020/07/05/74d97db9-d198-4c8b-b0d8-1339287fe2ef.png" alt="image.png"><br><img src="/images/2020/07/05/20d2ccdb-41e5-48af-b32d-fc1529239b6c.png" alt="image.png"><br><img src="/images/2020/07/05/3bbc1032-ae0f-4b4c-bf4d-d402da270711.png" alt="image.png"><br>另外，还有一种比较常用的选择器是XPath，这种选择方式后面会详细介绍。</p>
+    <title>python四种验证码解决思路</title>
+    <url>/python%E5%9B%9B%E7%A7%8D%E9%AA%8C%E8%AF%81%E7%A0%81%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>1.输入式验证码<br>这种验证码主要是通过用户输入图片中的字母、数字、汉字等进行验证。如下图<br>   <img src="/images/2020/07/12/1da1261d-7475-4dc7-881e-5ec5e0c54c7a.png" alt="image.png">图1 <img src="/images/2020/07/12/0ab1686e-60ef-4c4d-a270-81f201490751.png" alt="image.png">图2</p>
+<p>解决思路：这种是最简单的一种，只要识别出里面的内容，然后填入到输入框中即可。这种识别技术叫OCR，这里我们推荐使用Python的第三方库，tesserocr。对于没有什么背影影响的验证码如图2，直接通过这个库来识别就可以。但是对于有嘈杂的背景的验证码这种，直接识别识别率会很低，遇到这种我们就得需要先处理一下图片，先对图片进行灰度化，然后再进行二值化，再去识别，这样识别率会大大提高。</p>
+<p>2.滑动式验证码<br>这种是将备选碎片直线滑动到正确的位置，如下图<br>  <img src="/images/2020/07/12/4d51b6de-7a6a-4c5b-ac9b-c7a3fe476435.png" alt="image.png">)<img src="/images/2020/07/12/356a818d-718f-4a6f-9576-ff91724f8c4c.png" alt="image.png"></p>
+<p>解决思路：对于这种验证码就比较复杂一点，但也是有相应的办法。我们直接想到的就是模拟人去拖动验证码的行为，点击按钮，然后看到了缺口  的位置，最后把拼图拖到缺口位置处完成验证。</p>
+<p>第一步：点击按钮。然后我们发现，在你没有点击按钮的时候那个缺口和拼图是没有出现的，点击后才出现，这为我们找到缺口的位置提供了灵感。</p>
+<p>第二步：拖到缺口位置。我们知道拼图应该拖到缺口处，但是这个距离如果用数值来表示？通过我们第一步观察到的现象，我们可以找到缺口的位置。这里我们可以比较两张图的像素，设置一个基准值，如果某个位置的差值超过了基准值，那我们就找到了这两张图片不一样的位置，当然我们是从那块拼图的右侧开始并且从左到右，找到第一个不一样的位置时就结束，这是的位置应该是缺口的left，所以我们使用selenium拖到这个位置即可。这里还有个疑问就是如何能自动的保存这两张图？这里我们可以先找到这个标签，然后获取它的location和size，然后 top，bottom，left，right = location[‘y’] ,location[‘y’]+size[‘height’]+ location[‘x’] + size[‘width’]  ,然后截图，最后抠图填入这四个位置就行。具体的使用可以查看selenium文档，点击按钮前抠张图，点击后再抠张图。最后拖动的时候要需要模拟人的行为，先加速然后减速。因为这种验证码有行为特征检测，人是不可能做到一直匀速的，否则它就判定为是机器在拖动，这样就无法通过验证了。</p>
+<p>3.点击式的图文验证 和  图标选择<br>图文验证：通过文字提醒用户点击图中相同字的位置进行验证。</p>
+<p>图标选择： 给出一组图片，按要求点击其中一张或者多张。借用万物识别的难度阻挡机器。</p>
+<p>这两种原理相似，只不过是一个是给出文字，点击图片中的文字，一个是给出图片，点出内容相同的图片。</p>
+<p>这两种没有特别好的方法，只能借助第三方识别接口来识别出相同的内容，推荐一个超级鹰，把验证码发过去，会返回相应的点击坐标。</p>
+<p>然后再使用selenium模拟点击即可。具体怎么获取图片和上面方法一样。</p>
+<p>4.宫格验证码</p>
+<p><img src="/images/2020/07/12/b3c00b2d-0545-4167-93f6-fc6272641263.png" alt="image.png"><br>这种就很棘手，每一次出现的都不一样，但是也会出现一样的。而且拖动顺序都不一样。</p>
+<p>但是我们发现不一样的验证码个数是有限的，这里采用模版匹配的方法。我觉得就好像暴力枚举，把所有出现的验证码保存下来，然后挑出不一样的验证码，按照拖动顺序命名，我们从左到右上下到下，设为1,2,3,4。上图的滑动顺序为4,3,2,1所以我们命名4_3_2_1.png，这里得手动搞。当验证码出现的时候，用我们保存的图片一一枚举，与出现这种比较像素，方法见上面。如果匹配上了，拖动顺序就为4,3,2,1。然后使用selenium模拟即可。</p>
+<p>python中的验证码识别库PyTesser</p>
 ]]></content>
       <categories>
-        <category>HTML</category>
+        <category>python</category>
       </categories>
       <tags>
-        <tag>网页</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>虚拟化VMware ESXi 6.7服务器与vCenter的安装与配置</title>
-    <url>/%E8%99%9A%E6%8B%9F%E5%8C%96VMware-ESXi-6-7%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8EvCenter%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h2 id="vSphere虚拟化架构"><a href="#vSphere虚拟化架构" class="headerlink" title="vSphere虚拟化架构"></a>vSphere虚拟化架构</h2><p>vSphere是VNware公司在2001年基于云计算推出的一套企业级虚拟化解决方案、核心组件为ESXi。如今，经历了5个版本的改进，已经实现了虚拟化基础架构、高可用性、集中管理、性能监控等一体化解决方案。</p>
-<p><a href="https://baike.baidu.com/item/vSphere" target="_blank" rel="noopener">🔗详情点击</a><br>安装步骤<br>首先打开VMware workstation软件创建新的虚拟机并且采用自定义安装</p>
-<p><img src="/images/2020/07/07/7bcaec75-a70d-4022-8dae-06470eea358e.png" alt="image.png">选择稍后安装一个操作系统</p>
-<p><img src="/images/2020/07/07/ba64b5a3-4c77-4dc0-a5b0-520fd5a019e3.png" alt="image.png"><br>选择操作系统，点击VMware ESX选择版本为VMware ESXI 6.x的那个版本<br><img src="/images/2020/07/07/52325d15-2bb8-4365-a243-bcf2a2c7e94b.png" alt="image.png"></p>
-<p>命名虚拟机名称并且选择虚拟机在自己电脑上的位置</p>
-<p><img src="/images/2020/07/07/4d9bfa35-0585-4084-bd18-8a1f6112f329.png" alt="image.png"></p>
-<p>选择处理器的配置，这里可以根据自己的需求选择</p>
-<p><img src="/images/2020/07/07/582516fd-62d2-4f34-930b-4affae4836bc.png" alt="image.png"></p>
-<p>选择网络类型，这里使用桥接网络</p>
-<p><img src="/images/2020/07/07/40f98f7d-5cb1-480c-990e-6fdf135422ad.png" alt="image.png"></p>
-<p>选择I/O控制器类型，选择为推荐的准虚拟化SCSI<br><img src="/images/2020/07/07/c1eca22a-0cc3-4174-affd-984f151bddd1.png" alt="image.png"></p>
-<p>选择虚拟磁盘类型为SCSI</p>
-<p><img src="/images/2020/07/07/c5389142-35cc-4c6c-a69b-51c5d63367b2.png" alt="image.png"></p>
-<p>选择创建新的虚拟磁盘</p>
-<p><img src="/images/2020/07/07/9640b004-2432-4158-a397-dec33ea63378.png" alt="image.png"></p>
-<p>指定虚拟磁盘的容量大小，在这分配200GB空间具体根据自己需求</p>
-<p><img src="/images/2020/07/07/13b1e0e0-15b4-4421-b092-1771ccd33db9.png" alt="image.png"></p>
-<p>先不要点击完成，因为ESXI的镜像还没有挂载，点击自定义硬件</p>
-<p><img src="/images/2020/07/07/9acb422c-bb75-4641-9cba-368d7d3b08b3.png" alt="image.png"></p>
-<p>选择挂载自己电脑上的ISO镜像文件</p>
-<p><img src="/images/2020/07/07/2f268ad5-32c3-4201-ab25-21d9ef1995b3.png" alt="image.png"></p>
-<p>选择完成后点击关闭然后再点击完成，然后打开虚拟机。会出现如下的界面</p>
-<p><img src="/images/2020/07/07/2721abcb-397e-4de2-a996-417821228115.png" alt="image.png"></p>
-<p>等待片刻，按回车键开始安装</p>
-<p><img src="/images/2020/07/07/684104e1-b05f-4598-9464-a5f5fe68eec8.png" alt="image.png"></p>
-<p>按F11键接受协议并继续</p>
-<p><img src="/images/2020/07/07/acd04bff-ce39-4224-b2c2-1fd8af495b0e.png" alt="image.png"></p>
-<p>选择安装的位置并按回车键继续安装</p>
-<p><img src="/images/2020/07/07/b4fef258-7294-423b-9c21-799f75910d8d.png" alt="image.png"></p>
-<p>选择键盘布局，这里选择使用默认.</p>
-<p><img src="/images/2020/07/07/ed2f25b5-61d0-4356-99d8-4d5e58406a6f.png" alt="image.png"></p>
-<p>为root用户创建密码，需要选择安全性较高的的数字字母字符组合来作为密码</p>
-<p><img src="/images/2020/07/07/0e84667b-7d98-416c-a5f6-5aa007215693.png" alt="image.png"></p>
-<p>按下F11键开始正式的安装</p>
-<p><img src="/images/2020/07/07/cc5559a3-0c8f-44ed-89ba-9d325796711b.png" alt="image.png"></p>
-<p>接下来会进入这个安装进度界面，</p>
-<p><img src="/images/2020/07/07/f93b1b24-bad1-4ee9-9fc8-281e35314a0a.png" alt="image.png"></p>
-<p>等待2-3分钟后，安装完成按回车键重启系统</p>
-<p><img src="/images/2020/07/07/ecf55256-b7fb-4dd9-91dd-a6a7b6be77fa.png" alt="image.png"></p>
-<p>重启完成后界面如下</p>
-<p><img src="/images/2020/07/07/dfd6d466-a9bf-47b3-9b89-aa2e43e81e13.png" alt="image.png"></p>
-<p>对系统进行配置，按F2键然后输入刚才创建的密码进入配置界面。</p>
-<p><img src="/images/2020/07/07/a1911cf5-a23e-4888-949c-fb69d27926c2.png" alt="image.png"></p>
-<p>Configure Managment Network来配置网络。配置静态IPV4地址</p>
-<p><img src="/images/2020/07/07/a2e19773-2470-4510-a3ad-9b8c668ad5b8.png" alt="image.png"></p>
-<p>配置DNS服务器地址</p>
-<p><img src="/images/2020/07/07/afe524fe-8c4d-4b29-a4c2-ee7b78c3fc92.png" alt="image.png"></p>
-<p>按ESC键离开，会提示下面这个界面按Y同意重启网络</p>
-<p><img src="/images/2020/07/07/ba6e1153-bf2a-43fc-9f3a-5b5c5715fd06.png" alt="image.png"></p>
-<p>Troubleshooting Options来开启SSH与Shell</p>
-<p><img src="/images/2020/07/07/e7bf600e-d87d-4925-9416-c9a2b87b4c88.png" alt="image.png"></p>
-<p>到此为止配置上基本完成了，下面在浏览器地址栏中输入刚才配置的IP地址192.168.1.103使用web界面对ESXI进行控制。使用root用户登录</p>
-<p><img src="/images/2020/07/07/805d2a5b-a964-414f-9ea9-a1bd16ea090a.png" alt="image.png"></p>
-<h2 id="vCenter"><a href="#vCenter" class="headerlink" title="vCenter"></a>vCenter</h2><p>Vcenter一般指 VMware vCenter™ Server<br>VMware vCenterServer 提供了一个可伸缩、可扩展的平台，为 虚拟化管理奠定了基础。 VMware vCenter Server（以前称为 VMware VirtualCenter），可集中管理 VMware vSphere 环境，与其他管理平台相比，极大地提高了 IT 管理员对虚拟环境的控制。<br>VMware vCenter Server：提高在虚拟基础架构每个级别上的集中控制和可见性，通过主动管理发挥 vSphere 潜能，是一个具有广泛合作伙伴体系支持的可伸缩、可扩展平台。</p>
-<p><a href="https://baike.baidu.com/item/vCenter" target="_blank" rel="noopener">🔗详情点击</a></p>
-<h2 id="安装vCenter"><a href="#安装vCenter" class="headerlink" title="安装vCenter"></a>安装vCenter</h2><p>vCenter主要有两种:一种是基于Windows的vCenter server它的功能和性能更强大！还有一种就是基于嵌入式linux的vCenter server appliance，使用小的虚拟化环境（主机小于50台，虚拟机少于1000个），使用这个部署起来更简单快捷。当然如果更大的虚拟化环境，就一定需要基于Windows的vCenter server了。随着版本的更迭，vmware去windows化越来越明显了，很多高级功能（跨集群迁移，vcsa ha等等）只有以vcsa方式部署才可能实现了，vcsa部署维护都要比传统windows+vCenterServer+MySQL方便，就是web管理界面还是不如原来的vsphere client好用。</p>
-<p><img src="/images/2020/07/07/94d52b8e-3461-48f4-b2eb-55904c4bcb07.png" alt="image.png"></p>
-<p>安装vCenter server appliance<br>在Windows上装载镜像</p>
-<p><img src="/images/2020/07/07/6802d789-1363-4e95-bbc0-50ce42e61865.png" alt="image.png">vcenter</p>
-<p>然后打开vcsa-ui-installer那个文件夹，在打开下面的那个win32目录，双击installer.exe即可开始安装。</p>
-<p><img src="/images/2020/07/07/09f8bcee-c68a-4ccf-84fd-5044d88f44e1.png" alt="image.png"></p>
-<p>安装分为两个阶段</p>
-<p><img src="/images/2020/07/07/37a72090-47e6-4105-a532-033f3f918931.png" alt="image.png"></p>
-<p>勾选“我接受许可协议条款”</p>
-<p><img src="/images/2020/07/07/8675eb99-4a6b-40c9-ba2d-c3d772a0c3bf.png" alt="image.png"></p>
-<p>选择嵌入式 Platform Services Controller</p>
-<p><img src="/images/2020/07/07/de346651-a018-40c6-becb-e9fa0c4cd9d6.png" alt="image.png"></p>
-<p>指定VCSA 6.7部署到ESXi主机或vCenter Server</p>
-<p><img src="/images/2020/07/07/b5aa3d3f-f48e-4dd7-add0-3ca5526442c2.png" alt="image.png"></p>
-<p>会出现警告直接点是即可，下面配置VCSA 6.7虚拟机名称以及root密码。</p>
-<p><img src="/images/2020/07/07/d80444a6-392b-4d2f-9494-22cbfc09f861.png" alt="image.png"></p>
-<p>选择部署大小</p>
-<p><img src="/images/2020/07/07/982b0164-426e-41ce-9c30-f3d53d4e5611.png" alt="image.png"></p>
-<p>选择VCSA 6.7虚拟机存储<br><img src="/images/2020/07/07/23af1a0c-f0f9-4691-8588-f992f7ddfa27.png" alt="image.png"></p>
-<p>之前的设置部署大小为300GB，可是由于自己电脑没有那么大的存储空间23333。只好这样先装了</p>
-<p>配置VCSA 6.7虚拟机网络</p>
-<p><img src="/images/2020/07/07/5b2ed2da-a716-40ff-af8d-a8d10d689648.png" alt="image.png"></p>
-<p>确认第1阶段参数<br><img src="/images/2020/07/07/24db6c5c-6722-4993-a53c-81b785c5e1c0.png" alt="image.png"></p>
-<p>开始第一阶段部署，部署的时间取决于物理服务器性能</p>
-<p><img src="/images/2020/07/07/bece36f1-bc18-47dc-8405-53040e150d31.png" alt="image.png"></p>
-<p>第一阶段完成，开始第二阶段</p>
-<p><img src="/images/2020/07/07/b5a19232-1905-483a-a025-774640aabf5c.png" alt="image.png">)<img src="/images/2020/07/07/b1a61faa-02c6-4dcf-98e0-914eb7b7b8c2.png" alt="image.png"></p>
-<p>配置系统时间</p>
-<p><img src="/images/2020/07/07/887f5517-f9ab-438a-864e-dd3a25df5a60.png" alt="image.png"></p>
-<p>这里选择跟ESXI主机同步。当然也可以选择和NTP服务器时间相同。根据自己需求选择是否启用SSH</p>
-<p>SSO配置</p>
-<p><img src="/images/2020/07/07/70404f34-797b-40e8-bcf5-0eb919ae80f9.png" alt="image.png"></p>
-<p>确认是否加入CEIP</p>
-<p><img src="/images/2020/07/07/8ef42ed4-fe92-46f9-b779-d664d390fddc.png" alt="image.png"></p>
-<p>确认参数</p>
-<p><img src="/images/2020/07/07/dc757e61-bf85-4c8d-86c3-8b747756bbca.png" alt="image.png"></p>
-<p>点击确定开始第二阶段部署</p>
-<p><img src="/images/2020/07/07/3d2e2f64-798e-49de-a438-10300e20e5e0.png" alt="image.png"></p>
-<p>开始部署</p>
-<p><img src="/images/2020/07/07/c8b3f7ee-4f93-4767-bbe7-9dc1a9769cd9.png" alt="image.png"></p>
-<p>安装完成</p>
-<p><img src="/images/2020/07/07/2b9c0c64-3393-4a03-8698-251a490b39df.png" alt="image.png"></p>
-<p>打开VCSA 6.7控制台界面</p>
-<p><img src="/images/2020/07/07/fc431e8c-134e-4c80-815e-11947dc87f21.png" alt="image.png"></p>
-<p>在浏览器中输入VCSA 6.7的IP地址进行访问，VCSA 6.7提供H5以及FLASH两个选择，从初步使用看，H5功能比VCSA 6.5得到增强</p>
-<p><img src="/images/2020/07/07/60dabf12-51c5-482b-bada-a28431efe7e8.png" alt="image.png"></p>
-<p>输入SSO登录</p>
-<p><img src="/images/2020/07/07/f1bf8161-91af-49c5-bcbc-38266e4e0da8.png" alt="image.png"></p>
-<p>VCSA 6.7 登录成功后界面如下</p>
-<p><img src="/images/2020/07/07/e6ee7699-a220-4c5c-b623-f908d886cb41.png" alt="image.png"></p>
-<p>访问VMware vCenter Server Appliance Web</p>
-<p><img src="/images/2020/07/07/b6aca240-9f68-458e-af9a-152944842c58.png" alt="image.png"><br><img src="/images/2020/07/07/bacd3236-4d20-49ee-9626-92d3659a8197.png" alt="image.png"></p>
-<h3 id="安装vCenter-server"><a href="#安装vCenter-server" class="headerlink" title="安装vCenter server"></a>安装vCenter server</h3><p>当镜像挂载之后打开安装程序<br><img src="/images/2020/07/07/db865e34-e4f3-4f69-84fa-e8c2b4c58b9a.png" alt="image.png"></p>
-<p>点击下一步继续安装<br><img src="/images/2020/07/07/e84fd03e-7965-4c54-b490-4a93597c3554.png" alt="image.png"></p>
-<p>选择接受许可协议条款</p>
-<p><img src="/images/2020/07/07/31fdd3d2-80cb-460a-92d4-3e41f898555a.png" alt="image.png"></p>
-<p>选择部署类型，在这先暂时选择嵌入式部署。在以后会对外部部署进行安装。</p>
-<p><img src="/images/2020/07/07/1883039b-fa49-4e1a-a0a5-de6570885525.png" alt="image.png"></p>
-<p>配置系统网络名称，输入windows server的IP地址</p>
-<p><img src="/images/2020/07/07/8a5cdc57-002d-4176-8c27-831431c6133c.png" alt="image.png"></p>
-<p>vCenter Single Sign-On 配置</p>
-<p><img src="/images/2020/07/07/686dd69f-b8a6-44c2-966e-b786055f1183.png" alt="image.png"></p>
-<p>选择vCenter Server服务账户</p>
-<p><img src="/images/2020/07/07/2ebc8f5a-de2e-4816-b0bf-a6cf3b344d21.png" alt="image.png"></p>
-<p>数据库设置，选择嵌入式数据库</p>
-<p><img src="/images/2020/07/07/36a4cd7e-234e-4925-8bd7-0cfd71769622.png" alt="image.png"></p>
-<p>配置端口</p>
-<p><img src="/images/2020/07/07/8e9f85b8-43ff-4a41-9a1b-b4e15402d5fa.png" alt="image.png"></p>
-<p>选择安装目录</p>
-<p><img src="/images/2020/07/07/508f6244-b468-418a-9c95-742d4abbbc22.png" alt="image.png"></p>
-<p>加入客户体验提升计划</p>
-<p><img src="/images/2020/07/07/19c6e02f-679e-4cab-baa9-f807bdb4da78.png" alt="image.png"></p>
-<p>点击完成开始安装<br><img src="/images/2020/07/07/2084f5c3-1edf-4a35-8c5e-e52fe501833d.png" alt="image.png"></p>
-<p>安装过程时间根据机器性能决定，大概10分钟左右</p>
-<p><img src="/images/2020/07/07/1f1c81e6-2e97-476f-89c0-0b93723ceca4.png" alt="image.png"></p>
-<p>安装完成</p>
-<p><img src="/images/2020/07/07/87be7579-5906-4db4-b081-6576152bcfc1.png" alt="image.png"></p>
-<p>在客户机访问vSphere Web Client</p>
-<p><img src="/images/2020/07/07/f12110f1-5829-4eb9-9aab-720145a342f1.png" alt="image.png"></p>
-<p>输入刚才设置的账号密码，然后登录成功</p>
-<p><img src="/images/2020/07/07/7087312b-e0be-458a-8785-04dae733ff83.png" alt="image.png"></p>
-]]></content>
-      <categories>
-        <category>虚拟化</category>
-      </categories>
-      <tags>
-        <tag>虚拟化</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -666,6 +678,239 @@ else:
       </tags>
   </entry>
   <entry>
+    <title>元数据库安装配置</title>
+    <url>/%E5%85%83%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h1 id="1、下载Mysql-yum-仓库"><a href="#1、下载Mysql-yum-仓库" class="headerlink" title="1、下载Mysql yum 仓库"></a>1、下载Mysql yum 仓库</h1><p><img src="/images/2020/07/04/2f5b1866-edd9-4e32-bff4-8d5464bf4a97.png" alt="image.png"></p>
+<h1 id="2、添加Mysql-yum-仓库"><a href="#2、添加Mysql-yum-仓库" class="headerlink" title="2、添加Mysql yum 仓库"></a>2、添加Mysql yum 仓库</h1><p><img src="/images/2020/07/04/e5596132-16ce-4edc-a81a-dae6715c3173.png" alt="image.png"></p>
+<h1 id="3、让安装包可用"><a href="#3、让安装包可用" class="headerlink" title="3、让安装包可用"></a>3、让安装包可用</h1><p><img src="/images/2020/07/04/466e06c3-1fba-4786-b8b6-1179ca7db91d.png" alt="image.png"></p>
+<h1 id="4、安装Mysql"><a href="#4、安装Mysql" class="headerlink" title="4、安装Mysql"></a>4、安装Mysql</h1><p><img src="/images/2020/07/04/5cd8776c-1cd8-413a-bacf-138f85b63c91.png" alt="image.png"></p>
+<h1 id="5、启动Mysql服务"><a href="#5、启动Mysql服务" class="headerlink" title="5、启动Mysql服务"></a>5、启动Mysql服务</h1><p><img src="/images/2020/07/04/4e17769e-f249-4501-94ff-534e2319ed57.png" alt="image.png"></p>
+<h1 id="6、修改Mysql数据库"><a href="#6、修改Mysql数据库" class="headerlink" title="6、修改Mysql数据库"></a>6、修改Mysql数据库</h1><p><img src="/images/2020/07/04/f3ceef96-7015-4999-8f5e-0a66d4195f01.png" alt="image.png"></p>
+<h1 id="7、设置数据库访问权限"><a href="#7、设置数据库访问权限" class="headerlink" title="7、设置数据库访问权限"></a>7、设置数据库访问权限</h1><p><img src="/images/2020/07/04/c33b7323-7b83-4ac2-af77-c285cab2d029.png" alt="image.png"><br><img src="/images/2020/07/04/980eddfc-3321-48e2-a33e-6bf0ad381013.png" alt="image.png"></p>
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>HIve</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>最强下载神器IDM</title>
+    <url>/%E6%9C%80%E5%BC%BA%E4%B8%8B%E8%BD%BD%E7%A5%9E%E5%99%A8IDM.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>Internet Download Manager，简称 IDM，是国外的一款优秀下载工具。目前凭借着下载计算的速度优势在外媒网站中均受好评，现在已被多数国人熟知。Internet Download Manager 提升你的下载速度最多达5倍，安排下载时程，带有续传功能，可以恢复因为断线、网络问题、计算机当机甚至无预警的停电导致下传到一半的资料。国外的Internet Download Manager简称IDM是一款下载利器，不限速，界面简洁好看，还能自动识别网页视频，无多余菜单弹窗!并且支持IE，Firefox，Chrome等浏览器。<br>IDM具有动态文件分割、多重下载点技术，而且它会重复使用现有的联机，而不需再重新联机登入一遍。智能in-speed技术会动态地将所有设定应用到某种联机类型，以充分利用下载速度。IDM支持下载队列、防火墙、代理服务器和映摄服务器、重新导向、cookies、需要验证的目录，以及各种不同的服务器平台，它紧密地与Internet Explorer和Netscape Communicator结合，自动地处理你的下载需求。此外，IDM还具有下载逻辑最佳化功能、检查病毒，以及多种偏好设定。</p>
+<h2 id="安装方法："><a href="#安装方法：" class="headerlink" title="安装方法："></a>安装方法：</h2><p>下载后解压&gt;找到!绿化卸载.bat&gt;右键以管理员身份运行。<br><img src="/images/2020/07/06/c308e0eb-9028-44a9-a29f-75c3d655b29b.png" alt="image.png"><br>输入1,回车确定安装。<br><img src="/images/2020/07/06/b22014f1-eca2-455f-9453-7b1b75de180a.png" alt="image.png"><br>强烈建议创建快捷方式。<br><img src="/images/2020/07/06/c769bb97-c8c1-4c03-b5b3-3539988b0b68.png" alt="image.png"><br>主界面就是这个样子了，还算简洁，最起码没广告。<br><img src="/images/2020/07/06/e072019d-34b3-4f6f-aeca-80fdf540613e.png" alt="image.png"><br>下面是个人推荐下载地址：<a href="http://soft.ucbug.com/uploads/soft/linshi/wlrj/ucbug.com-idm.rar" target="_blank" rel="noopener">idm下载</a></p>
+]]></content>
+      <categories>
+        <category>插件</category>
+      </categories>
+      <tags>
+        <tag>IDM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>爬虫基本原理</title>
+    <url>/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>我们可以把互联网比作一张大网，而爬虫（即网络爬虫）便是在网上爬行的蜘蛛。把网的节点比作一个个网页，爬虫爬到这就相当于访问了该页面，获取了其信息。可以把节点间的连线比作网页与网页之间的链接关系，这样蜘蛛通过一个节点后，可以顺着节点连线继续爬行到达下一个节点，即通过一个网页继续获取后续的网页，这样整个网的节点便可以被蜘蛛全部爬行到，网站的数据就可以被抓取下来了。</p>
+<h2 id="1-爬虫概述"><a href="#1-爬虫概述" class="headerlink" title="1. 爬虫概述"></a>1. 爬虫概述</h2><p>简单来说，爬虫就是获取网页并提取和保存信息的自动化程序，下面概要介绍一下。<br>(1) 获取网页<br>爬虫首先要做的工作就是获取网页，这里就是获取网页的源代码。源代码里包含了网页的部分有用信息，所以只要把源代码获取下来，就可以从中提取想要的信息了。<br>前面讲了请求和响应的概念，向网站的服务器发送一个请求，返回的响应体便是网页源代码。所以，最关键的部分就是构造一个请求并发送给服务器，然后接收到响应并将其解析出来，那么这个流程怎样实现呢？总不能手工去截取网页源码吧？<br>不用担心，Python提供了许多库来帮助我们实现这个操作，如urllib、requests等。我们可以用这些库来帮助我们实现HTTP请求操作，请求和响应都可以用类库提供的数据结构来表示，得到响应之后只需要解析数据结构中的Body部分即可，即得到网页的源代码，这样我们可以用程序来实现获取网页的过程了。<br>(2) 提取信息<br>获取网页源代码后，接下来就是分析网页源代码，从中提取我们想要的数据。首先，最通用的方法便是采用正则表达式提取，这是一个万能的方法，但是在构造正则表达式时比较复杂且容易出错。<br>另外，由于网页的结构有一定的规则，所以还有一些根据网页节点属性、CSS选择器或XPath来提取网页信息的库，如Beautiful Soup、pyquery、lxml等。使用这些库，我们可以高效快速地从中提取网页信息，如节点的属性、文本值等。<br>提取信息是爬虫非常重要的部分，它可以使杂乱的数据变得条理清晰，以便我们后续处理和分析数据。<br>(3) 保存数据<br>提取信息后，我们一般会将提取到的数据保存到某处以便后续使用。这里保存形式有多种多样，如可以简单保存为TXT文本或JSON文本，也可以保存到数据库，如MySQL和MongoDB等，也可保存至远程服务器，如借助SFTP进行操作等。<br>(4) 自动化程序<br>说到自动化程序，意思是说爬虫可以代替人来完成这些操作。首先，我们手工当然可以提取这些信息，但是当量特别大或者想快速获取大量数据的话，肯定还是要借助程序。爬虫就是代替我们来完成这份爬取工作的自动化程序，它可以在抓取过程中进行各种异常处理、错误重试等操作，确保爬取持续高效地运行。</p>
+<h2 id="2-能抓怎样的数据"><a href="#2-能抓怎样的数据" class="headerlink" title="2. 能抓怎样的数据"></a>2. 能抓怎样的数据</h2><p>在网页中我们能看到各种各样的信息，最常见的便是常规网页，它们对应着HTML代码，而最常抓取的便是HTML源代码。<br>另外，可能有些网页返回的不是HTML代码，而是一个JSON字符串（其中API接口大多采用这样的形式），这种格式的数据方便传输和解析，它们同样可以抓取，而且数据提取更加方便。<br>此外，我们还可以看到各种二进制数据，如图片、视频和音频等。利用爬虫，我们可以将这些二进制数据抓取下来，然后保存成对应的文件名。<br>另外，还可以看到各种扩展名的文件，如CSS、JavaScript和配置文件等，这些其实也是最普通的文件，只要在浏览器里面可以访问到，就可以将其抓取下来。<br>上述内容其实都对应各自的URL，是基于HTTP或HTTPS协议的，只要是这种数据，爬虫都可以抓取。</p>
+<h2 id="3-JavaScript渲染页面"><a href="#3-JavaScript渲染页面" class="headerlink" title="3. JavaScript渲染页面"></a>3. JavaScript渲染页面</h2><p>有时候，我们在用urllib或requests抓取网页时，得到的源代码实际和浏览器中看到的不一样。<br>这是一个非常常见的问题。现在网页越来越多地采用Ajax、前端模块化工具来构建，整个网页可能都是由JavaScript渲染出来的，也就是说原始的HTML代码就是一个空壳，例如：<br> <figure class="highlight plain"><figcaption><span>html></span></figcaption><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">   &lt;head&gt;</span><br><span class="line">         &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">         &lt;title&gt;This is a Demo&lt;&#x2F;title&gt;</span><br><span class="line">     &lt;&#x2F;head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">         &lt;div id&#x3D;&quot;container&quot;&gt;</span><br><span class="line">       &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;body&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;app.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>body节点里面只有一个id为container的节点，但是需要注意在body节点后引入了app.js，它便负责整个网站的渲染。<br>在浏览器中打开这个页面时，首先会加载这个HTML内容，接着浏览器会发现其中引入了一个app.js文件，然后便会接着去请求这个文件，获取到该文件后，便会执行其中的JavaScript代码，而JavaScript则会改变HTML中的节点，向其添加内容，最后得到完整的页面。<br>但是在用urllib或requests等库请求当前页面时，我们得到的只是这个HTML代码，它不会帮助我们去继续加载这个JavaScript文件，这样也就看不到浏览器中的内容了。<br>这也解释了为什么有时我们得到的源代码和浏览器中看到的不一样。<br>因此，使用基本HTTP请求库得到的源代码可能跟浏览器中的页面源代码不太一样。对于这样的情况，我们可以分析其后台Ajax接口，也可使用Selenium、Splash这样的库来实现模拟JavaScript渲染。<br>后面，我们会详细介绍如何采集JavaScript渲染的网页。</p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>网页基础</title>
+    <url>/%E7%BD%91%E9%A1%B5%E5%9F%BA%E7%A1%80.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h2 id="1-网页的组成"><a href="#1-网页的组成" class="headerlink" title="1. 网页的组成"></a>1. 网页的组成</h2><p>网页可以分为三大部分——HTML、CSS和JavaScript。如果把网页比作一个人的话，HTML相当于骨架，JavaScript相当于肌肉，CSS相当于皮肤，三者结合起来才能形成一个完善的网页。下面我们分别来介绍一下这三部分的功能。<br>(1) HTML<br>HTML是用来描述网页的一种语言，其全称叫作Hyper Text Markup Language，即超文本标记语言。网页包括文字、按钮、图片和视频等各种复杂的元素，其基础架构就是HTML。不同类型的文字通过不同类型的标签来表示，如图片用img标签表示，视频用video标签表示，段落用p标签表示，它们之间的布局又常通过布局标签div嵌套组合而成，各种标签通过不同的排列和嵌套才形成了网页的框架。<br>在Chrome浏览器中打开百度，右击并选择“检查”项（或按F12键），打开开发者模式，这时在Elements选项卡中即可看到网页的源代码，如图2-9所示。<br> <img src="/images/2020/07/05/eb2e6bab-77a3-435d-9a73-001dc077439a.png" alt="image.png">图2-9 源代码<br>这就是HTML，整个网页就是由各种标签嵌套组合而成的。这些标签定义的节点元素相互嵌套和组合形成了复杂的层次关系，就形成了网页的架构。<br>(2) CSS<br>HTML定义了网页的结构，但是只有HTML页面的布局并不美观，可能只是简单的节点元素的排列，为了让网页看起来更好看一些，这里借助了CSS。<br>CSS，全称叫作Cascading Style Sheets，即层叠样式表。“层叠”是指当在HTML中引用了数个样式文件，并且样式发生冲突时，浏览器能依据层叠顺序处理。“样式”指网页中文字大小、颜色、元素间距、排列等格式。<br>CSS是目前唯一的网页页面排版样式标准，有了它的帮助，页面才会变得更为美观。<br>图2-9的右侧即为CSS，例如：</p>
+<pre><code>#head_wrapper.s-ps-islite .s-p-top {
+position: absolute;
+bottom: 40px;
+width: 100%;
+height: 181px;}</code></pre><p>就是一个CSS样式。大括号前面是一个CSS选择器，此选择器的意思是首先选中id为head_wrapper且class为s-ps-islite的节点，然后再选中其内部的class为s-p-top的节点。大括号内部写的就是一条条样式规则，例如position指定了这个元素的布局方式为绝对布局，bottom指定元素的下边距为40像素，width指定了宽度为100%占满父元素，height则指定了元素的高度。也就是说，我们将位置、宽度、高度等样式配置统一写成这样的形式，然后用大括号括起来，接着在开头再加上CSS选择器，这就代表这个样式对CSS选择器选中的元素生效，元素就会根据此样式来展示了。<br>在网页中，一般会统一定义整个网页的样式规则，并写入CSS文件中（其后缀为css）。在HTML中，只需要用link标签即可引入写好的CSS文件，这样整个页面就会变得美观、优雅。<br>(3) JavaScript<br>JavaScript，简称JS，是一种脚本语言。HTML和CSS配合使用，提供给用户的只是一种静态信息，缺乏交互性。我们在网页里可能会看到一些交互和动画效果，如下载进度条、提示框、轮播图等，这通常就是JavaScript的功劳。它的出现使得用户与信息之间不只是一种浏览与显示的关系，而是实现了一种实时、动态、交互的页面功能。<br>JavaScript通常也是以单独的文件形式加载的，后缀为js，在HTML中通过script标签即可引入，例如：</p>
+<pre><code>&lt;script src=&quot;jquery-2.1.0.js&quot;&gt;&lt;/script&gt;</code></pre><p>综上所述，HTML定义了网页的内容和结构，CSS描述了网页的布局，JavaScript定义了网页的行为。</p>
+<h2 id="2-网页的结构"><a href="#2-网页的结构" class="headerlink" title="2. 网页的结构"></a>2. 网页的结构</h2><p>我们首先用例子来感受一下HTML的基本结构。新建一个文本文件，名称可以自取，后缀为html，内容如下：</p>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>This is a Demo</title>
+    <meta name="generator" content="Hexo 4.2.1"></head>
+    <body>
+        <div id="container">
+            <div class="wrapper">
+                <h2 class="title">Hello World</h2>
+                <p class="text">Hello, this is a paragraph.</p>
+            </div>
+        </div>
+    </body>
+</html>
+
+<p>这就是一个最简单的HTML实例。开头用DOCTYPE定义了文档类型，其次最外层是html标签，最后还有对应的结束标签来表示闭合，其内部是head标签和body标签，分别代表网页头和网页体，它们也需要结束标签。head标签内定义了一些页面的配置和引用，如：</p>
+<pre><code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code></pre><p>它指定了网页的编码为UTF-8。<br>title标签则定义了网页的标题，会显示在网页的选项卡中，不会显示在正文中。body标签内则是在网页正文中显示的内容。div标签定义了网页中的区块，它的id是container，这是一个非常常用的属性，且id的内容在网页中是唯一的，我们可以通过它来获取这个区块。然后在此区块内又有一个div标签，它的class为wrapper，这也是一个非常常用的属性，经常与CSS配合使用来设定样式。然后此区块内部又有一个h2标签，这代表一个二级标题。另外，还有一个p标签，这代表一个段落。在这两者中直接写入相应的内容即可在网页中呈现出来，它们也有各自的class属性。<br>将代码保存后，在浏览器中打开该文件，可以看到如图2-10所示的内容。<br> <img src="/images/2020/07/05/0f0f252b-4e61-4a92-be73-b14db897e7a4.png" alt="image.png">   图2-10 运行结果<br>可以看到，在选项卡上显示了This is a Demo字样，这是我们在head中的title里定义的文字。而网页正文是body标签内部定义的各个元素生成的，可以看到这里显示了二级标题和段落。<br>这个实例便是网页的一般结构。一个网页的标准形式是html标签内嵌套head和body标签，head内定义网页的配置和引用，body内定义网页的正文。</p>
+<h2 id="3-节点树及节点间的关系"><a href="#3-节点树及节点间的关系" class="headerlink" title="3. 节点树及节点间的关系"></a>3. 节点树及节点间的关系</h2><p>在HTML中，所有标签定义的内容都是节点，它们构成了一个HTML DOM树。<br>我们先看下什么是DOM，DOM是W3C（万维网联盟）的标准，其英文全称Document Object Model，即文档对象模型。它定义了访问HTML和XML文档的标准：<br>W3C文档对象模型（DOM）是中立于平台和语言的接口，它允许程序和脚本动态地访问和更新文档的内容、结构和样式。<br>W3C DOM标准被分为3个不同的部分。<br>•    核心DOM： 针对任何结构化文档的标准模型。<br>•    XML DOM：针对XML文档的标准模型。<br>•    HTML DOM：针对HTML文档的标准模型。<br>根据W3C的HTML DOM标准，HTML文档中的所有内容都是节点。<br>•    整个文档是一个文档节点；<br>•    每个HTML元素是元素节点；<br>•    HTML元素内的文本是文本节点；<br>•    每个HTML属性是属性节点；<br>•    注释是注释节点。<br>HTML DOM将HTML文档视作树结构，这种结构被称为节点树，如图2-11所示。<br><img src="/images/2020/07/05/b93058d4-c3ce-475c-91c2-ff3c37e04702.png" alt="image.png"> 图2-11 节点树<br>通过HTML DOM，树中的所有节点均可通过JavaScript访问，所有HTML节点元素均可被修改，也可以被创建或删除。<br>节点树中的节点彼此拥有层级关系。我们常用父（parent）、子（child）和兄弟（sibling）等术语描述这些关系。父节点拥有子节点，同级的子节点被称为兄弟节点。<br>在节点树中，顶端节点称为根（root）。除了根节点之外，每个节点都有父节点，同时可拥有任意数量的子节点或兄弟节点。图2-12展示了节点树以及节点之间的关系。<img src="/images/2020/07/05/cd6a66aa-25f6-47aa-aa7d-498ef629f263.png" alt="image.png"><br> 图2-12 节点树及节点间的关系<br>本段参考W3SCHOOL，链接：<a href="http://www.w3school.com.cn/htmldom/dom_nodes.asp。" target="_blank" rel="noopener">http://www.w3school.com.cn/htmldom/dom_nodes.asp。</a></p>
+<h2 id="4-选择器"><a href="#4-选择器" class="headerlink" title="4. 选择器"></a>4. 选择器</h2><p>我们知道网页由一个个节点组成，CSS选择器会根据不同的节点设置不同的样式规则，那么怎样来定位节点呢？<br>在CSS中，我们使用CSS选择器来定位节点。例如，上例中div节点的id为container，那么就可以表示为#container，其中#开头代表选择id，其后紧跟id的名称。另外，如果我们想选择class为wrapper的节点，便可以使用.wrapper，这里以点（.）开头代表选择class，其后紧跟class的名称。另外，还有一种选择方式，那就是根据标签名筛选，例如想选择二级标题，直接用h2即可。这是最常用的3种表示，分别是根据id、class、标签名筛选，请牢记它们的写法。<br>另外，CSS选择器还支持嵌套选择，各个选择器之间加上空格分隔开便可以代表嵌套关系，如#container .wrapper p则代表先选择id为container的节点，然后选中其内部的class为wrapper的节点，然后再进一步选中其内部的p节点。另外，如果不加空格，则代表并列关系，如div#container .wrapper p.text代表先选择id为container的div节点，然后选中其内部的class为wrapper的节点，再进一步选中其内部的class为text的p节点。这就是CSS选择器，其筛选功能还是非常强大的。<br>另外，CSS选择器还有一些其他语法规则，具体如表2-4所示。<br>表2-4 CSS选择器的其他语法规则<br><img src="/images/2020/07/05/8bf1bfc8-f09c-4e68-8bbf-2d1834b60323.png" alt="image.png"><br><img src="/images/2020/07/05/5545f3ee-025c-4211-a5f0-430207508533.png" alt="image.png"><br><img src="/images/2020/07/05/74d97db9-d198-4c8b-b0d8-1339287fe2ef.png" alt="image.png"><br><img src="/images/2020/07/05/20d2ccdb-41e5-48af-b32d-fc1529239b6c.png" alt="image.png"><br><img src="/images/2020/07/05/3bbc1032-ae0f-4b4c-bf4d-d402da270711.png" alt="image.png"><br>另外，还有一种比较常用的选择器是XPath，这种选择方式后面会详细介绍。</p>
+]]></content>
+      <categories>
+        <category>HTML</category>
+      </categories>
+      <tags>
+        <tag>网页</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>虚拟化VMware ESXi 6.7服务器与vCenter的安装与配置</title>
+    <url>/%E8%99%9A%E6%8B%9F%E5%8C%96VMware-ESXi-6-7%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8EvCenter%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h2 id="vSphere虚拟化架构"><a href="#vSphere虚拟化架构" class="headerlink" title="vSphere虚拟化架构"></a>vSphere虚拟化架构</h2><p>vSphere是VNware公司在2001年基于云计算推出的一套企业级虚拟化解决方案、核心组件为ESXi。如今，经历了5个版本的改进，已经实现了虚拟化基础架构、高可用性、集中管理、性能监控等一体化解决方案。</p>
+<p><a href="https://baike.baidu.com/item/vSphere" target="_blank" rel="noopener">🔗详情点击</a><br>安装步骤<br>首先打开VMware workstation软件创建新的虚拟机并且采用自定义安装</p>
+<p><img src="/images/2020/07/07/7bcaec75-a70d-4022-8dae-06470eea358e.png" alt="image.png">选择稍后安装一个操作系统</p>
+<p><img src="/images/2020/07/07/ba64b5a3-4c77-4dc0-a5b0-520fd5a019e3.png" alt="image.png"><br>选择操作系统，点击VMware ESX选择版本为VMware ESXI 6.x的那个版本<br><img src="/images/2020/07/07/52325d15-2bb8-4365-a243-bcf2a2c7e94b.png" alt="image.png"></p>
+<p>命名虚拟机名称并且选择虚拟机在自己电脑上的位置</p>
+<p><img src="/images/2020/07/07/4d9bfa35-0585-4084-bd18-8a1f6112f329.png" alt="image.png"></p>
+<p>选择处理器的配置，这里可以根据自己的需求选择</p>
+<p><img src="/images/2020/07/07/582516fd-62d2-4f34-930b-4affae4836bc.png" alt="image.png"></p>
+<p>选择网络类型，这里使用桥接网络</p>
+<p><img src="/images/2020/07/07/40f98f7d-5cb1-480c-990e-6fdf135422ad.png" alt="image.png"></p>
+<p>选择I/O控制器类型，选择为推荐的准虚拟化SCSI<br><img src="/images/2020/07/07/c1eca22a-0cc3-4174-affd-984f151bddd1.png" alt="image.png"></p>
+<p>选择虚拟磁盘类型为SCSI</p>
+<p><img src="/images/2020/07/07/c5389142-35cc-4c6c-a69b-51c5d63367b2.png" alt="image.png"></p>
+<p>选择创建新的虚拟磁盘</p>
+<p><img src="/images/2020/07/07/9640b004-2432-4158-a397-dec33ea63378.png" alt="image.png"></p>
+<p>指定虚拟磁盘的容量大小，在这分配200GB空间具体根据自己需求</p>
+<p><img src="/images/2020/07/07/13b1e0e0-15b4-4421-b092-1771ccd33db9.png" alt="image.png"></p>
+<p>先不要点击完成，因为ESXI的镜像还没有挂载，点击自定义硬件</p>
+<p><img src="/images/2020/07/07/9acb422c-bb75-4641-9cba-368d7d3b08b3.png" alt="image.png"></p>
+<p>选择挂载自己电脑上的ISO镜像文件</p>
+<p><img src="/images/2020/07/07/2f268ad5-32c3-4201-ab25-21d9ef1995b3.png" alt="image.png"></p>
+<p>选择完成后点击关闭然后再点击完成，然后打开虚拟机。会出现如下的界面</p>
+<p><img src="/images/2020/07/07/2721abcb-397e-4de2-a996-417821228115.png" alt="image.png"></p>
+<p>等待片刻，按回车键开始安装</p>
+<p><img src="/images/2020/07/07/684104e1-b05f-4598-9464-a5f5fe68eec8.png" alt="image.png"></p>
+<p>按F11键接受协议并继续</p>
+<p><img src="/images/2020/07/07/acd04bff-ce39-4224-b2c2-1fd8af495b0e.png" alt="image.png"></p>
+<p>选择安装的位置并按回车键继续安装</p>
+<p><img src="/images/2020/07/07/b4fef258-7294-423b-9c21-799f75910d8d.png" alt="image.png"></p>
+<p>选择键盘布局，这里选择使用默认.</p>
+<p><img src="/images/2020/07/07/ed2f25b5-61d0-4356-99d8-4d5e58406a6f.png" alt="image.png"></p>
+<p>为root用户创建密码，需要选择安全性较高的的数字字母字符组合来作为密码</p>
+<p><img src="/images/2020/07/07/0e84667b-7d98-416c-a5f6-5aa007215693.png" alt="image.png"></p>
+<p>按下F11键开始正式的安装</p>
+<p><img src="/images/2020/07/07/cc5559a3-0c8f-44ed-89ba-9d325796711b.png" alt="image.png"></p>
+<p>接下来会进入这个安装进度界面，</p>
+<p><img src="/images/2020/07/07/f93b1b24-bad1-4ee9-9fc8-281e35314a0a.png" alt="image.png"></p>
+<p>等待2-3分钟后，安装完成按回车键重启系统</p>
+<p><img src="/images/2020/07/07/ecf55256-b7fb-4dd9-91dd-a6a7b6be77fa.png" alt="image.png"></p>
+<p>重启完成后界面如下</p>
+<p><img src="/images/2020/07/07/dfd6d466-a9bf-47b3-9b89-aa2e43e81e13.png" alt="image.png"></p>
+<p>对系统进行配置，按F2键然后输入刚才创建的密码进入配置界面。</p>
+<p><img src="/images/2020/07/07/a1911cf5-a23e-4888-949c-fb69d27926c2.png" alt="image.png"></p>
+<p>Configure Managment Network来配置网络。配置静态IPV4地址</p>
+<p><img src="/images/2020/07/07/a2e19773-2470-4510-a3ad-9b8c668ad5b8.png" alt="image.png"></p>
+<p>配置DNS服务器地址</p>
+<p><img src="/images/2020/07/07/afe524fe-8c4d-4b29-a4c2-ee7b78c3fc92.png" alt="image.png"></p>
+<p>按ESC键离开，会提示下面这个界面按Y同意重启网络</p>
+<p><img src="/images/2020/07/07/ba6e1153-bf2a-43fc-9f3a-5b5c5715fd06.png" alt="image.png"></p>
+<p>Troubleshooting Options来开启SSH与Shell</p>
+<p><img src="/images/2020/07/07/e7bf600e-d87d-4925-9416-c9a2b87b4c88.png" alt="image.png"></p>
+<p>到此为止配置上基本完成了，下面在浏览器地址栏中输入刚才配置的IP地址192.168.1.103使用web界面对ESXI进行控制。使用root用户登录</p>
+<p><img src="/images/2020/07/07/805d2a5b-a964-414f-9ea9-a1bd16ea090a.png" alt="image.png"></p>
+<h2 id="vCenter"><a href="#vCenter" class="headerlink" title="vCenter"></a>vCenter</h2><p>Vcenter一般指 VMware vCenter™ Server<br>VMware vCenterServer 提供了一个可伸缩、可扩展的平台，为 虚拟化管理奠定了基础。 VMware vCenter Server（以前称为 VMware VirtualCenter），可集中管理 VMware vSphere 环境，与其他管理平台相比，极大地提高了 IT 管理员对虚拟环境的控制。<br>VMware vCenter Server：提高在虚拟基础架构每个级别上的集中控制和可见性，通过主动管理发挥 vSphere 潜能，是一个具有广泛合作伙伴体系支持的可伸缩、可扩展平台。</p>
+<p><a href="https://baike.baidu.com/item/vCenter" target="_blank" rel="noopener">🔗详情点击</a></p>
+<h2 id="安装vCenter"><a href="#安装vCenter" class="headerlink" title="安装vCenter"></a>安装vCenter</h2><p>vCenter主要有两种:一种是基于Windows的vCenter server它的功能和性能更强大！还有一种就是基于嵌入式linux的vCenter server appliance，使用小的虚拟化环境（主机小于50台，虚拟机少于1000个），使用这个部署起来更简单快捷。当然如果更大的虚拟化环境，就一定需要基于Windows的vCenter server了。随着版本的更迭，vmware去windows化越来越明显了，很多高级功能（跨集群迁移，vcsa ha等等）只有以vcsa方式部署才可能实现了，vcsa部署维护都要比传统windows+vCenterServer+MySQL方便，就是web管理界面还是不如原来的vsphere client好用。</p>
+<p><img src="/images/2020/07/07/94d52b8e-3461-48f4-b2eb-55904c4bcb07.png" alt="image.png"></p>
+<p>安装vCenter server appliance<br>在Windows上装载镜像</p>
+<p><img src="/images/2020/07/07/6802d789-1363-4e95-bbc0-50ce42e61865.png" alt="image.png">vcenter</p>
+<p>然后打开vcsa-ui-installer那个文件夹，在打开下面的那个win32目录，双击installer.exe即可开始安装。</p>
+<p><img src="/images/2020/07/07/09f8bcee-c68a-4ccf-84fd-5044d88f44e1.png" alt="image.png"></p>
+<p>安装分为两个阶段</p>
+<p><img src="/images/2020/07/07/37a72090-47e6-4105-a532-033f3f918931.png" alt="image.png"></p>
+<p>勾选“我接受许可协议条款”</p>
+<p><img src="/images/2020/07/07/8675eb99-4a6b-40c9-ba2d-c3d772a0c3bf.png" alt="image.png"></p>
+<p>选择嵌入式 Platform Services Controller</p>
+<p><img src="/images/2020/07/07/de346651-a018-40c6-becb-e9fa0c4cd9d6.png" alt="image.png"></p>
+<p>指定VCSA 6.7部署到ESXi主机或vCenter Server</p>
+<p><img src="/images/2020/07/07/b5aa3d3f-f48e-4dd7-add0-3ca5526442c2.png" alt="image.png"></p>
+<p>会出现警告直接点是即可，下面配置VCSA 6.7虚拟机名称以及root密码。</p>
+<p><img src="/images/2020/07/07/d80444a6-392b-4d2f-9494-22cbfc09f861.png" alt="image.png"></p>
+<p>选择部署大小</p>
+<p><img src="/images/2020/07/07/982b0164-426e-41ce-9c30-f3d53d4e5611.png" alt="image.png"></p>
+<p>选择VCSA 6.7虚拟机存储<br><img src="/images/2020/07/07/23af1a0c-f0f9-4691-8588-f992f7ddfa27.png" alt="image.png"></p>
+<p>之前的设置部署大小为300GB，可是由于自己电脑没有那么大的存储空间23333。只好这样先装了</p>
+<p>配置VCSA 6.7虚拟机网络</p>
+<p><img src="/images/2020/07/07/5b2ed2da-a716-40ff-af8d-a8d10d689648.png" alt="image.png"></p>
+<p>确认第1阶段参数<br><img src="/images/2020/07/07/24db6c5c-6722-4993-a53c-81b785c5e1c0.png" alt="image.png"></p>
+<p>开始第一阶段部署，部署的时间取决于物理服务器性能</p>
+<p><img src="/images/2020/07/07/bece36f1-bc18-47dc-8405-53040e150d31.png" alt="image.png"></p>
+<p>第一阶段完成，开始第二阶段</p>
+<p><img src="/images/2020/07/07/b5a19232-1905-483a-a025-774640aabf5c.png" alt="image.png">)<img src="/images/2020/07/07/b1a61faa-02c6-4dcf-98e0-914eb7b7b8c2.png" alt="image.png"></p>
+<p>配置系统时间</p>
+<p><img src="/images/2020/07/07/887f5517-f9ab-438a-864e-dd3a25df5a60.png" alt="image.png"></p>
+<p>这里选择跟ESXI主机同步。当然也可以选择和NTP服务器时间相同。根据自己需求选择是否启用SSH</p>
+<p>SSO配置</p>
+<p><img src="/images/2020/07/07/70404f34-797b-40e8-bcf5-0eb919ae80f9.png" alt="image.png"></p>
+<p>确认是否加入CEIP</p>
+<p><img src="/images/2020/07/07/8ef42ed4-fe92-46f9-b779-d664d390fddc.png" alt="image.png"></p>
+<p>确认参数</p>
+<p><img src="/images/2020/07/07/dc757e61-bf85-4c8d-86c3-8b747756bbca.png" alt="image.png"></p>
+<p>点击确定开始第二阶段部署</p>
+<p><img src="/images/2020/07/07/3d2e2f64-798e-49de-a438-10300e20e5e0.png" alt="image.png"></p>
+<p>开始部署</p>
+<p><img src="/images/2020/07/07/c8b3f7ee-4f93-4767-bbe7-9dc1a9769cd9.png" alt="image.png"></p>
+<p>安装完成</p>
+<p><img src="/images/2020/07/07/2b9c0c64-3393-4a03-8698-251a490b39df.png" alt="image.png"></p>
+<p>打开VCSA 6.7控制台界面</p>
+<p><img src="/images/2020/07/07/fc431e8c-134e-4c80-815e-11947dc87f21.png" alt="image.png"></p>
+<p>在浏览器中输入VCSA 6.7的IP地址进行访问，VCSA 6.7提供H5以及FLASH两个选择，从初步使用看，H5功能比VCSA 6.5得到增强</p>
+<p><img src="/images/2020/07/07/60dabf12-51c5-482b-bada-a28431efe7e8.png" alt="image.png"></p>
+<p>输入SSO登录</p>
+<p><img src="/images/2020/07/07/f1bf8161-91af-49c5-bcbc-38266e4e0da8.png" alt="image.png"></p>
+<p>VCSA 6.7 登录成功后界面如下</p>
+<p><img src="/images/2020/07/07/e6ee7699-a220-4c5c-b623-f908d886cb41.png" alt="image.png"></p>
+<p>访问VMware vCenter Server Appliance Web</p>
+<p><img src="/images/2020/07/07/b6aca240-9f68-458e-af9a-152944842c58.png" alt="image.png"><br><img src="/images/2020/07/07/bacd3236-4d20-49ee-9626-92d3659a8197.png" alt="image.png"></p>
+<h3 id="安装vCenter-server"><a href="#安装vCenter-server" class="headerlink" title="安装vCenter server"></a>安装vCenter server</h3><p>当镜像挂载之后打开安装程序<br><img src="/images/2020/07/07/db865e34-e4f3-4f69-84fa-e8c2b4c58b9a.png" alt="image.png"></p>
+<p>点击下一步继续安装<br><img src="/images/2020/07/07/e84fd03e-7965-4c54-b490-4a93597c3554.png" alt="image.png"></p>
+<p>选择接受许可协议条款</p>
+<p><img src="/images/2020/07/07/31fdd3d2-80cb-460a-92d4-3e41f898555a.png" alt="image.png"></p>
+<p>选择部署类型，在这先暂时选择嵌入式部署。在以后会对外部部署进行安装。</p>
+<p><img src="/images/2020/07/07/1883039b-fa49-4e1a-a0a5-de6570885525.png" alt="image.png"></p>
+<p>配置系统网络名称，输入windows server的IP地址</p>
+<p><img src="/images/2020/07/07/8a5cdc57-002d-4176-8c27-831431c6133c.png" alt="image.png"></p>
+<p>vCenter Single Sign-On 配置</p>
+<p><img src="/images/2020/07/07/686dd69f-b8a6-44c2-966e-b786055f1183.png" alt="image.png"></p>
+<p>选择vCenter Server服务账户</p>
+<p><img src="/images/2020/07/07/2ebc8f5a-de2e-4816-b0bf-a6cf3b344d21.png" alt="image.png"></p>
+<p>数据库设置，选择嵌入式数据库</p>
+<p><img src="/images/2020/07/07/36a4cd7e-234e-4925-8bd7-0cfd71769622.png" alt="image.png"></p>
+<p>配置端口</p>
+<p><img src="/images/2020/07/07/8e9f85b8-43ff-4a41-9a1b-b4e15402d5fa.png" alt="image.png"></p>
+<p>选择安装目录</p>
+<p><img src="/images/2020/07/07/508f6244-b468-418a-9c95-742d4abbbc22.png" alt="image.png"></p>
+<p>加入客户体验提升计划</p>
+<p><img src="/images/2020/07/07/19c6e02f-679e-4cab-baa9-f807bdb4da78.png" alt="image.png"></p>
+<p>点击完成开始安装<br><img src="/images/2020/07/07/2084f5c3-1edf-4a35-8c5e-e52fe501833d.png" alt="image.png"></p>
+<p>安装过程时间根据机器性能决定，大概10分钟左右</p>
+<p><img src="/images/2020/07/07/1f1c81e6-2e97-476f-89c0-0b93723ceca4.png" alt="image.png"></p>
+<p>安装完成</p>
+<p><img src="/images/2020/07/07/87be7579-5906-4db4-b081-6576152bcfc1.png" alt="image.png"></p>
+<p>在客户机访问vSphere Web Client</p>
+<p><img src="/images/2020/07/07/f12110f1-5829-4eb9-9aab-720145a342f1.png" alt="image.png"></p>
+<p>输入刚才设置的账号密码，然后登录成功</p>
+<p><img src="/images/2020/07/07/7087312b-e0be-458a-8785-04dae733ff83.png" alt="image.png"></p>
+]]></content>
+      <categories>
+        <category>虚拟化</category>
+      </categories>
+      <tags>
+        <tag>虚拟化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>详解python命名空间和作用域</title>
     <url>/%E8%AF%A6%E8%A7%A3python%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E5%92%8C%E4%BD%9C%E7%94%A8%E5%9F%9F.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h1 id="1、典型案例"><a href="#1、典型案例" class="headerlink" title="1、典型案例"></a>1、典型案例</h1><p>先从几个典型的案例来看下名称空间及作用域对python代码运行的影响，请看下面几个代码实例及其执行结果，是否符合你的预期。<br>代码1：块作用域<br>if True:<br>    i = 1<br>print i<br>执行结果： 1<br>代码2：函数作用域<br>def f():<br>    i = 1<br>f()<br>print i<br>执行结果：执行报错“NameError: name ‘cc’ is not defined”</p>
@@ -681,225 +926,6 @@ python解释器加载阶段会创建出内建命名空间、模块的全局命�
 <p>【规则】<br>    1、静态作用域规则<br>         定义：python中变量的作用域是由它在源代码中的位置决定的。（名字查找是动态发生的）<br>         说明：参考代码3/4，以代码3为例说明，在模块中定义了一个全局变量 i = 1，在test方法中执行 i += 1，对变量 i进行了赋值动作，该赋值动作决定了i在test()方法中是一个局部变量， i += 1可以拆分为两步执行，首先执行 i + 1, 然后将结果赋值给i。执行i + 1操作时，i虽然申明为局部变量，但是没有绑定任何具体值，因此报错。<br>    2、最内嵌套作用域规则<br>         定义：由一个赋值语句引进的名字在这个赋值语句所在的作用域里是可见（起作用）的，而且在其内部嵌套的每个作用域内也可见，除非它被嵌套于内部的且引进同样名字的赋值语句所遮蔽。<br>         说明：参考代码5. 方法g()是方法f()中定义的内嵌函数。在方法f()中定义的局部变量 i =2，在内嵌方法 g()中是可见的。如果在g()中又定义一个重名的变量 i = 3，则f()中定义的变量将被遮蔽。</p>
 <h1 id="4、命名空间与作用域的关系"><a href="#4、命名空间与作用域的关系" class="headerlink" title="4、命名空间与作用域的关系"></a>4、命名空间与作用域的关系</h1><pre><code>命名空间定义了在某个作用域内变量名和绑定值之间的对应关系，命名空间是键值对的集合，变量名与值是一一对应关系。作用域定义了命名空间中的变量能够在多大范围内起作用。
 命名空间在python解释器中是以字典的形式存在的，是以一种可以看得见摸得着的实体存在的。作用域是python解释器定义的一种规则，该规则确定了运行时变量查找的顺序，是一种形而上的虚的规定。</code></pre><p>【变量查找法则】<br>    python解释器动态执行过程中，对遇到的变量进行解释时，是按照一条固定的作用域链查找解释的，又称为LEGB法则。<br>    其中L代表Local 局部作用域，E代表Enclosing 嵌套作用域，G代表Global 全局作用域，B代表Built-in 内建作用域。<br>    python解释器查找变量时，会按照顺序依次查找局部作用域，嵌套作用域，全局作用域，内建作用域，在任意一个作用域中找到变量则停止查找，所有作用域查找完成没有找到对应的变量，则抛出 NameError: name ‘xxxx’ is not defined的异常。<br>    在局部作用域中，可以看到局部作用域、嵌套作用域、全局作用域、内建作用域中所有定义的变量。<br>    在全局作用域中，可以看到全局作用域、内建作用域中的所有定义的变量，无法看到局部作用域中的变量。</p>
-]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>python元组</title>
-    <url>/python%E5%85%83%E7%BB%84.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h1 id="对于元组来说，元组和列表是差不多的"><a href="#对于元组来说，元组和列表是差不多的" class="headerlink" title="对于元组来说，元组和列表是差不多的"></a>对于元组来说，元组和列表是差不多的</h1><h1 id="元组是不能修改的，-比如不能增加元素，不能修改元素，不能删除元素，"><a href="#元组是不能修改的，-比如不能增加元素，不能修改元素，不能删除元素，" class="headerlink" title="元组是不能修改的， 比如不能增加元素，不能修改元素，不能删除元素，"></a>元组是不能修改的， 比如不能增加元素，不能修改元素，不能删除元素，</h1><h1 id="元组遍历"><a href="#元组遍历" class="headerlink" title="元组遍历"></a>元组遍历</h1><p>tu = (1,2,34,5)<br>for index,value in enumerate(tu):<br>    print(index,value)</p>
-<h1 id="返回这个元素在对象中出现的次数"><a href="#返回这个元素在对象中出现的次数" class="headerlink" title="返回这个元素在对象中出现的次数"></a>返回这个元素在对象中出现的次数</h1><p>num = tu.count(2)<br>print(num)</p>
-<h1 id="index-返回的是查找在列表中的下标"><a href="#index-返回的是查找在列表中的下标" class="headerlink" title="index 返回的是查找在列表中的下标"></a>index 返回的是查找在列表中的下标</h1><p>num2 = tu.index(34)<br>print(num2)</p>
-<h1 id="类型相互转换"><a href="#类型相互转换" class="headerlink" title="============类型相互转换=========="></a>============类型相互转换==========</h1><h1 id="1、字典转换成元组"><a href="#1、字典转换成元组" class="headerlink" title="1、字典转换成元组"></a>1、字典转换成元组</h1><p>dict1 = {‘name’:1,”age”:23}</p>
-<h1 id="如果直接tuple-dict1-那么返回的只是字典的keys"><a href="#如果直接tuple-dict1-那么返回的只是字典的keys" class="headerlink" title="如果直接tuple(dict1) 那么返回的只是字典的keys"></a>如果直接tuple(dict1) 那么返回的只是字典的keys</h1><p>tu1 = tuple(dict1.values())<br>print(tu1)</p>
-<h1 id="字典转换成列表-list-dict1-那么返回的只是字典的keys"><a href="#字典转换成列表-list-dict1-那么返回的只是字典的keys" class="headerlink" title="字典转换成列表,list(dict1) 那么返回的只是字典的keys"></a>字典转换成列表,list(dict1) 那么返回的只是字典的keys</h1><p>li = list(dict1)<br>print(li)</p>
-<p>li2 =list(dict1.values())<br>print(li2)</p>
-<h1 id="2、字典转换成字符串"><a href="#2、字典转换成字符串" class="headerlink" title="2、字典转换成字符串"></a>2、字典转换成字符串</h1><p>str1 = str(dict1)<br>print(str1)<br>转字符串需不需要注意返回得是什么内容（关键字？values？）</p>
-<h1 id="元组转换成字符串、列表-注意：元组不可以转为字典"><a href="#元组转换成字符串、列表-注意：元组不可以转为字典" class="headerlink" title="=====元组转换成字符串、列表====注意：元组不可以转为字典"></a>=====元组转换成字符串、列表====注意：元组不可以转为字典</h1><p>tupleExchang = (1,2,3,4,5,”a”)<br>str2 = tupleExchang.<strong>str</strong>()<br>print(type(str2))<br>print(str2)</p>
-<p>list2 = list(tupleExchang)<br>print(list2)</p>
-<h1 id="列表转换成字符串、元组-注意：列表不能转换成字典"><a href="#列表转换成字符串、元组-注意：列表不能转换成字典" class="headerlink" title="=======列表转换成字符串、元组======注意：列表不能转换成字典"></a>=======列表转换成字符串、元组======注意：列表不能转换成字典</h1><p>list3 = [1,2,34,55,6]<br>str3 = str(list3)<br>print(str3)</p>
-<p>tup = tuple(list3)<br>print(tup)</p>
-]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hadoop编程入门</title>
-    <url>/Hadoop%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>::: hljs-center</p>
-<p>Hadoop编程入门</p>
-<p>:::</p>
-<p>一、准备软件<br>（1）IntelliJ IDEA Community<br><a href="https://www.jetbrains.com/idea/download/#section=windows" target="_blank" rel="noopener">https://www.jetbrains.com/idea/download/#section=windows</a><br>（2）Hadoop<br><a href="https://hadoop.apache.org/releases.html" target="_blank" rel="noopener">https://hadoop.apache.org/releases.html</a><br>（3）Winutils<br>链接：<a href="https://pan.baidu.com/s/15xizRvY17-m-gqPH5YapXw" target="_blank" rel="noopener">https://pan.baidu.com/s/15xizRvY17-m-gqPH5YapXw</a><br>提取码：qw0j<br>（4）Java JDK 1.8<br>链接：<a href="https://pan.baidu.com/s/1hMad9dATs3MpZka3QXgIZA" target="_blank" rel="noopener">https://pan.baidu.com/s/1hMad9dATs3MpZka3QXgIZA</a><br>提取码：q59l</p>
-<p>二、安装软件<br>（1）IntelliJ IDEA Community</p>
-<p>（2）Hadoop解压到D盘</p>
-<p>并配置环境变量</p>
-<p>（3）将winutils解压后放到hadoop目录中的bin下面</p>
-<p>（4）JDK环境变量配置</p>
-<p>三、创建项目<br>（1）创建maven项目</p>
-<p>为项目起名（mapreduce）</p>
-<p>项目结构</p>
-<p>（2）配置pom文件</p>
-<p>（3）创建WordCount程序</p>
-<p>package com.hmy.mr;</p>
-<p>import org.apache.hadoop.conf.Configuration;<br>import org.apache.hadoop.fs.Path;<br>import org.apache.hadoop.io.IntWritable;<br>import org.apache.hadoop.io.Text;<br>import org.apache.hadoop.mapreduce.Job;<br>import org.apache.hadoop.mapreduce.Mapper;<br>import org.apache.hadoop.mapreduce.Reducer;<br>import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;<br>import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;</p>
-<p>import java.io.IOException;<br>import java.util.StringTokenizer;</p>
-<p>public class WordCount {</p>
-<pre><code>public static void main(String[] args) throws Exception {
-    Configuration conf = new Configuration();
-    Job job = Job.getInstance(conf, &quot;word count&quot;);
-    job.setJarByClass(WordCount.class);
-    job.setMapperClass(TokenizerMapper.class);
-    job.setCombinerClass(IntSumReducer.class);
-    job.setReducerClass(IntSumReducer.class);
-    job.setOutputKeyClass(Text.class);
-    job.setOutputValueClass(IntWritable.class);
-    FileInputFormat.addInputPath(job, new Path(args[0]));
-    FileOutputFormat.setOutputPath(job, new Path(args[1]));
-    System.exit(job.waitForCompletion(true) ? 0 : 1);
-}
-
-public static class TokenizerMapper extends Mapper&lt;Object, Text, Text, IntWritable&gt; {
-    private final static IntWritable one = new IntWritable(1);
-    private Text word = new Text();
-
-    public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
-        StringTokenizer itr = new StringTokenizer(value.toString());
-        while (itr.hasMoreTokens()) {
-            word.set(itr.nextToken());
-            context.write(word, one);
-        }
-    }
-}
-
-public static class IntSumReducer extends Reducer&lt;Text,IntWritable,Text,IntWritable&gt; {
-    private IntWritable result = new IntWritable();
-
-    public void reduce(Text key, Iterable&lt;IntWritable&gt; values, Context context) throws IOException, InterruptedException {
-        int sum = 0;
-        for (IntWritable val : values) {
-            sum += val.get();
-        }
-        result.set(sum);
-        context.write(key, result);
-    }
-}</code></pre><p>}</p>
-<p>四、发布项目<br>（1）打jar包</p>
-<p>五、将jar包传到linux系统</p>
-<p>六、运行hadoop程序<br>（1） 首先在/opt/tools/下创建一个文件t，打开文件，里面任意输入几个单词<br>（2） 在hdfs上创建文件夹，使用此命令<br>hdfs dfs -mkdir /test<br>然后，将文件t上传到hdfs上，使用此命令<br>hdfs  dfs  -put  /opt/tools/t    /test</p>
-<p>（3） 执行hadoop jar /opt/tools/mareduce.jar com.hmy.mr.WordCount /test/t /out/1</p>
-<p>最终结果</p>
-]]></content>
-      <categories>
-        <category>大数据</category>
-      </categories>
-      <tags>
-        <tag>Hadoop</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>python函数</title>
-    <url>/python%E5%87%BD%E6%95%B0.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>1、python3的map函数<br>map()函数接收两个参数，一个是函数，一个是Iterable（可迭代对象），map将传入的函数依次作用到序列的每个元素，并把结果作为新的Iterator（迭代器）返回。<br>举例说明，比如我们有一个函数f(x)=x2，要把这个函数作用在一个list [1, 2, 3, 4, 5, 6, 7, 8, 9]上，就可以用map()实现如下：</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>def f(x):<br>     return x * x<br>r = map(f, [1<em>1, 2</em>2, 3<em>3, 4, 5, 6, 7, 8, 9])<br>list(r)<br>[1, 4, 9, 16, 25, 36, 49, 64, 81]<br>上述代码中f是一个map对象，r是一个Iterator，Iterator是惰性序列，因此通过list()函数让它把整个序列都计算出来并返回一个list。<br>不对r进行list函数的话，输出结果如下：<br>def f(n):<br>    return n</em>n<br>r = map(f,[1,2,3])<br>print(r)<br>结果：<br>&lt;map object at 0x000001FB4EC5D240&gt;<br>map()作为高阶函数，事实上它把运算规则抽象了，因此，我们不但可以计算简单的f(x)=x2，还可以计算任意复杂的函数，比如，把这个list所有数字转为字符串：</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>list(map(str, [1, 2, 3, 4, 5, 6, 7, 8, 9]))</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>[‘1’, ‘2’, ‘3’, ‘4’, ‘5’, ‘6’, ‘7’, ‘8’, ‘9’]<br>2、python3的reduce函数<br>reduce把一个函数作用在一个序列[x1, x2, x3, …]上，这个函数必须接收两个参数，reduce把结果继续和序列的下一个元素做累积计算，其效果就是：</p>
-<p>reduce(f, [x1, x2, x3, x4]) = f(f(f(x1, x2), x3), x4)<br>比方说对一个序列求和，就可以用reduce实现：</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>from functools import reduce<br>def add(x, y):<br>     return x + y<br>reduce(add, [1, 3, 5, 7, 9])<br>25<br>字符串str也是一个序列，对上面的例子稍加改动，配合map()，我们就可以写出把str转换为int的函数：</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>from functools import reduce<br>def fn(x, y):<br>     return x * 10 + y<br>def char2num(s):<br>…     digits = {‘0’: 0, ‘1’: 1, ‘2’: 2, ‘3’: 3, ‘4’: 4, ‘5’: 5, ‘6’: 6, ‘7’: 7, ‘8’: 8, ‘9’: 9}<br>…     return digits[s]<br>reduce(fn,[1,3,5,7,9])<br>map(char2num, ‘13579’)<br>13579</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>3、python的filter函数<br>Python内建的filter()函数用于过滤序列。<br>和map()类似，filter()也接收一个函数和一个序列。和map()不同的是，filter()把传入的函数依次作用于每个元素，然后根据返回值是True还是False决定保留还是丢弃该元素。<br>例如，在一个list中，删掉偶数，只保留奇数，可以这么写：<br>def is_odd(n):<br>    return n % 2 == 1</p>
-<p>list(filter(is_odd, [1, 2, 4, 5, 6, 9, 10, 15]))</p>
-<h1 id="结果-1-5-9-15"><a href="#结果-1-5-9-15" class="headerlink" title="结果: [1, 5, 9, 15]"></a>结果: [1, 5, 9, 15]</h1><p>把一个序列中的空字符串删掉，可以这么写：<br>def not_empty(s):<br>    return s and s.strip()<br>list(filter(not_empty, [‘A’, ‘’, ‘B’, None, ‘C’, ‘  ‘]))</p>
-<h1 id="结果-‘A’-‘B’-‘C’"><a href="#结果-‘A’-‘B’-‘C’" class="headerlink" title="结果: [‘A’, ‘B’, ‘C’]"></a>结果: [‘A’, ‘B’, ‘C’]</h1><p>可见用filter()这个高阶函数，关键在于正确实现一个“筛选”函数。<br>注意到filter()函数返回的是一个Iterator，也就是一个惰性序列，所以要强迫filter()完成计算结果，需要用list()函数获得所有结果并返回list。<br>4、python的sort函数<br>Python内置的sorted()函数就可以对list进行排序：</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>sorted([36, 5, -12, 9, -21])<br>[-21, -12, 5, 9, 36]<br>此外，sorted()函数也是一个高阶函数，它还可以接收一个key函数来实现自定义的排序，例如按绝对值大小排序：<br>sorted([36, 5, -12, 9, -21], key=abs)<br>Key函数放在前面行不行？<br>[5, 9, -12, -21, 36]<br>key指定的函数将作用于list的每一个元素上，并根据key函数返回的结果进行排序。<br>再看一个字符串排序的例子：<br>sorted([‘bob’, ‘about’, ‘Zoo’, ‘Credit’])<br>[‘Credit’, ‘Zoo’, ‘about’, ‘bob’]<br>默认情况下，对字符串排序，是按照ASCII的大小比较的，由于’Z’ &lt; ‘a’，结果，大写字母Z会排在小写字母a的前面。<br>现在，我们提出排序应该忽略大小写，按照字母序排序。要实现这个算法，不必对现有代码大加改动，只要我们能用一个key函数把字符串映射为忽略大小写排序即可。忽略大小写来比较两个字符串，实际上就是先把字符串都变成大写（或者都变成小写），再比较。<br>这样，我们给sorted传入key函数，即可实现忽略大小写的排序：<br>sorted([‘bob’, ‘about’, ‘Zoo’, ‘Credit’], key=str.lower)<br>[‘about’, ‘bob’, ‘Credit’, ‘Zoo’]<br>要进行反向排序，不必改动key函数，可以传入第三个参数reverse=True：</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>sorted([‘bob’, ‘about’, ‘Zoo’, ‘Credit’], key=str.lower, reverse=True)<br>[‘Zoo’, ‘Credit’, ‘bob’, ‘about’]</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>5、匿名函数<br>当我们在传入函数时，有些时候，不需要显式地定义函数，直接传入匿名函数更方便。</p>
-<p>在Python中，对匿名函数提供了有限支持。还是以map()函数为例，计算f(x)=x2时，除了定义一个f(x)的函数外，还可以直接传入匿名函数：</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>list(map(lambda x: x * x, [1, 2, 3, 4, 5, 6, 7, 8, 9]))<br>[1, 4, 9, 16, 25, 36, 49, 64, 81]<br>通过对比可以看出，匿名函数lambda x: x * x实际上就是：<br>def f(x):<br>    return x * x<br>关键字lambda表示匿名函数，冒号前面的x表示函数参数。<br>（连续使用参数值会不会出现覆盖的情况？）<br>匿名函数有个限制，就是只能有一个表达式，不用写return，返回值就是该表达式的结果。<br>用匿名函数有个好处，因为函数没有名字，不必担心函数名冲突。此外，匿名函数也是一个函数对象，也可以把匿名函数赋值给一个变量，再利用变量来调用该函数：<br>（为什么匿名函数需要通过变量来调用？）<br>f = lambda x: x * x<br>f<br>&lt;function <lambda> at 0x101c6ef28&gt;<br>f(5)<br>25<br>同样，也可以把匿名函数作为返回值返回，比如：</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>def build(x, y):<br>return lambda: x * x + y * y<br>6、装饰器<br>函数也是一个对象，而且函数对象可以被赋值给变量，所以，通过变量也能调用该函数</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>def now():<br>…     print(‘2035-3-25’)<br>…<br>f = now<br>f()<br>2035-3-25<br>函数对象有一个<strong>name</strong>属性，可以拿到函数的名字：</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>now.<strong>name</strong><br>‘now’<br>f.<strong>name</strong><br>‘now’<br>现在，假设我们要增强now()函数的功能，比如，在函数调用前后自动打印日志，但又不希望修改now()函数的定义，这种在代码运行期间动态增加功能的方式，称之为“装饰器”（Decorator）。<br>本质上，decorator就是一个返回函数的高阶函数。所以，我们要定义一个能打印日志的decorator，可以定义如下:</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>def log(func):<br>    def wrapper(<em>args, *</em>kw):<br>        print(‘call %s():’ % func.<strong>name</strong>)<br>        return func(<em>args, *</em>kw)<br>    return wrapper<br>观察上面的log，因为它是一个decorator，所以接受一个函数作为参数，并返回一个函数。我们要借助Python的@语法，把decorator置于函数的定义处：<br>@log<br>def now():<br>    print(‘2015-3-25’)<br>调用now()函数，不仅会运行now()函数本身，还会在运行now()函数前打印一行日志：<br>装饰器如果放在函数后面可不可以？</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>now()<br>call now():<br>2015-3-25<br>把@log放到now()函数的定义处，相当于执行了语句：</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>now = log(now)<br>由于log()是一个decorator，返回一个函数，所以，原来的now()函数仍然存在，只是现在同名的now变量指向了新的函数，于是调用now()将执行新函数，即在log()函数中返回的wrapper()函数。</p>
-<p>那为什么还会调用原来的函数呢？<br>wrapper()函数的参数定义是(<em>args, *</em>kw)，因此，wrapper()函数可以接受任意参数的调用。在wrapper()函数内，首先打印日志，再紧接着调用原始函数。</p>
-<p>如果decorator本身需要传入参数，那就需要编写一个返回decorator的高阶函数，写出来会更复杂。比如，要自定义log的文本：</p>
-<p>def log(text):<br>    def decorator(func):<br>        def wrapper(<em>args, *</em>kw):<br>            print(‘%s %s():’ % (text, func.<strong>name</strong>))<br>            return func(<em>args, *</em>kw)<br>        return wrapper<br>    return decorator<br>这个3层嵌套的decorator用法如下：</p>
-<p>@log(‘execute’)<br>def now():<br>    print(‘2015-3-25’)<br>执行结果如下：</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>now()<br>execute now():<br>2015-3-25<br>和两层嵌套的decorator相比，3层嵌套的效果是这样的：</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>now = log(‘execute’)(now)<br>我们来剖析上面的语句，首先执行log(‘execute’)，返回的是decorator函数，再调用返回的函数，参数是now函数，返回值最终是wrapper函数。</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>以上两种decorator的定义都没有问题，但还差最后一步。因为我们讲了函数也是对象，它有name等属性，但你去看经过decorator装饰之后的函数，它们的name已经从原来的’now’变成了’wrapper’：</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>now.<strong>name</strong><br>‘wrapper’<br>因为返回的那个wrapper()函数名字就是’wrapper’，所以，需要把原始函数的<strong>name</strong>等属性复制到wrapper()函数中，否则，有些依赖函数签名的代码执行就会出错。<br>不需要编写wrapper.<strong>name</strong> = func.<strong>name</strong>这样的代码，Python内置的functools.wraps就是干这个事的，所以，一个完整的decorator的写法如下：</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>import functools</p>
-<p>def log(func):<br>    @functools.wraps(func)<br>    def wrapper(<em>args, *</em>kw):<br>        print(‘call %s():’ % func.<strong>name</strong>)<br>        return func(<em>args, *</em>kw)<br>    return wrapper<br>或者针对带参数的decorator：</p>
-<p>import functools</p>
-<p>def log(text):<br>    def decorator(func):<br>        @functools.wraps(func)<br>        def wrapper(<em>args, *</em>kw):<br>            print(‘%s %s():’ % (text, func.<strong>name</strong>))<br>            return func(<em>args, *</em>kw)<br>        return wrapper<br>    return decorator</p>
 ]]></content>
       <categories>
         <category>python</category>
