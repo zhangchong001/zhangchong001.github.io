@@ -689,4 +689,223 @@ python解释器加载阶段会创建出内建命名空间、模块的全局命�
         <tag>python</tag>
       </tags>
   </entry>
+  <entry>
+    <title>python元组</title>
+    <url>/python%E5%85%83%E7%BB%84.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h1 id="对于元组来说，元组和列表是差不多的"><a href="#对于元组来说，元组和列表是差不多的" class="headerlink" title="对于元组来说，元组和列表是差不多的"></a>对于元组来说，元组和列表是差不多的</h1><h1 id="元组是不能修改的，-比如不能增加元素，不能修改元素，不能删除元素，"><a href="#元组是不能修改的，-比如不能增加元素，不能修改元素，不能删除元素，" class="headerlink" title="元组是不能修改的， 比如不能增加元素，不能修改元素，不能删除元素，"></a>元组是不能修改的， 比如不能增加元素，不能修改元素，不能删除元素，</h1><h1 id="元组遍历"><a href="#元组遍历" class="headerlink" title="元组遍历"></a>元组遍历</h1><p>tu = (1,2,34,5)<br>for index,value in enumerate(tu):<br>    print(index,value)</p>
+<h1 id="返回这个元素在对象中出现的次数"><a href="#返回这个元素在对象中出现的次数" class="headerlink" title="返回这个元素在对象中出现的次数"></a>返回这个元素在对象中出现的次数</h1><p>num = tu.count(2)<br>print(num)</p>
+<h1 id="index-返回的是查找在列表中的下标"><a href="#index-返回的是查找在列表中的下标" class="headerlink" title="index 返回的是查找在列表中的下标"></a>index 返回的是查找在列表中的下标</h1><p>num2 = tu.index(34)<br>print(num2)</p>
+<h1 id="类型相互转换"><a href="#类型相互转换" class="headerlink" title="============类型相互转换=========="></a>============类型相互转换==========</h1><h1 id="1、字典转换成元组"><a href="#1、字典转换成元组" class="headerlink" title="1、字典转换成元组"></a>1、字典转换成元组</h1><p>dict1 = {‘name’:1,”age”:23}</p>
+<h1 id="如果直接tuple-dict1-那么返回的只是字典的keys"><a href="#如果直接tuple-dict1-那么返回的只是字典的keys" class="headerlink" title="如果直接tuple(dict1) 那么返回的只是字典的keys"></a>如果直接tuple(dict1) 那么返回的只是字典的keys</h1><p>tu1 = tuple(dict1.values())<br>print(tu1)</p>
+<h1 id="字典转换成列表-list-dict1-那么返回的只是字典的keys"><a href="#字典转换成列表-list-dict1-那么返回的只是字典的keys" class="headerlink" title="字典转换成列表,list(dict1) 那么返回的只是字典的keys"></a>字典转换成列表,list(dict1) 那么返回的只是字典的keys</h1><p>li = list(dict1)<br>print(li)</p>
+<p>li2 =list(dict1.values())<br>print(li2)</p>
+<h1 id="2、字典转换成字符串"><a href="#2、字典转换成字符串" class="headerlink" title="2、字典转换成字符串"></a>2、字典转换成字符串</h1><p>str1 = str(dict1)<br>print(str1)<br>转字符串需不需要注意返回得是什么内容（关键字？values？）</p>
+<h1 id="元组转换成字符串、列表-注意：元组不可以转为字典"><a href="#元组转换成字符串、列表-注意：元组不可以转为字典" class="headerlink" title="=====元组转换成字符串、列表====注意：元组不可以转为字典"></a>=====元组转换成字符串、列表====注意：元组不可以转为字典</h1><p>tupleExchang = (1,2,3,4,5,”a”)<br>str2 = tupleExchang.<strong>str</strong>()<br>print(type(str2))<br>print(str2)</p>
+<p>list2 = list(tupleExchang)<br>print(list2)</p>
+<h1 id="列表转换成字符串、元组-注意：列表不能转换成字典"><a href="#列表转换成字符串、元组-注意：列表不能转换成字典" class="headerlink" title="=======列表转换成字符串、元组======注意：列表不能转换成字典"></a>=======列表转换成字符串、元组======注意：列表不能转换成字典</h1><p>list3 = [1,2,34,55,6]<br>str3 = str(list3)<br>print(str3)</p>
+<p>tup = tuple(list3)<br>print(tup)</p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hadoop编程入门</title>
+    <url>/Hadoop%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>::: hljs-center</p>
+<p>Hadoop编程入门</p>
+<p>:::</p>
+<p>一、准备软件<br>（1）IntelliJ IDEA Community<br><a href="https://www.jetbrains.com/idea/download/#section=windows" target="_blank" rel="noopener">https://www.jetbrains.com/idea/download/#section=windows</a><br>（2）Hadoop<br><a href="https://hadoop.apache.org/releases.html" target="_blank" rel="noopener">https://hadoop.apache.org/releases.html</a><br>（3）Winutils<br>链接：<a href="https://pan.baidu.com/s/15xizRvY17-m-gqPH5YapXw" target="_blank" rel="noopener">https://pan.baidu.com/s/15xizRvY17-m-gqPH5YapXw</a><br>提取码：qw0j<br>（4）Java JDK 1.8<br>链接：<a href="https://pan.baidu.com/s/1hMad9dATs3MpZka3QXgIZA" target="_blank" rel="noopener">https://pan.baidu.com/s/1hMad9dATs3MpZka3QXgIZA</a><br>提取码：q59l</p>
+<p>二、安装软件<br>（1）IntelliJ IDEA Community</p>
+<p>（2）Hadoop解压到D盘</p>
+<p>并配置环境变量</p>
+<p>（3）将winutils解压后放到hadoop目录中的bin下面</p>
+<p>（4）JDK环境变量配置</p>
+<p>三、创建项目<br>（1）创建maven项目</p>
+<p>为项目起名（mapreduce）</p>
+<p>项目结构</p>
+<p>（2）配置pom文件</p>
+<p>（3）创建WordCount程序</p>
+<p>package com.hmy.mr;</p>
+<p>import org.apache.hadoop.conf.Configuration;<br>import org.apache.hadoop.fs.Path;<br>import org.apache.hadoop.io.IntWritable;<br>import org.apache.hadoop.io.Text;<br>import org.apache.hadoop.mapreduce.Job;<br>import org.apache.hadoop.mapreduce.Mapper;<br>import org.apache.hadoop.mapreduce.Reducer;<br>import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;<br>import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;</p>
+<p>import java.io.IOException;<br>import java.util.StringTokenizer;</p>
+<p>public class WordCount {</p>
+<pre><code>public static void main(String[] args) throws Exception {
+    Configuration conf = new Configuration();
+    Job job = Job.getInstance(conf, &quot;word count&quot;);
+    job.setJarByClass(WordCount.class);
+    job.setMapperClass(TokenizerMapper.class);
+    job.setCombinerClass(IntSumReducer.class);
+    job.setReducerClass(IntSumReducer.class);
+    job.setOutputKeyClass(Text.class);
+    job.setOutputValueClass(IntWritable.class);
+    FileInputFormat.addInputPath(job, new Path(args[0]));
+    FileOutputFormat.setOutputPath(job, new Path(args[1]));
+    System.exit(job.waitForCompletion(true) ? 0 : 1);
+}
+
+public static class TokenizerMapper extends Mapper&lt;Object, Text, Text, IntWritable&gt; {
+    private final static IntWritable one = new IntWritable(1);
+    private Text word = new Text();
+
+    public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
+        StringTokenizer itr = new StringTokenizer(value.toString());
+        while (itr.hasMoreTokens()) {
+            word.set(itr.nextToken());
+            context.write(word, one);
+        }
+    }
+}
+
+public static class IntSumReducer extends Reducer&lt;Text,IntWritable,Text,IntWritable&gt; {
+    private IntWritable result = new IntWritable();
+
+    public void reduce(Text key, Iterable&lt;IntWritable&gt; values, Context context) throws IOException, InterruptedException {
+        int sum = 0;
+        for (IntWritable val : values) {
+            sum += val.get();
+        }
+        result.set(sum);
+        context.write(key, result);
+    }
+}</code></pre><p>}</p>
+<p>四、发布项目<br>（1）打jar包</p>
+<p>五、将jar包传到linux系统</p>
+<p>六、运行hadoop程序<br>（1） 首先在/opt/tools/下创建一个文件t，打开文件，里面任意输入几个单词<br>（2） 在hdfs上创建文件夹，使用此命令<br>hdfs dfs -mkdir /test<br>然后，将文件t上传到hdfs上，使用此命令<br>hdfs  dfs  -put  /opt/tools/t    /test</p>
+<p>（3） 执行hadoop jar /opt/tools/mareduce.jar com.hmy.mr.WordCount /test/t /out/1</p>
+<p>最终结果</p>
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>Hadoop</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python函数</title>
+    <url>/python%E5%87%BD%E6%95%B0.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>1、python3的map函数<br>map()函数接收两个参数，一个是函数，一个是Iterable（可迭代对象），map将传入的函数依次作用到序列的每个元素，并把结果作为新的Iterator（迭代器）返回。<br>举例说明，比如我们有一个函数f(x)=x2，要把这个函数作用在一个list [1, 2, 3, 4, 5, 6, 7, 8, 9]上，就可以用map()实现如下：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>def f(x):<br>     return x * x<br>r = map(f, [1<em>1, 2</em>2, 3<em>3, 4, 5, 6, 7, 8, 9])<br>list(r)<br>[1, 4, 9, 16, 25, 36, 49, 64, 81]<br>上述代码中f是一个map对象，r是一个Iterator，Iterator是惰性序列，因此通过list()函数让它把整个序列都计算出来并返回一个list。<br>不对r进行list函数的话，输出结果如下：<br>def f(n):<br>    return n</em>n<br>r = map(f,[1,2,3])<br>print(r)<br>结果：<br>&lt;map object at 0x000001FB4EC5D240&gt;<br>map()作为高阶函数，事实上它把运算规则抽象了，因此，我们不但可以计算简单的f(x)=x2，还可以计算任意复杂的函数，比如，把这个list所有数字转为字符串：</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>list(map(str, [1, 2, 3, 4, 5, 6, 7, 8, 9]))</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>[‘1’, ‘2’, ‘3’, ‘4’, ‘5’, ‘6’, ‘7’, ‘8’, ‘9’]<br>2、python3的reduce函数<br>reduce把一个函数作用在一个序列[x1, x2, x3, …]上，这个函数必须接收两个参数，reduce把结果继续和序列的下一个元素做累积计算，其效果就是：</p>
+<p>reduce(f, [x1, x2, x3, x4]) = f(f(f(x1, x2), x3), x4)<br>比方说对一个序列求和，就可以用reduce实现：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>from functools import reduce<br>def add(x, y):<br>     return x + y<br>reduce(add, [1, 3, 5, 7, 9])<br>25<br>字符串str也是一个序列，对上面的例子稍加改动，配合map()，我们就可以写出把str转换为int的函数：</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>from functools import reduce<br>def fn(x, y):<br>     return x * 10 + y<br>def char2num(s):<br>…     digits = {‘0’: 0, ‘1’: 1, ‘2’: 2, ‘3’: 3, ‘4’: 4, ‘5’: 5, ‘6’: 6, ‘7’: 7, ‘8’: 8, ‘9’: 9}<br>…     return digits[s]<br>reduce(fn,[1,3,5,7,9])<br>map(char2num, ‘13579’)<br>13579</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>3、python的filter函数<br>Python内建的filter()函数用于过滤序列。<br>和map()类似，filter()也接收一个函数和一个序列。和map()不同的是，filter()把传入的函数依次作用于每个元素，然后根据返回值是True还是False决定保留还是丢弃该元素。<br>例如，在一个list中，删掉偶数，只保留奇数，可以这么写：<br>def is_odd(n):<br>    return n % 2 == 1</p>
+<p>list(filter(is_odd, [1, 2, 4, 5, 6, 9, 10, 15]))</p>
+<h1 id="结果-1-5-9-15"><a href="#结果-1-5-9-15" class="headerlink" title="结果: [1, 5, 9, 15]"></a>结果: [1, 5, 9, 15]</h1><p>把一个序列中的空字符串删掉，可以这么写：<br>def not_empty(s):<br>    return s and s.strip()<br>list(filter(not_empty, [‘A’, ‘’, ‘B’, None, ‘C’, ‘  ‘]))</p>
+<h1 id="结果-‘A’-‘B’-‘C’"><a href="#结果-‘A’-‘B’-‘C’" class="headerlink" title="结果: [‘A’, ‘B’, ‘C’]"></a>结果: [‘A’, ‘B’, ‘C’]</h1><p>可见用filter()这个高阶函数，关键在于正确实现一个“筛选”函数。<br>注意到filter()函数返回的是一个Iterator，也就是一个惰性序列，所以要强迫filter()完成计算结果，需要用list()函数获得所有结果并返回list。<br>4、python的sort函数<br>Python内置的sorted()函数就可以对list进行排序：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>sorted([36, 5, -12, 9, -21])<br>[-21, -12, 5, 9, 36]<br>此外，sorted()函数也是一个高阶函数，它还可以接收一个key函数来实现自定义的排序，例如按绝对值大小排序：<br>sorted([36, 5, -12, 9, -21], key=abs)<br>Key函数放在前面行不行？<br>[5, 9, -12, -21, 36]<br>key指定的函数将作用于list的每一个元素上，并根据key函数返回的结果进行排序。<br>再看一个字符串排序的例子：<br>sorted([‘bob’, ‘about’, ‘Zoo’, ‘Credit’])<br>[‘Credit’, ‘Zoo’, ‘about’, ‘bob’]<br>默认情况下，对字符串排序，是按照ASCII的大小比较的，由于’Z’ &lt; ‘a’，结果，大写字母Z会排在小写字母a的前面。<br>现在，我们提出排序应该忽略大小写，按照字母序排序。要实现这个算法，不必对现有代码大加改动，只要我们能用一个key函数把字符串映射为忽略大小写排序即可。忽略大小写来比较两个字符串，实际上就是先把字符串都变成大写（或者都变成小写），再比较。<br>这样，我们给sorted传入key函数，即可实现忽略大小写的排序：<br>sorted([‘bob’, ‘about’, ‘Zoo’, ‘Credit’], key=str.lower)<br>[‘about’, ‘bob’, ‘Credit’, ‘Zoo’]<br>要进行反向排序，不必改动key函数，可以传入第三个参数reverse=True：</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>sorted([‘bob’, ‘about’, ‘Zoo’, ‘Credit’], key=str.lower, reverse=True)<br>[‘Zoo’, ‘Credit’, ‘bob’, ‘about’]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>5、匿名函数<br>当我们在传入函数时，有些时候，不需要显式地定义函数，直接传入匿名函数更方便。</p>
+<p>在Python中，对匿名函数提供了有限支持。还是以map()函数为例，计算f(x)=x2时，除了定义一个f(x)的函数外，还可以直接传入匿名函数：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>list(map(lambda x: x * x, [1, 2, 3, 4, 5, 6, 7, 8, 9]))<br>[1, 4, 9, 16, 25, 36, 49, 64, 81]<br>通过对比可以看出，匿名函数lambda x: x * x实际上就是：<br>def f(x):<br>    return x * x<br>关键字lambda表示匿名函数，冒号前面的x表示函数参数。<br>（连续使用参数值会不会出现覆盖的情况？）<br>匿名函数有个限制，就是只能有一个表达式，不用写return，返回值就是该表达式的结果。<br>用匿名函数有个好处，因为函数没有名字，不必担心函数名冲突。此外，匿名函数也是一个函数对象，也可以把匿名函数赋值给一个变量，再利用变量来调用该函数：<br>（为什么匿名函数需要通过变量来调用？）<br>f = lambda x: x * x<br>f<br>&lt;function <lambda> at 0x101c6ef28&gt;<br>f(5)<br>25<br>同样，也可以把匿名函数作为返回值返回，比如：</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>def build(x, y):<br>return lambda: x * x + y * y<br>6、装饰器<br>函数也是一个对象，而且函数对象可以被赋值给变量，所以，通过变量也能调用该函数</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>def now():<br>…     print(‘2035-3-25’)<br>…<br>f = now<br>f()<br>2035-3-25<br>函数对象有一个<strong>name</strong>属性，可以拿到函数的名字：</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>now.<strong>name</strong><br>‘now’<br>f.<strong>name</strong><br>‘now’<br>现在，假设我们要增强now()函数的功能，比如，在函数调用前后自动打印日志，但又不希望修改now()函数的定义，这种在代码运行期间动态增加功能的方式，称之为“装饰器”（Decorator）。<br>本质上，decorator就是一个返回函数的高阶函数。所以，我们要定义一个能打印日志的decorator，可以定义如下:</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>def log(func):<br>    def wrapper(<em>args, *</em>kw):<br>        print(‘call %s():’ % func.<strong>name</strong>)<br>        return func(<em>args, *</em>kw)<br>    return wrapper<br>观察上面的log，因为它是一个decorator，所以接受一个函数作为参数，并返回一个函数。我们要借助Python的@语法，把decorator置于函数的定义处：<br>@log<br>def now():<br>    print(‘2015-3-25’)<br>调用now()函数，不仅会运行now()函数本身，还会在运行now()函数前打印一行日志：<br>装饰器如果放在函数后面可不可以？</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>now()<br>call now():<br>2015-3-25<br>把@log放到now()函数的定义处，相当于执行了语句：</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>now = log(now)<br>由于log()是一个decorator，返回一个函数，所以，原来的now()函数仍然存在，只是现在同名的now变量指向了新的函数，于是调用now()将执行新函数，即在log()函数中返回的wrapper()函数。</p>
+<p>那为什么还会调用原来的函数呢？<br>wrapper()函数的参数定义是(<em>args, *</em>kw)，因此，wrapper()函数可以接受任意参数的调用。在wrapper()函数内，首先打印日志，再紧接着调用原始函数。</p>
+<p>如果decorator本身需要传入参数，那就需要编写一个返回decorator的高阶函数，写出来会更复杂。比如，要自定义log的文本：</p>
+<p>def log(text):<br>    def decorator(func):<br>        def wrapper(<em>args, *</em>kw):<br>            print(‘%s %s():’ % (text, func.<strong>name</strong>))<br>            return func(<em>args, *</em>kw)<br>        return wrapper<br>    return decorator<br>这个3层嵌套的decorator用法如下：</p>
+<p>@log(‘execute’)<br>def now():<br>    print(‘2015-3-25’)<br>执行结果如下：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>now()<br>execute now():<br>2015-3-25<br>和两层嵌套的decorator相比，3层嵌套的效果是这样的：</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>now = log(‘execute’)(now)<br>我们来剖析上面的语句，首先执行log(‘execute’)，返回的是decorator函数，再调用返回的函数，参数是now函数，返回值最终是wrapper函数。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>以上两种decorator的定义都没有问题，但还差最后一步。因为我们讲了函数也是对象，它有name等属性，但你去看经过decorator装饰之后的函数，它们的name已经从原来的’now’变成了’wrapper’：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>now.<strong>name</strong><br>‘wrapper’<br>因为返回的那个wrapper()函数名字就是’wrapper’，所以，需要把原始函数的<strong>name</strong>等属性复制到wrapper()函数中，否则，有些依赖函数签名的代码执行就会出错。<br>不需要编写wrapper.<strong>name</strong> = func.<strong>name</strong>这样的代码，Python内置的functools.wraps就是干这个事的，所以，一个完整的decorator的写法如下：</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>import functools</p>
+<p>def log(func):<br>    @functools.wraps(func)<br>    def wrapper(<em>args, *</em>kw):<br>        print(‘call %s():’ % func.<strong>name</strong>)<br>        return func(<em>args, *</em>kw)<br>    return wrapper<br>或者针对带参数的decorator：</p>
+<p>import functools</p>
+<p>def log(text):<br>    def decorator(func):<br>        @functools.wraps(func)<br>        def wrapper(<em>args, *</em>kw):<br>            print(‘%s %s():’ % (text, func.<strong>name</strong>))<br>            return func(<em>args, *</em>kw)<br>        return wrapper<br>    return decorator</p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
 </search>

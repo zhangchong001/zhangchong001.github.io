@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>python元组 - zc&#39;blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="ZC,"> 
+    <meta name="description" content="对于元组来说，元组和列表是差不多的元组是不能修改的， 比如不能增加元素，不能修改元素，不能删除元素，元组遍历tu = (1,2,34,5)for index,value in enumerate(t,"> 
+    <meta name="author" content="ZC"> 
+    <link rel="alternative" href="atom.xml" title="zc&#39;blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">zc&#39;blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://zc.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">python元组</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">python元组</h1>
+        <div class="stuff">
+            <span>七月 12, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="对于元组来说，元组和列表是差不多的"><a href="#对于元组来说，元组和列表是差不多的" class="headerlink" title="对于元组来说，元组和列表是差不多的"></a>对于元组来说，元组和列表是差不多的</h1><h1 id="元组是不能修改的，-比如不能增加元素，不能修改元素，不能删除元素，"><a href="#元组是不能修改的，-比如不能增加元素，不能修改元素，不能删除元素，" class="headerlink" title="元组是不能修改的， 比如不能增加元素，不能修改元素，不能删除元素，"></a>元组是不能修改的， 比如不能增加元素，不能修改元素，不能删除元素，</h1><h1 id="元组遍历"><a href="#元组遍历" class="headerlink" title="元组遍历"></a>元组遍历</h1><p>tu = (1,2,34,5)<br>for index,value in enumerate(tu):<br>    print(index,value)</p>
+<h1 id="返回这个元素在对象中出现的次数"><a href="#返回这个元素在对象中出现的次数" class="headerlink" title="返回这个元素在对象中出现的次数"></a>返回这个元素在对象中出现的次数</h1><p>num = tu.count(2)<br>print(num)</p>
+<h1 id="index-返回的是查找在列表中的下标"><a href="#index-返回的是查找在列表中的下标" class="headerlink" title="index 返回的是查找在列表中的下标"></a>index 返回的是查找在列表中的下标</h1><p>num2 = tu.index(34)<br>print(num2)</p>
+<h1 id="类型相互转换"><a href="#类型相互转换" class="headerlink" title="============类型相互转换=========="></a>============类型相互转换==========</h1><h1 id="1、字典转换成元组"><a href="#1、字典转换成元组" class="headerlink" title="1、字典转换成元组"></a>1、字典转换成元组</h1><p>dict1 = {‘name’:1,”age”:23}</p>
+<h1 id="如果直接tuple-dict1-那么返回的只是字典的keys"><a href="#如果直接tuple-dict1-那么返回的只是字典的keys" class="headerlink" title="如果直接tuple(dict1) 那么返回的只是字典的keys"></a>如果直接tuple(dict1) 那么返回的只是字典的keys</h1><p>tu1 = tuple(dict1.values())<br>print(tu1)</p>
+<h1 id="字典转换成列表-list-dict1-那么返回的只是字典的keys"><a href="#字典转换成列表-list-dict1-那么返回的只是字典的keys" class="headerlink" title="字典转换成列表,list(dict1) 那么返回的只是字典的keys"></a>字典转换成列表,list(dict1) 那么返回的只是字典的keys</h1><p>li = list(dict1)<br>print(li)</p>
+<p>li2 =list(dict1.values())<br>print(li2)</p>
+<h1 id="2、字典转换成字符串"><a href="#2、字典转换成字符串" class="headerlink" title="2、字典转换成字符串"></a>2、字典转换成字符串</h1><p>str1 = str(dict1)<br>print(str1)<br>转字符串需不需要注意返回得是什么内容（关键字？values？）</p>
+<h1 id="元组转换成字符串、列表-注意：元组不可以转为字典"><a href="#元组转换成字符串、列表-注意：元组不可以转为字典" class="headerlink" title="=====元组转换成字符串、列表====注意：元组不可以转为字典"></a>=====元组转换成字符串、列表====注意：元组不可以转为字典</h1><p>tupleExchang = (1,2,3,4,5,”a”)<br>str2 = tupleExchang.<strong>str</strong>()<br>print(type(str2))<br>print(str2)</p>
+<p>list2 = list(tupleExchang)<br>print(list2)</p>
+<h1 id="列表转换成字符串、元组-注意：列表不能转换成字典"><a href="#列表转换成字符串、元组-注意：列表不能转换成字典" class="headerlink" title="=======列表转换成字符串、元组======注意：列表不能转换成字典"></a>=======列表转换成字符串、元组======注意：列表不能转换成字典</h1><p>list3 = [1,2,34,55,6]<br>str3 = str(list3)<br>print(str3)</p>
+<p>tup = tuple(list3)<br>print(tup)</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#对于元组来说，元组和列表是差不多的"><span class="toc-number">1.</span> <span class="toc-text">对于元组来说，元组和列表是差不多的</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#元组是不能修改的，-比如不能增加元素，不能修改元素，不能删除元素，"><span class="toc-number">2.</span> <span class="toc-text">元组是不能修改的， 比如不能增加元素，不能修改元素，不能删除元素，</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#元组遍历"><span class="toc-number">3.</span> <span class="toc-text">元组遍历</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#返回这个元素在对象中出现的次数"><span class="toc-number">4.</span> <span class="toc-text">返回这个元素在对象中出现的次数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#index-返回的是查找在列表中的下标"><span class="toc-number">5.</span> <span class="toc-text">index 返回的是查找在列表中的下标</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#类型相互转换"><span class="toc-number">6.</span> <span class="toc-text">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;类型相互转换&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1、字典转换成元组"><span class="toc-number">7.</span> <span class="toc-text">1、字典转换成元组</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#如果直接tuple-dict1-那么返回的只是字典的keys"><span class="toc-number">8.</span> <span class="toc-text">如果直接tuple(dict1) 那么返回的只是字典的keys</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#字典转换成列表-list-dict1-那么返回的只是字典的keys"><span class="toc-number">9.</span> <span class="toc-text">字典转换成列表,list(dict1) 那么返回的只是字典的keys</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2、字典转换成字符串"><span class="toc-number">10.</span> <span class="toc-text">2、字典转换成字符串</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#元组转换成字符串、列表-注意：元组不可以转为字典"><span class="toc-number">11.</span> <span class="toc-text">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;元组转换成字符串、列表&#x3D;&#x3D;&#x3D;&#x3D;注意：元组不可以转为字典</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#列表转换成字符串、元组-注意：列表不能转换成字典"><span class="toc-number">12.</span> <span class="toc-text">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;列表转换成字符串、元组&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;注意：列表不能转换成字典</span></a></li></ol>	
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '171639872', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+</html>
