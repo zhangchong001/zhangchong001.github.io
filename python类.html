@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>python类 - zc&#39;blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="ZC,"> 
+    <meta name="description" content="类的声明：一、类的属性（私有属性和公有属性）（类属性）二、类的方法（构造方法、析构方法、自定义方法、特殊成员方法）（静态方法、类方法、类属性）三、类的继承（方法和属性的继承，方法的重构）（抽象类，多,"> 
+    <meta name="author" content="ZC"> 
+    <link rel="alternative" href="atom.xml" title="zc&#39;blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">zc&#39;blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://zc.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">python类</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">python类</h1>
+        <div class="stuff">
+            <span>七月 12, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>类的声明：<br>一、类的属性<br>（私有属性和公有属性）<br>（类属性）<br>二、类的方法<br>（构造方法、析构方法、自定义方法、特殊成员方法）<br>（静态方法、类方法、类属性）<br>三、类的继承<br>（方法和属性的继承，方法的重构）<br>（抽象类，多重继承）<br>四、类的多态<br>（实现接口的重用）<br>五、类的特殊装饰<br>（@staticmethod、@classmethod、@property）<br>六、类的来源和原类（metaclass）<br>七、反射<br>    类的声明<br>使用class声明类，建议类名单词首字母大写。<br>“新式类”和“经典类”的区分在Python 3之后就已经不存在，在Python 3.x之后的版本，因为所有的类都派生自内置类型object(即使没有显示的继承object类型)，即所有的类都是“新式类”。<br>新式类：<br>class Management(object):</p>
+<pre><code>def add():
+    pass
+  经典类：</code></pre><p>class Management:<br>    pass</p>
+<p>    类的属性<br>类的属性就是类定义的变量值。<br>       公有属性：在类里直接定义的属性，它在类名下面直接定义。<br>                        调用：1、类中调用：类名.属性名 ，更改原公有属性值<br>                                   2、实例调用：实例.属性名<br>class Management(object):<br>    num = 10<br>    def add(self):<br>        Management.num +=10            # 类中调用公有属性并更改值，num=11<br>        pass<br>s1 = Management()<br>s2 = Management()</p>
+<h1 id="第一种情况：s1实例中调用公有属性，s2实例没有调用公有属性"><a href="#第一种情况：s1实例中调用公有属性，s2实例没有调用公有属性" class="headerlink" title="第一种情况：s1实例中调用公有属性，s2实例没有调用公有属性"></a>第一种情况：s1实例中调用公有属性，s2实例没有调用公有属性</h1><p>s1.num +=1<br>Management.num += 2<br>“””&lt;结果&gt;<br>s1不变，s2和Management都改变了<br>s1_num:11   s2_num:12   Manage_num:12”””</p>
+<h1 id="第二种情况：先调用s1实例公有属性，再通过S1调用add更改，然后再使用类更改"><a href="#第二种情况：先调用s1实例公有属性，再通过S1调用add更改，然后再使用类更改" class="headerlink" title="第二种情况：先调用s1实例公有属性，再通过S1调用add更改，然后再使用类更改"></a>第二种情况：先调用s1实例公有属性，再通过S1调用add更改，然后再使用类更改</h1><p>s1.num +=1<br>s1.add()<br>Management.num += 2<br>“””&lt;结果&gt;<br>先调用的s1实例num依然不变，s2和Management都被修改了<br>s1_num:11   s2_num:22   Manage_num:22”””<br> 问题：为什么修改num的值以后，实例s1和实例s2会有不同的结果呢 ？<br>            因为公有属性查找的顺序是：先找实例的公有属性，没找到再找类里的公有属性<br>            可以这样理解：Management相当于一个微信群，num是群里发的一张照片，S1和S2是群里面的两个人。<br>            情况1：S1把照片存到本地，P了个双眼皮，S2说太难看了，我也不会P图，不保存。这个时候发照片的Management说我也觉得难看，把图撤回，重新发了一个P的图。S2就只能保存最新的图片。<br>            情况2：S1找到Management说你的图太丑了，重新改一下吧，Management说好！撤回图片修改了~</p>
+<pre><code>私有属性：加两个下划线，__membername,编译的时候自动加上类名，变成_classname__membername，这种技术叫变量名压缩(mangling)，以达到外部不能调用的目的。实际使用_classname__membername是可以调用的，但是不符合规定。标准方法是通过定义函数来获取。</code></pre><p>class Classname(object):<br> ‘’’this is a demo!’’’<br> def <strong>init</strong>(self):<br>  self.__membername = 88</p>
+<p> def read_membername(self):            # 标准的外部访问方法,使用函数来读取私有属性。<br>  return self.__membername</p>
+<p>s= Classname()<br>print(s.<em>Classname__membername)<br>print(s.read_membername())<br>‘’’<br>&lt;结果&gt;<br>88<br>88<br>——像下面的调用，会出现AttributeError错误——<br>print(s.<em>_membername)<br>‘’’<br>       类属性：  类自带的属性,需要注意的是实例化的类属性，和原类的类属性不同。用上面的例子作演示。<br>属性    作用    示例    结果<br>__doc</em></em>    类的文档字符串    print(s.<strong>doc</strong>)<br>print(Classname.<strong>doc</strong>)    this is a demo!<br>this is a demo!<br><strong>dict</strong>    类的属性组成的字典    print(s.<strong>dict</strong>)<br>print(Classname.<strong>dict</strong>)    {‘<em>Classname__membername’: 88}<br>{‘<em>_init</em></em>‘:, ‘<strong>module</strong>‘: ‘<strong>main</strong>‘, ‘<strong>doc</strong>‘: ‘\nthis is a demo!\n’, ‘read_membername’:}<br><strong>name</strong>    类的名字（字符串）    ##不能用于实例print(s.<strong>name</strong> )<br>print(Classname.<strong>name</strong> )<br>Classname<br><strong>bases</strong>    类的所有父类组成的元组    #不能用于实例print(s.<strong>bases</strong>)<br>print(Classname.<strong>bases</strong>)<br>(,)为什么没有值？可能是编译器问题<br><strong>module</strong>    类所属的模块    print(s.<strong>module</strong>)<br>print(Classname.<strong>module</strong>)    <strong>main</strong><br><strong>main</strong><br><strong>class</strong>    类对象的类型    print(s.<strong>class</strong>)<br>print(Classname.<strong>class</strong>)    待测<br><strong>slots</strong>    限定类属性，在类属性位置定义<br>未在slots定义的属性都是非法属性    <strong>slots</strong>.(‘name’,’age’,’sexy’)    使用’name’,’age’,’sexy’的以外属性会报错</p>
+<p>    类的方法<br>类的方法就是类里面定义的函数。类的构造方法、析构方法、自定义类方法、静态方法、类方法、属性方法、特殊成员方法。<br>构造方法：<strong>init</strong><br>实例化类的时候就会运行的函数。希望初始化的参数放置在init下面。(个人觉得，这个初始化参数可以是一切对象！)<br>class A(object):<br> def instense(self):<br>  print(“init obj A”)</p>
+<p>class B(object):<br> def <strong>init</strong>(self, para):<br>  self.init_para = para<br>  self.obj_A = A()<br>  self.num = 1</p>
+<p> def show(self):<br>  print(self.init_para)<br>  self.obj_A.instense()<br>  print(self.num)<br>haha = B(“this is para”)<br>haha.show()</p>
+<hr>
+<p>this is para</p>
+<p>init obj A</p>
+<p>1<br>   析构方法：<br>   <strong>del</strong>：销毁实例时，方法才会执行。<br>class Hello(object):<br>    def <strong>del</strong>(self):<br>        print(“你删除了实例”)</p>
+<h1 id="在python上测试"><a href="#在python上测试" class="headerlink" title="在python上测试"></a>在python上测试</h1><p>instance = Hello()<br>del instance</p>
+<h1 id="当然也可以使用实例调用，但没有这么用的"><a href="#当然也可以使用实例调用，但没有这么用的" class="headerlink" title="当然也可以使用实例调用，但没有这么用的~~"></a>当然也可以使用实例调用，但没有这么用的~~</h1><p>instance.<strong>del</strong>()</p>
+<p>  自定义方法：<br>  除去类中自带的以<em>下划线开头的函数，在类中定义一个函数，实现相应的功能。<br>class Person(object):<br>    def <em>_init</em></em>(self,person_name, person_age)<br>   静态方法：<br>    @staticmethod，不需要访问类里的任何参数。所带的参数都是从外部传入的。<br>class Person(object):<br>    def <strong>init</strong>(self,person_name, person_age):<br>        self.name = person_name<br>        self.age = person_age</p>
+<pre><code>@staticmethod
+def info(country):
+    print(country)</code></pre><p>   类方法：<br>   @classmethod,第一个参数必须是类属性。<br>class Person(object):<br>    country = “china”<br>    def <strong>init</strong>(self,person_name, person_age):<br>        self.name = person_name<br>        self.age = person_age</p>
+<pre><code>@classmethod
+def info(country):
+    print(country)</code></pre><p>属性方法：<br>1ban<br>    @property把一个函数变成一个静态属性<br>    直接调用函数名字，不需要加括号，就能获取到函数返回值。一般用在不注重过程，只要结果的情况!<br>class Person(object):<br>    country = “china”<br>    def <strong>init</strong>(self,person_name, person_age):<br>        self.name = person_name<br>        self.age = person_age</p>
+<pre><code>@property
+def health_point(self):
+    print(&quot;HP:【{}】&quot;.format(self.age*2))
+    return self.age*2</code></pre><p>P = Person(“laowang”,23)<br>P.health_point                # 不需要括号，看起来完全是一个属性，这就是属性方法</p>
+<p>‘’’上面的类属性只是只读的，即然是叫属性，那么只读就显得太LOW了’’’<br>    类属性装饰器@property,装饰以后，函数就有：赋值setter\销毁deleter两个方法。<br>class Person(object):<br>    country = “china”<br>    def <strong>init</strong>(self,person_name, person_age):<br>        self.name = person_name<br>        self.age = person_age</p>
+<pre><code>@property
+def health_point(self):
+    self.age = self.age*2
+    print(&quot;HP:【{}】&quot;.format(self.age))
+    return self.age
+
+@health_point.setter                    # 增加了一个赋值方法
+def health_point(self, add):
+    self.age = add
+
+@health_point.deleter                   # 增加了一个销毁属性的方法
+def health_point(self):
+    del self.age</code></pre><p>P = Person(“laowang”, 33)<br>print(P.health_point)</p>
+<p>P.health_point = 22                        # 给health.point赋值<br>print(P.health_point)</p>
+<p>del P.health_point                         # 销毁属性</p>
+<pre><code>特殊成员方法：</code></pre><p>方法    作用    示例    结果<br><strong>call</strong>    默认未定义<br>类实例化后,调用实例运行的方法    p = Person()<br>p()    Person是类名<br>实例p没有调用函数，加()运行call方法<br><strong>str</strong>    默认未定义,定义时必须有返回值<br>定义时，打印实例，输入str返回值    p = Person()<br>print (p)    Person是类名<br>打印实例p，运行str方法，打印返回值<br><strong>getitem</strong>    用于索引操作，如字典。获取数据    p = Person()<br>p[‘name’]    自动运行getitem<br><strong>setitem</strong>    用于索引操作，如字典。赋值    p = Person()<br>p[‘name’] = ‘David’    自动运行setitem<br><strong>delitem</strong>    用于索引操作，如字典。删除数据    p = Person()<br>del p[‘name’]    自动运行delitem<br><strong>new</strong>    类实例化时，执行<strong>new</strong>，并且会阻止<br>init运行，可以在new里调用init<br>    p = Person()    参照例子二<br><strong>len</strong>    待续<br><strong>cmp</strong>    待续<br>‘’’例子一call\str\getitem\setitem\delitem方法’’’<br>class Person(object):<br> def <strong>call</strong>(self):<br>  print(“print call”)</p>
+<p> def <strong>str</strong>(self):<br>  print(“print str:”,end=’’)<br>  return “1”</p>
+<p> def <strong>getitem</strong>(self,key):<br>  print(“getitem:”,key)</p>
+<p> def <strong>setitem</strong>(self,key,value):<br>  print(‘setitem:’,key,value)</p>
+<p> def <strong>delitem</strong>(self,key):<br>  print(‘delitem:’,key)</p>
+<p>p = Person()<br>p()<br>print(p)<br>print(‘———–’)<br>get = p[‘name’]<br>p[‘name’] = ‘David’<br>del p[‘name’]<br>‘’’例子二：<strong>new</strong>/<strong>init</strong>‘’’<br>class Person(object):</p>
+<p> def <strong>init</strong>(self):</p>
+<p>  print(‘this is init!’)</p>
+<p> def <strong>new</strong>(self):                  # <strong>new</strong>会阻断<strong>init</strong>执行，要想执行，需要写init方法</p>
+<p>  print(“this is new!”)</p>
+<p>  self.<strong>init</strong>(self)        # 如果去掉这一行，init不能执行</p>
+<p>p = Person()<br>    类的来源和元类：<br>    <a href="http://blog.jobbole.com/21351/中文版详细解答。下面写一个自己理解的简版的。" target="_blank" rel="noopener">http://blog.jobbole.com/21351/中文版详细解答。下面写一个自己理解的简版的。</a><br>    首先，类也是对象，可以：<br>    1)   你可以将它赋值给一个变量<br>    2)   你可以拷贝它<br>    3)   你可以为它增加属性<br>    4)   你可以将它作为函数参数进行传递</p>
+<pre><code>类也是是由type()这个函数创建的，type是类的类，类的爹。学名叫元类！
+也许有人会问那为啥type()能查看到数据类型呢？
+可能你会注意到，type的结果前是class。。。因为数据类型在Python中都是类定义的，这也说明了，为什么数字，字符等等全是对象。
+
+type格式：
+type(类名,(父类元组),{属性和方法的字典})  ,  父类元组可以没有；后面两个典省略时，默认值为None。</code></pre><p>‘’’一言不合就上例子’’’</p>
+<p>Person = type(‘Person’,(),{‘country’:’china’})</p>
+<p>print(Person.country)</p>
+<h1 id="带继承Person类的用法"><a href="#带继承Person类的用法" class="headerlink" title="带继承Person类的用法"></a>带继承Person类的用法</h1><p>def run():                    # 定义函数，把run传给Action的leg方法。<br>    print(‘running…’)</p>
+<p>Action = type(‘Action’,(Person,),{‘leg’:run})</p>
+<p>print(Action.country)<br>Action.leg()</p>
+<pre><code>metaclass:
+创建类的时候，使用metaclass，python就会使用指定的元类创建类。找不到则使用type创建。</code></pre><p>class MyType(type):<br>    def <strong>init</strong>(self,<em>args,*</em>kwargs):</p>
+<pre><code>    print(&quot;Mytype __init__&quot;,*args,**kwargs)
+
+def __call__(self, *args, **kwargs):
+    print(&quot;Mytype __call__&quot;, *args, **kwargs)
+    obj = self.__new__(self)
+    print(&quot;obj &quot;,obj,*args, **kwargs)
+    print(self)
+    self.__init__(obj,*args, **kwargs)
+    return obj
+
+def __new__(cls, *args, **kwargs):
+    print(&quot;Mytype __new__&quot;,*args,**kwargs)
+    return type.__new__(cls, *args, **kwargs)</code></pre><p>print(‘here…’)<br>class Foo(object,metaclass=MyType):<br>    def <strong>init</strong>(self,name):<br>        self.name = name</p>
+<pre><code>    print(&quot;Foo __init__&quot;)
+
+def __new__(cls, *args, **kwargs):
+    print(&quot;Foo __new__&quot;,cls, *args, **kwargs)
+    return object.__new__(cls)</code></pre><p>f = Foo(“Alex”)<br>print(“f”,f)<br>print(“fname”,f.name)</p>
+<p>    类的继承<br>代码重用。<br>    Python3中类有单继承和多继承，其中多继承与Python2的继承顺序不同。<br>    子类方法与父类重名，子类方法会覆盖父类<br>  单继承：<br>‘’’一言不合就上例子’’’</p>
+<p>class Person(object):<br>    def <strong>init</strong>(self,person_name):<br>        self.name = person_name<br>    def info(self):<br>        print(“this is personal info:\nname:{}”.format(self.name))</p>
+<p>class Action(Person):<br>    def <strong>init</strong>(self,person_name):<br>    ‘’’父类析构函数有两种继承方法’’’<br>        super(Action, self).<strong>init</strong>(person_name)     # 方法一<br>        # Person.<strong>init</strong>(self, person_name)          # 方法二<br>    # —-<br>    # 如果自已带参数写在继承的参数前面,然后在super里再声明一下父类变量<br>    # def <strong>init</strong>(self,person_sex,person_name):<br>    #     super(Action,self).<strong>init</strong>(person_name)<br>    # —-</p>
+<pre><code>def run(self):
+    print(&quot;{} is running...&quot;.format(self.name))</code></pre><p>a = Action(‘Alex’)<br>a.run()                            # 继承了Person的属性。<br>a.info()                           # 继承了Person的方法。</p>
+<p>多重继承：<br>不能同时继承两父亲类和爷爷类比如B继承A，C继承时就不能同时写A和B，只写B就可以了。</p>
+<p>class ROOT(object):<br>    def <strong>init</strong>(self):<br>        print(“this is root”)<br>    def action(self):<br>        print(“ROOT is action…”)</p>
+<p>class A(ROOT):<br>    def <strong>init</strong>(self):<br>        super(A, self).<strong>init</strong>()<br>        print (‘init A…’)<br>    def action(self):<br>        print(“A is action…”)</p>
+<p>class B(ROOT):<br>    def <strong>init</strong>(self):<br>        super(B, self).<strong>init</strong>()<br>        print (‘init B…’)<br>    def action(self):<br>        print(“B is action…”)</p>
+<p>class C(A):<br>    def <strong>init</strong>(self):<br>        super(C, self).<strong>init</strong>()<br>        print (‘init C…’)<br>    def action(self):<br>        print(“C is action…”)</p>
+<p>class D(B,C):<br>    def <strong>init</strong>(self):<br>        super(D, self).<strong>init</strong>()<br>        print (‘init D…’)<br>    def action(self):<br>        print(“D is action…”)</p>
+<p>d = D()</p>
+<p>要理解继承的顺序，因为当方法重名时，顺序靠后的方法覆盖前面的方法。<br>类的继承关系：                D(A,B)实例化时候的继承先后顺序：先找B（及其父类），再找C（及其父类）</p>
+<h1 id="多重继承的参数"><a href="#多重继承的参数" class="headerlink" title="多重继承的参数"></a>多重继承的参数</h1><p>class A(object):<br>    def <strong>init</strong>(self,sever_ip):<br>        self.ip = sever_ip</p>
+<pre><code>def show(self):
+    print(&apos;IP:&apos;,self.ip)</code></pre><p>class B(object):<br>    def <strong>init</strong>(self,server_port):<br>        self.port = server_port</p>
+<pre><code>def show(self):
+    print(&apos;PORT:&apos;,self.port)</code></pre><p>class C(A,B):<br>    def <strong>init</strong>(self,server_port,server_ip):        # 先写B的参数，再写A的参数。<br>        super(C,self).<strong>init</strong>(server_port)          # B的参数继承<br>        super(A,self).<strong>init</strong>(server_ip)            # C的参数继承</p>
+<pre><code>def show_b(self):
+    print(self.ip,self.port)</code></pre><p>c = C(‘192.168.1.1’,1234)<br>c.show_b()<br>c.show()        # 先继承B的show，再继承A的show，A把B的show 替换掉了，所以此处运行的是A的show方法</p>
+<p>    类的多态<br>    多态就是同一个父类的方法，不同子类继承可以进行不同的改写，实现多种不同的功能。<br>    任何依赖父类作为参数的函数或者方法都可以不加修改地正常运行，原因就在于多态。<br>‘’’接着上面的例子’’’</p>
+<h1 id="定义一个函数，把ROOT类传进里面"><a href="#定义一个函数，把ROOT类传进里面" class="headerlink" title="定义一个函数，把ROOT类传进里面"></a>定义一个函数，把ROOT类传进里面</h1><p>def who_action(class_name):<br>    class_name.action()</p>
+<p>who_action(ROOT())<br>who_action(D())<br>who_action(A())</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第一种情况：s1实例中调用公有属性，s2实例没有调用公有属性"><span class="toc-number">1.</span> <span class="toc-text">第一种情况：s1实例中调用公有属性，s2实例没有调用公有属性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第二种情况：先调用s1实例公有属性，再通过S1调用add更改，然后再使用类更改"><span class="toc-number">2.</span> <span class="toc-text">第二种情况：先调用s1实例公有属性，再通过S1调用add更改，然后再使用类更改</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在python上测试"><span class="toc-number">3.</span> <span class="toc-text">在python上测试</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#当然也可以使用实例调用，但没有这么用的"><span class="toc-number">4.</span> <span class="toc-text">当然也可以使用实例调用，但没有这么用的~~</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#带继承Person类的用法"><span class="toc-number">5.</span> <span class="toc-text">带继承Person类的用法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#多重继承的参数"><span class="toc-number">6.</span> <span class="toc-text">多重继承的参数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#定义一个函数，把ROOT类传进里面"><span class="toc-number">7.</span> <span class="toc-text">定义一个函数，把ROOT类传进里面</span></a></li></ol>	
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '171639872', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+</html>

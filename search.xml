@@ -448,4 +448,245 @@ height: 181px;}</code></pre><p>就是一个CSS样式。大括号前面是一个C
         <tag>虚拟化</tag>
       </tags>
   </entry>
+  <entry>
+    <title>python类</title>
+    <url>/python%E7%B1%BB.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>类的声明：<br>一、类的属性<br>（私有属性和公有属性）<br>（类属性）<br>二、类的方法<br>（构造方法、析构方法、自定义方法、特殊成员方法）<br>（静态方法、类方法、类属性）<br>三、类的继承<br>（方法和属性的继承，方法的重构）<br>（抽象类，多重继承）<br>四、类的多态<br>（实现接口的重用）<br>五、类的特殊装饰<br>（@staticmethod、@classmethod、@property）<br>六、类的来源和原类（metaclass）<br>七、反射<br>    类的声明<br>使用class声明类，建议类名单词首字母大写。<br>“新式类”和“经典类”的区分在Python 3之后就已经不存在，在Python 3.x之后的版本，因为所有的类都派生自内置类型object(即使没有显示的继承object类型)，即所有的类都是“新式类”。<br>新式类：<br>class Management(object):</p>
+<pre><code>def add():
+    pass
+  经典类：</code></pre><p>class Management:<br>    pass</p>
+<p>    类的属性<br>类的属性就是类定义的变量值。<br>       公有属性：在类里直接定义的属性，它在类名下面直接定义。<br>                        调用：1、类中调用：类名.属性名 ，更改原公有属性值<br>                                   2、实例调用：实例.属性名<br>class Management(object):<br>    num = 10<br>    def add(self):<br>        Management.num +=10            # 类中调用公有属性并更改值，num=11<br>        pass<br>s1 = Management()<br>s2 = Management()</p>
+<h1 id="第一种情况：s1实例中调用公有属性，s2实例没有调用公有属性"><a href="#第一种情况：s1实例中调用公有属性，s2实例没有调用公有属性" class="headerlink" title="第一种情况：s1实例中调用公有属性，s2实例没有调用公有属性"></a>第一种情况：s1实例中调用公有属性，s2实例没有调用公有属性</h1><p>s1.num +=1<br>Management.num += 2<br>“””&lt;结果&gt;<br>s1不变，s2和Management都改变了<br>s1_num:11   s2_num:12   Manage_num:12”””</p>
+<h1 id="第二种情况：先调用s1实例公有属性，再通过S1调用add更改，然后再使用类更改"><a href="#第二种情况：先调用s1实例公有属性，再通过S1调用add更改，然后再使用类更改" class="headerlink" title="第二种情况：先调用s1实例公有属性，再通过S1调用add更改，然后再使用类更改"></a>第二种情况：先调用s1实例公有属性，再通过S1调用add更改，然后再使用类更改</h1><p>s1.num +=1<br>s1.add()<br>Management.num += 2<br>“””&lt;结果&gt;<br>先调用的s1实例num依然不变，s2和Management都被修改了<br>s1_num:11   s2_num:22   Manage_num:22”””<br> 问题：为什么修改num的值以后，实例s1和实例s2会有不同的结果呢 ？<br>            因为公有属性查找的顺序是：先找实例的公有属性，没找到再找类里的公有属性<br>            可以这样理解：Management相当于一个微信群，num是群里发的一张照片，S1和S2是群里面的两个人。<br>            情况1：S1把照片存到本地，P了个双眼皮，S2说太难看了，我也不会P图，不保存。这个时候发照片的Management说我也觉得难看，把图撤回，重新发了一个P的图。S2就只能保存最新的图片。<br>            情况2：S1找到Management说你的图太丑了，重新改一下吧，Management说好！撤回图片修改了~</p>
+<pre><code>私有属性：加两个下划线，__membername,编译的时候自动加上类名，变成_classname__membername，这种技术叫变量名压缩(mangling)，以达到外部不能调用的目的。实际使用_classname__membername是可以调用的，但是不符合规定。标准方法是通过定义函数来获取。</code></pre><p>class Classname(object):<br> ‘’’this is a demo!’’’<br> def <strong>init</strong>(self):<br>  self.__membername = 88</p>
+<p> def read_membername(self):            # 标准的外部访问方法,使用函数来读取私有属性。<br>  return self.__membername</p>
+<p>s= Classname()<br>print(s.<em>Classname__membername)<br>print(s.read_membername())<br>‘’’<br>&lt;结果&gt;<br>88<br>88<br>——像下面的调用，会出现AttributeError错误——<br>print(s.<em>_membername)<br>‘’’<br>       类属性：  类自带的属性,需要注意的是实例化的类属性，和原类的类属性不同。用上面的例子作演示。<br>属性    作用    示例    结果<br>__doc</em></em>    类的文档字符串    print(s.<strong>doc</strong>)<br>print(Classname.<strong>doc</strong>)    this is a demo!<br>this is a demo!<br><strong>dict</strong>    类的属性组成的字典    print(s.<strong>dict</strong>)<br>print(Classname.<strong>dict</strong>)    {‘<em>Classname__membername’: 88}<br>{‘<em>_init</em></em>‘:, ‘<strong>module</strong>‘: ‘<strong>main</strong>‘, ‘<strong>doc</strong>‘: ‘\nthis is a demo!\n’, ‘read_membername’:}<br><strong>name</strong>    类的名字（字符串）    ##不能用于实例print(s.<strong>name</strong> )<br>print(Classname.<strong>name</strong> )<br>Classname<br><strong>bases</strong>    类的所有父类组成的元组    #不能用于实例print(s.<strong>bases</strong>)<br>print(Classname.<strong>bases</strong>)<br>(,)为什么没有值？可能是编译器问题<br><strong>module</strong>    类所属的模块    print(s.<strong>module</strong>)<br>print(Classname.<strong>module</strong>)    <strong>main</strong><br><strong>main</strong><br><strong>class</strong>    类对象的类型    print(s.<strong>class</strong>)<br>print(Classname.<strong>class</strong>)    待测<br><strong>slots</strong>    限定类属性，在类属性位置定义<br>未在slots定义的属性都是非法属性    <strong>slots</strong>.(‘name’,’age’,’sexy’)    使用’name’,’age’,’sexy’的以外属性会报错</p>
+<p>    类的方法<br>类的方法就是类里面定义的函数。类的构造方法、析构方法、自定义类方法、静态方法、类方法、属性方法、特殊成员方法。<br>构造方法：<strong>init</strong><br>实例化类的时候就会运行的函数。希望初始化的参数放置在init下面。(个人觉得，这个初始化参数可以是一切对象！)<br>class A(object):<br> def instense(self):<br>  print(“init obj A”)</p>
+<p>class B(object):<br> def <strong>init</strong>(self, para):<br>  self.init_para = para<br>  self.obj_A = A()<br>  self.num = 1</p>
+<p> def show(self):<br>  print(self.init_para)<br>  self.obj_A.instense()<br>  print(self.num)<br>haha = B(“this is para”)<br>haha.show()</p>
+<hr>
+<p>this is para</p>
+<p>init obj A</p>
+<p>1<br>   析构方法：<br>   <strong>del</strong>：销毁实例时，方法才会执行。<br>class Hello(object):<br>    def <strong>del</strong>(self):<br>        print(“你删除了实例”)</p>
+<h1 id="在python上测试"><a href="#在python上测试" class="headerlink" title="在python上测试"></a>在python上测试</h1><p>instance = Hello()<br>del instance</p>
+<h1 id="当然也可以使用实例调用，但没有这么用的"><a href="#当然也可以使用实例调用，但没有这么用的" class="headerlink" title="当然也可以使用实例调用，但没有这么用的~~"></a>当然也可以使用实例调用，但没有这么用的~~</h1><p>instance.<strong>del</strong>()</p>
+<p>  自定义方法：<br>  除去类中自带的以<em>下划线开头的函数，在类中定义一个函数，实现相应的功能。<br>class Person(object):<br>    def <em>_init</em></em>(self,person_name, person_age)<br>   静态方法：<br>    @staticmethod，不需要访问类里的任何参数。所带的参数都是从外部传入的。<br>class Person(object):<br>    def <strong>init</strong>(self,person_name, person_age):<br>        self.name = person_name<br>        self.age = person_age</p>
+<pre><code>@staticmethod
+def info(country):
+    print(country)</code></pre><p>   类方法：<br>   @classmethod,第一个参数必须是类属性。<br>class Person(object):<br>    country = “china”<br>    def <strong>init</strong>(self,person_name, person_age):<br>        self.name = person_name<br>        self.age = person_age</p>
+<pre><code>@classmethod
+def info(country):
+    print(country)</code></pre><p>属性方法：<br>1ban<br>    @property把一个函数变成一个静态属性<br>    直接调用函数名字，不需要加括号，就能获取到函数返回值。一般用在不注重过程，只要结果的情况!<br>class Person(object):<br>    country = “china”<br>    def <strong>init</strong>(self,person_name, person_age):<br>        self.name = person_name<br>        self.age = person_age</p>
+<pre><code>@property
+def health_point(self):
+    print(&quot;HP:【{}】&quot;.format(self.age*2))
+    return self.age*2</code></pre><p>P = Person(“laowang”,23)<br>P.health_point                # 不需要括号，看起来完全是一个属性，这就是属性方法</p>
+<p>‘’’上面的类属性只是只读的，即然是叫属性，那么只读就显得太LOW了’’’<br>    类属性装饰器@property,装饰以后，函数就有：赋值setter\销毁deleter两个方法。<br>class Person(object):<br>    country = “china”<br>    def <strong>init</strong>(self,person_name, person_age):<br>        self.name = person_name<br>        self.age = person_age</p>
+<pre><code>@property
+def health_point(self):
+    self.age = self.age*2
+    print(&quot;HP:【{}】&quot;.format(self.age))
+    return self.age
+
+@health_point.setter                    # 增加了一个赋值方法
+def health_point(self, add):
+    self.age = add
+
+@health_point.deleter                   # 增加了一个销毁属性的方法
+def health_point(self):
+    del self.age</code></pre><p>P = Person(“laowang”, 33)<br>print(P.health_point)</p>
+<p>P.health_point = 22                        # 给health.point赋值<br>print(P.health_point)</p>
+<p>del P.health_point                         # 销毁属性</p>
+<pre><code>特殊成员方法：</code></pre><p>方法    作用    示例    结果<br><strong>call</strong>    默认未定义<br>类实例化后,调用实例运行的方法    p = Person()<br>p()    Person是类名<br>实例p没有调用函数，加()运行call方法<br><strong>str</strong>    默认未定义,定义时必须有返回值<br>定义时，打印实例，输入str返回值    p = Person()<br>print (p)    Person是类名<br>打印实例p，运行str方法，打印返回值<br><strong>getitem</strong>    用于索引操作，如字典。获取数据    p = Person()<br>p[‘name’]    自动运行getitem<br><strong>setitem</strong>    用于索引操作，如字典。赋值    p = Person()<br>p[‘name’] = ‘David’    自动运行setitem<br><strong>delitem</strong>    用于索引操作，如字典。删除数据    p = Person()<br>del p[‘name’]    自动运行delitem<br><strong>new</strong>    类实例化时，执行<strong>new</strong>，并且会阻止<br>init运行，可以在new里调用init<br>    p = Person()    参照例子二<br><strong>len</strong>    待续<br><strong>cmp</strong>    待续<br>‘’’例子一call\str\getitem\setitem\delitem方法’’’<br>class Person(object):<br> def <strong>call</strong>(self):<br>  print(“print call”)</p>
+<p> def <strong>str</strong>(self):<br>  print(“print str:”,end=’’)<br>  return “1”</p>
+<p> def <strong>getitem</strong>(self,key):<br>  print(“getitem:”,key)</p>
+<p> def <strong>setitem</strong>(self,key,value):<br>  print(‘setitem:’,key,value)</p>
+<p> def <strong>delitem</strong>(self,key):<br>  print(‘delitem:’,key)</p>
+<p>p = Person()<br>p()<br>print(p)<br>print(‘———–’)<br>get = p[‘name’]<br>p[‘name’] = ‘David’<br>del p[‘name’]<br>‘’’例子二：<strong>new</strong>/<strong>init</strong>‘’’<br>class Person(object):</p>
+<p> def <strong>init</strong>(self):</p>
+<p>  print(‘this is init!’)</p>
+<p> def <strong>new</strong>(self):                  # <strong>new</strong>会阻断<strong>init</strong>执行，要想执行，需要写init方法</p>
+<p>  print(“this is new!”)</p>
+<p>  self.<strong>init</strong>(self)        # 如果去掉这一行，init不能执行</p>
+<p>p = Person()<br>    类的来源和元类：<br>    <a href="http://blog.jobbole.com/21351/中文版详细解答。下面写一个自己理解的简版的。" target="_blank" rel="noopener">http://blog.jobbole.com/21351/中文版详细解答。下面写一个自己理解的简版的。</a><br>    首先，类也是对象，可以：<br>    1)   你可以将它赋值给一个变量<br>    2)   你可以拷贝它<br>    3)   你可以为它增加属性<br>    4)   你可以将它作为函数参数进行传递</p>
+<pre><code>类也是是由type()这个函数创建的，type是类的类，类的爹。学名叫元类！
+也许有人会问那为啥type()能查看到数据类型呢？
+可能你会注意到，type的结果前是class。。。因为数据类型在Python中都是类定义的，这也说明了，为什么数字，字符等等全是对象。
+
+type格式：
+type(类名,(父类元组),{属性和方法的字典})  ,  父类元组可以没有；后面两个典省略时，默认值为None。</code></pre><p>‘’’一言不合就上例子’’’</p>
+<p>Person = type(‘Person’,(),{‘country’:’china’})</p>
+<p>print(Person.country)</p>
+<h1 id="带继承Person类的用法"><a href="#带继承Person类的用法" class="headerlink" title="带继承Person类的用法"></a>带继承Person类的用法</h1><p>def run():                    # 定义函数，把run传给Action的leg方法。<br>    print(‘running…’)</p>
+<p>Action = type(‘Action’,(Person,),{‘leg’:run})</p>
+<p>print(Action.country)<br>Action.leg()</p>
+<pre><code>metaclass:
+创建类的时候，使用metaclass，python就会使用指定的元类创建类。找不到则使用type创建。</code></pre><p>class MyType(type):<br>    def <strong>init</strong>(self,<em>args,*</em>kwargs):</p>
+<pre><code>    print(&quot;Mytype __init__&quot;,*args,**kwargs)
+
+def __call__(self, *args, **kwargs):
+    print(&quot;Mytype __call__&quot;, *args, **kwargs)
+    obj = self.__new__(self)
+    print(&quot;obj &quot;,obj,*args, **kwargs)
+    print(self)
+    self.__init__(obj,*args, **kwargs)
+    return obj
+
+def __new__(cls, *args, **kwargs):
+    print(&quot;Mytype __new__&quot;,*args,**kwargs)
+    return type.__new__(cls, *args, **kwargs)</code></pre><p>print(‘here…’)<br>class Foo(object,metaclass=MyType):<br>    def <strong>init</strong>(self,name):<br>        self.name = name</p>
+<pre><code>    print(&quot;Foo __init__&quot;)
+
+def __new__(cls, *args, **kwargs):
+    print(&quot;Foo __new__&quot;,cls, *args, **kwargs)
+    return object.__new__(cls)</code></pre><p>f = Foo(“Alex”)<br>print(“f”,f)<br>print(“fname”,f.name)</p>
+<p>    类的继承<br>代码重用。<br>    Python3中类有单继承和多继承，其中多继承与Python2的继承顺序不同。<br>    子类方法与父类重名，子类方法会覆盖父类<br>  单继承：<br>‘’’一言不合就上例子’’’</p>
+<p>class Person(object):<br>    def <strong>init</strong>(self,person_name):<br>        self.name = person_name<br>    def info(self):<br>        print(“this is personal info:\nname:{}”.format(self.name))</p>
+<p>class Action(Person):<br>    def <strong>init</strong>(self,person_name):<br>    ‘’’父类析构函数有两种继承方法’’’<br>        super(Action, self).<strong>init</strong>(person_name)     # 方法一<br>        # Person.<strong>init</strong>(self, person_name)          # 方法二<br>    # —-<br>    # 如果自已带参数写在继承的参数前面,然后在super里再声明一下父类变量<br>    # def <strong>init</strong>(self,person_sex,person_name):<br>    #     super(Action,self).<strong>init</strong>(person_name)<br>    # —-</p>
+<pre><code>def run(self):
+    print(&quot;{} is running...&quot;.format(self.name))</code></pre><p>a = Action(‘Alex’)<br>a.run()                            # 继承了Person的属性。<br>a.info()                           # 继承了Person的方法。</p>
+<p>多重继承：<br>不能同时继承两父亲类和爷爷类比如B继承A，C继承时就不能同时写A和B，只写B就可以了。</p>
+<p>class ROOT(object):<br>    def <strong>init</strong>(self):<br>        print(“this is root”)<br>    def action(self):<br>        print(“ROOT is action…”)</p>
+<p>class A(ROOT):<br>    def <strong>init</strong>(self):<br>        super(A, self).<strong>init</strong>()<br>        print (‘init A…’)<br>    def action(self):<br>        print(“A is action…”)</p>
+<p>class B(ROOT):<br>    def <strong>init</strong>(self):<br>        super(B, self).<strong>init</strong>()<br>        print (‘init B…’)<br>    def action(self):<br>        print(“B is action…”)</p>
+<p>class C(A):<br>    def <strong>init</strong>(self):<br>        super(C, self).<strong>init</strong>()<br>        print (‘init C…’)<br>    def action(self):<br>        print(“C is action…”)</p>
+<p>class D(B,C):<br>    def <strong>init</strong>(self):<br>        super(D, self).<strong>init</strong>()<br>        print (‘init D…’)<br>    def action(self):<br>        print(“D is action…”)</p>
+<p>d = D()</p>
+<p>要理解继承的顺序，因为当方法重名时，顺序靠后的方法覆盖前面的方法。<br>类的继承关系：                D(A,B)实例化时候的继承先后顺序：先找B（及其父类），再找C（及其父类）</p>
+<h1 id="多重继承的参数"><a href="#多重继承的参数" class="headerlink" title="多重继承的参数"></a>多重继承的参数</h1><p>class A(object):<br>    def <strong>init</strong>(self,sever_ip):<br>        self.ip = sever_ip</p>
+<pre><code>def show(self):
+    print(&apos;IP:&apos;,self.ip)</code></pre><p>class B(object):<br>    def <strong>init</strong>(self,server_port):<br>        self.port = server_port</p>
+<pre><code>def show(self):
+    print(&apos;PORT:&apos;,self.port)</code></pre><p>class C(A,B):<br>    def <strong>init</strong>(self,server_port,server_ip):        # 先写B的参数，再写A的参数。<br>        super(C,self).<strong>init</strong>(server_port)          # B的参数继承<br>        super(A,self).<strong>init</strong>(server_ip)            # C的参数继承</p>
+<pre><code>def show_b(self):
+    print(self.ip,self.port)</code></pre><p>c = C(‘192.168.1.1’,1234)<br>c.show_b()<br>c.show()        # 先继承B的show，再继承A的show，A把B的show 替换掉了，所以此处运行的是A的show方法</p>
+<p>    类的多态<br>    多态就是同一个父类的方法，不同子类继承可以进行不同的改写，实现多种不同的功能。<br>    任何依赖父类作为参数的函数或者方法都可以不加修改地正常运行，原因就在于多态。<br>‘’’接着上面的例子’’’</p>
+<h1 id="定义一个函数，把ROOT类传进里面"><a href="#定义一个函数，把ROOT类传进里面" class="headerlink" title="定义一个函数，把ROOT类传进里面"></a>定义一个函数，把ROOT类传进里面</h1><p>def who_action(class_name):<br>    class_name.action()</p>
+<p>who_action(ROOT())<br>who_action(D())<br>who_action(A())</p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python练习</title>
+    <url>/python%E7%BB%83%E4%B9%A0.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>1、 执行 Python 脚本的两种方式<br>1）/usr/bin/python3  xx.py<br>2）python3 xx.py  #注xx.py需要在内容里面调用由什么解释器执行<br>2、 简述位、字节的关系<br>1Byte = 8bit<br>1bit 表示某个二进制 0 1<br>3、 简述 ascii、unicode、utf-8、gbk 的关系<br>最初计算机是由美国发明的，计算机需要一套相应的字符编码集ascii，来表示英文字符<br>后来中国也表示也用来计算机，也需要一套字符编码集来表示汉字字符，也就是gbk<br>由于各国需要用计算机都需要一套相应的字符编码，来表示自已国家的字符，<br>于是就出现统一的字符编码的集也就是unicode，所有的字符都表示两个字节，<br>原来英文字符只占用一个字节，存放英文字符文档，会浪费一倍的空间，美国肯定不会同意<br>于是就出现了utf-8编码，可变长的字符编码，英文字符编码表示1个字节，汉字表示3个字节<br>这下美国就开兴了哈！<br>4、 请写出 “你好” 分别用 utf-8 和 gbk 编码所占的位数<br>你好  在utf-8中一个中文字符3个字节(Byte)  1字节 = 8位(bit) 你好就在utf-8表示24位<br>你好  在gbk中一个中文字符用2个字节(Byte)  1字节 = 8位(bit) 你好就在gbk中表示16位<br>5、 Pyhton 单行注释和多行注释分别用什么？<br>单行注释:用 #注释内容<br>多行注释:用’’’注释内容’’’    或者   “””注释内容”””<br>6、 声明变量注意事项有那些？<br>1 变量名不能以数字开头<br>2 变量名只能是数字，下划线，英文字母的组合<br>3 变量名不能有特殊符号<br>4 某些特定的字符不能用做变量名<br>7、 如何查看变量在内存中的地址?<br>id(变量名)<br>8、 执行 Python 程序时，自动生成的  .pyc文件的作用是什么？<br>当执行xx.py的python会 把编译的结果会保存在位于内存中的Pycodeobject中，<br>python程序运行结束，python解释器则将PyCodeObject写回到pyc文件中。<br>当python再次执行xx.py时，首先程序会在硬盘中寻找pyc文件，直接载入，否则就重复上面的<br>过程<br>.pyc文件在<em>pycache</em></p>
+<p>注：自已理解，我也不是很了解<br>9、写代码<br>a.实现用户输入用户名和密码，当用户名为seven且密码为123时，<br>显示登陆成功，否则登陆失败！<br>代码如下：</p>
+<p>user  =  “seven”<br>passwd = 123<br>username = input(“please the enter user:”)<br>password = int(input(“please the enter passwd:”))<br>if username == user and password == passwd:<br>    print(“logon successfull”)<br>else:<br>    print(“logon failed”)<br>注意:input()输入的任何内容都是字符串（存储str）<br>b.实现用户输入用户名和密码，当用户名为 seven且密码为 123 时，<br>显示登陆成功，否则登陆失败，失败时允许重复输入三次<br>代码如下</p>
+<p>user  =  “seven”<br>passwd =  “123456”<br>（string）<br>print passwd.isdigit();<br>print user.isdigit();</p>
+<p>for i in range(3):<br>    username = input(“please the enter user:”)<br>    password = input(“please the enter passwd:”)<br>    if password.isdigit():<br>        password = int(password)<br>        if username == user and passwd == password:<br>            print(“logon successfull”)<br>            break<br>        else:<br>            print(“logon failed”)<br>    else:<br>        print(“logon failed”)<br>c.实现用户输入用户名和密码，当用户名为 seven 或 alex 且密码为 123 时，<br>显示登陆成功，否则登陆失败，失败时允许重复输入三次<br>代码如下：</p>
+<p>user  =  [“seven”,”alex”]<br>passwd =  123<br>for i in range(3):<br>    username = input(“please the enter user:”)<br>    password = input(“please the enter passwd:”)<br>    if password.isdigit():<br>        password = int(password)<br>        if (username in user)  and passwd == password:<br>            print(“logon successfull”)<br>            break<br>        else:<br>            print(“logon failed”)<br>    else:<br>        print(“logon failed”)<br>10、写代码<br>a.使用 while 循环实现输出 2-3+4¬-5+6 …+100 的和<br>代码如下：</p>
+<p>even = 0<br>count = 1<br>while count&lt;100:<br>    count+=1<br>    #方法1：得出偶数-奇数+偶数-奇数…<br>    #方法2：求出所有的偶数减去所有的奇数和 （跟小学的换位运算类似）<br>    if count % 2 == 0:<br>        print(“2-100的偶数”,count)<br>        even += count<br>    else:<br>        print(“2-100的奇数”,count)<br>        even -= count<br>print(even) #得出的结果<br>b.使用 for 循环和 range 实现输出1-2+3-4+5-6….-98+99  的和<br>代码如下：</p>
+<p>uneven = 0<br>for i in range(1,100):<br>    #方法1:得出的奇数-偶数+奇数-偶数….<br>    #方法2:求出奇数和，求出偶数和，用奇数和减偶数和<br>    if i % 2 == 1:<br>        print(“1-99的奇数”,i)<br>        uneven += i<br>    else:<br>        print(“1-99的偶数”,i)<br>        uneven -= i<br>print(uneven)   #得出结果<br>c.使用 while 循环实现输出1，2，3，4，5，7，8，9，11，12<br>代码如下：</p>
+<p>count = 0<br>while count &lt;12:<br>    count += 1<br>    if count == 6:<br>        continue<br>    elif count ==10:<br>        continue<br>    print(count)<br>d.使用 while 循环实现输出 1-100 内的所有奇数<br>代码如下：</p>
+<p>count = 0<br>while count &lt; 100:<br>    count += 1<br>    if count % 2 == 1:<br>        print(“1-100的奇数”,count)<br>e. 使用 while 循环实现输出1-100内的所有偶数<br>代码如下：</p>
+<p>count = 0<br>while count &lt; 100:<br>    count += 1<br>    if count % 2 == 0:<br>        print(“1-100的偶数”,count)<br>11、分别书写数字5，10，32，7的二进制表示</p>
+<p>在python解释器中执行bin(number)，把某个数字转换成二进制<br>二进制的表示:0b (binary)<br>bin(5)    #0b101<br>bin(10)  #0b1010<br>bin(32)  #0b100000<br>bin(7)    #0b111<br>12、简述对象和 类的关系（可用比喻的手法）<br>类：用来描述具有相同属性和方法的对象集合，<br>它定义每个对象的属性所共有的属性和方法，对象是类的实例<br>对象：通过类定义的数据结构实例</p>
+<p>假如：人是一个种类，我们自已本身就是类的对象<br>类是一张图纸（该图纸上画了建筑的模型，以及怎样实现），实际高楼大夏就是图纸<br>实现的对象，<br>类是抽象的，对象是实际存在的。<br>13、现有如下两个变量，请简述 n1 和 n2是什么关系？<br>n1=123<br>n2=123<br>n1和n2关系是一样 ，我们可以用id(n1),id(n2)在内存中的地址的表示<br>14、现有如下两个变量，请简述 n1 和 n2是什么关系？<br>n1 = 123456<br>n2 = 123456<br>n1和n2虽然在值是一样的，在内存地址表示中是不一样的</p>
+<p>注：<br>（在python内部中，内存还有一个(小数字池，字符串池)缓存池，对于经常用的，<br>在python内部编译有一个优化，在这个缓存池，如果重复使用，都是使用同一内存缓存池的内存（地址）空间<br>如果大于这个缓存池，则会在内存独立开辟新的一个内存（地址）空间<br>例如<br>数字的缓存池 -5 至 256<br>可以用不相同的变量名，相同的值，用id(变量名)，看它们的内存地址）</p>
+<p>15、现有如下两个变量，请简述 n1 和 n2 是什么关系？<br>n1 = 123456<br>n2 = n1<br>n1 = 1234</p>
+<p>n2 是 n1 值的引用   它们在内存的地址是一样和内容也是一样的，只是不同命名<br>变量的赋值:<br>赋值不会开辟新的内存空间，它只是复制了新对象的引用，如果n1的值发生改变，<br>n2还是原来的改变之前值<br>16、如有一下变量 n1 =5，请使用 int 的提供的方法，<br>得到该变量最少可以用多少个二进制位表示？<br>n1= 5<br>print(n1.bit_length())<br>#结果<br>3<br> 17、布尔值分别有什么？<br>True  False<br>18、阅读代码，请写出执行结果<br>a = “alex”<br>b = a.capitalize()<br>print(a)<br>print(b)<br>请写出输出结果：<br>alex    #a<br>Alex    #b<br>19、写代码，有如下变量，请按照要求实现每个功能<br>name = “ aleX”<br>a. 移除 name 变量对应的值两边的空格，并输入移除有的内容</p>
+<p>print(name.strip())<br>#结果<br>aleX<br>b.判断 name 变量对应的值是否以 “al” 开头，并输出结果</p>
+<p>print(name.startswith(“al”))<br>#结果<br>False<br>c.判断 name 变量对应的值是否以 “X” 结尾，并输出结果</p>
+<p>print(name.endswith(“X”))<br>#结果<br>True<br>d.将 name 变量对应的值中的 “ l” 替换为 “ p”，并输出结果</p>
+<p>print(name.replace(“l”,”p”))<br>#结果<br>    apeX<br>e.将 name 变量对应的值根据 “ l” 分割，并输出结果。</p>
+<p>print(name.split(“l”))<br>#结果<br>[‘\ta’, ‘eX’]  #\t 表示使用了tab<br>f.请问，上一题 e分割之后得到值是什么类型？</p>
+<p>print(type(name.split(“l”)))<br>#结果<br>&lt;class ‘list’&gt; #列表<br>g.将 name 变量对应的值变大写，并输出结果</p>
+<p>print(name.upper())<br>    ALEX<br>h.将 name 变量对应的值变小写，并输出结果</p>
+<p>print(name.lower())<br>#结果<br>    alex</p>
+<p>i.请输出 name 变量对应的值的第 2 个字符？</p>
+<p>print(name[2])<br>#结果<br>l<br>j. 请输出 name 变量对应的值的前 3 个字符？</p>
+<p>print(name[:3])<br>#结果<br>    al<br>k. 请输出 name 变量对应的值的后 2 个字符？</p>
+<p>print(name[-2:])<br>#结果<br>eX<br>l.请输出 name 变量对应的值中 “ e” 所在索引位置？</p>
+<p>print(name.index(‘e’))<br>#结果<br>3<br> 20、字符串是否可迭代？如可以请使用 for 循环每一个元素？</p>
+<p>字符串可以迭代<br>代码如下：<br>hobby = “一条龙”<br>for i in hobby:<br>    print(i)<br>显示结果如下：<br>一<br>条<br>龙<br>21、请用代码实现：利用下划线将列表的每一个元素拼接成字符串，<br>li = [‘alex’, ‘eric’, ‘rain’]</p>
+<p>print(“_”.join(li))<br>#结果<br>alex_eric_rain<br>22、写代码，有如下列表，按照要求实现每一个功能<br>li = [‘alex’,’eric’,’rain’]<br>a.计算列表长度并输出</p>
+<p>print(len(li))<br>#结果<br>3<br>b.列表中追加元素 “seven”，并输出添加后的列表</p>
+<p>li.append(“seven”)<br>print(li)<br>#结果<br>[‘alex’, ‘eric’, ‘rain’, ‘seven’]<br>c.请在列表的第1个位置插入元素 “Tony”，并输出添加后的列表</p>
+<p>li.insert(0,”Tony”)<br>print(li)<br>#结果<br>[‘Tony’, ‘alex’, ‘eric’, ‘rain’]<br>d.请修改列表第2个位置的元素为 “Kelly”，并输出修改后的列表</p>
+<p>li[1] = “Kelly”<br>print(li)<br>#结果<br>[‘alex’, ‘Kelly’, ‘rain’]<br>e.请删除列表中的元素 “eric”，并输出修改后的列表</p>
+<p>第一种：得出“eric”索引，通过索引来删除该值<br>第二种：直接删除”eric”<br>1)<br>del li[1];print(li)   #结果[‘alex’, ‘rain’]<br>li.pop(1);print(li)   #结果[‘alex’, ‘rain’]<br>2)<br>li.remove(“eric”)<br>print(li)<br>#结果<br>[‘alex’, ‘rain’]<br>f.请删除列表中的第2个元素，并输出删除的元素的值和删除元素后的列表</p>
+<p>print(li.pop(1));print(li)<br>#结果<br>eric<br>[‘alex’, ‘rain’]<br>g.请删除列表中的第3个元素，并输出删除元素后的列表</p>
+<p>print(li.pop(2));print(li)<br>#结果<br>rain<br>[‘alex’, ‘eric’]<br>h.请删除列表中的第2至4个元素并输出删除元素后的列表</p>
+<p>del li[1:3]<br>print(li)<br>#结果<br>[‘alex’]<br>i.请将列表所有的元素反转，并输出反转后的列表</p>
+<p>li.reverse()<br>print(li)<br>#结果<br>[‘rain’, ‘eric’, ‘alex’]<br>j.请使用 for、len、range 输出列表的索引</p>
+<p>#3种方法，建议用第三种<br>1)for<br>for i in li:<br>    #list.index()列表有相同元素的,只是的获取（相同元素中的第一个元素）的索引<br>    print(li.index(i),i)  #如果列表内有相同的元素，不建议使用此方法<br>#结果<br>0 alex<br>1 eric<br>2 rain</p>
+<p>2)len<br>zero = []<br>for i in li:<br>    print(len(zero),i)<br>    zero.append(i)<br>#结果<br>0 alex<br>1 eric<br>2 rain</p>
+<p>3)range<br>for i in range(len(li)):<br>    print(i,li[i])<br>#结果<br>0 alex<br>1 eric<br>2 rain<br> k.请使用 enumrate 输出列表元素和序号（序号从 100 开始）</p>
+<p>for index,i in enumerate(li,start=100):<br>    print(index,i)<br>#结果<br>100 alex<br>101 eric<br>102 rain<br>l.请使用 for 循环输出列表的所有元素</p>
+<p>for i in li:<br>    print(i)<br>#结果<br>alex<br>eric<br>rain<br> (新)<br>23、写代码，有如下列表，请按照功能要求实现每一个功能<br>li=[“hello”,’seven’,[“mon”,[“h”,”kelly”],’all’],123,446]<br>a. 请输出 “Kelly”</p>
+<p>print(li[2][1][1])<br>#结果<br>kelly<br>b.请使用索引找到 ‘all’元素并将其修改为 “ALL”</p>
+<p>li[2][2] = “ALL”<br>print(li)<br>#结果<br>[‘hello’, ‘seven’, [‘mon’, [‘h’, ‘kelly’], ‘ALL’], 123, 446]<br>24、写代码，有如下元组，按照要求实现每一个功能<br>tu=(‘alex’,’eric’,’rain’)<br>a.计算元组长度并输出</p>
+<p>print(len(tu))<br>#结果<br>3<br>b.获取元组的第2个元素，并输出</p>
+<p>print(tu[1])<br>#结果<br>eric<br>c.获取元组的第 1-2个元素，并输出</p>
+<p>print(tu[0:2])<br>#结果<br>(‘alex’, ‘eric’)<br>d.请使用 for 输出元组的元素</p>
+<p>for i in tu:<br>    print(i)<br>#结果<br>alex<br>eric<br>rain<br>e.请使用 for、len、range 输出元组的索引</p>
+<p>#跟22题j列表用法类似<br>for i in range(len(tu)):<br>    print(i,tu[i])<br>#结果<br>0 alex<br>1 eric<br>2 rain<br>f.请使用 enumrate 输出元祖元素和序号（序号从 10 开始）</p>
+<p>for index,i in enumerate(tu,start=10):<br>    print(index,i)<br>#结果<br>10 alex<br>11 eric<br>12 rain<br>25、有如下变量，请实现要求的功能<br>tu=(“alex”,[11,22,{“k1”:’v1’,”k2”:[“age”,”name”],”k3”:(11,22,33)},44])<br>a.讲述元祖的特性<br>元祖和列表类似都是有序的从0开始<br>不同的是元祖的元素是不能修改的<br>b.请问 tu 变量中的第一个元素 “alex” 是否可被修改？<br>不能修改<br>c.请问tu变量中的”k2”对应的值是什么类型？是否可以被修改？<br>如果可以，请在其中添加一个元素 “Seven”</p>
+<p>print(type(tu[1][2][“k2”]))<br>#结果<br>&lt;class ‘list’&gt;<br>列表类型可以修改<br>tu[1][2][“k2”].append(“seven”)<br>print(tu)<br>#结果<br>(‘alex’, [11, 22, {‘k2’: [‘age’, ‘name’, ‘seven’], ‘k3’: (11, 22, 33), ‘k1’: ‘v1’}, 44])<br>注：表面上看，tuple的元素确实变了，但其实变的不是tuple的元素，而是list的元素。<br>tuple一开始指向的list并没有改成别的list，所以，tuple所谓的“不变”是说，<br>tuple的每个元素，指向永远不变。但指向的这个list本身是可变的！<br>d.请问 tu 变量中的”k3”对应的值是什么类型？是否可以被修改？<br>如果可以，请在其中添加一个元素 “Seven”</p>
+<p>print(type(tu[1][2][“k3”]))<br>#结果<br>&lt;class ‘tuple’&gt;<br>#对应值是元祖，不能修改</p>
+<p>26、字典<br>dic ={‘k1’:”v1”,”k2”:”v2”,”k3”:[11,22,33]}<br>a.请循环输出所有的 key</p>
+<p>for i in dic:<br>    print(i)<br>#结果<br>k1<br>k3<br>k2<br>注：字典是无序的<br>b.请循环输出所有的value</p>
+<p>for i in dic:<br>    print(dic[i])<br>#结果<br>[11, 22, 33]<br>v2<br>v1<br>c.请循环输出所有的 key 和 value</p>
+<p>for i in dic:<br>    print(i,dic[i])<br>#结果<br>k2 v2<br>k3 [11, 22, 33]<br>k1 v1<br>d.请在字典中添加一个键值对，”k4”:”v4”，输出添加后的字典</p>
+<p>dic[“k4”] = “v4”<br>print(dic)<br>#结果<br>{‘k4’: ‘v4’, ‘k2’: ‘v2’, ‘k3’: [11, 22, 33], ‘k1’: ‘v1’}<br>e.请在修改字典中 “k1” 对应的值为 “alex”，输出修改后的字典</p>
+<p>dic[‘k1’] = “alex”<br>print(dic)<br>#结果<br>{‘k3’: [11, 22, 33], ‘k1’: ‘alex’, ‘k2’: ‘v2’}<br>f.请在 k3 对应的值中追加一个元素44，输出修改后的字典</p>
+<p>dic[“k3”].append(44)<br>print(dic)<br>#结果<br>{‘k2’: ‘v2’, ‘k3’: [11, 22, 33, 44], ‘k1’: ‘v1’}<br>g.请在 k3 对应的值的第1个位置插入个元素18，输出修改后的字典</p>
+<p>dic[“k3”].insert(0,18)<br>print(dic)<br>#结果<br>{‘k1’: ‘v1’, ‘k2’: ‘v2’, ‘k3’: [18, 11, 22, 33]}<br> 27、转换<br>a.将字符串 s=”alex” 转换成列表</p>
+<p>print(list(s))<br>#结果<br>[‘a’, ‘l’, ‘e’, ‘x’]<br>b.将字符串 s=”alex” 转换成元祖</p>
+<p>print(tuple(s))<br>#结果<br>(‘a’, ‘l’, ‘e’, ‘x’)<br>c.将列表 li =[“alex”,”seven”]转换成元组</p>
+<p>print(tuple(li))<br>#结果<br>(‘alex’, ‘seven’)<br>d.将元祖 tu =(‘Alex’,”seven”)转换成列表</p>
+<p>print(list(tu))<br>#结果<br>[‘Alex’, ‘seven’]<br>e.将列表 li=[“alex”,”seven”]转换成字典且字典的key按照10开始向后递增</p>
+<p>dic1 = {}<br>for key,value in enumerate(li,start=10):<br>    dic1[key] = value<br>print(dic1)<br>#结果<br>{10: ‘alex’, 11: ‘seven’}<br> 28、转码<br>n=”老男孩”<br>a.将字符串转换成 utf-8 编码的字节，并输出，然后将该字节再转换成 utf-8 编码字符串，再输出</p>
+<p>print(n.encode(“utf-8”))<br>#结果<br>b’\xe8\x80\x81\xe7\x94\xb7\xe5\xad\xa9’</p>
+<p>print(n.encode(“utf-8”).decode(“utf-8”))<br>#结果<br>老男孩<br>b.将字符串转换成 gbk 编码的字节，并输出，然后将该字节再转换成 gbk 编码字符串，再输出</p>
+<p>print(n.encode(“gbk”))<br>#结果<br>b’\xc0\xcf\xc4\xd0\xba\xa2’</p>
+<p>print(n.encode(“gbk”).decode(“gbk”))<br>#结果<br>老男孩<br> 29、求1-100内的所有数的和</p>
+<p>#3种方法<br>1)<br>print(sum(range(1,101)))<br>#结果<br>5050</p>
+<p>2)<br>SUM = 0<br>for i in range(1,101):<br>    SUM += i<br>print(SUM)<br>#结果<br>5050</p>
+<p>3)<br>SUM = 0<br>count = 1<br>while count &lt;= 100:<br>    SUM += count<br>    count += 1<br>print(SUM)<br>#结果<br>5050<br>30、元素分类<br>有如下值集合 [11,22,33,44,55,66,77,88,99,90]，<br>将所有大于66的值保存至字典的第一个 key中，<br>将小于66的值保存至第二个 key 的值中。<br>即：{‘k1’:大于 66 的所有值,’k2’:小于66 的所有值}</p>
+<p>dic = {“k1”:[],<br>       “k2”:[]}<br>aa = set([11,22,33,44,55,66,77,88,99,90])<br>for i in aa:<br>    if i&gt;= 66:<br>        dic[“k1”].append(i)<br>    else:<br>        dic[“k2”].append(i)<br>print(dic)<br>结果<br>{‘k1’: [66, 99, 77, 88, 90], ‘k2’: [33, 11, 44, 22, 55]}<br>31、购物车<br>功能要求：<br>要求用户输入总资产，例如： 2000<br>显示商品列表，让用户根据序号选择商品，加入购物车<br>购买，如果商品总额大于总资产，提示账户余额不足，否则，购买成功。<br>goods = [<br>{“name”:”电脑”,”price”:1999},<br>{“name”:”鼠标”,”price”:10},<br>{“name”:”游艇”,”price”:20},<br>{“name”:”美女”,”price”:98},<br>]</p>
+<p>shop_cart = []<br>goods    =    [<br>{“name”:”电脑”,”price”:1999},<br>{“name”:”鼠标”,”price”:10},<br>{“name”:”游艇”,”price”:20},<br>{“name”:”美女”,”price”:98},<br>]<br>while True:<br>    salary = input(“请输入用户余额[quit]:”)<br>    if salary.isdigit():<br>        salary = int(salary)<br>        break<br>    elif salary == “quit”:<br>        exit(“不想购买”)<br>    else:<br>        print(“please the enter number”)<br>while True:<br>    print(“shop list”.center(50, ‘*’))<br>    for index,i in enumerate(goods):<br>        print(index,i)<br>    choose_number = input(“请输入购买商品编号[quit]:”)<br>    if choose_number.isdigit():<br>    choose_number = int(choose_number)<br>        product_list = []<br>        if 0 &lt;= choose_number &lt;= len(goods):<br>            product_list.append(goods[choose_number])<br>            if salary &gt;= product_list[0][“price”]:<br>              shop_cart.append(goods[choose_number])<br>              salary -= product_list[0][‘price’]<br>              print(“当前购买的商品”,product_list,”当前用户余额\033[1;31m{salary}\033[0m”.format(salary=salary))<br>            else:<br>                print(“余额不足”)<br>        else:<br>            print(“无效的商品编号”)<br>    elif choose_number.lower() == ‘quit’:</p>
+<pre><code>    print(&quot;购买的商品&quot;.center(50,&quot;*&quot;))
+    for y in shop_cart:
+        print(y)
+    exit()
+else:
+    print(&quot;无效的输入&quot;)</code></pre><p>#注:简易的购物车，还能继续优化</p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>详解python命名空间和作用域</title>
+    <url>/%E8%AF%A6%E8%A7%A3python%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E5%92%8C%E4%BD%9C%E7%94%A8%E5%9F%9F.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h1 id="1、典型案例"><a href="#1、典型案例" class="headerlink" title="1、典型案例"></a>1、典型案例</h1><p>先从几个典型的案例来看下名称空间及作用域对python代码运行的影响，请看下面几个代码实例及其执行结果，是否符合你的预期。<br>代码1：块作用域<br>if True:<br>    i = 1<br>print i<br>执行结果： 1<br>代码2：函数作用域<br>def f():<br>    i = 1<br>f()<br>print i<br>执行结果：执行报错“NameError: name ‘cc’ is not defined”</p>
+<p>代码3：静态作用域<br>i = 1<br>def test():<br>    i += 1<br>test()<br>执行结果：执行报错“UnboundLocalError: local variable ‘i’ referenced before assignment”</p>
+<p>代码4：静态作用域<br>i = 1<br>def g():<br>print i<br>print i<br>def f():<br>    i = 2<br>    g()<br>f()　<br>执行结果： 1<br> 将i = 2放在g()后面会不会起作用？<br>代码5：闭包、全局作用域<br>i = 1<br>def f():<br>    i = 2<br>def g():<br>        print i<br>    return g<br>func = f()<br>func()<br>print i<br>执行结果：2    1<br>PS:python2.1之前执行该代码会报错，闭包(嵌套作用域)是在之后引入的概念，内部函数g()只能访问本函数中的命名空间、全局命名空间、内建命名空间，无法访问外部调用函数的命名空间。</p>
+<h1 id="2、命名空间"><a href="#2、命名空间" class="headerlink" title="2、命名空间"></a>2、命名空间</h1><p>【定义】<br>    名称到对象的映射。命名空间是一个字典的实现，键为变量名，值是变量对应的值。各个命名空间是独立没有关系的，一个命名空间中不能有重名，但是不同的命名空间可以重名而没有任何影响。</p>
+<p>【分类】<br>    python程序执行期间会有2个或3个活动的命名空间（函数调用时有3个，函数调用结束后2个）。按照变量定义的位置，可以划分为以下3类：<br>    Local，局部命名空间，每个函数所拥有的命名空间，记录了函数中定义的所有变量，包括函数的入参、内部定义的局部变量。<br>    Global，全局命名空间，每个模块加载执行时创建的，记录了模块中定义的变量，包括模块中定义的函数、类、其他导入的模块、模块级的变量与常量。<br>    Built-in，python自带的内建命名空间，任何模块均可以访问，放着内置的函数和异常。</p>
+<p>【生命周期】<br>    Local（局部命名空间）在函数被调用时才被创建，但函数返回结果或抛出异常时被删除。（每一个递归函数都拥有自己的命名空间）。<br>    Global（全局命名空间）在模块被加载时创建，通常一直保留直到python解释器退出。<br>    Built-in（内建命名空间）在python解释器启动时创建，一直保留直到解释器退出。</p>
+<pre><code>各命名空间创建顺序：python解释器启动 -&gt;创建内建命名空间 -&gt; 加载模块 -&gt; 创建全局命名空间 -&gt;函数被调用 -&gt;创建局部命名空间
+各命名空间销毁顺序：函数调用结束 -&gt; 销毁函数对应的局部命名空间 -&gt; python虚拟机（解释器）退出 -&gt;销毁全局命名空间 -&gt;销毁内建命名空间
+python解释器加载阶段会创建出内建命名空间、模块的全局命名空间，局部命名空间是在运行阶段函数被调用时动态创建出来的，函数调用结束动态的销毁的。</code></pre><h1 id="3、作用域"><a href="#3、作用域" class="headerlink" title="3、作用域"></a>3、作用域</h1><p>【定义】<br>    作用域是针对变量而言，指申明的变量在程序里的可应用范围。或者称为变量的可见性。</p>
+<p>【分类】<br>    只有函数、类、模块会产生作用域，代码块不会产生作用域（参考代码1）。作用域按照变量的定义位置可以划分为4类：<br>    Local(函数内部)局部作用域<br>    Enclosing（嵌套函数的外层函数内部）嵌套作用域（闭包）<br>    Global（模块全局）全局作用域<br>    Built-in（内建）内建作用域</p>
+<p>【规则】<br>    1、静态作用域规则<br>         定义：python中变量的作用域是由它在源代码中的位置决定的。（名字查找是动态发生的）<br>         说明：参考代码3/4，以代码3为例说明，在模块中定义了一个全局变量 i = 1，在test方法中执行 i += 1，对变量 i进行了赋值动作，该赋值动作决定了i在test()方法中是一个局部变量， i += 1可以拆分为两步执行，首先执行 i + 1, 然后将结果赋值给i。执行i + 1操作时，i虽然申明为局部变量，但是没有绑定任何具体值，因此报错。<br>    2、最内嵌套作用域规则<br>         定义：由一个赋值语句引进的名字在这个赋值语句所在的作用域里是可见（起作用）的，而且在其内部嵌套的每个作用域内也可见，除非它被嵌套于内部的且引进同样名字的赋值语句所遮蔽。<br>         说明：参考代码5. 方法g()是方法f()中定义的内嵌函数。在方法f()中定义的局部变量 i =2，在内嵌方法 g()中是可见的。如果在g()中又定义一个重名的变量 i = 3，则f()中定义的变量将被遮蔽。</p>
+<h1 id="4、命名空间与作用域的关系"><a href="#4、命名空间与作用域的关系" class="headerlink" title="4、命名空间与作用域的关系"></a>4、命名空间与作用域的关系</h1><pre><code>命名空间定义了在某个作用域内变量名和绑定值之间的对应关系，命名空间是键值对的集合，变量名与值是一一对应关系。作用域定义了命名空间中的变量能够在多大范围内起作用。
+命名空间在python解释器中是以字典的形式存在的，是以一种可以看得见摸得着的实体存在的。作用域是python解释器定义的一种规则，该规则确定了运行时变量查找的顺序，是一种形而上的虚的规定。</code></pre><p>【变量查找法则】<br>    python解释器动态执行过程中，对遇到的变量进行解释时，是按照一条固定的作用域链查找解释的，又称为LEGB法则。<br>    其中L代表Local 局部作用域，E代表Enclosing 嵌套作用域，G代表Global 全局作用域，B代表Built-in 内建作用域。<br>    python解释器查找变量时，会按照顺序依次查找局部作用域，嵌套作用域，全局作用域，内建作用域，在任意一个作用域中找到变量则停止查找，所有作用域查找完成没有找到对应的变量，则抛出 NameError: name ‘xxxx’ is not defined的异常。<br>    在局部作用域中，可以看到局部作用域、嵌套作用域、全局作用域、内建作用域中所有定义的变量。<br>    在全局作用域中，可以看到全局作用域、内建作用域中的所有定义的变量，无法看到局部作用域中的变量。</p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
 </search>

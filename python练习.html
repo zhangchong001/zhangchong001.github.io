@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>python练习 - zc&#39;blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="ZC,"> 
+    <meta name="description" content="1、 执行 Python 脚本的两种方式1）/usr/bin/python3  xx.py2）python3 xx.py  #注xx.py需要在内容里面调用由什么解释器执行2、 简述位、字节的关系1,"> 
+    <meta name="author" content="ZC"> 
+    <link rel="alternative" href="atom.xml" title="zc&#39;blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">zc&#39;blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://zc.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">python练习</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">python练习</h1>
+        <div class="stuff">
+            <span>七月 12, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>1、 执行 Python 脚本的两种方式<br>1）/usr/bin/python3  xx.py<br>2）python3 xx.py  #注xx.py需要在内容里面调用由什么解释器执行<br>2、 简述位、字节的关系<br>1Byte = 8bit<br>1bit 表示某个二进制 0 1<br>3、 简述 ascii、unicode、utf-8、gbk 的关系<br>最初计算机是由美国发明的，计算机需要一套相应的字符编码集ascii，来表示英文字符<br>后来中国也表示也用来计算机，也需要一套字符编码集来表示汉字字符，也就是gbk<br>由于各国需要用计算机都需要一套相应的字符编码，来表示自已国家的字符，<br>于是就出现统一的字符编码的集也就是unicode，所有的字符都表示两个字节，<br>原来英文字符只占用一个字节，存放英文字符文档，会浪费一倍的空间，美国肯定不会同意<br>于是就出现了utf-8编码，可变长的字符编码，英文字符编码表示1个字节，汉字表示3个字节<br>这下美国就开兴了哈！<br>4、 请写出 “你好” 分别用 utf-8 和 gbk 编码所占的位数<br>你好  在utf-8中一个中文字符3个字节(Byte)  1字节 = 8位(bit) 你好就在utf-8表示24位<br>你好  在gbk中一个中文字符用2个字节(Byte)  1字节 = 8位(bit) 你好就在gbk中表示16位<br>5、 Pyhton 单行注释和多行注释分别用什么？<br>单行注释:用 #注释内容<br>多行注释:用’’’注释内容’’’    或者   “””注释内容”””<br>6、 声明变量注意事项有那些？<br>1 变量名不能以数字开头<br>2 变量名只能是数字，下划线，英文字母的组合<br>3 变量名不能有特殊符号<br>4 某些特定的字符不能用做变量名<br>7、 如何查看变量在内存中的地址?<br>id(变量名)<br>8、 执行 Python 程序时，自动生成的  .pyc文件的作用是什么？<br>当执行xx.py的python会 把编译的结果会保存在位于内存中的Pycodeobject中，<br>python程序运行结束，python解释器则将PyCodeObject写回到pyc文件中。<br>当python再次执行xx.py时，首先程序会在硬盘中寻找pyc文件，直接载入，否则就重复上面的<br>过程<br>.pyc文件在<em>pycache</em></p>
+<p>注：自已理解，我也不是很了解<br>9、写代码<br>a.实现用户输入用户名和密码，当用户名为seven且密码为123时，<br>显示登陆成功，否则登陆失败！<br>代码如下：</p>
+<p>user  =  “seven”<br>passwd = 123<br>username = input(“please the enter user:”)<br>password = int(input(“please the enter passwd:”))<br>if username == user and password == passwd:<br>    print(“logon successfull”)<br>else:<br>    print(“logon failed”)<br>注意:input()输入的任何内容都是字符串（存储str）<br>b.实现用户输入用户名和密码，当用户名为 seven且密码为 123 时，<br>显示登陆成功，否则登陆失败，失败时允许重复输入三次<br>代码如下</p>
+<p>user  =  “seven”<br>passwd =  “123456”<br>（string）<br>print passwd.isdigit();<br>print user.isdigit();</p>
+<p>for i in range(3):<br>    username = input(“please the enter user:”)<br>    password = input(“please the enter passwd:”)<br>    if password.isdigit():<br>        password = int(password)<br>        if username == user and passwd == password:<br>            print(“logon successfull”)<br>            break<br>        else:<br>            print(“logon failed”)<br>    else:<br>        print(“logon failed”)<br>c.实现用户输入用户名和密码，当用户名为 seven 或 alex 且密码为 123 时，<br>显示登陆成功，否则登陆失败，失败时允许重复输入三次<br>代码如下：</p>
+<p>user  =  [“seven”,”alex”]<br>passwd =  123<br>for i in range(3):<br>    username = input(“please the enter user:”)<br>    password = input(“please the enter passwd:”)<br>    if password.isdigit():<br>        password = int(password)<br>        if (username in user)  and passwd == password:<br>            print(“logon successfull”)<br>            break<br>        else:<br>            print(“logon failed”)<br>    else:<br>        print(“logon failed”)<br>10、写代码<br>a.使用 while 循环实现输出 2-3+4¬-5+6 …+100 的和<br>代码如下：</p>
+<p>even = 0<br>count = 1<br>while count&lt;100:<br>    count+=1<br>    #方法1：得出偶数-奇数+偶数-奇数…<br>    #方法2：求出所有的偶数减去所有的奇数和 （跟小学的换位运算类似）<br>    if count % 2 == 0:<br>        print(“2-100的偶数”,count)<br>        even += count<br>    else:<br>        print(“2-100的奇数”,count)<br>        even -= count<br>print(even) #得出的结果<br>b.使用 for 循环和 range 实现输出1-2+3-4+5-6….-98+99  的和<br>代码如下：</p>
+<p>uneven = 0<br>for i in range(1,100):<br>    #方法1:得出的奇数-偶数+奇数-偶数….<br>    #方法2:求出奇数和，求出偶数和，用奇数和减偶数和<br>    if i % 2 == 1:<br>        print(“1-99的奇数”,i)<br>        uneven += i<br>    else:<br>        print(“1-99的偶数”,i)<br>        uneven -= i<br>print(uneven)   #得出结果<br>c.使用 while 循环实现输出1，2，3，4，5，7，8，9，11，12<br>代码如下：</p>
+<p>count = 0<br>while count &lt;12:<br>    count += 1<br>    if count == 6:<br>        continue<br>    elif count ==10:<br>        continue<br>    print(count)<br>d.使用 while 循环实现输出 1-100 内的所有奇数<br>代码如下：</p>
+<p>count = 0<br>while count &lt; 100:<br>    count += 1<br>    if count % 2 == 1:<br>        print(“1-100的奇数”,count)<br>e. 使用 while 循环实现输出1-100内的所有偶数<br>代码如下：</p>
+<p>count = 0<br>while count &lt; 100:<br>    count += 1<br>    if count % 2 == 0:<br>        print(“1-100的偶数”,count)<br>11、分别书写数字5，10，32，7的二进制表示</p>
+<p>在python解释器中执行bin(number)，把某个数字转换成二进制<br>二进制的表示:0b (binary)<br>bin(5)    #0b101<br>bin(10)  #0b1010<br>bin(32)  #0b100000<br>bin(7)    #0b111<br>12、简述对象和 类的关系（可用比喻的手法）<br>类：用来描述具有相同属性和方法的对象集合，<br>它定义每个对象的属性所共有的属性和方法，对象是类的实例<br>对象：通过类定义的数据结构实例</p>
+<p>假如：人是一个种类，我们自已本身就是类的对象<br>类是一张图纸（该图纸上画了建筑的模型，以及怎样实现），实际高楼大夏就是图纸<br>实现的对象，<br>类是抽象的，对象是实际存在的。<br>13、现有如下两个变量，请简述 n1 和 n2是什么关系？<br>n1=123<br>n2=123<br>n1和n2关系是一样 ，我们可以用id(n1),id(n2)在内存中的地址的表示<br>14、现有如下两个变量，请简述 n1 和 n2是什么关系？<br>n1 = 123456<br>n2 = 123456<br>n1和n2虽然在值是一样的，在内存地址表示中是不一样的</p>
+<p>注：<br>（在python内部中，内存还有一个(小数字池，字符串池)缓存池，对于经常用的，<br>在python内部编译有一个优化，在这个缓存池，如果重复使用，都是使用同一内存缓存池的内存（地址）空间<br>如果大于这个缓存池，则会在内存独立开辟新的一个内存（地址）空间<br>例如<br>数字的缓存池 -5 至 256<br>可以用不相同的变量名，相同的值，用id(变量名)，看它们的内存地址）</p>
+<p>15、现有如下两个变量，请简述 n1 和 n2 是什么关系？<br>n1 = 123456<br>n2 = n1<br>n1 = 1234</p>
+<p>n2 是 n1 值的引用   它们在内存的地址是一样和内容也是一样的，只是不同命名<br>变量的赋值:<br>赋值不会开辟新的内存空间，它只是复制了新对象的引用，如果n1的值发生改变，<br>n2还是原来的改变之前值<br>16、如有一下变量 n1 =5，请使用 int 的提供的方法，<br>得到该变量最少可以用多少个二进制位表示？<br>n1= 5<br>print(n1.bit_length())<br>#结果<br>3<br> 17、布尔值分别有什么？<br>True  False<br>18、阅读代码，请写出执行结果<br>a = “alex”<br>b = a.capitalize()<br>print(a)<br>print(b)<br>请写出输出结果：<br>alex    #a<br>Alex    #b<br>19、写代码，有如下变量，请按照要求实现每个功能<br>name = “ aleX”<br>a. 移除 name 变量对应的值两边的空格，并输入移除有的内容</p>
+<p>print(name.strip())<br>#结果<br>aleX<br>b.判断 name 变量对应的值是否以 “al” 开头，并输出结果</p>
+<p>print(name.startswith(“al”))<br>#结果<br>False<br>c.判断 name 变量对应的值是否以 “X” 结尾，并输出结果</p>
+<p>print(name.endswith(“X”))<br>#结果<br>True<br>d.将 name 变量对应的值中的 “ l” 替换为 “ p”，并输出结果</p>
+<p>print(name.replace(“l”,”p”))<br>#结果<br>    apeX<br>e.将 name 变量对应的值根据 “ l” 分割，并输出结果。</p>
+<p>print(name.split(“l”))<br>#结果<br>[‘\ta’, ‘eX’]  #\t 表示使用了tab<br>f.请问，上一题 e分割之后得到值是什么类型？</p>
+<p>print(type(name.split(“l”)))<br>#结果<br>&lt;class ‘list’&gt; #列表<br>g.将 name 变量对应的值变大写，并输出结果</p>
+<p>print(name.upper())<br>    ALEX<br>h.将 name 变量对应的值变小写，并输出结果</p>
+<p>print(name.lower())<br>#结果<br>    alex</p>
+<p>i.请输出 name 变量对应的值的第 2 个字符？</p>
+<p>print(name[2])<br>#结果<br>l<br>j. 请输出 name 变量对应的值的前 3 个字符？</p>
+<p>print(name[:3])<br>#结果<br>    al<br>k. 请输出 name 变量对应的值的后 2 个字符？</p>
+<p>print(name[-2:])<br>#结果<br>eX<br>l.请输出 name 变量对应的值中 “ e” 所在索引位置？</p>
+<p>print(name.index(‘e’))<br>#结果<br>3<br> 20、字符串是否可迭代？如可以请使用 for 循环每一个元素？</p>
+<p>字符串可以迭代<br>代码如下：<br>hobby = “一条龙”<br>for i in hobby:<br>    print(i)<br>显示结果如下：<br>一<br>条<br>龙<br>21、请用代码实现：利用下划线将列表的每一个元素拼接成字符串，<br>li = [‘alex’, ‘eric’, ‘rain’]</p>
+<p>print(“_”.join(li))<br>#结果<br>alex_eric_rain<br>22、写代码，有如下列表，按照要求实现每一个功能<br>li = [‘alex’,’eric’,’rain’]<br>a.计算列表长度并输出</p>
+<p>print(len(li))<br>#结果<br>3<br>b.列表中追加元素 “seven”，并输出添加后的列表</p>
+<p>li.append(“seven”)<br>print(li)<br>#结果<br>[‘alex’, ‘eric’, ‘rain’, ‘seven’]<br>c.请在列表的第1个位置插入元素 “Tony”，并输出添加后的列表</p>
+<p>li.insert(0,”Tony”)<br>print(li)<br>#结果<br>[‘Tony’, ‘alex’, ‘eric’, ‘rain’]<br>d.请修改列表第2个位置的元素为 “Kelly”，并输出修改后的列表</p>
+<p>li[1] = “Kelly”<br>print(li)<br>#结果<br>[‘alex’, ‘Kelly’, ‘rain’]<br>e.请删除列表中的元素 “eric”，并输出修改后的列表</p>
+<p>第一种：得出“eric”索引，通过索引来删除该值<br>第二种：直接删除”eric”<br>1)<br>del li[1];print(li)   #结果[‘alex’, ‘rain’]<br>li.pop(1);print(li)   #结果[‘alex’, ‘rain’]<br>2)<br>li.remove(“eric”)<br>print(li)<br>#结果<br>[‘alex’, ‘rain’]<br>f.请删除列表中的第2个元素，并输出删除的元素的值和删除元素后的列表</p>
+<p>print(li.pop(1));print(li)<br>#结果<br>eric<br>[‘alex’, ‘rain’]<br>g.请删除列表中的第3个元素，并输出删除元素后的列表</p>
+<p>print(li.pop(2));print(li)<br>#结果<br>rain<br>[‘alex’, ‘eric’]<br>h.请删除列表中的第2至4个元素并输出删除元素后的列表</p>
+<p>del li[1:3]<br>print(li)<br>#结果<br>[‘alex’]<br>i.请将列表所有的元素反转，并输出反转后的列表</p>
+<p>li.reverse()<br>print(li)<br>#结果<br>[‘rain’, ‘eric’, ‘alex’]<br>j.请使用 for、len、range 输出列表的索引</p>
+<p>#3种方法，建议用第三种<br>1)for<br>for i in li:<br>    #list.index()列表有相同元素的,只是的获取（相同元素中的第一个元素）的索引<br>    print(li.index(i),i)  #如果列表内有相同的元素，不建议使用此方法<br>#结果<br>0 alex<br>1 eric<br>2 rain</p>
+<p>2)len<br>zero = []<br>for i in li:<br>    print(len(zero),i)<br>    zero.append(i)<br>#结果<br>0 alex<br>1 eric<br>2 rain</p>
+<p>3)range<br>for i in range(len(li)):<br>    print(i,li[i])<br>#结果<br>0 alex<br>1 eric<br>2 rain<br> k.请使用 enumrate 输出列表元素和序号（序号从 100 开始）</p>
+<p>for index,i in enumerate(li,start=100):<br>    print(index,i)<br>#结果<br>100 alex<br>101 eric<br>102 rain<br>l.请使用 for 循环输出列表的所有元素</p>
+<p>for i in li:<br>    print(i)<br>#结果<br>alex<br>eric<br>rain<br> (新)<br>23、写代码，有如下列表，请按照功能要求实现每一个功能<br>li=[“hello”,’seven’,[“mon”,[“h”,”kelly”],’all’],123,446]<br>a. 请输出 “Kelly”</p>
+<p>print(li[2][1][1])<br>#结果<br>kelly<br>b.请使用索引找到 ‘all’元素并将其修改为 “ALL”</p>
+<p>li[2][2] = “ALL”<br>print(li)<br>#结果<br>[‘hello’, ‘seven’, [‘mon’, [‘h’, ‘kelly’], ‘ALL’], 123, 446]<br>24、写代码，有如下元组，按照要求实现每一个功能<br>tu=(‘alex’,’eric’,’rain’)<br>a.计算元组长度并输出</p>
+<p>print(len(tu))<br>#结果<br>3<br>b.获取元组的第2个元素，并输出</p>
+<p>print(tu[1])<br>#结果<br>eric<br>c.获取元组的第 1-2个元素，并输出</p>
+<p>print(tu[0:2])<br>#结果<br>(‘alex’, ‘eric’)<br>d.请使用 for 输出元组的元素</p>
+<p>for i in tu:<br>    print(i)<br>#结果<br>alex<br>eric<br>rain<br>e.请使用 for、len、range 输出元组的索引</p>
+<p>#跟22题j列表用法类似<br>for i in range(len(tu)):<br>    print(i,tu[i])<br>#结果<br>0 alex<br>1 eric<br>2 rain<br>f.请使用 enumrate 输出元祖元素和序号（序号从 10 开始）</p>
+<p>for index,i in enumerate(tu,start=10):<br>    print(index,i)<br>#结果<br>10 alex<br>11 eric<br>12 rain<br>25、有如下变量，请实现要求的功能<br>tu=(“alex”,[11,22,{“k1”:’v1’,”k2”:[“age”,”name”],”k3”:(11,22,33)},44])<br>a.讲述元祖的特性<br>元祖和列表类似都是有序的从0开始<br>不同的是元祖的元素是不能修改的<br>b.请问 tu 变量中的第一个元素 “alex” 是否可被修改？<br>不能修改<br>c.请问tu变量中的”k2”对应的值是什么类型？是否可以被修改？<br>如果可以，请在其中添加一个元素 “Seven”</p>
+<p>print(type(tu[1][2][“k2”]))<br>#结果<br>&lt;class ‘list’&gt;<br>列表类型可以修改<br>tu[1][2][“k2”].append(“seven”)<br>print(tu)<br>#结果<br>(‘alex’, [11, 22, {‘k2’: [‘age’, ‘name’, ‘seven’], ‘k3’: (11, 22, 33), ‘k1’: ‘v1’}, 44])<br>注：表面上看，tuple的元素确实变了，但其实变的不是tuple的元素，而是list的元素。<br>tuple一开始指向的list并没有改成别的list，所以，tuple所谓的“不变”是说，<br>tuple的每个元素，指向永远不变。但指向的这个list本身是可变的！<br>d.请问 tu 变量中的”k3”对应的值是什么类型？是否可以被修改？<br>如果可以，请在其中添加一个元素 “Seven”</p>
+<p>print(type(tu[1][2][“k3”]))<br>#结果<br>&lt;class ‘tuple’&gt;<br>#对应值是元祖，不能修改</p>
+<p>26、字典<br>dic ={‘k1’:”v1”,”k2”:”v2”,”k3”:[11,22,33]}<br>a.请循环输出所有的 key</p>
+<p>for i in dic:<br>    print(i)<br>#结果<br>k1<br>k3<br>k2<br>注：字典是无序的<br>b.请循环输出所有的value</p>
+<p>for i in dic:<br>    print(dic[i])<br>#结果<br>[11, 22, 33]<br>v2<br>v1<br>c.请循环输出所有的 key 和 value</p>
+<p>for i in dic:<br>    print(i,dic[i])<br>#结果<br>k2 v2<br>k3 [11, 22, 33]<br>k1 v1<br>d.请在字典中添加一个键值对，”k4”:”v4”，输出添加后的字典</p>
+<p>dic[“k4”] = “v4”<br>print(dic)<br>#结果<br>{‘k4’: ‘v4’, ‘k2’: ‘v2’, ‘k3’: [11, 22, 33], ‘k1’: ‘v1’}<br>e.请在修改字典中 “k1” 对应的值为 “alex”，输出修改后的字典</p>
+<p>dic[‘k1’] = “alex”<br>print(dic)<br>#结果<br>{‘k3’: [11, 22, 33], ‘k1’: ‘alex’, ‘k2’: ‘v2’}<br>f.请在 k3 对应的值中追加一个元素44，输出修改后的字典</p>
+<p>dic[“k3”].append(44)<br>print(dic)<br>#结果<br>{‘k2’: ‘v2’, ‘k3’: [11, 22, 33, 44], ‘k1’: ‘v1’}<br>g.请在 k3 对应的值的第1个位置插入个元素18，输出修改后的字典</p>
+<p>dic[“k3”].insert(0,18)<br>print(dic)<br>#结果<br>{‘k1’: ‘v1’, ‘k2’: ‘v2’, ‘k3’: [18, 11, 22, 33]}<br> 27、转换<br>a.将字符串 s=”alex” 转换成列表</p>
+<p>print(list(s))<br>#结果<br>[‘a’, ‘l’, ‘e’, ‘x’]<br>b.将字符串 s=”alex” 转换成元祖</p>
+<p>print(tuple(s))<br>#结果<br>(‘a’, ‘l’, ‘e’, ‘x’)<br>c.将列表 li =[“alex”,”seven”]转换成元组</p>
+<p>print(tuple(li))<br>#结果<br>(‘alex’, ‘seven’)<br>d.将元祖 tu =(‘Alex’,”seven”)转换成列表</p>
+<p>print(list(tu))<br>#结果<br>[‘Alex’, ‘seven’]<br>e.将列表 li=[“alex”,”seven”]转换成字典且字典的key按照10开始向后递增</p>
+<p>dic1 = {}<br>for key,value in enumerate(li,start=10):<br>    dic1[key] = value<br>print(dic1)<br>#结果<br>{10: ‘alex’, 11: ‘seven’}<br> 28、转码<br>n=”老男孩”<br>a.将字符串转换成 utf-8 编码的字节，并输出，然后将该字节再转换成 utf-8 编码字符串，再输出</p>
+<p>print(n.encode(“utf-8”))<br>#结果<br>b’\xe8\x80\x81\xe7\x94\xb7\xe5\xad\xa9’</p>
+<p>print(n.encode(“utf-8”).decode(“utf-8”))<br>#结果<br>老男孩<br>b.将字符串转换成 gbk 编码的字节，并输出，然后将该字节再转换成 gbk 编码字符串，再输出</p>
+<p>print(n.encode(“gbk”))<br>#结果<br>b’\xc0\xcf\xc4\xd0\xba\xa2’</p>
+<p>print(n.encode(“gbk”).decode(“gbk”))<br>#结果<br>老男孩<br> 29、求1-100内的所有数的和</p>
+<p>#3种方法<br>1)<br>print(sum(range(1,101)))<br>#结果<br>5050</p>
+<p>2)<br>SUM = 0<br>for i in range(1,101):<br>    SUM += i<br>print(SUM)<br>#结果<br>5050</p>
+<p>3)<br>SUM = 0<br>count = 1<br>while count &lt;= 100:<br>    SUM += count<br>    count += 1<br>print(SUM)<br>#结果<br>5050<br>30、元素分类<br>有如下值集合 [11,22,33,44,55,66,77,88,99,90]，<br>将所有大于66的值保存至字典的第一个 key中，<br>将小于66的值保存至第二个 key 的值中。<br>即：{‘k1’:大于 66 的所有值,’k2’:小于66 的所有值}</p>
+<p>dic = {“k1”:[],<br>       “k2”:[]}<br>aa = set([11,22,33,44,55,66,77,88,99,90])<br>for i in aa:<br>    if i&gt;= 66:<br>        dic[“k1”].append(i)<br>    else:<br>        dic[“k2”].append(i)<br>print(dic)<br>结果<br>{‘k1’: [66, 99, 77, 88, 90], ‘k2’: [33, 11, 44, 22, 55]}<br>31、购物车<br>功能要求：<br>要求用户输入总资产，例如： 2000<br>显示商品列表，让用户根据序号选择商品，加入购物车<br>购买，如果商品总额大于总资产，提示账户余额不足，否则，购买成功。<br>goods = [<br>{“name”:”电脑”,”price”:1999},<br>{“name”:”鼠标”,”price”:10},<br>{“name”:”游艇”,”price”:20},<br>{“name”:”美女”,”price”:98},<br>]</p>
+<p>shop_cart = []<br>goods    =    [<br>{“name”:”电脑”,”price”:1999},<br>{“name”:”鼠标”,”price”:10},<br>{“name”:”游艇”,”price”:20},<br>{“name”:”美女”,”price”:98},<br>]<br>while True:<br>    salary = input(“请输入用户余额[quit]:”)<br>    if salary.isdigit():<br>        salary = int(salary)<br>        break<br>    elif salary == “quit”:<br>        exit(“不想购买”)<br>    else:<br>        print(“please the enter number”)<br>while True:<br>    print(“shop list”.center(50, ‘*’))<br>    for index,i in enumerate(goods):<br>        print(index,i)<br>    choose_number = input(“请输入购买商品编号[quit]:”)<br>    if choose_number.isdigit():<br>    choose_number = int(choose_number)<br>        product_list = []<br>        if 0 &lt;= choose_number &lt;= len(goods):<br>            product_list.append(goods[choose_number])<br>            if salary &gt;= product_list[0][“price”]:<br>              shop_cart.append(goods[choose_number])<br>              salary -= product_list[0][‘price’]<br>              print(“当前购买的商品”,product_list,”当前用户余额\033[1;31m{salary}\033[0m”.format(salary=salary))<br>            else:<br>                print(“余额不足”)<br>        else:<br>            print(“无效的商品编号”)<br>    elif choose_number.lower() == ‘quit’:</p>
+<pre><code>    print(&quot;购买的商品&quot;.center(50,&quot;*&quot;))
+    for y in shop_cart:
+        print(y)
+    exit()
+else:
+    print(&quot;无效的输入&quot;)</code></pre><p>#注:简易的购物车，还能继续优化</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+				
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '171639872', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+</html>

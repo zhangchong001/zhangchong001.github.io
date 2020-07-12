@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>详解python命名空间和作用域 - zc&#39;blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="ZC,"> 
+    <meta name="description" content="1、典型案例先从几个典型的案例来看下名称空间及作用域对python代码运行的影响，请看下面几个代码实例及其执行结果，是否符合你的预期。代码1：块作用域if True:    i = 1print i,"> 
+    <meta name="author" content="ZC"> 
+    <link rel="alternative" href="atom.xml" title="zc&#39;blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">zc&#39;blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://zc.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">详解python命名空间和作用域</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">详解python命名空间和作用域</h1>
+        <div class="stuff">
+            <span>七月 12, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="1、典型案例"><a href="#1、典型案例" class="headerlink" title="1、典型案例"></a>1、典型案例</h1><p>先从几个典型的案例来看下名称空间及作用域对python代码运行的影响，请看下面几个代码实例及其执行结果，是否符合你的预期。<br>代码1：块作用域<br>if True:<br>    i = 1<br>print i<br>执行结果： 1<br>代码2：函数作用域<br>def f():<br>    i = 1<br>f()<br>print i<br>执行结果：执行报错“NameError: name ‘cc’ is not defined”</p>
+<p>代码3：静态作用域<br>i = 1<br>def test():<br>    i += 1<br>test()<br>执行结果：执行报错“UnboundLocalError: local variable ‘i’ referenced before assignment”</p>
+<p>代码4：静态作用域<br>i = 1<br>def g():<br>print i<br>print i<br>def f():<br>    i = 2<br>    g()<br>f()　<br>执行结果： 1<br> 将i = 2放在g()后面会不会起作用？<br>代码5：闭包、全局作用域<br>i = 1<br>def f():<br>    i = 2<br>def g():<br>        print i<br>    return g<br>func = f()<br>func()<br>print i<br>执行结果：2    1<br>PS:python2.1之前执行该代码会报错，闭包(嵌套作用域)是在之后引入的概念，内部函数g()只能访问本函数中的命名空间、全局命名空间、内建命名空间，无法访问外部调用函数的命名空间。</p>
+<h1 id="2、命名空间"><a href="#2、命名空间" class="headerlink" title="2、命名空间"></a>2、命名空间</h1><p>【定义】<br>    名称到对象的映射。命名空间是一个字典的实现，键为变量名，值是变量对应的值。各个命名空间是独立没有关系的，一个命名空间中不能有重名，但是不同的命名空间可以重名而没有任何影响。</p>
+<p>【分类】<br>    python程序执行期间会有2个或3个活动的命名空间（函数调用时有3个，函数调用结束后2个）。按照变量定义的位置，可以划分为以下3类：<br>    Local，局部命名空间，每个函数所拥有的命名空间，记录了函数中定义的所有变量，包括函数的入参、内部定义的局部变量。<br>    Global，全局命名空间，每个模块加载执行时创建的，记录了模块中定义的变量，包括模块中定义的函数、类、其他导入的模块、模块级的变量与常量。<br>    Built-in，python自带的内建命名空间，任何模块均可以访问，放着内置的函数和异常。</p>
+<p>【生命周期】<br>    Local（局部命名空间）在函数被调用时才被创建，但函数返回结果或抛出异常时被删除。（每一个递归函数都拥有自己的命名空间）。<br>    Global（全局命名空间）在模块被加载时创建，通常一直保留直到python解释器退出。<br>    Built-in（内建命名空间）在python解释器启动时创建，一直保留直到解释器退出。</p>
+<pre><code>各命名空间创建顺序：python解释器启动 -&gt;创建内建命名空间 -&gt; 加载模块 -&gt; 创建全局命名空间 -&gt;函数被调用 -&gt;创建局部命名空间
+各命名空间销毁顺序：函数调用结束 -&gt; 销毁函数对应的局部命名空间 -&gt; python虚拟机（解释器）退出 -&gt;销毁全局命名空间 -&gt;销毁内建命名空间
+python解释器加载阶段会创建出内建命名空间、模块的全局命名空间，局部命名空间是在运行阶段函数被调用时动态创建出来的，函数调用结束动态的销毁的。</code></pre><h1 id="3、作用域"><a href="#3、作用域" class="headerlink" title="3、作用域"></a>3、作用域</h1><p>【定义】<br>    作用域是针对变量而言，指申明的变量在程序里的可应用范围。或者称为变量的可见性。</p>
+<p>【分类】<br>    只有函数、类、模块会产生作用域，代码块不会产生作用域（参考代码1）。作用域按照变量的定义位置可以划分为4类：<br>    Local(函数内部)局部作用域<br>    Enclosing（嵌套函数的外层函数内部）嵌套作用域（闭包）<br>    Global（模块全局）全局作用域<br>    Built-in（内建）内建作用域</p>
+<p>【规则】<br>    1、静态作用域规则<br>         定义：python中变量的作用域是由它在源代码中的位置决定的。（名字查找是动态发生的）<br>         说明：参考代码3/4，以代码3为例说明，在模块中定义了一个全局变量 i = 1，在test方法中执行 i += 1，对变量 i进行了赋值动作，该赋值动作决定了i在test()方法中是一个局部变量， i += 1可以拆分为两步执行，首先执行 i + 1, 然后将结果赋值给i。执行i + 1操作时，i虽然申明为局部变量，但是没有绑定任何具体值，因此报错。<br>    2、最内嵌套作用域规则<br>         定义：由一个赋值语句引进的名字在这个赋值语句所在的作用域里是可见（起作用）的，而且在其内部嵌套的每个作用域内也可见，除非它被嵌套于内部的且引进同样名字的赋值语句所遮蔽。<br>         说明：参考代码5. 方法g()是方法f()中定义的内嵌函数。在方法f()中定义的局部变量 i =2，在内嵌方法 g()中是可见的。如果在g()中又定义一个重名的变量 i = 3，则f()中定义的变量将被遮蔽。</p>
+<h1 id="4、命名空间与作用域的关系"><a href="#4、命名空间与作用域的关系" class="headerlink" title="4、命名空间与作用域的关系"></a>4、命名空间与作用域的关系</h1><pre><code>命名空间定义了在某个作用域内变量名和绑定值之间的对应关系，命名空间是键值对的集合，变量名与值是一一对应关系。作用域定义了命名空间中的变量能够在多大范围内起作用。
+命名空间在python解释器中是以字典的形式存在的，是以一种可以看得见摸得着的实体存在的。作用域是python解释器定义的一种规则，该规则确定了运行时变量查找的顺序，是一种形而上的虚的规定。</code></pre><p>【变量查找法则】<br>    python解释器动态执行过程中，对遇到的变量进行解释时，是按照一条固定的作用域链查找解释的，又称为LEGB法则。<br>    其中L代表Local 局部作用域，E代表Enclosing 嵌套作用域，G代表Global 全局作用域，B代表Built-in 内建作用域。<br>    python解释器查找变量时，会按照顺序依次查找局部作用域，嵌套作用域，全局作用域，内建作用域，在任意一个作用域中找到变量则停止查找，所有作用域查找完成没有找到对应的变量，则抛出 NameError: name ‘xxxx’ is not defined的异常。<br>    在局部作用域中，可以看到局部作用域、嵌套作用域、全局作用域、内建作用域中所有定义的变量。<br>    在全局作用域中，可以看到全局作用域、内建作用域中的所有定义的变量，无法看到局部作用域中的变量。</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1、典型案例"><span class="toc-number">1.</span> <span class="toc-text">1、典型案例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2、命名空间"><span class="toc-number">2.</span> <span class="toc-text">2、命名空间</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3、作用域"><span class="toc-number">3.</span> <span class="toc-text">3、作用域</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4、命名空间与作用域的关系"><span class="toc-number">4.</span> <span class="toc-text">4、命名空间与作用域的关系</span></a></li></ol>	
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '171639872', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+</html>
