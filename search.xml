@@ -946,4 +946,20 @@ python解释器加载阶段会创建出内建命名空间、模块的全局命�
         <tag>python</tag>
       </tags>
   </entry>
+  <entry>
+    <title>爬虫开发步骤流程简析</title>
+    <url>/%E7%88%AC%E8%99%AB%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4%E6%B5%81%E7%A8%8B%E7%AE%80%E6%9E%90.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>爬虫的基本流程:<br>0.（预处理）<br>1.发起请求：<br>通过HTTP库向目标站点发起请求，即发送一个Request，请求可以包含额外的headers、data等信息，然后等待服务器响应。这个请求的过程就像我们打开浏览器，在浏览器地址栏输入网址：<a href="http://www.baidu.com，然后点击回车。这个过程其实就相当于浏览器作为一个浏览的客户端，向服务器端发送了" target="_blank" rel="noopener">www.baidu.com，然后点击回车。这个过程其实就相当于浏览器作为一个浏览的客户端，向服务器端发送了</a> 一次请求。</p>
+<p>2.获取响应内容：<br>如果服务器能正常响应，我们会得到一个Response，Response的内容便是所要获取的内容，类型可能有HTML、Json字符串，二进制数据(图片，视频等）等类型。这个过程就是服务器接收客户端的请求，进过解析发送给浏览器的网页HTML文件。</p>
+<p>3.解析内容：<br>得到的内容可能是HTML，可以使用正则表达式，网页解析库进行解析。也可能是Json，可以直接转为Json对象解析。可能是二进制数据，可以做保存或者进一步处理。这一步相当于浏览器把服务器端的文件获取到本地，再进行解释并且展现出来。</p>
+<p>4.保存数据：<br>保存的方式可以是把数据存为文本，也可以把数据保存到数据库，或者保存为特定的jpg，mp4 等格式的文件。这就相当于我们在浏览网页时，下载了网页上的图片或者视频。</p>
+<p>Scrapy爬虫开发流程一般包括如下步骤：<br>1）确定项目需求。<br>2）创建Scrapy项目。<br>3）定义页面提取的Item。<br>4）分析被爬对象页面。<br>5）编写爬取网站的Spider并提取Item。<br>6）编写Item Pipeline来存储提取到的Item（即数据）。<br>7）运行爬虫。</p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
 </search>

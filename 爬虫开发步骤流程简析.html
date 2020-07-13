@@ -5,12 +5,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>zc&#39;blog</title>
+    <title>爬虫开发步骤流程简析 - zc&#39;blog</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="ZC,"> 
-    
+    <meta name="description" content="爬虫的基本流程:0.（预处理）1.发起请求：通过HTTP库向目标站点发起请求，即发送一个Request，请求可以包含额外的headers、data等信息，然后等待服务器响应。这个请求的过程就像我们打,"> 
     <meta name="author" content="ZC"> 
     <link rel="alternative" href="atom.xml" title="zc&#39;blog" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -36,27 +36,83 @@
 <body class="loading">
     <span id="config-title" style="display:none">zc&#39;blog</span>
     <div id="loader"></div>
-    <div id="single" class="page">
-    <div id="top">
-        <a class="iconfont icon-left image-icon" href="javascript:history.back()"></a>
-    </div>
-    <div class="section">
-        <div class="article">
-            <div class="main">
-                <div class="content">
-                
-                    <div class="set">
-  <h2>分类</h2>
-  <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/">大数据</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8F%92%E4%BB%B6/">插件</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2/">博客</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%99%9A%E6%8B%9F%E5%8C%96/">虚拟化</a><span class="category-list-count">1</span></li></ul>
-</div>
-
-                
-                </div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://zc.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">爬虫开发步骤流程简析</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
             </div>
+            <div id="qr"></div>
         </div>
     </div>
+    <div class="scrollbar"></div>
 </div>
 
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">爬虫开发步骤流程简析</h1>
+        <div class="stuff">
+            <span>七月 13, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>爬虫的基本流程:<br>0.（预处理）<br>1.发起请求：<br>通过HTTP库向目标站点发起请求，即发送一个Request，请求可以包含额外的headers、data等信息，然后等待服务器响应。这个请求的过程就像我们打开浏览器，在浏览器地址栏输入网址：<a href="http://www.baidu.com，然后点击回车。这个过程其实就相当于浏览器作为一个浏览的客户端，向服务器端发送了" target="_blank" rel="noopener">www.baidu.com，然后点击回车。这个过程其实就相当于浏览器作为一个浏览的客户端，向服务器端发送了</a> 一次请求。</p>
+<p>2.获取响应内容：<br>如果服务器能正常响应，我们会得到一个Response，Response的内容便是所要获取的内容，类型可能有HTML、Json字符串，二进制数据(图片，视频等）等类型。这个过程就是服务器接收客户端的请求，进过解析发送给浏览器的网页HTML文件。</p>
+<p>3.解析内容：<br>得到的内容可能是HTML，可以使用正则表达式，网页解析库进行解析。也可能是Json，可以直接转为Json对象解析。可能是二进制数据，可以做保存或者进一步处理。这一步相当于浏览器把服务器端的文件获取到本地，再进行解释并且展现出来。</p>
+<p>4.保存数据：<br>保存的方式可以是把数据存为文本，也可以把数据保存到数据库，或者保存为特定的jpg，mp4 等格式的文件。这就相当于我们在浏览网页时，下载了网页上的图片或者视频。</p>
+<p>Scrapy爬虫开发流程一般包括如下步骤：<br>1）确定项目需求。<br>2）创建Scrapy项目。<br>3）定义页面提取的Item。<br>4）分析被爬对象页面。<br>5）编写爬取网站的Spider并提取Item。<br>6）编写Item Pipeline来存储提取到的Item（即数据）。<br>7）运行爬虫。</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+				
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
 </body>
 
 <script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
