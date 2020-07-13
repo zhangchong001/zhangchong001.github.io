@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Python模拟登录的几种方法 - zc&#39;blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="ZC,"> 
+    <meta name="description" content="方法一：直接使用已知的cookie访问特点：　　简单，但需要先在浏览器登录原理：　　简单地说，cookie保存在发起请求的客户端中，服务器利用cookie来区分不同的客户端。因为http是一种无状态,"> 
+    <meta name="author" content="ZC"> 
+    <link rel="alternative" href="atom.xml" title="zc&#39;blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">zc&#39;blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://zc.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">Python模拟登录的几种方法</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Python模拟登录的几种方法</h1>
+        <div class="stuff">
+            <span>七月 13, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="方法一：直接使用已知的cookie访问"><a href="#方法一：直接使用已知的cookie访问" class="headerlink" title="方法一：直接使用已知的cookie访问"></a>方法一：直接使用已知的cookie访问</h1><p>特点：<br>　　简单，但需要先在浏览器登录<br>原理：<br>　　简单地说，cookie保存在发起请求的客户端中，服务器利用cookie来区分不同的客户端。因为http是一种无状态的连接，当服务器一下子收到好几个请求时，是无法判断出哪些请求是同一个客户端发起的。而“访问登录后才能看到的页面”这一行为，恰恰需要客户端向服务器证明：“我是刚才登录过的那个客户端”。于是就需要cookie来标识客户端的身份，以存储它的信息（如登录状态）。<br>　　当然，这也意味着，只要得到了别的客户端的cookie，我们就可以假冒成它来和服务器对话。这给我们的程序带来了可乘之机。<br>　　我们先用浏览器登录，然后使用开发者工具查看cookie。接着在程序中携带该cookie向网站发送请求，就能让你的程序假扮成刚才登录的那个浏览器，得到只有登录后才能看到的页面。<br>具体步骤：</p>
+<h3 id="1-用浏览器登录，获取浏览器里的cookie字符串"><a href="#1-用浏览器登录，获取浏览器里的cookie字符串" class="headerlink" title="1.用浏览器登录，获取浏览器里的cookie字符串"></a>1.用浏览器登录，获取浏览器里的cookie字符串</h3><p>　　先使用浏览器登录。再打开开发者工具，转到network选项卡。在左边的Name一栏找到当前的网址，选择右边的Headers选项卡，查看Request Headers，这里包含了该网站颁发给浏览器的cookie。对，就是后面的字符串。把它复制下来，一会儿代码里要用到。<br>　　注意，最好是在运行你的程序前再登录。如果太早登录，或是把浏览器关了，很可能复制的那个cookie就过期无效了。<br><img src="/images/2020/07/13/a1fd95b7-1874-46a2-a2e0-11d63f13a18f.png" alt="image.png"></p>
+<h3 id="2-写代码"><a href="#2-写代码" class="headerlink" title="2.写代码"></a>2.写代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">　　urllib库的版本：</span><br><span class="line"> </span><br><span class="line">import sys</span><br><span class="line">import io</span><br><span class="line">from urllib import request</span><br><span class="line"></span><br><span class="line">sys.stdout &#x3D; io.TextIOWrapper(sys.stdout.buffer,encoding&#x3D;&#39;utf8&#39;) #改变标准输出的默认编码</span><br><span class="line"></span><br><span class="line">#登录后才能访问的网站</span><br><span class="line">url &#x3D; &#39;http:&#x2F;&#x2F;ssfw.xmu.edu.cn&#x2F;cmstar&#x2F;index.portal&#39;</span><br><span class="line"></span><br><span class="line">#浏览器登录后得到的cookie，也就是刚才复制的字符串</span><br><span class="line">cookie_str &#x3D; r&#39;JSESSIONID&#x3D;xxxxxxxxxxxxxxxxxxxxxx; iPlanetDirectoryPro&#x3D;xxxxxxxxxxxxxxxxxx&#39;</span><br><span class="line"></span><br><span class="line">#登录后才能访问的网页</span><br><span class="line">url &#x3D; &#39;http:&#x2F;&#x2F;ssfw.xmu.edu.cn&#x2F;cmstar&#x2F;index.portal&#39;</span><br><span class="line"></span><br><span class="line">req &#x3D; request.Request(url)</span><br><span class="line">#设置cookie</span><br><span class="line">req.add_header(&#39;cookie&#39;, raw_cookies)</span><br><span class="line">#设置请求头</span><br><span class="line">req.add_header(&#39;User-Agent&#39;, &#39;Mozilla&#x2F;5.0 (Windows NT 6.1; WOW64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;60.0.3112.113 Safari&#x2F;537.36&#39;)</span><br><span class="line"></span><br><span class="line">resp &#x3D; request.urlopen(req)</span><br><span class="line"></span><br><span class="line">print(resp.read().decode(&#39;utf-8&#39;))</span><br><span class="line"> </span><br><span class="line">　　requests库的版本：</span><br><span class="line"> </span><br><span class="line">import requests</span><br><span class="line">import sys</span><br><span class="line">import io</span><br><span class="line"></span><br><span class="line">sys.stdout &#x3D; io.TextIOWrapper(sys.stdout.buffer,encoding&#x3D;&#39;utf8&#39;) #改变标准输出的默认编码</span><br><span class="line"></span><br><span class="line">#登录后才能访问的网页</span><br><span class="line">url &#x3D; &#39;http:&#x2F;&#x2F;ssfw.xmu.edu.cn&#x2F;cmstar&#x2F;index.portal&#39;</span><br><span class="line"></span><br><span class="line">#浏览器登录后得到的cookie，也就是刚才复制的字符串</span><br><span class="line">cookie_str &#x3D; r&#39;JSESSIONID&#x3D;xxxxxxxxxxxxxxxxxxxxxx; iPlanetDirectoryPro&#x3D;xxxxxxxxxxxxxxxxxx&#39;</span><br><span class="line"></span><br><span class="line">#把cookie字符串处理成字典，以便接下来使用</span><br><span class="line">cookies &#x3D; &#123;&#125;</span><br><span class="line">for line in cookie_str.split(&#39;;&#39;):</span><br><span class="line">    key, value &#x3D; line.split(&#39;&#x3D;&#39;, 1)</span><br><span class="line">    cookies[key] &#x3D; value</span><br></pre></td></tr></table></figure>
+<h1 id="方法二：模拟登录后再携带得到的cookie访问"><a href="#方法二：模拟登录后再携带得到的cookie访问" class="headerlink" title="方法二：模拟登录后再携带得到的cookie访问"></a>方法二：模拟登录后再携带得到的cookie访问</h1><p>原理：<br>　　我们先在程序中向网站发出登录请求，也就是提交包含登录信息的表单（用户名、密码等）。从响应中得到cookie，今后在访问其他页面时也带上这个cookie，就能得到只有登录后才能看到的页面。<br>具体步骤：</p>
+<h3 id="1-找出表单提交到的页面"><a href="#1-找出表单提交到的页面" class="headerlink" title="1.找出表单提交到的页面"></a>1.找出表单提交到的页面</h3><p>　　还是要利用浏览器的开发者工具。转到network选项卡，并勾选Preserve Log（重要！）。在浏览器里登录网站。然后在左边的Name一栏找到表单提交到的页面。怎么找呢？看看右侧，转到Headers选项卡。首先，在General那段，Request Method应当是POST。其次最下方应该要有一段叫做Form Data的，里面可以看到你刚才输入的用户名和密码等。也可以看看左边的Name，如果含有login这个词，有可能就是提交表单的页面（不一定！）。<br><img src="/images/2020/07/13/cf92bfd8-aa92-47de-b2ab-ef31b8988b03.png" alt="image.png"><br>这里要强调一点，“表单提交到的页面”通常并不是你填写用户名和密码的页面！所以要利用工具来找到它。</p>
+<h3 id="2-找出要提交的数据"><a href="#2-找出要提交的数据" class="headerlink" title="2.找出要提交的数据"></a>2.找出要提交的数据</h3><p>　　虽然你在浏览器里登陆时只填了用户名和密码，但表单里包含的数据可不只这些。从Form Data里就可以看到需要提交的所有数据。<br><img src="/images/2020/07/13/f1a90959-0ed1-4d22-874a-8285b940c92c.png" alt="image.png"></p>
+<h3 id="3-写代码"><a href="#3-写代码" class="headerlink" title="3.写代码"></a>3.写代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"> 　　urllib库的版本：</span><br><span class="line"> </span><br><span class="line">import sys</span><br><span class="line">import io</span><br><span class="line">import urllib.request</span><br><span class="line">import http.cookiejar</span><br><span class="line"></span><br><span class="line">sys.stdout &#x3D; io.TextIOWrapper(sys.stdout.buffer,encoding&#x3D;&#39;utf8&#39;) #改变标准输出的默认编码</span><br><span class="line"></span><br><span class="line">#登录时需要POST的数据</span><br><span class="line">data &#x3D; &#123;&#39;Login.Token1&#39;:&#39;学号&#39;, </span><br><span class="line">        &#39;Login.Token2&#39;:&#39;密码&#39;, </span><br><span class="line">        &#39;goto:http&#39;:&#39;&#x2F;&#x2F;ssfw.xmu.edu.cn&#x2F;cmstar&#x2F;loginSuccess.portal&#39;, </span><br><span class="line">        &#39;gotoOnFail:http&#39;:&#39;&#x2F;&#x2F;ssfw.xmu.edu.cn&#x2F;cmstar&#x2F;loginFailure.portal&#39;&#125;</span><br><span class="line">post_data &#x3D; urllib.parse.urlencode(data).encode(&#39;utf-8&#39;)</span><br><span class="line"></span><br><span class="line">#设置请求头</span><br><span class="line">headers &#x3D; &#123;&#39;User-agent&#39;:&#39;Mozilla&#x2F;5.0 (Windows NT 6.1; WOW64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;60.0.3112.113 Safari&#x2F;537.36&#39;&#125;</span><br><span class="line"></span><br><span class="line">#登录时表单提交到的地址（用开发者工具可以看到）</span><br><span class="line">login_url &#x3D; &#39; http:&#x2F;&#x2F;ssfw.xmu.edu.cn&#x2F;cmstar&#x2F;userPasswordValidate.portal</span><br><span class="line"></span><br><span class="line">#构造登录请求</span><br><span class="line">req &#x3D; urllib.request.Request(login_url, headers &#x3D; headers, data &#x3D; post_data)</span><br><span class="line"></span><br><span class="line">#构造cookie</span><br><span class="line">cookie &#x3D; http.cookiejar.CookieJar()</span><br><span class="line"></span><br><span class="line">#由cookie构造opener</span><br><span class="line">opener &#x3D; urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cookie))</span><br><span class="line"></span><br><span class="line">#发送登录请求，此后这个opener就携带了cookie，以证明自己登录过</span><br><span class="line">resp &#x3D; opener.open(req)</span><br><span class="line"></span><br><span class="line">#登录后才能访问的网页</span><br><span class="line">url &#x3D; &#39;http:&#x2F;&#x2F;ssfw.xmu.edu.cn&#x2F;cmstar&#x2F;index.portal&#39;</span><br><span class="line"></span><br><span class="line">#构造访问请求</span><br><span class="line">req &#x3D; urllib.request.Request(url, headers &#x3D; headers)</span><br><span class="line"></span><br><span class="line">resp &#x3D; opener.open(req)</span><br><span class="line"></span><br><span class="line">print(resp.read().decode(&#39;utf-8&#39;))</span><br><span class="line"> </span><br><span class="line">　　requests库的版本：</span><br><span class="line"> </span><br><span class="line">import requests</span><br><span class="line">import sys</span><br><span class="line">import io</span><br><span class="line"></span><br><span class="line">sys.stdout &#x3D; io.TextIOWrapper(sys.stdout.buffer,encoding&#x3D;&#39;utf8&#39;) #改变标准输出的默认编码</span><br><span class="line"></span><br><span class="line">#登录后才能访问的网页</span><br><span class="line">url &#x3D; &#39;http:&#x2F;&#x2F;ssfw.xmu.edu.cn&#x2F;cmstar&#x2F;index.portal&#39;</span><br><span class="line"></span><br><span class="line">#浏览器登录后得到的cookie，也就是刚才复制的字符串</span><br><span class="line">cookie_str &#x3D; r&#39;JSESSIONID&#x3D;xxxxxxxxxxxxxxxxxxxxxx; iPlanetDirectoryPro&#x3D;xxxxxxxxxxxxxxxxxx&#39;</span><br><span class="line"></span><br><span class="line">#把cookie字符串处理成字典，以便接下来使用</span><br><span class="line">cookies &#x3D; &#123;&#125;</span><br><span class="line">for line in cookie_str.split(&#39;;&#39;):</span><br><span class="line">    key, value &#x3D; line.split(&#39;&#x3D;&#39;, 1)</span><br><span class="line">    cookies[key] &#x3D; value</span><br><span class="line"></span><br><span class="line">#设置请求头</span><br><span class="line">headers &#x3D; &#123;&#39;User-agent&#39;:&#39;Mozilla&#x2F;5.0 (Windows NT 6.1; WOW64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;60.0.3112.113 Safari&#x2F;537.36&#39;&#125;</span><br><span class="line"></span><br><span class="line">#在发送get请求时带上请求头和cookies</span><br><span class="line">resp &#x3D; requests.get(url, headers &#x3D; headers, cookies &#x3D; cookies)</span><br><span class="line">        </span><br><span class="line">print(resp.content.decode(&#39;utf-8&#39;))</span><br></pre></td></tr></table></figure>
+<h1 id="方法三：模拟登录后用session保持登录状态"><a href="#方法三：模拟登录后用session保持登录状态" class="headerlink" title="方法三：模拟登录后用session保持登录状态"></a>方法三：模拟登录后用session保持登录状态</h1><p>原理：<br>　　session是会话的意思。和cookie的相似之处在于，它也可以让服务器“认得”客户端。简单理解就是，把每一个客户端和服务器的互动当作一个“会话”。既然在同一个“会话”里，服务器自然就能知道这个客户端是否登录过。<br>具体步骤：</p>
+<h3 id="1-找出表单提交到的页面-1"><a href="#1-找出表单提交到的页面-1" class="headerlink" title="1.找出表单提交到的页面"></a>1.找出表单提交到的页面</h3><p>2.找出要提交的数据<br>　　这两步和方法二的前两步是一样的</p>
+<h3 id="3-写代码-1"><a href="#3-写代码-1" class="headerlink" title="3.写代码"></a>3.写代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">requests库的版本</span><br><span class="line"> </span><br><span class="line">import requests</span><br><span class="line">import sys</span><br><span class="line">import io</span><br><span class="line"></span><br><span class="line">sys.stdout &#x3D; io.TextIOWrapper(sys.stdout.buffer,encoding&#x3D;&#39;utf8&#39;) #改变标准输出的默认编码</span><br><span class="line"></span><br><span class="line">#登录时需要POST的数据</span><br><span class="line">data &#x3D; &#123;&#39;Login.Token1&#39;:&#39;学号&#39;, </span><br><span class="line">        &#39;Login.Token2&#39;:&#39;密码&#39;, </span><br><span class="line">        &#39;goto:http&#39;:&#39;&#x2F;&#x2F;ssfw.xmu.edu.cn&#x2F;cmstar&#x2F;loginSuccess.portal&#39;, </span><br><span class="line">        &#39;gotoOnFail:http&#39;:&#39;&#x2F;&#x2F;ssfw.xmu.edu.cn&#x2F;cmstar&#x2F;loginFailure.portal&#39;&#125;</span><br><span class="line"></span><br><span class="line">#设置请求头</span><br><span class="line">headers &#x3D; &#123;&#39;User-agent&#39;:&#39;Mozilla&#x2F;5.0 (Windows NT 6.1; WOW64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;60.0.3112.113 Safari&#x2F;537.36&#39;&#125;</span><br><span class="line"></span><br><span class="line">#登录时表单提交到的地址（用开发者工具可以看到）</span><br><span class="line">login_url &#x3D; &#39;http:&#x2F;&#x2F;ssfw.xmu.edu.cn&#x2F;cmstar&#x2F;userPasswordValidate.portal&#39;</span><br><span class="line"></span><br><span class="line">#构造Session</span><br><span class="line">session &#x3D; requests.Session()</span><br><span class="line"></span><br><span class="line">#在session中发送登录请求，此后这个session里就存储了cookie</span><br><span class="line">#可以用print(session.cookies.get_dict())查看</span><br><span class="line">resp &#x3D; session.post(login_url, data)</span><br><span class="line"></span><br><span class="line">#登录后才能访问的网页</span><br><span class="line">url &#x3D; &#39;http:&#x2F;&#x2F;ssfw.xmu.edu.cn&#x2F;cmstar&#x2F;index.portal&#39;</span><br><span class="line"></span><br><span class="line">#发送访问请求</span><br><span class="line">resp &#x3D; session.get(url)</span><br><span class="line"></span><br><span class="line">print(resp.content.decode(&#39;utf-8&#39;))</span><br></pre></td></tr></table></figure>
+<h1 id="方法四：使用无头浏览器访问"><a href="#方法四：使用无头浏览器访问" class="headerlink" title="方法四：使用无头浏览器访问"></a>方法四：使用无头浏览器访问</h1><p>特点：<br>　　功能强大，几乎可以对付任何网页，但会导致代码效率低<br>原理：<br>　　如果能在程序里调用一个浏览器来访问网站，那么像登录这样的操作就轻而易举了。在Python中可以使用Selenium库来调用浏览器，写在代码里的操作（打开网页、点击……）会变成浏览器忠实地执行。这个被控制的浏览器可以是Firefox，Chrome等，但最常用的还是PhantomJS这个无头（没有界面）浏览器。也就是说，只要把填写用户名密码、点击“登录”按钮、打开另一个网页等操作写到程序中，PhamtomJS就能确确实实地让你登录上去，并把响应返回给你。<br>具体步骤：</p>
+<h3 id="1-安装selenium库、PhantomJS浏览器"><a href="#1-安装selenium库、PhantomJS浏览器" class="headerlink" title="1.安装selenium库、PhantomJS浏览器"></a>1.安装selenium库、PhantomJS浏览器</h3><p>2.在源代码中找到登录时的输入文本框、按钮这些元素<br>　　因为要在无头浏览器中进行操作，所以就要先找到输入框，才能输入信息。找到登录按钮，才能点击它。<br>　　在浏览器中打开填写用户名密码的页面，将光标移动到输入用户名的文本框，右键，选择“审查元素”，就可以在右边的网页源代码中看到文本框是哪个元素。同理，可以在源代码中找到输入密码的文本框、登录按钮。</p>
+<h3 id="3-考虑如何在程序中找到上述元素"><a href="#3-考虑如何在程序中找到上述元素" class="headerlink" title="3.考虑如何在程序中找到上述元素"></a>3.考虑如何在程序中找到上述元素</h3><p>　　Selenium库提供了find_element(s)_by_xxx的方法来找到网页中的输入框、按钮等元素。其中xxx可以是id、name、tag_name（标签名）、class_name（class），也可以是xpath（xpath表达式）等等。当然还是要具体分析网页源代码。</p>
+<h3 id="4-写代码"><a href="#4-写代码" class="headerlink" title="4.写代码"></a>4.写代码</h3> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">import sys</span><br><span class="line">import io</span><br><span class="line">from selenium import webdriver</span><br><span class="line"></span><br><span class="line">sys.stdout &#x3D; io.TextIOWrapper(sys.stdout.buffer, encoding&#x3D;&#39;utf8&#39;) #改变标准输出的默认编码</span><br><span class="line"></span><br><span class="line">#建立Phantomjs浏览器对象，括号里是phantomjs.exe在你的电脑上的路径</span><br><span class="line">browser &#x3D; webdriver.PhantomJS(&#39;d:&#x2F;tool&#x2F;07-net&#x2F;phantomjs-windows&#x2F;phantomjs-2.1.1-windows&#x2F;bin&#x2F;phantomjs.exe&#39;)</span><br><span class="line"></span><br><span class="line">#登录页面</span><br><span class="line">url &#x3D; r&#39;http:&#x2F;&#x2F;ssfw.xmu.edu.cn&#x2F;cmstar&#x2F;index.portal&#39;</span><br><span class="line"></span><br><span class="line"># 访问登录页面</span><br><span class="line">browser.get(url)</span><br><span class="line"></span><br><span class="line"># 等待一定时间，让js脚本加载完毕</span><br><span class="line">browser.implicitly_wait(3)</span><br><span class="line"></span><br><span class="line">#输入用户名</span><br><span class="line">username &#x3D; browser.find_element_by_name(&#39;user&#39;)</span><br><span class="line">username.send_keys(&#39;学号&#39;)</span><br><span class="line"></span><br><span class="line">#输入密码</span><br><span class="line">password &#x3D; browser.find_element_by_name(&#39;pwd&#39;)</span><br><span class="line">password.send_keys(&#39;密码&#39;)</span><br><span class="line"></span><br><span class="line">#选择“学生”单选按钮</span><br><span class="line">student &#x3D; browser.find_element_by_xpath(&#39;&#x2F;&#x2F;input[@value&#x3D;&quot;student&quot;]&#39;)</span><br><span class="line">student.click()</span><br><span class="line"></span><br><span class="line">#点击“登录”按钮</span><br><span class="line">login_button &#x3D; browser.find_element_by_name(&#39;btn&#39;)</span><br><span class="line">login_button.submit()</span><br><span class="line"></span><br><span class="line">#网页截图</span><br><span class="line">browser.save_screenshot(&#39;picture1.png&#39;)</span><br><span class="line">#打印网页源代码</span><br><span class="line">print(browser.page_source.encode(&#39;utf-8&#39;).decode())</span><br><span class="line"></span><br><span class="line">browser.quit()</span><br></pre></td></tr></table></figure>
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#方法一：直接使用已知的cookie访问"><span class="toc-number">1.</span> <span class="toc-text">方法一：直接使用已知的cookie访问</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-用浏览器登录，获取浏览器里的cookie字符串"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.用浏览器登录，获取浏览器里的cookie字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-写代码"><span class="toc-number">1.0.2.</span> <span class="toc-text">2.写代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#方法二：模拟登录后再携带得到的cookie访问"><span class="toc-number">2.</span> <span class="toc-text">方法二：模拟登录后再携带得到的cookie访问</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-找出表单提交到的页面"><span class="toc-number">2.0.1.</span> <span class="toc-text">1.找出表单提交到的页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-找出要提交的数据"><span class="toc-number">2.0.2.</span> <span class="toc-text">2.找出要提交的数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-写代码"><span class="toc-number">2.0.3.</span> <span class="toc-text">3.写代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#方法三：模拟登录后用session保持登录状态"><span class="toc-number">3.</span> <span class="toc-text">方法三：模拟登录后用session保持登录状态</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-找出表单提交到的页面-1"><span class="toc-number">3.0.1.</span> <span class="toc-text">1.找出表单提交到的页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-写代码-1"><span class="toc-number">3.0.2.</span> <span class="toc-text">3.写代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#方法四：使用无头浏览器访问"><span class="toc-number">4.</span> <span class="toc-text">方法四：使用无头浏览器访问</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-安装selenium库、PhantomJS浏览器"><span class="toc-number">4.0.1.</span> <span class="toc-text">1.安装selenium库、PhantomJS浏览器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-考虑如何在程序中找到上述元素"><span class="toc-number">4.0.2.</span> <span class="toc-text">3.考虑如何在程序中找到上述元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-写代码"><span class="toc-number">4.0.3.</span> <span class="toc-text">4.写代码</span></a></li></ol></li></ol></li></ol>	
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '171639872', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+</html>
