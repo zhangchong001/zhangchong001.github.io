@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>数据预处理 - zc&#39;blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="ZC,"> 
+    <meta name="description" content="在数据挖掘中，海量的原始数据中存在着这大量不完整（有缺失值）、不一致、有异常的数据，严重影响到数据挖掘建模的执行效率，甚至可能导致挖掘结果的偏差，所以进行数据清洗就显得尤为重要，数据清洗完成后接着进,"> 
+    <meta name="author" content="ZC"> 
+    <link rel="alternative" href="atom.xml" title="zc&#39;blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">zc&#39;blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://zc.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">数据预处理</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">数据预处理</h1>
+        <div class="stuff">
+            <span>七月 14, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/python/" rel="tag">python</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>在数据挖掘中，海量的原始数据中存在着这大量不完整（有缺失值）、不一致、有异常的数据，严重影响到数据挖掘建模的执行效率，甚至可能导致挖掘结果的偏差，所以进行数据清洗就显得尤为重要，数据清洗完成后接着进行或者同时进行数据继承、转换、规约等一系列的处理，该过程就是数据预处理。<br>      数据预处理一方面是要提高数据的质量，另一个方面是要让数据更好地适应特定挖掘技术或工具。统计发现，在数据挖掘的过程中，数据预处理工作量占到了整个过程的60%<br>数据预处理框架图<br><img src="/images/2020/07/14/5671eb5f-c0c8-4354-9ea3-efc6d4c1808d.png" alt="image.png">数据清洗<br>      数据清洗主要是删除原始数据集中的无关数据、重复数据，平滑噪声数据，筛选掉与挖掘主题无关的数据，处理缺失值、异常值等。</p>
+<h1 id="缺失值的处理"><a href="#缺失值的处理" class="headerlink" title="缺失值的处理"></a>缺失值的处理</h1><p>处理缺失值的方法可以分为三类：<br>删除记录<br>数据插补<br>不处理<br> ::: hljs-center</p>
+<p>常用的插补方法</p>
+<p>:::</p>
+<p>  <img src="/images/2020/07/14/b818c5b9-ac4c-410a-b403-8db8a77f99cd.png" alt="image.png"><br>插值法：<br>拉格朗日插值法<br>Hermite插值<br>牛顿插值法<br>分段插值<br>样条插值<br>      如果通过简单的删除小部分记录达到既定的目标，那么删除含有缺失值的记录的方法是最有效的。然而，这种方法却有很大的局限性。它是以减少历史数据来换取数据的完备，会造成资源的大量浪费，将丢弃了大量隐藏在这些记录中的信息。尤其是在数据集本来就包含很少纪录的情况下，删除少量记录可能会严重影响到分析结果的客观性和正确性。一些模型可以将缺失值视作一种特殊的取值，允许直接在含有缺失值的数据上进行建模。<br>异常值处理<br>      在数据预处理时，异常值是否剔除，需视具体情况而定，因为有些异常值可能蕴含着有用的信息。<br>::: hljs-center</p>
+<p>异常值处理常用方法 </p>
+<p>:::<br>  <img src="/images/2020/07/14/6c47b79b-0d9e-42b6-a5c8-5feabc961821.png" alt="image.png">将含有异常值的记录直接删除的方法简单易行，但缺点也很明显，在观测值很少的情况下，这种删除会造成样本量不足，可能会改变变量的原有分布，从而造成分析结果的不准确。视为缺失值处理的好处是可以利用现有变量的信息，对异常值（缺失值）进行填补。<br>      在很多情况下，要先分析异常值出现的可能原因，在判断异常值是否应该舍弃，如果是正确的数据，可以直接在具有异常值的数据集上进行挖掘建模。</p>
+<h1 id="数据集成"><a href="#数据集成" class="headerlink" title="数据集成"></a>数据集成</h1><p>数据挖掘需要的数据往往分布在不同的数据源中，数据集成就是将多个数据源合并存放在一个一致的数据存储（数据仓库）中的过程。<br>      在数据集成时，来自多个数据源的现实世界实体的表达形式是不一样的，有可能不匹配，要考虑实体识别问题和属性冗余问题，从而将数据源在最底层上加以转换、提炼和集成。<br>实体识别<br>实体识别是指从不同数据源识别出现实世界的实体，它的任务是统一不同源数据的矛盾之处，常见形式如下：</p>
+<h1 id="同名异义"><a href="#同名异义" class="headerlink" title="同名异义"></a>同名异义</h1><p>数据源A中的属性ID和数据源中的属性ID分别描述的是学生编号和科目编号，即描述的是不同的实体。</p>
+<h1 id="异名同义"><a href="#异名同义" class="headerlink" title="异名同义"></a>异名同义</h1><p>数据源A中dt和数据源B中的date都是描述日期的。</p>
+<h1 id="单位不统一"><a href="#单位不统一" class="headerlink" title="单位不统一"></a>单位不统一</h1><p>描述同一个实体分别用的是国际单位和中国传统的计量单位，检测和解决这些冲突就是实体识别的任务。</p>
+<h1 id="冗余属性识别"><a href="#冗余属性识别" class="headerlink" title="冗余属性识别"></a>冗余属性识别</h1><p>数据冗余情况：<br>同一属性多次出现。<br>同一属性命名不一致导致重复。<br>      仔细整合不同数据源减少甚至避免数据冗余与不一致，从而提高数据挖掘的速度和质量。对于冗余属性要先分析，检测到后再将其删除。<br>      有些冗余属性可以用相关分析检测。给定两个数值型A和B，根据其属性值，用相关系数度量一个属性在多大程度上蕴含另一个属性。</p>
+<h1 id="数据变换"><a href="#数据变换" class="headerlink" title="数据变换"></a>数据变换</h1><p>数据变换主要是对数据进行规范化处理，将数据转化成“适当的”形式，以适用于挖掘任务及算法的需要。</p>
+<p>方便置信区间分析或者可视化 (缩放数据， 对称分布)。<br>为了获取更容易解释的特征 (获取线性特征)。<br>降低数据的维度或者复杂度。<br>方便使用简单的回归模型。<br>简单的数据变换<br>      简单的函数变换常用来将不具有正态分布非数据变换成具有正态分布的数据。在时间序列分析中，有时简单的对数变换或者差分运算就可以将非平稳序列转换成平稳序列。<br>::: hljs-center</p>
+<p>常用简单的函数表</p>
+<p>:::<br><img src="/images/2020/07/14/b3e224bb-c0f8-474e-9ea3-e3d750a4d55f.png" alt="image.png"></p>
+<h1 id="规范化"><a href="#规范化" class="headerlink" title="规范化"></a>规范化</h1><p>数据规范化（归一化）处理是数据挖掘的一项基础工作。不同评价指标往往具有不同的量纲， 数之间的差别可能很大，不进行处理会影响到数据分析的结果。为了消除指标之间的量纲和取值范围差异的影响，需要进行标准化处理，将数据按照比例进行缩放，使之落入特定的区域，便于进行综合分析。<br>把数据映射到[0,1]的区间中。<br>把有量纲形式变成无量纲形式 。<br>::: hljs-center</p>
+<p>常用的规范化方法</p>
+<p>:::<br><img src="/images/2020/07/14/66d45649-4790-4442-a499-6282b49d09de.png" alt="image.png"></p>
+<h1 id="连续属性离散化"><a href="#连续属性离散化" class="headerlink" title="连续属性离散化"></a>连续属性离散化</h1><p> 一些数据挖掘算法，特别是某些分类算法（ID3算法、Apripri算法等）、要求数据是分类属性形式。这样，常常需要将连续属性变换换成分类属性，即连续属性离散化。</p>
+<h3 id="离散化过程"><a href="#离散化过程" class="headerlink" title="离散化过程"></a>离散化过程</h3><p>连续属性的离散化就是在数据的取值范围内设定若干个离散的划分点，将取值范围划分为一些离散化的区间，最后用不同的符号或整数值代表落在每个子区间中的数据值。所以，离散化涉及两个任务：确定分类数以及如何将连续属性值映射到这些分类值。</p>
+<h3 id="常用的离散化方法"><a href="#常用的离散化方法" class="headerlink" title="常用的离散化方法"></a>常用的离散化方法</h3><p><img src="/images/2020/07/14/03344607-bc7c-4beb-8e45-80892039794b.png" alt="image.png"></p>
+<h1 id="属性构造"><a href="#属性构造" class="headerlink" title="属性构造"></a>属性构造</h1><p>在数据挖掘的过程中，为了提取更有用的信息，挖掘更深层次的模式，提高挖掘结果的精度，需要利用已有的属性集构造出新的属性，并加入到现有的属性集合中。</p>
+<h1 id="数据规约"><a href="#数据规约" class="headerlink" title="数据规约"></a>数据规约</h1><p>在大数据集上进行复杂的数据分析和挖掘需要很长的时间，数据归约产生更小但保持原数据完整性的新数据集。在规约后的数据集上进行分析和挖掘将更有效率。<br>数据规约的意义：</p>
+<p>降低无效、错误数据对建模的影响，提高建模的准确性。<br>少量且代表性的数据将大幅缩减数据挖掘所需的时间。<br>降低存储数据的成本</p>
+<h1 id="属性规约"><a href="#属性规约" class="headerlink" title="属性规约"></a>属性规约</h1><p> 属性规约通过属性合并来创建新属性维数，或者直接通过删除不相关（维）来减少数据维数，从而提高数据挖掘的效率、降低计算成本。属性规约的目标是寻找出最小的属性子集并确保新数据子集的概率分布尽可能地接近原来数据集的概率分布。<br><img src="/images/2020/07/14/a178a096-56b8-4052-a5de-ed5c2d47eec2.png" alt="image.png"></p>
+<h1 id="数值规约"><a href="#数值规约" class="headerlink" title="数值规约"></a>数值规约</h1><p>数值规约值通过选择替代的、较少的数据来减少数据量，包括有参数和无参数方法两类。有参数方法是使用一个模型来评估数据，只需存放参数，而不需要存放实际数据，例如回归和对数线性模型。无参数方法就需要存放实际数据。</p>
+<h3 id="直方图"><a href="#直方图" class="headerlink" title="直方图"></a>直方图</h3><p>直方图使用分箱来近似数据分布，是一种流行的数据归约形式。</p>
+<h3 id="聚类"><a href="#聚类" class="headerlink" title="聚类"></a>聚类</h3><p>聚类技术将数据元组（即记录，数据表中的一行）视为对象。它将对象划分为簇，使一个簇中的对象相互“相似”，而与其他簇中的对象“相异”。在数据规约中，用数据的簇替换实际数据。该技术的有效性依赖于簇的定义是否符合数据的分布性质。</p>
+<h3 id="抽样"><a href="#抽样" class="headerlink" title="抽样"></a>抽样</h3><p>抽样也是一种数据规约技术，它用比原始数据小得多的随机样本（子集）表示原始数据集。假定原始数据集D包含N个元组，可以采用抽样方法对D进行抽样。<br><strong>s个样本无放回简单随机抽样<br>s个样本有放回简单随机抽样<br>聚类抽样<br>分层抽样</strong></p>
+<h3 id="参数回归"><a href="#参数回归" class="headerlink" title="参数回归"></a>参数回归</h3><p>简单线性模型和对数线性模型可以用来近似描述给定的数据。线性模型对数据建模，使之拟合一条直线。</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#缺失值的处理"><span class="toc-number">1.</span> <span class="toc-text">缺失值的处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据集成"><span class="toc-number">2.</span> <span class="toc-text">数据集成</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#同名异义"><span class="toc-number">3.</span> <span class="toc-text">同名异义</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#异名同义"><span class="toc-number">4.</span> <span class="toc-text">异名同义</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#单位不统一"><span class="toc-number">5.</span> <span class="toc-text">单位不统一</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#冗余属性识别"><span class="toc-number">6.</span> <span class="toc-text">冗余属性识别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据变换"><span class="toc-number">7.</span> <span class="toc-text">数据变换</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#规范化"><span class="toc-number">8.</span> <span class="toc-text">规范化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#连续属性离散化"><span class="toc-number">9.</span> <span class="toc-text">连续属性离散化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#离散化过程"><span class="toc-number">9.0.1.</span> <span class="toc-text">离散化过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用的离散化方法"><span class="toc-number">9.0.2.</span> <span class="toc-text">常用的离散化方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#属性构造"><span class="toc-number">10.</span> <span class="toc-text">属性构造</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据规约"><span class="toc-number">11.</span> <span class="toc-text">数据规约</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#属性规约"><span class="toc-number">12.</span> <span class="toc-text">属性规约</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数值规约"><span class="toc-number">13.</span> <span class="toc-text">数值规约</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#直方图"><span class="toc-number">13.0.1.</span> <span class="toc-text">直方图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#聚类"><span class="toc-number">13.0.2.</span> <span class="toc-text">聚类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#抽样"><span class="toc-number">13.0.3.</span> <span class="toc-text">抽样</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参数回归"><span class="toc-number">13.0.4.</span> <span class="toc-text">参数回归</span></a></li></ol></li></ol></li></ol>	
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '171639872', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+</html>
