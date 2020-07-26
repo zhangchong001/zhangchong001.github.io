@@ -1066,4 +1066,55 @@ python解释器加载阶段会创建出内建命名空间、模块的全局命�
         <tag>hexo</tag>
       </tags>
   </entry>
+  <entry>
+    <title>虚拟机安装openfiler</title>
+    <url>/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85openfiler.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Openfiler是一个基于rPath Linux系统的免费ISCIS/NAS应用。它是一个基于浏览器的免费网络存储管理实用程序，可以在单一框架中提供基于文件的网络连接存储 (NAS) 和基于块的存储区域网 (SAN)。Openfiler 支持 CIFS、NFS、HTTP/DAV 和 FTP。Openfiler能把标准x86/64架构的系统变成一个强大的NAS、SAN存储和IP存储网关，为管理员提供一个强大的管理平台，并能能应付未来的存储需求。依赖如VMware，Virtual Iron和Xen服务器虚拟化技术，Openfiler也可部署为一个虚拟机实例。<br>Openfiler的主要性能和优点：<br>1.可靠性—Openfiler可以支持软件和硬件的RAID，能监测和预警，并且可以做卷的快照和快速恢复。<br>2. 高可用性–Openfiler支持主动或被动的高可用性集群、多路径存储（MPIO）、块级别的复制。<br>3.性能–及时更新的Linux内核支持最新的CPU、网络和存储硬件。<br>4.可伸缩性—文件系统可扩展性最高可超出60TB，并能使文件系统大小可以在线的增长。</p>
+<h1 id="openfiler安装"><a href="#openfiler安装" class="headerlink" title="openfiler安装"></a>openfiler安装</h1><h3 id="下载openfiler镜像"><a href="#下载openfiler镜像" class="headerlink" title="下载openfiler镜像"></a>下载openfiler镜像</h3><p><a href="https://www.openfiler.com/community/download" target="_blank" rel="noopener">链接🔗</a></p>
+<h3 id="创建虚拟机"><a href="#创建虚拟机" class="headerlink" title="创建虚拟机"></a>创建虚拟机</h3><p>新建虚拟机，选择自定义<br><img src="/images/2020/07/26/a62b9fba-1e6d-45a0-8671-0e67b4c95302.png" alt="image.png"><br>选择虚拟机兼容性<br><img src="/images/2020/07/26/b797defc-3b51-42db-afec-24f5aa0ed0ce.png" alt="image.png"><br>选择稍后安装操作系统<br><img src="/images/2020/07/26/415c3b94-bfce-4d22-ade7-fd5ea4bfc5e0.png" alt="image.png"><br>选择系统为Linux并且选择为Red Hat Enterprise Linux 5<br><img src="/images/2020/07/26/4c2e82dd-0611-4ea4-860b-757d659b1190.png" alt="image.png"><br>命名虚拟机并且选择安装位置<br><img src="/images/2020/07/26/5ad5a368-53b4-4b5b-b4b7-4b50c3d844dd.png" alt="image.png"><br>处理器配置<br><img src="/images/2020/07/26/f8e854f8-86c6-4599-a917-75d952329ebe.png" alt="image.png"><br>虚拟机内存设置<br><img src="/images/2020/07/26/9840952f-5648-4e62-9120-40bea1417d3f.png" alt="image.png"><br>设置网络类型，选择桥接<br><img src="/images/2020/07/26/f2adc548-24b1-42d9-8927-376f2546e97f.png" alt="image.png"><br>选择I/O控制器类型<br><img src="/images/2020/07/26/094c5a2c-d9fb-404d-8ff3-af63c4ff9144.png" alt="image.png"><br>选择磁盘类型<br><img src="/images/2020/07/26/642a542b-0a15-4b30-8b06-fad1d5bde637.png" alt="image.png"><br>选择磁盘<br><img src="/images/2020/07/26/3de87fb9-9b81-46d8-b4fd-ac67e66d216e.png" alt="image.png"><br>指定磁盘容量<br><img src="/images/2020/07/26/c6a484d9-bb58-458b-b9b7-a15d2b1a3712.png" alt="image.png"><br>指定磁盘文件<br><img src="/images/2020/07/26/cef87bbd-9d2c-47a4-bf28-781bc87fc884.png" alt="image.png"><br>选择挂载安装镜像<br><img src="/images/2020/07/26/18d40631-dd49-4623-8451-bb872ff55318.png" alt="image.png"><br>开启虚拟机，进入此界面按回车<br><img src="/images/2020/07/26/55b6cbdc-e504-4403-8a9e-1dc520edfdc8.png" alt="image.png"><br>点击下一步<br><img src="/images/2020/07/26/10e86c71-14df-4a3e-8bae-761f9bdc74d2.png" alt="image.png"><br>选择适当的键盘<br><img src="/images/2020/07/26/5d3fd7b9-412b-45b7-940f-9fd2c644c1a0.png" alt="image.png"><br>初始化磁盘，选择”Yes”<br><img src="/images/2020/07/26/237a10bb-7207-4967-a114-5e0b063ba327.png" alt="image.png"><br>创建分区，选择”Yes”<br><img src="/images/2020/07/26/8c00f7ed-fb02-4846-b64e-fc16067b517a.png" alt="image.png"><br>选择使用静态的IP地址<img src="/images/2020/07/26/c459e249-a7b9-4ccc-9ac2-ff6b259ace07.png" alt="image.png"><br>配置网关与DNS服务器地址，这一步使用内网地址的话感觉DNS服务器配置与否都行。所以此处有点多余2333🤣<img src="/images/2020/07/26/03d29a10-b29e-4c0c-a8c1-d6bf12e987b1.png" alt="image.png"><br>选择时区，选择上海<img src="/images/2020/07/26/5e3bbc04-8a6f-4acc-a78c-f3650b2c6049.png" alt="image.png"><br>设置root密码<img src="/images/2020/07/26/afaf7d1a-4123-481b-ac1b-d70e0963b1d3.png" alt="image.png"><br>点击“Next”进行安装<img src="/images/2020/07/26/55bb2d31-4bb6-4263-91ce-cdee2f7025ae.png" alt="image.png"><br><img src="/images/2020/07/26/cb1b0604-c779-4b92-9480-2ee312a80381.png" alt="image.png"><br>安装完成，选择“Reboot”重启系统<br><img src="/images/2020/07/26/6937af98-bdc9-4a0b-afb3-b0d17f850c2a.png" alt="image.png"></p>
+<h1 id="配置openfiler-的iscsi目标服务器"><a href="#配置openfiler-的iscsi目标服务器" class="headerlink" title="配置openfiler 的iscsi目标服务器"></a>配置openfiler 的iscsi目标服务器</h1><h3 id="1-重启进入操作系统"><a href="#1-重启进入操作系统" class="headerlink" title="1.重启进入操作系统"></a>1.重启进入操作系统</h3><p><img src="/images/2020/07/26/bebf2e4c-2748-4772-8287-41af3a38150e.png" alt="image.png"></p>
+<h3 id="2-添加3块scsi硬盘"><a href="#2-添加3块scsi硬盘" class="headerlink" title="2.添加3块scsi硬盘"></a>2.添加3块scsi硬盘</h3><p><img src="/images/2020/07/26/40c3ce31-49f3-4b55-adb7-766f62fc9795.png" alt="image.png"><br>然后输入init 6重启操作系统，重新扫描scsi硬盘。<br><img src="/images/2020/07/26/c68166db-8831-4ef5-8446-e3f265a76d4d.png" alt="image.png"></p>
+<h3 id="3-登录web界面"><a href="#3-登录web界面" class="headerlink" title="3.登录web界面"></a>3.登录web界面</h3><p>登录地址就是启动时页面上显示的IP地址;用户名是：openfiler ， 密码是：password</p>
+<p><img src="/images/2020/07/26/66c20d26-c33b-451e-bdcc-21b48c828aa0.png" alt="image.png"></p>
+<h3 id="4-磁盘配置RAID5"><a href="#4-磁盘配置RAID5" class="headerlink" title="4.磁盘配置RAID5"></a>4.磁盘配置RAID5</h3><p>登录成功后界面如下所示</p>
+<p><img src="/images/2020/07/26/1adbd07d-6252-41eb-979b-af762f37357c.png" alt="image.png"></p>
+<p>选择”Volumes”选项<br><img src="/images/2020/07/26/12ae85bc-1445-40de-8cfb-9090dbb3c043.png" alt="image.png"></p>
+<p>选择右测得菜单栏“Block Devices”<br><img src="/images/2020/07/26/cab73e38-b09a-4535-b188-2cdda3dbc5e2.png" alt="image.png"></p>
+<p>点击刚添加的三块硬盘</p>
+<p><img src="/images/2020/07/26/71055f79-a98a-469b-a6bc-35ee26a1f6a8.png" alt="image.png"></p>
+<p>创建raid分区类型</p>
+<p><img src="/images/2020/07/26/cd25519f-0a0c-4ff4-b11b-3cdde6cddcf0.png" alt="image.png"></p>
+<p>选择右侧的“Software RAID”<br><img src="/images/2020/07/26/b2ba056a-f670-43e9-80ad-fe9fbdfda22a.png" alt="image.png"></p>
+<p>选择创建RAID5分区，点击“Add array”<br><img src="/images/2020/07/26/2fa2225b-bab8-4a7c-bd7e-964a5af2198f.png" alt="image.png"></p>
+<h3 id="5-创建逻辑卷"><a href="#5-创建逻辑卷" class="headerlink" title="5.创建逻辑卷"></a>5.创建逻辑卷</h3><p>使用刚才创建好的raid5分区创建逻辑卷，点击“Volume Groups”</p>
+<p><img src="/images/2020/07/26/c65b447a-fae2-4b44-882a-f70dce3c252b.png" alt="image.png"></p>
+<p>点击“create new physical volumes”，给卷组起一个名字叫“First”，选择物理卷“/dev/md0”</p>
+<p><img src="/images/2020/07/26/f2f2650a-e477-4bd4-8c12-20383c1282c5.png" alt="image.png"></p>
+<p>点击右侧的“Add volume”<br><img src="/images/2020/07/26/7d86236b-602b-4761-a460-ea91d5865a74.png" alt="image.png"></p>
+<p>创建卷，卷的名字叫“One”，卷描述“hello world”当然可以填其他的，容量调整为最大，FileSystem / Volume type： 选择 block(iSCSI,FC,etc)<br><img src="/images/2020/07/26/b1eeef6a-9faf-4e0a-9e27-c3063443310f.png" alt="image.png"></p>
+<h3 id="6-启动iscsi目标服务器"><a href="#6-启动iscsi目标服务器" class="headerlink" title="6.启动iscsi目标服务器"></a>6.启动iscsi目标服务器</h3><p><img src="/images/2020/07/26/94683742-b973-4263-88bb-c2add97827ad.png" alt="image.png"></p>
+<h3 id="7-配置访问控制列表，iscsi目标服务器"><a href="#7-配置访问控制列表，iscsi目标服务器" class="headerlink" title="7.配置访问控制列表，iscsi目标服务器"></a>7.配置访问控制列表，iscsi目标服务器</h3><p>选择“System”</p>
+<p><img src="/images/2020/07/26/328c6199-ba14-4620-a97a-b7ceccdb2609.png" alt="image.png"></p>
+<p>选择允许访问的ip地址或一个网段，然后点击“update”<br><img src="/images/2020/07/26/0f569178-a59f-444f-bd4b-50b05ce7fb31.png" alt="image.png"></p>
+<p>选择Volumes<br><img src="/images/2020/07/26/7154ab2e-d624-43b1-baef-a3b2d4aee943.png" alt="image.png"></p>
+<p>选择右边的“iSCSI Targets”</p>
+<p><img src="/images/2020/07/26/391c8d3b-c29f-47b7-9d27-78f892e3e90a.png" alt="image.png"></p>
+<p>添加一个target IQN<br><img src="/images/2020/07/26/b6519eef-ab67-4777-a277-e4b2ce58d5f5.png" alt="image.png"></p>
+<p>选择“LUN Mapping”，然后进行映射</p>
+<p><img src="/images/2020/07/26/94c26dde-efae-48ca-98e9-4a142d30e0ee.png" alt="image.png"></p>
+<p>选择“Network ACL”，“ACCESS”下面改成“Allow”，然后点击“update”</p>
+<p><img src="/images/2020/07/26/d3607d29-a38f-4d18-9bea-752c674da007.png" alt="image.png"></p>
+<p>连接iscsi测试<br>打开iscsi发起程序，连接iscsi目标服务器<br><img src="/images/2020/07/26/039c2696-eb04-4828-b835-fb2b3b54832d.png" alt="image.png"><br><img src="/images/2020/07/26/8a56f05d-2968-4fd2-add9-56345cabbaa8.png" alt="image.png"></p>
+<p>查看Windows磁盘管理，发现已经正常连接<br><img src="/images/2020/07/26/818b688a-0259-4af6-af5f-71dfc751740b.png" alt="image.png"></p>
+<p>新建一个分区</p>
+<p><img src="/images/2020/07/26/7f3c9172-1196-40af-8c2d-bebf17336811.png" alt="image.png"></p>
+<p>复制文件速度测试<br><img src="/images/2020/07/26/26b461b7-bf26-4ecf-a8fc-715e5a84a383.png" alt="image.png"></p>
+]]></content>
+      <categories>
+        <category>虚拟化</category>
+      </categories>
+      <tags>
+        <tag>虚拟机</tag>
+      </tags>
+  </entry>
 </search>

@@ -1,0 +1,499 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>虚拟机安装openfiler - zc&#39;blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="ZC,"> 
+    <meta name="description" content="简介Openfiler是一个基于rPath Linux系统的免费ISCIS/NAS应用。它是一个基于浏览器的免费网络存储管理实用程序，可以在单一框架中提供基于文件的网络连接存储 (NAS) 和基于块,"> 
+    <meta name="author" content="ZC"> 
+    <link rel="alternative" href="atom.xml" title="zc&#39;blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">zc&#39;blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://zc.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">虚拟机安装openfiler</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">虚拟机安装openfiler</h1>
+        <div class="stuff">
+            <span>七月 26, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Openfiler是一个基于rPath Linux系统的免费ISCIS/NAS应用。它是一个基于浏览器的免费网络存储管理实用程序，可以在单一框架中提供基于文件的网络连接存储 (NAS) 和基于块的存储区域网 (SAN)。Openfiler 支持 CIFS、NFS、HTTP/DAV 和 FTP。Openfiler能把标准x86/64架构的系统变成一个强大的NAS、SAN存储和IP存储网关，为管理员提供一个强大的管理平台，并能能应付未来的存储需求。依赖如VMware，Virtual Iron和Xen服务器虚拟化技术，Openfiler也可部署为一个虚拟机实例。<br>Openfiler的主要性能和优点：<br>1.可靠性—Openfiler可以支持软件和硬件的RAID，能监测和预警，并且可以做卷的快照和快速恢复。<br>2. 高可用性–Openfiler支持主动或被动的高可用性集群、多路径存储（MPIO）、块级别的复制。<br>3.性能–及时更新的Linux内核支持最新的CPU、网络和存储硬件。<br>4.可伸缩性—文件系统可扩展性最高可超出60TB，并能使文件系统大小可以在线的增长。</p>
+<h1 id="openfiler安装"><a href="#openfiler安装" class="headerlink" title="openfiler安装"></a>openfiler安装</h1><h3 id="下载openfiler镜像"><a href="#下载openfiler镜像" class="headerlink" title="下载openfiler镜像"></a>下载openfiler镜像</h3><p><a href="https://www.openfiler.com/community/download" target="_blank" rel="noopener">链接🔗</a></p>
+<h3 id="创建虚拟机"><a href="#创建虚拟机" class="headerlink" title="创建虚拟机"></a>创建虚拟机</h3><p>新建虚拟机，选择自定义<br><img src="/images/2020/07/26/a62b9fba-1e6d-45a0-8671-0e67b4c95302.png" alt="image.png"><br>选择虚拟机兼容性<br><img src="/images/2020/07/26/b797defc-3b51-42db-afec-24f5aa0ed0ce.png" alt="image.png"><br>选择稍后安装操作系统<br><img src="/images/2020/07/26/415c3b94-bfce-4d22-ade7-fd5ea4bfc5e0.png" alt="image.png"><br>选择系统为Linux并且选择为Red Hat Enterprise Linux 5<br><img src="/images/2020/07/26/4c2e82dd-0611-4ea4-860b-757d659b1190.png" alt="image.png"><br>命名虚拟机并且选择安装位置<br><img src="/images/2020/07/26/5ad5a368-53b4-4b5b-b4b7-4b50c3d844dd.png" alt="image.png"><br>处理器配置<br><img src="/images/2020/07/26/f8e854f8-86c6-4599-a917-75d952329ebe.png" alt="image.png"><br>虚拟机内存设置<br><img src="/images/2020/07/26/9840952f-5648-4e62-9120-40bea1417d3f.png" alt="image.png"><br>设置网络类型，选择桥接<br><img src="/images/2020/07/26/f2adc548-24b1-42d9-8927-376f2546e97f.png" alt="image.png"><br>选择I/O控制器类型<br><img src="/images/2020/07/26/094c5a2c-d9fb-404d-8ff3-af63c4ff9144.png" alt="image.png"><br>选择磁盘类型<br><img src="/images/2020/07/26/642a542b-0a15-4b30-8b06-fad1d5bde637.png" alt="image.png"><br>选择磁盘<br><img src="/images/2020/07/26/3de87fb9-9b81-46d8-b4fd-ac67e66d216e.png" alt="image.png"><br>指定磁盘容量<br><img src="/images/2020/07/26/c6a484d9-bb58-458b-b9b7-a15d2b1a3712.png" alt="image.png"><br>指定磁盘文件<br><img src="/images/2020/07/26/cef87bbd-9d2c-47a4-bf28-781bc87fc884.png" alt="image.png"><br>选择挂载安装镜像<br><img src="/images/2020/07/26/18d40631-dd49-4623-8451-bb872ff55318.png" alt="image.png"><br>开启虚拟机，进入此界面按回车<br><img src="/images/2020/07/26/55b6cbdc-e504-4403-8a9e-1dc520edfdc8.png" alt="image.png"><br>点击下一步<br><img src="/images/2020/07/26/10e86c71-14df-4a3e-8bae-761f9bdc74d2.png" alt="image.png"><br>选择适当的键盘<br><img src="/images/2020/07/26/5d3fd7b9-412b-45b7-940f-9fd2c644c1a0.png" alt="image.png"><br>初始化磁盘，选择”Yes”<br><img src="/images/2020/07/26/237a10bb-7207-4967-a114-5e0b063ba327.png" alt="image.png"><br>创建分区，选择”Yes”<br><img src="/images/2020/07/26/8c00f7ed-fb02-4846-b64e-fc16067b517a.png" alt="image.png"><br>选择使用静态的IP地址<img src="/images/2020/07/26/c459e249-a7b9-4ccc-9ac2-ff6b259ace07.png" alt="image.png"><br>配置网关与DNS服务器地址，这一步使用内网地址的话感觉DNS服务器配置与否都行。所以此处有点多余2333🤣<img src="/images/2020/07/26/03d29a10-b29e-4c0c-a8c1-d6bf12e987b1.png" alt="image.png"><br>选择时区，选择上海<img src="/images/2020/07/26/5e3bbc04-8a6f-4acc-a78c-f3650b2c6049.png" alt="image.png"><br>设置root密码<img src="/images/2020/07/26/afaf7d1a-4123-481b-ac1b-d70e0963b1d3.png" alt="image.png"><br>点击“Next”进行安装<img src="/images/2020/07/26/55bb2d31-4bb6-4263-91ce-cdee2f7025ae.png" alt="image.png"><br><img src="/images/2020/07/26/cb1b0604-c779-4b92-9480-2ee312a80381.png" alt="image.png"><br>安装完成，选择“Reboot”重启系统<br><img src="/images/2020/07/26/6937af98-bdc9-4a0b-afb3-b0d17f850c2a.png" alt="image.png"></p>
+<h1 id="配置openfiler-的iscsi目标服务器"><a href="#配置openfiler-的iscsi目标服务器" class="headerlink" title="配置openfiler 的iscsi目标服务器"></a>配置openfiler 的iscsi目标服务器</h1><h3 id="1-重启进入操作系统"><a href="#1-重启进入操作系统" class="headerlink" title="1.重启进入操作系统"></a>1.重启进入操作系统</h3><p><img src="/images/2020/07/26/bebf2e4c-2748-4772-8287-41af3a38150e.png" alt="image.png"></p>
+<h3 id="2-添加3块scsi硬盘"><a href="#2-添加3块scsi硬盘" class="headerlink" title="2.添加3块scsi硬盘"></a>2.添加3块scsi硬盘</h3><p><img src="/images/2020/07/26/40c3ce31-49f3-4b55-adb7-766f62fc9795.png" alt="image.png"><br>然后输入init 6重启操作系统，重新扫描scsi硬盘。<br><img src="/images/2020/07/26/c68166db-8831-4ef5-8446-e3f265a76d4d.png" alt="image.png"></p>
+<h3 id="3-登录web界面"><a href="#3-登录web界面" class="headerlink" title="3.登录web界面"></a>3.登录web界面</h3><p>登录地址就是启动时页面上显示的IP地址;用户名是：openfiler ， 密码是：password</p>
+<p><img src="/images/2020/07/26/66c20d26-c33b-451e-bdcc-21b48c828aa0.png" alt="image.png"></p>
+<h3 id="4-磁盘配置RAID5"><a href="#4-磁盘配置RAID5" class="headerlink" title="4.磁盘配置RAID5"></a>4.磁盘配置RAID5</h3><p>登录成功后界面如下所示</p>
+<p><img src="/images/2020/07/26/1adbd07d-6252-41eb-979b-af762f37357c.png" alt="image.png"></p>
+<p>选择”Volumes”选项<br><img src="/images/2020/07/26/12ae85bc-1445-40de-8cfb-9090dbb3c043.png" alt="image.png"></p>
+<p>选择右测得菜单栏“Block Devices”<br><img src="/images/2020/07/26/cab73e38-b09a-4535-b188-2cdda3dbc5e2.png" alt="image.png"></p>
+<p>点击刚添加的三块硬盘</p>
+<p><img src="/images/2020/07/26/71055f79-a98a-469b-a6bc-35ee26a1f6a8.png" alt="image.png"></p>
+<p>创建raid分区类型</p>
+<p><img src="/images/2020/07/26/cd25519f-0a0c-4ff4-b11b-3cdde6cddcf0.png" alt="image.png"></p>
+<p>选择右侧的“Software RAID”<br><img src="/images/2020/07/26/b2ba056a-f670-43e9-80ad-fe9fbdfda22a.png" alt="image.png"></p>
+<p>选择创建RAID5分区，点击“Add array”<br><img src="/images/2020/07/26/2fa2225b-bab8-4a7c-bd7e-964a5af2198f.png" alt="image.png"></p>
+<h3 id="5-创建逻辑卷"><a href="#5-创建逻辑卷" class="headerlink" title="5.创建逻辑卷"></a>5.创建逻辑卷</h3><p>使用刚才创建好的raid5分区创建逻辑卷，点击“Volume Groups”</p>
+<p><img src="/images/2020/07/26/c65b447a-fae2-4b44-882a-f70dce3c252b.png" alt="image.png"></p>
+<p>点击“create new physical volumes”，给卷组起一个名字叫“First”，选择物理卷“/dev/md0”</p>
+<p><img src="/images/2020/07/26/f2f2650a-e477-4bd4-8c12-20383c1282c5.png" alt="image.png"></p>
+<p>点击右侧的“Add volume”<br><img src="/images/2020/07/26/7d86236b-602b-4761-a460-ea91d5865a74.png" alt="image.png"></p>
+<p>创建卷，卷的名字叫“One”，卷描述“hello world”当然可以填其他的，容量调整为最大，FileSystem / Volume type： 选择 block(iSCSI,FC,etc)<br><img src="/images/2020/07/26/b1eeef6a-9faf-4e0a-9e27-c3063443310f.png" alt="image.png"></p>
+<h3 id="6-启动iscsi目标服务器"><a href="#6-启动iscsi目标服务器" class="headerlink" title="6.启动iscsi目标服务器"></a>6.启动iscsi目标服务器</h3><p><img src="/images/2020/07/26/94683742-b973-4263-88bb-c2add97827ad.png" alt="image.png"></p>
+<h3 id="7-配置访问控制列表，iscsi目标服务器"><a href="#7-配置访问控制列表，iscsi目标服务器" class="headerlink" title="7.配置访问控制列表，iscsi目标服务器"></a>7.配置访问控制列表，iscsi目标服务器</h3><p>选择“System”</p>
+<p><img src="/images/2020/07/26/328c6199-ba14-4620-a97a-b7ceccdb2609.png" alt="image.png"></p>
+<p>选择允许访问的ip地址或一个网段，然后点击“update”<br><img src="/images/2020/07/26/0f569178-a59f-444f-bd4b-50b05ce7fb31.png" alt="image.png"></p>
+<p>选择Volumes<br><img src="/images/2020/07/26/7154ab2e-d624-43b1-baef-a3b2d4aee943.png" alt="image.png"></p>
+<p>选择右边的“iSCSI Targets”</p>
+<p><img src="/images/2020/07/26/391c8d3b-c29f-47b7-9d27-78f892e3e90a.png" alt="image.png"></p>
+<p>添加一个target IQN<br><img src="/images/2020/07/26/b6519eef-ab67-4777-a277-e4b2ce58d5f5.png" alt="image.png"></p>
+<p>选择“LUN Mapping”，然后进行映射</p>
+<p><img src="/images/2020/07/26/94c26dde-efae-48ca-98e9-4a142d30e0ee.png" alt="image.png"></p>
+<p>选择“Network ACL”，“ACCESS”下面改成“Allow”，然后点击“update”</p>
+<p><img src="/images/2020/07/26/d3607d29-a38f-4d18-9bea-752c674da007.png" alt="image.png"></p>
+<p>连接iscsi测试<br>打开iscsi发起程序，连接iscsi目标服务器<br><img src="/images/2020/07/26/039c2696-eb04-4828-b835-fb2b3b54832d.png" alt="image.png"><br><img src="/images/2020/07/26/8a56f05d-2968-4fd2-add9-56345cabbaa8.png" alt="image.png"></p>
+<p>查看Windows磁盘管理，发现已经正常连接<br><img src="/images/2020/07/26/818b688a-0259-4af6-af5f-71dfc751740b.png" alt="image.png"></p>
+<p>新建一个分区</p>
+<p><img src="/images/2020/07/26/7f3c9172-1196-40af-8c2d-bebf17336811.png" alt="image.png"></p>
+<p>复制文件速度测试<br><img src="/images/2020/07/26/26b461b7-bf26-4ecf-a8fc-715e5a84a383.png" alt="image.png"></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='valine_container' class="valine_thread v"
+	data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    
+    ></div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#openfiler安装"><span class="toc-number">2.</span> <span class="toc-text">openfiler安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#下载openfiler镜像"><span class="toc-number">2.0.1.</span> <span class="toc-text">下载openfiler镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建虚拟机"><span class="toc-number">2.0.2.</span> <span class="toc-text">创建虚拟机</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置openfiler-的iscsi目标服务器"><span class="toc-number">3.</span> <span class="toc-text">配置openfiler 的iscsi目标服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-重启进入操作系统"><span class="toc-number">3.0.1.</span> <span class="toc-text">1.重启进入操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-添加3块scsi硬盘"><span class="toc-number">3.0.2.</span> <span class="toc-text">2.添加3块scsi硬盘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-登录web界面"><span class="toc-number">3.0.3.</span> <span class="toc-text">3.登录web界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-磁盘配置RAID5"><span class="toc-number">3.0.4.</span> <span class="toc-text">4.磁盘配置RAID5</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-创建逻辑卷"><span class="toc-number">3.0.5.</span> <span class="toc-text">5.创建逻辑卷</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-启动iscsi目标服务器"><span class="toc-number">3.0.6.</span> <span class="toc-text">6.启动iscsi目标服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-配置访问控制列表，iscsi目标服务器"><span class="toc-number">3.0.7.</span> <span class="toc-text">7.配置访问控制列表，iscsi目标服务器</span></a></li></ol></li></ol></li></ol>	
+        </div>
+    
+</div>
+
+
+        
+    <div class="blog-post-comments">
+      <section id="comment">
+        <div id="valine_container" class="valine_thread"></div>
+      </section>
+      <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+      <script src="https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js"></script>
+
+<style>
+  #comment{
+    width: 70%;
+    display: block;
+    border-radius: 20px;
+    margin: 0 auto;
+  }
+ .v #veditor{
+     min-height: 10rem;
+     background-image: url(https://cdn.jsdelivr.net/gh/cungudafa/img/images/girls2.png);
+     background-size: contain;
+     background-repeat: no-repeat;
+     background-position: right;
+     background-color: rgba(255,255,255,0);
+     resize: none;}
+
+ /*图片消失
+ #veditor:focus{
+	background-position-y: 200px;
+	transition: all 0.2s ease-in-out 0s;
+}  */  
+/*头像旋转*/
+img.vimg {
+     transition: all 1s   /* 旋转时间为 1s */
+}
+
+img.vimg:hover {
+     transform: rotate(360deg);
+     -webkit-transform: rotate(360deg);
+     -moz-transform: rotate(360deg);
+     -o-transform: rotate(360deg);
+     -ms-transform: rotate(360deg);
+}
+
+/*调整一下表情高度*/
+div.vcontent p  img.vemoji {
+    height: 30px;
+
+}
+</style>
+
+
+      <script>
+        var GUEST_INFO = ["nick", "mail", "link"];
+        var guest_info = "nick,mail,link"
+          .split(",")
+          .filter(function (item) {
+            return GUEST_INFO.indexOf(item) > -1;
+          });
+        var valine = new Valine();
+        valine.init({
+          el: "#valine_container",
+          admin_email: 'i@1l.fit',
+          appId: "iDHJ60Ufv3QjOR4sWuH4oL3r-9Nh9j0Va",
+          appKey: "S7rF0X45YIfNj5cNzdg4gMLl",
+          placeholder: "Just go go",
+          path: window.location.pathname,
+          pageSize: "15",
+          avatar: "monsterid",
+          lang: "",
+          pushType: "sc",
+          pushLink: "https://sc.ftqq.com/SCU106322T782cfcd867473745105f94e94de33c085f13bd947b6e3.send",
+          enableQQ: true,
+          master: 'eb4d5f16fb5a933662a768b5c2c85f20',   //博主邮箱md5
+          tagMeta: ["博主","小伙伴","访客"],     //标识字段名
+          friends:  ["4b278adff5fd7c28aedbf73dd9c52ae5","191434ebf724621793c3b2cb237b7e3d"],  //小伙伴邮箱Md5
+          emojiCDN: "https://mirrorcdn.bili33.top/",
+          // 表情title和图片映射
+          emojiMaps: {
+          "嘿嘿":"https://s-o.oss-cn-shanghai.aliyuncs.com/emoji/%E5%98%BF%E5%98%BF.jpg",    
+          "土豆":"https://s-o.oss-cn-shanghai.aliyuncs.com/emoji/tudou.gif",
+          "汗_":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200411023456.webp",
+          "点赞": "https://cdn.jsdelivr.net/gh/drew233/cdn/kawayi.webp",   
+          "傲娇":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409103906.webp",
+          "开心":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409104757.webp",
+          "扣手手":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130304.webp",
+          "仙女下凡":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130301.webp",
+          "得瑟":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130258.webp",
+          "揉左脸":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130254.webp",
+          "揉右脸":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130249.webp",
+          "滑稽":"https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_huaji.gif",
+          "彩虹滑稽":"https://cdn.jsdelivr.net/gh/drew233/cdn/caihongtiao.webp",
+          "呆滞":"https://cdn.jsdelivr.net/gh/drew233/cdn/daizhi.webp",
+          "躲进小被子":"https://cdn.jsdelivr.net/gh/drew233/cdn/djxbz.webp",
+          "给我也整一个":"https://cdn.jsdelivr.net/gh/drew233/cdn/gwyzyg.webp",
+          "草":"https://cdn.jsdelivr.net/gh/drew233/cdn/imgcao.webp",
+          "花":"https://cdn.jsdelivr.net/gh/drew233/cdn/imghua.webp",
+          "日":"https://cdn.jsdelivr.net/gh/drew233/cdn/imgri.webp",
+          "目瞪狗呆":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200412095243.webp",
+          "tql":"https://cdn.jsdelivr.net/gh/drew233/cdn/tql.webp",
+          "转圈圈":"https://cdn.jsdelivr.net/gh/drew233/cdn/zqq.webp",
+          
+         
+         "tv_doge": "bilibilitv/[tv_doge].png",
+         "tv_亲亲": "bilibilitv/[tv_亲亲].png",
+         "tv_偷笑": "bilibilitv/[tv_偷笑].png",
+         "tv_再见": "bilibilitv/[tv_再见].png",
+         "tv_冷漠": "bilibilitv/[tv_冷漠].png",
+         "tv_发怒": "bilibilitv/[tv_发怒].png",
+         "tv_发财": "bilibilitv/[tv_发财].png",
+         "tv_可爱": "bilibilitv/[tv_可爱].png",
+         "tv_吐血": "bilibilitv/[tv_吐血].png",
+         "tv_呆": "bilibilitv/[tv_呆].png",
+         "tv_呕吐": "bilibilitv/[tv_呕吐].png",
+         "tv_困": "bilibilitv/[tv_困].png",
+         "tv_坏笑": "bilibilitv/[tv_坏笑].png",
+         "tv_大佬": "bilibilitv/[tv_大佬].png",
+         "tv_大哭": "bilibilitv/[tv_大哭].png",
+         "tv_委屈": "bilibilitv/[tv_委屈].png",
+         "tv_害羞": "bilibilitv/[tv_害羞].png",
+         "tv_尴尬": "bilibilitv/[tv_尴尬].png",
+         "tv_微笑": "bilibilitv/[tv_微笑].png",
+         "tv_思考": "bilibilitv/[tv_思考].png",
+         "tv_惊吓": "bilibilitv/[tv_惊吓].png",
+         "tv_打脸": "bilibilitv/[tv_打脸].png",
+         "tv_抓狂": "bilibilitv/[tv_抓狂].png",
+         "tv_抠鼻": "bilibilitv/[tv_抠鼻].png",
+         "tv_斜眼笑": "bilibilitv/[tv_斜眼笑].png",
+         "tv_无奈": "bilibilitv/[tv_无奈].png",
+         "tv_晕": "bilibilitv/[tv_晕].png",
+         "tv_流汗": "bilibilitv/[tv_流汗].png",
+         "tv_流泪": "bilibilitv/[tv_流泪].png",
+         "tv_流鼻血": "bilibilitv/[tv_流鼻血].png",
+         "tv_点赞": "bilibilitv/[tv_点赞].png",
+         "tv_生气": "bilibilitv/[tv_生气].png",
+         "tv_生病": "bilibilitv/[tv_生病].png",
+         "tv_疑问": "bilibilitv/[tv_疑问].png",
+         "tv_白眼": "bilibilitv/[tv_白眼].png",
+         "tv_皱眉": "bilibilitv/[tv_皱眉].png",
+         "tv_目瞪口呆": "bilibilitv/[tv_目瞪口呆].png",
+         "tv_睡着": "bilibilitv/[tv_睡着].png",
+         "tv_笑哭": "bilibilitv/[tv_笑哭].png",
+         "tv_腼腆": "bilibilitv/[tv_腼腆].png",
+         "tv_色": "bilibilitv/[tv_色].png",
+         "tv_调侃": "bilibilitv/[tv_调侃].png",
+         "tv_调皮": "bilibilitv/[tv_调皮].png",
+         "tv_鄙视": "bilibilitv/[tv_鄙视].png",
+         "tv_闭嘴": "bilibilitv/[tv_闭嘴].png",
+         "tv_难过": "bilibilitv/[tv_难过].png",
+         "tv_馋": "bilibilitv/[tv_馋].png",
+         "tv_鬼脸": "bilibilitv/[tv_鬼脸].png",
+         "tv_黑人问号": "bilibilitv/[tv_黑人问号].png",
+         "tv_鼓掌": "bilibilitv/[tv_鼓掌].png",
+         "卖萌": "bilibili2233/[2233娘_卖萌].png",
+         "吃惊": "bilibili2233/[2233娘_吃惊].png",
+         "吐魂": "bilibili2233/[2233娘_吐魂].png",
+         "喝水": "bilibili2233/[2233娘_喝水].png",
+         "困惑": "bilibili2233/[2233娘_困惑].png",
+         "大哭": "bilibili2233/[2233娘_大哭].png",
+         "大笑": "bilibili2233/[2233娘_大笑].png",
+         "委屈": "bilibili2233/[2233娘_委屈].png",
+         "怒": "bilibili2233/[2233娘_怒].png",
+         "无言": "bilibili2233/[2233娘_无言].png",
+         "出汗": "bilibili2233/[2233娘_汗].png",
+         "疑问": "bilibili2233/[2233娘_疑问].png",
+         "第一": "bilibili2233/[2233娘_第一].png",
+         "耶": "bilibili2233/[2233娘_耶].png",
+         "郁闷": "bilibili2233/[2233娘_郁闷].png",
+         "妙": "bilibiliHotKey/1.jpg",
+         "危": "bilibiliHotKey/2.jpg",
+         "有内味儿了": "bilibiliHotKey/3.jpg",
+         "高产": "bilibiliHotKey/4.jpg",
+         "我枯了": "bilibiliHotKey/5.jpg",
+         "不愧是你": "bilibiliHotKey/6.jpg",
+         "狼火": "bilibiliHotKey/9.jpg",
+         "你细品": "bilibiliHotKey/10.jpg",
+         "锤": "bilibiliHotKey/11.jpg",
+         "秀": "bilibiliHotKey/12.jpg",
+         "这次一定": "bilibiliHotKey/14.jpg",
+         "酸了": "bilibiliHotKey/15.jpg",
+         "打卡": "bilibiliHotKey/16.jpg",
+         "我太南了": "bilibiliHotKey/18.jpg",
+         "吹爆": "bilibiliHotKey/19.jpg",
+         "奥力给": "bilibiliHotKey/20.jpg",
+         "awsl": "bilibiliHotKey/21.jpg",
+         "猛男必看": "bilibiliHotKey/22.jpg",
+         "害": "bilibiliHotKey/23.jpg",
+         "知识盲区": "bilibiliHotKey/24.jpg",
+         "我全都要": "bilibiliHotKey/25.jpg",
+         "咕咕咕": "bilibiliHotKey/26.jpg",
+         "可以": "bilibiliHotKey/27.jpg",
+         "真香": "bilibiliHotKey/28.jpg",
+         "完结": "bilibiliHotKey/29.jpg",
+         "有生之年": "bilibiliHotKey/30.jpg",
+         "大师球": "bilibiliHotKey/31.jpg",
+         "爷关更": "bilibiliHotKey/32.jpg",
+            
+            
+          },
+        });
+      </script>
+
+
+   
+      
+      <!-- 今日诗词：随机返回一句古诗词名句的接口，宅到用来做 Valine 的 placeholder 显示内容 -->
+      <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+      <script type="text/javascript">
+       jinrishici.load(function(result) {
+           var jrsc_plac =  result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author;
+           document.getElementById("veditor").setAttribute("placeholder",jrsc_plac);
+       })
+      </script>
+    </div>
+    
+<!--
+
+
+
+-->
+    </div>
+</div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7},"log":false});</script></body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '171639872', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<!-- 天气 -->
+<script type="text/javascript">
+WIDGET = {FID: '21I8HlZYjY'}
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+
+<script>
+   var title1="text=blog又有新评论啦~！--by Valine"
+var SCKEY_Server="SCU106322T782cfcd867473745105f94e94de33c085f13bd947b6e3"
+var ValineButton=document.getElementsByClassName("vsubmit vbtn")[0];
+function send_valine_Server(){
+    var text="desp=";
+    var pagename=document.title;
+    var wz=pagename.indexOf('|');
+    var res=pagename.substring(0,wz);
+    var pageurl=document.URL;
+    var ptime=new Date();
+    var vnick=document.getElementsByClassName("vnick vinput")[0].value;
+    var vmail=document.getElementsByClassName("vmail vinput")[0].value;
+    var vlink=document.getElementsByClassName("vlink vinput")[0].value;
+    var veditor=document.getElementsByClassName("veditor vinput")[0].value;
+    var data=text+"|昵称："+"|邮箱："+"|网站地址："+"|当前页面："+"|评论内容："+"|跳转链接："+"|评论时间"+"\n"+"|----|----|----|----|"+"\n"+"|   "+vnick+"   |   "+vmail+"  |  "+vlink+"|   "+res+"| "+veditor+"| "+pageurl+"|" +ptime.toLocaleString()+"|";
+    var httpRequest = new XMLHttpRequest();//第一步：创建需要的对象
+    httpRequest.open('POST', 'https://sc.ftqq.com/'+SCKEY_Server+'.send', true); //第二步：打开连接
+    httpRequest.setRequestHeader("Content-type","application/x-www-form-urlencoded");//设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+    httpRequest.send(title1+"&"+data);//发送请求 将情头体写在send中
+};
+ValineButton.onclick=send_valine_Server;
+  </script>
+</html>
