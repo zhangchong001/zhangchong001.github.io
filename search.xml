@@ -1213,7 +1213,37 @@ python解释器加载阶段会创建出内建命名空间、模块的全局命�
 <p>如果要把数据显示成我们期望的格式，就需要使用格式化输出的功能。格式化输出使用System.out.printf()，通过使用占位符%?，printf()可以把后面的参数格式化成指定格式：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Main &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        double d &#x3D; 3.1415926;</span><br><span class="line">        System.out.printf(&quot;%.2f\n&quot;, d); &#x2F;&#x2F; 显示两位小数3.14</span><br><span class="line">        System.out.printf(&quot;%.4f\n&quot;, d); &#x2F;&#x2F; 显示4位小数3.1416</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Java的格式化功能提供了多种占位符，可以把各种数据类型“格式化”成指定的字符串：</p>
-<p>|占位符|说明|<br>|-|-|-|<br>|%d|格式化输出整数|<br>|%x|格式化输出十六进制整数|<br>|%f|格式化输出浮点数|<br>|%e|格式化输出科学计数法表示的浮点数|<br>|%s|格式化字符串|<br>注意，由于%表示占位符，因此，连续两个%%表示一个%字符本身。</p>
+<p>::: hljs-center</p>
+<table>
+<thead>
+<tr>
+<th>占位符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%d</td>
+<td>格式化输出整数</td>
+</tr>
+<tr>
+<td>%x</td>
+<td>格式化输出十六进制整数</td>
+</tr>
+<tr>
+<td>%f</td>
+<td>格式化输出浮点数</td>
+</tr>
+<tr>
+<td>%e</td>
+<td>格式化输出科学计数法表示的浮点数</td>
+</tr>
+<tr>
+<td>%s</td>
+<td>格式化字符串</td>
+</tr>
+</tbody></table>
+<p>:::</p>
+<p>注意，由于%表示占位符，因此，连续两个%%表示一个%字符本身。</p>
 <p>占位符本身还可以有更详细的格式化参数。下面的例子把一个整数格式化成十六进制，并用0补足8位：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Main &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int n &#x3D; 12345000;</span><br><span class="line">        System.out.printf(&quot;n&#x3D;%d, hex&#x3D;%08x&quot;, n, n); &#x2F;&#x2F; 注意，两个%占位符必须传入两个数</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>详细的格式化参数请参考JDK文档<a href="java.util.Formatter">java.util.Formatter</a></p>
