@@ -1202,4 +1202,40 @@ python解释器加载阶段会创建出内建命名空间、模块的全局命�
 <p>====================安装 lrzsz(可以上传文件到指定目录)<br>1,安装:yum install lrzsz<br>2,安装后使用命令: cd /usr/local/hadoop/<br>rz: 直接弹出传输对话框<br>3,将 tomcat 传递到 hadoop 目录下<br>4,启动 tomcat<br>cd /usr/local/hadoop/apache-tomcat-7.0.47/bin/<br>./startup.sh </p>
 ]]></content>
   </entry>
+  <entry>
+    <title>Java输入输出</title>
+    <url>/Java%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h1 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h1><p>在前面的代码中，我们总是使用System.out.println()来向屏幕输出一些内容。</p>
+<p>println是print line的缩写，表示输出并换行。因此，如果输出后不想换行，可以用print()：</p>
+<figure class="highlight plain"><figcaption><span>class Main &#123;</span></figcaption><table><tr><td class="code"><pre><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        System.out.print(&quot;A,&quot;);</span><br><span class="line">        System.out.print(&quot;B,&quot;);</span><br><span class="line">        System.out.print(&quot;C.&quot;);</span><br><span class="line">        System.out.println();</span><br><span class="line">        System.out.println(&quot;END&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>格式化输出<br>Java还提供了格式化输出的功能。为什么要格式化输出？因为计算机表示的数据不一定适合人来阅读：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Main &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        double d &#x3D; 12900000;</span><br><span class="line">        System.out.println(d); &#x2F;&#x2F; 1.29E7</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果要把数据显示成我们期望的格式，就需要使用格式化输出的功能。格式化输出使用System.out.printf()，通过使用占位符%?，printf()可以把后面的参数格式化成指定格式：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Main &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        double d &#x3D; 3.1415926;</span><br><span class="line">        System.out.printf(&quot;%.2f\n&quot;, d); &#x2F;&#x2F; 显示两位小数3.14</span><br><span class="line">        System.out.printf(&quot;%.4f\n&quot;, d); &#x2F;&#x2F; 显示4位小数3.1416</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Java的格式化功能提供了多种占位符，可以把各种数据类型“格式化”成指定的字符串：</p>
+<p>|占位符|说明|<br>|-|-|-|<br>|%d|格式化输出整数|<br>|%x|格式化输出十六进制整数|<br>|%f|格式化输出浮点数|<br>|%e|格式化输出科学计数法表示的浮点数|<br>|%s|格式化字符串|<br>注意，由于%表示占位符，因此，连续两个%%表示一个%字符本身。</p>
+<p>占位符本身还可以有更详细的格式化参数。下面的例子把一个整数格式化成十六进制，并用0补足8位：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Main &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int n &#x3D; 12345000;</span><br><span class="line">        System.out.printf(&quot;n&#x3D;%d, hex&#x3D;%08x&quot;, n, n); &#x2F;&#x2F; 注意，两个%占位符必须传入两个数</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>详细的格式化参数请参考JDK文档<a href="java.util.Formatter">java.util.Formatter</a></p>
+<h1 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h1><p>和输出相比，Java的输入就要复杂得多。</p>
+<p>我们先看一个从控制台读取一个字符串和一个整数的例子：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner scanner &#x3D; new Scanner(System.in); &#x2F;&#x2F; 创建Scanner对象</span><br><span class="line">        System.out.print(&quot;Input your name: &quot;); &#x2F;&#x2F; 打印提示</span><br><span class="line">        String name &#x3D; scanner.nextLine(); &#x2F;&#x2F; 读取一行输入并获取字符串</span><br><span class="line">        System.out.print(&quot;Input your age: &quot;); &#x2F;&#x2F; 打印提示</span><br><span class="line">        int age &#x3D; scanner.nextInt(); &#x2F;&#x2F; 读取一行输入并获取整数</span><br><span class="line">        System.out.printf(&quot;Hi, %s, you are %d\n&quot;, name, age); &#x2F;&#x2F; 格式化输出</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>首先，我们通过import语句导入java.util.Scanner，import是导入某个类的语句，必须放到Java源代码的开头，后面我们在Java的package中会详细讲解如何使用import。</p>
+<p>然后，创建Scanner对象并传入System.in。System.out代表标准输出流，而System.in代表标准输入流。直接使用System.in读取用户输入虽然是可以的，但需要更复杂的代码，而通过Scanner就可以简化后续的代码。</p>
+<p>有了Scanner对象后，要读取用户输入的字符串，使用scanner.nextLine()，要读取用户输入的整数，使用scanner.nextInt()。Scanner会自动转换数据类型，因此不必手动转换。</p>
+<p>要测试输入，我们不能在线运行它，因为输入必须从命令行读取，因此，需要走编译、执行的流程：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ javac Main.java</span><br></pre></td></tr></table></figure>
+<p>这个程序编译时如果有警告，可以暂时忽略它，在后面学习IO的时候再详细解释。编译成功后，执行：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ java Main</span><br><span class="line">Input your name: Bob</span><br><span class="line">Input your age: 12</span><br><span class="line">Hi, Bob, you are 12</span><br></pre></td></tr></table></figure>
+<p>根据提示分别输入一个字符串和整数后，我们得到了格式化的输出。</p>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>Java提供的输出包括：System.out.println() / print() / printf()，其中printf()可以格式化输出；</p>
+<p>Java提供Scanner对象来方便输入，读取对应的类型可以使用：scanner.nextLine() / nextInt() / nextDouble() / …</p>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
 </search>
