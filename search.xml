@@ -1129,4 +1129,77 @@ python解释器加载阶段会创建出内建命名空间、模块的全局命�
         <tag>网页</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Linux 基础知识入门及常见命令</title>
+    <url>/Linux-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%85%A5%E9%97%A8%E5%8F%8A%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>1,V8:192.168.40.10<br>V1:192.168.40.11<br>Linux ip:192.168.40.128<br>2,Linux 是一个操作系统, 与 windows 的区别:<br>Linux:图形化界面简单,性能很快,在企业中当做服务器来使用.<br>Windows:图形化界面很炫,性能相对差,大众用户.<br>windows 的服务器: windows2003,windows2008,windows2012<br>3,Linux 的作用:<br>当做服务器来使用<br>4,Linux 中目录结构: bin:存放二进制可执行文件 sbin: 存放二进制可执行文件,只有 root 才能访问 etc:存放系统配置文件 usr:用于存放共享的系统资源 home:存放用户文件的根目录 root:超级的用户目录 dev:用于存放设备文件 lib:存放跟文件系统中的程序运行所需要的共享库及内核模块 mnt:mount 系统管理员安装临时文件的安装点 boot:存放用于系统引导时使用的各种文件 tmp:用于存放各种临时文件 var:用于存放运行时需要改变数据的文件(log 日志) 5,NetWork connection:<br>Host-only:本地跟远方的 Linux 通信需要用这个<br>NAT:多个 Linux 系统之间相互通信<br>6,使用 SecureCRT<br>Linux 命令:<br>ifconfig: 查看 ip service network restart:重启<br>命令分类:<br>内部命令:执行 shell 解析器的一部分,存放在 bash 目录,执行速度快,不需要创建子进程<br>cd:切换目录 change directory pwd:显示当前工作目录 print working directory help:帮助 </p>
+<p>外部命令:独立于 Shell 解析器之外的文件程序,执行速度慢,一般存放在 bin/sbin/usr/sbin/此类目录,执行时创建子线程. ls:显示文件和目录列表 mkdir:创建目录 cp:复制文件或目录 </p>
+<p>操作文件或目录的命令:<br>pwd touch:创建空文件<br>echo:写文件内容: echo “aaa”&gt;a.txt mkdir:创建目录<br>-p 父目录不存在的情况下先生成父目录<br>cp:复制文件或目录<br>-r:递归处理,将指定目录下的文件与子目录一并拷贝 mv:移动文件或目录,文件或目录改名 rm:删除文件<br>-r 同时删除该目录下的所有文件 -f 强制删除文件或目录<br>rmdir:删除空目录 cat:显示文本文件内容 more,less:分页显示文本文件内容 head,tail:查看文本中开头或结尾部分的内容. </p>
+<p>查看帮助文档:<br>内部命令 :help+命令(help cd) 外部命令: man+命令(man ls) </p>
+<p>7,常见命令<br>===========常用命令============= 一,目录与文件命令<br>1,目录处理命令:mkdir,rm,ls,find,cd,mv,cp,pwd,chmod<br>2,操作文件命令:touch,rm,find,cat,more,less<br>3,压缩/解压命令:gzip,bzip2,tar<br>4,其他常用命令:head,tail,wc,in,mount </p>
+<p>二,用户操作命令<br>useradd,userdel,usermod<br>三,用户组操作命令<br>groupadd,groupdel,groupmod<br>四,安装软件命令<br>yum,rpm<br>五,网络命令<br>ping,ifconfig,netstat </p>
+<p>===========================<br>echo “welcome to linux” &gt; a.txt: 往 a.txt 中写入字符 cat a.txt: 查看 a.txt 中的内容 ctrl+L: 清屏 ctrl + z: 退出(cat &gt; file 写入文件时使用这个键退出写入) vi 模式下: 编辑完成后点 esc ,然后 如果要保存退出输入:wq,不保存退出输入:q!<br>点击 esc, shift + z + z 退出并保存<br>============详解============<br>mkdir:创建目录 (touch a.txt :创建文件) mkdir dir : 创建名称叫做 dir 目录, 创建单个目录<br>mkdir dir1 dir2 : 创建多个目录,dir1, dir2 mkdir dir{3..10}: 创建 dir3 dir4…dir10 </p>
+<p>cp:copy 复制<br>复制文件:<br>cp a.txt b.txt: 复制 a.txt 且复制后的文件名为 b.txt cp a.txt dir: 将 a.txt 拷贝到 dir 文件夹下<br>cp <em>.txt dir<br>cp ../</em>.txt ../dir2:将上一级目录下的所有 txt 文件拷贝到上一级目录的 dir2 文件夹下 cp ../file* . //拷贝到上一级目录下的所有 file 文件到当前目录 </p>
+<p>复制目录:<br>cp -r dir1 dir2: 将 dir1 目录复制到 dir2 目录中 cp -r dir/* dir1/ : 将 dir 中的所有文件和目录复制到 dir1 目录中 </p>
+<p>mv:目录移动(剪切) 移动文件:<br>mv file1 file2 //如果 file2 不存在,将 file1 重命名为 file2 mv file2 file1//将 file2 命名为 file1, 如果 file1 中有内容, 则覆盖 mv dir/* dir1//将 dir 中所有目录及文件移动到 dir1 目录中 </p>
+<p>移动目录:<br>mv dir dir1//将 dir 目录移动到 dir1 目录中 mv dir2 dir3 dir1//将 dir2 和 dir3 移动到 dir1 中 </p>
+<p>rm:remove 删除删除文件:<br>rm a.txt //删除 a.txt rm a.txt b.txt //同时删除 a.txt b.txt<br>rm <em>txt//删除所有扩展名为 txt 的文件 rm -rf dir1/</em> //强制删除 dir1 下所有文件和目录 </p>
+<p>删除目录: rm -rf dir1// 删除 dir1 下的所有文件和目录, f 是强制删除, 不需要提示 </p>
+<p>cd:切换目录 cd .. //跳转到上一级目录 cd ~ //跳转到根目录 cd /usr/local //跳转到 usr 下的 local 目录 </p>
+<p>pwd:显示当前的目录 </p>
+<p>touch:创建文件<br>语法:touch filename </p>
+<p>touch myfile1//创建单个文件,文件名为 myfile1 touch myfile2 myfile3//同时创建两个文件 touch myfile{1..10}//创建多个文件 </p>
+<p>cat<br>功能 1: 查询文件内容,查询全部文件内容(如果文件过大, 会卡死)<br>cat filename// 查看文件名 filename 的文件内容 </p>
+<p>功能 2: 可以创建文件, 并且写入内容<br>cat &gt; myfile10 </p>
+<p>功能 3:合并文件,合并内容<br>cat myfile1 myfile2 &gt; myfile10//将 myfile1 和 myfile2 中的内容合并到 myfile10 中, myfile10 中内<br>容被覆盖<br>more: 查看文件, 可以分页查看 +n 从第几行开始<br>-n 定义屏幕显示多少行 </p>
+<p>more myfile//分页查看 myfile 文件 more +3 myfile//从第三行开始查看 myfile 文件 more -2 myfile//每页显示两行 more +/pattern myfile//从 myfile 中搜索 pattern, 结果显示在第三行 </p>
+<p>less: 查看文件, 分页上下翻滚页 </p>
+<p>head: 查看文件, 分页显示, 每页只显示 10 条 head myfile// 默认每页只显示 10 条 head -n 5 myfile//查看 myfile1,每页显示 5 条记录 head -c 12 myfile//查看 myfile,只显示前面 12 字节符 tail:查看文件, 实时监控文件 tail -f myfile// 实时监控 myfile 文件的变化<br>which:查找命令 which 命令<br>which mv//将 mv 命令的别名和 mv 所在的位置都给查询出来 </p>
+<p>whereis: 查找命令 whereis mv: 查找命令的所在位置, 帮助文档,命令源码 </p>
+<p>locate: 查找文件 locate myfile//搜索出来 myfile 所在目录, 需要先刷新 db, 使用命令: updatedb<br>新创建的文件搜索不到,新创建的文件被放在 Linux 的文件数据库, 需要属性文件数据库才能够找到 </p>
+<p>find: 查找文件 find -name myfile//根据文件名, 在当前的目录进行查询 find -name “myfile”//和上面一个没有区别 find /etc/ /root/ -name “<em>[A-Z]</em>“ //查询目录 etc 和 root 下以 A-Z 开头的所有文件 find /etc/ /root/ -name “<em>[A-Z]</em>“ -exec ls -l {} ;// 把查询结果交给 ls 命令继续执行, 显示前面查询<br>结果详细信息.<br>-exec:执行,执行后面的命令,执行 ls -l 命令<br>{}: 标识查询结果在一行显示<br>; :命令要使用很好结束,斜杠是用来转义的. </p>
+<p>| (管道命令)<br>把前面的查询结果交给后面的命令进行执行<br>ls -al | more -5 //查询所有,把查询的结果交给 more 命令去执行 </p>
+<p>grep (过滤命令) 经常和管道命令一起使用<br>ps -ef | grep svn//查询所有进程, 过滤查询 svn </p>
+<p>ln: 连接命令,创建快捷方式<br>ln -s myfile link//给 myfile 创建一个快捷方式 link </p>
+<p>top:显示当前系统中消耗资源的进程情况 top //每隔 5 秒显示徐偶有进程的资源占用情况<br>top -d 2//每隔 2 秒刷新 </p>
+<p>ps: 查看进程(常用) ps -ef//查看所有进程 ps -ef | grep redis //查看 redis 进程是否存在 </p>
+<p>kill: 杀死进程(常用)<br>kill -9 PID<br>df: 显示磁盘使用情况 df -h//查看当前磁盘使用情况, 包括占用量单位 </p>
+<p>shutdown: 关机 shutdown 系统关机 shutdown -r 关机后立即重启 shutdown -h 关机后不重新启动 </p>
+<p>halt: 关机后关闭电源 </p>
+<p>reboot: 重新启动 </p>
+<p>=============================解压缩命令<br>gzip zip bzip2 压缩命令<br>gzip: 压缩文件, 不能够压缩目录<br>gzip file3// 把 file3 压缩, 压缩后文件名变为: file3.gz gunzip: 解压  gunzip file3.gz//解压单个文件 gunzip file1.gz file2.gz //解压多个文件<br>通常使用 gzip -d 来解压 gzip -dv file1.gz// 解压 file1, v 是视图可以看到解压过程 </p>
+<p>bzip2 和 gzip 压缩方式一样 </p>
+<p>zip:<br>zip myzip.zip file1 //将 file1 压缩成 myzip.zip unzip myzip.zip// 解压 </p>
+<p>tar: 打包命令, 将多个文件压缩成一个文件<br>tar -cvf dir.tar dir//将 dir 目录下所有文件打包成 dir.tar<br>tar -xvf dir1.tar//解包 </p>
+<p>gzip dir.tar //压缩 tar 文件变成 dir.tar.gz tar -zxvf dir.tar.gz//解压 dir.tar.gz 到 dir<br>-z:解压 gz 扩展名的文件<br>-x:解压 tar 包<br>-v:显示执行过程<br>-f:指定解压文件 </p>
+<p>bzip2 dir.tar//使用 bzip2 压缩 tar 包: dir.tar.bz2<br>tar -jxvf dir.tar.bz2//解压 bzip2 格式包 </p>
+<p>==============vim 文本编辑器 vim 进入编辑器 vi 有 3 总模式: 插入模式,命令模式,低行模式<br>1,插入模式 i 进入插入模式<br>2,命令模式 esc 进入命令模式<br>3,底行模式<br>:或者/ 进入底行模式<br>在命令模式下:<br>基本:<br>a:在当前光标位置的右边添加文本 i:在当前光标的位置的左边添加文本<br>A:在当前行的末尾位置添加文本<br>I:在当前行的开始处添加文本<br>O: 在当前行上面创建一行<br>0: 在当前行下面创建一行 R:替换(覆盖)当前光标位置及后面的若干文本<br>J:合并光标所在行及下一行为一行 </p>
+<p>删除,撤销:<br>x:删除当前字符 nx: 删除从光标开始的 n 个字符 dd:删除当前行 ndd:删除 n 行 u:撤销上一步操作<br>U:撤销当前行的操作 </p>
+<p>搜索:<br>/vpser: 向光标下搜索 vpser 字符串<br>?vpser: 向光标闪搜索 vpser 字符串 n: 先下搜索前一个搜索动作<br>N: 向上搜索前一个搜索动作 </p>
+<p>跳转指定行:<br>n+: 向下跳转 n 行 n-: 向下跳转 n 行 nG: 调到行号为 n 的行<br>G: 跳至文件的底部 </p>
+<p>设置行号:<br>:set nu //显示行号<br>:set noun//取消显示行号 </p>
+<p>复制粘贴:<br>yy: 将当前行复制到缓存区 nyy:将当前行向下 n 行复制到缓存区 p: 当前行的下面进行粘贴 P: 当前光标所在行的上面进行粘贴 yw:复制光标到单词词尾 nyw:复制从光标开始的 n 个单词 y^: 复制从光标到行首的内容 y$: 复制从光标到行尾的内容 </p>
+<p>替换:<br>:s/old/new //用 new 替换行中首次出现的 old 这个单词为 new<br>:s/old/new/g //用 new 替换当前行中所有的 old 单词<br>:n,m s/old/new/g //用 new 替换从 n 到 m 行在哪个所有的 old 单词<br>:%s/old/new/g //用 new 替换当前文件中的所有 old </p>
+<p>8,权限管理<br>==================权限管理<br>-rwxrw-r– </p>
+<ul>
+<li>:类型<br>rwx:所属用户权限 rw-:所属组权限 r–:其他用户权限 </li>
+</ul>
+<p>最高位:文件类型<br>-: 普通文件 d: 目录 l: 快捷方式文件<br>高三位:u 所属用户权限(rwx) 中间三位:g 用户所属组权限(rw-) 第三位:o 其他用户权限(r–)<br>设置权限第一种方式举例:<br>———- file1: file1 无权限 (使用 chmod 0 file1 就取消所有权限) 设置权限: (x:执行权限 r:读权限 w:写权限)<br>chmod u+x file1—-&gt; —x—— file1 chmod u+r file1—-&gt; -r-x—— file1 chmod g+w file1—-&gt; -r-x-w—- file1 chmod g+rx file1—&gt; -r-xrwx— file1 chmod o+rwx file1–&gt; -r-xrwxrwx file1 </p>
+<p>chomod o=x file1—&gt; -r-xrwx–x file1 </p>
+<p>设置权限第二种方式举例: 用 421 来代表 rwx, 对应关系如下:<br>421 421 421 rwx rwx rwx<br>chmod 后面每一位数字匹配三位: 3=2(w)+1(x) 5=4(r)+1(x)<br>chmod 421 file1—–&gt; -r—w—x file1 (4 代表用户的读权限,2 代表组的写权限,1 代表其他用户的执行权限)<br>chmod 354 file1—–&gt; -rwxrwxw-x file1<br>9,安装软件<br>=======================安装软件 rpm: 安装麻烦 不建议使用 yum: 支持在线升级<br>1,关联 dvd 磁盘到本地: 右键 CentOS 选择 Settings, 然后找到 CD/DVD 选择 connected 即可. </p>
+<p>2,Yum 命令支持在线升级,执行 yum 命令的时候,检测/etc/yum.repos.d/下面所有 repo 文件. repo 文件里面存储的是网址,yum 命令检测 repo 文件里面网址直接去网上下载. 可以把 repo 文件修改, 让 repo 文件指向本地的 dvd 盘.<br>3,挂载 dvd 盘到 mnt 目录<br>挂载命令:mount /dev/cdrom/ mnt/<br>挂载成功截图: </p>
+<p>4,修改 repo 文件先备份 repo 文件: rename .repo .bak * //将所有 repo 扩展名的文件修改为后缀为.bak 创建自己的 repo 文件,指向本地文件:touch mine.repo 进入 vim 编辑 repo 文件: vim mine.repo<br>[centos6.6] name=centos-dvd<br>baseurl=file:///mnt gpgcheck=0 enabled=1 清空 yum 源:yum clean all 加载 yum 源:yum repolist all </p>
+<p>安装 mysql: yum install mysql-server  </p>
+<p>启动 mysql:service mysqld start </p>
+<p>登录数据库:mysql -uroot p </p>
+<p>查询数据库:show databases; </p>
+<p>======================安装 jdk 和 tomcat<br>1, 先将 jdk 和 tomcat 传输到 Linux root 目录下 </p>
+<p>2, 在 usr/local 下建立文件夹存放 jdk 和 tomcat 安装包: mkdir hadoop </p>
+<p>3, 移动 root 目录下安装包 到 usr/local 目录下: mv jdk-7u55-linux-i586.tar.gz apache-tomcat7.0.47.tar.gz /usr/local/hadoop/ </p>
+<p>4, 解压安装包: tar -zxvf jdk-7u55-linux-i586.tar.gz  tar -zxvf apache-tomcat-7.0.47.tar.gz 5,配置环境变量: vim profile 在最后一行添加: export JAVA_HOME=/usr/local/hadoop/jdk1.7.0_55 export PATH=$JAVA_HOME/bin:$PATH </p>
+<p>6,刷新设置: source /etc/profile<br>7,查看是否安装成功:java -version </p>
+<p>常见问题:<br>1,修复/lib/ld-linux.so.2: bad ELF interpreter: No such file or directory 问题<br>解决方案:在 64 系统里执行 32 位程序如果出现/lib/ld-linux.so.2:<br>bad ELF interpreter: No such file or directory，<br>安装下 glic 即可:sudo yum install glibc.i686<br>2,error while loading shared libraries: libz.so.1: cannot open shared object file: No such file or directory 使用:sudo yum install zlib.i686  </p>
+<p>====================安装 lrzsz(可以上传文件到指定目录)<br>1,安装:yum install lrzsz<br>2,安装后使用命令: cd /usr/local/hadoop/<br>rz: 直接弹出传输对话框<br>3,将 tomcat 传递到 hadoop 目录下<br>4,启动 tomcat<br>cd /usr/local/hadoop/apache-tomcat-7.0.47/bin/<br>./startup.sh </p>
+]]></content>
+  </entry>
 </search>
