@@ -1402,4 +1402,18 @@ python解释器加载阶段会创建出内建命名空间、模块的全局命�
         <tag>爬虫</tag>
       </tags>
   </entry>
+  <entry>
+    <title>mysql_front连接报错，sql执行错误#3167的解决方案</title>
+    <url>/mysql-front%E8%BF%9E%E6%8E%A5%E6%8A%A5%E9%94%99%EF%BC%8Csql%E6%89%A7%E8%A1%8C%E9%94%99%E8%AF%AF-3167%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>在使用myql_front连接mysql时出现了:The ‘INFORMATION_SCHEMA.SESSION_VARIABLES’ feature is disabled; see the documentation for ‘show_compatibility_56’<br><img src="/images/2020/08/02/c26c91e6-cbff-4b10-a5b7-98edbe907f4e.png" alt="image.png"><br>百度后得知-从mysql5.7.6开始information_schema.global_status已经开始被舍弃，为了兼容性，此时需要打开 show_compatibility_56</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select * from information_schema.global_status limit 3;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/2020/08/02/e2d686c1-ae6e-4d06-9268-e64a632c21de.png" alt="image.png"><br>查看一下show_compatibility_56的值</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">show variables like &#39;%show_compatibility_56%&#39;;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/2020/08/02/5be22427-fcce-40de-bcaa-9bfa86d0bffb.png" alt="image.png"><br>把show_compatibility_56打开</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set global show_compatibility_56&#x3D;on;</span><br><span class="line">show variables like &#39;%show_compatibility_56%&#39;;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/2020/08/02/eeb4b7be-0fbc-46da-a8d0-f1519b91a2a8.png" alt="image.png"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select * from information_schema.global_status limit 3;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/2020/08/02/abc7d072-69be-466f-8452-50eabc00c7e6.png" alt="image.png"><br>然后即可使用mysql_front连接到mysql数据库了<br><img src="/images/2020/08/02/967f9772-4350-4768-84d2-0dcdb044d757.png" alt="image.png"></p>
+]]></content>
+  </entry>
 </search>
