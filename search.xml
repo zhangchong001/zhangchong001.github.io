@@ -1442,4 +1442,18 @@ python解释器加载阶段会创建出内建命名空间、模块的全局命�
         <tag>爬虫</tag>
       </tags>
   </entry>
+  <entry>
+    <title>国外疫情数据爬取</title>
+    <url>/%E5%9B%BD%E5%A4%96%E7%96%AB%E6%83%85%E6%95%B0%E6%8D%AE%E7%88%AC%E5%8F%96.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">from selenium import webdriver</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    divs &#x3D; driver.find_elements_by_xpath(&#39;&#x2F;&#x2F;*[@id&#x3D;&quot;foreignWraper&quot;]&#x2F;table&#x2F;tbody&#x2F;tr&#39;)</span><br><span class="line">    for div in divs:</span><br><span class="line">        area &#x3D; div.find_element_by_xpath(&#39;.&#x2F;&#x2F;th&#39;).text</span><br><span class="line">        new &#x3D; div.find_element_by_xpath(&#39;.&#x2F;&#x2F;td[1]&#39;).text</span><br><span class="line">        total &#x3D; div.find_element_by_xpath(&#39;.&#x2F;&#x2F;td[2]&#39;).text</span><br><span class="line">        cured &#x3D; div.find_element_by_xpath(&#39;.&#x2F;&#x2F;td[3]&#39;).text</span><br><span class="line">        die &#x3D; div.find_element_by_xpath(&#39;.&#x2F;&#x2F;td[4]&#39;).text</span><br><span class="line">        print(area,new,total,cured,die,sep&#x3D;&#39;|&#39;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ &#x3D;&#x3D; &#39;__main__&#39;:</span><br><span class="line">    url &#x3D; &#39;https:&#x2F;&#x2F;news.qq.com&#x2F;zt2020&#x2F;page&#x2F;feiyan.htm#&#x2F;global?nojump&#x3D;1&#39;</span><br><span class="line"></span><br><span class="line">    driver &#x3D; webdriver.Chrome()</span><br><span class="line">    driver.get(url)</span><br><span class="line"></span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/2020/08/02/94afed6c-883a-4c23-b91c-12d74a85c6b1.png" alt="image.png"><br><img src="/images/2020/08/02/df67da6d-1967-4247-a349-e30d30068795.png" alt="image.png"></p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
 </search>
