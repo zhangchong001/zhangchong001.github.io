@@ -1,0 +1,462 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>爬取小说 - zc&#39;blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="ZC,"> 
+    <meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354,"> 
+    <meta name="author" content="ZC"> 
+    <link rel="alternative" href="atom.xml" title="zc&#39;blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">zc&#39;blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://zc.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">爬取小说</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">爬取小说</h1>
+        <div class="stuff">
+            <span>八月 03, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/python/" rel="tag">python</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br></pre></td><td class="code"><pre><span class="line">&#39;&#39;&#39;</span><br><span class="line">    此程序用于下载笔趣阁（网址：https:&#x2F;&#x2F;www.duquanben.com&#x2F;book&#x2F;monthvisit&#x2F;0&#x2F;1&#x2F;）</span><br><span class="line">    月排行榜的小说（按页下载）</span><br><span class="line">&#39;&#39;&#39;</span><br><span class="line">from bs4 import BeautifulSoup     #网页解析，获取数据</span><br><span class="line">import re       #正则表达式，进行文字匹配</span><br><span class="line">import urllib.request,urllib.error      #制定url，获取网页数据</span><br><span class="line">import requests</span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    baseurl &#x3D; &quot;https:&#x2F;&#x2F;www.duquanben.com&#x2F;book&#x2F;monthvisit&#x2F;0&#x2F;&quot;</span><br><span class="line"></span><br><span class="line">    #1.爬取网页</span><br><span class="line">    datalist &#x3D; getData(baseurl)</span><br><span class="line"></span><br><span class="line">    #3.保存数据</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#小说链接</span><br><span class="line">findLink &#x3D; re.compile(&#39;&lt;a href&#x3D;&quot;(.*?)&quot; target&#x3D;&quot;_blank&quot;&gt;&#39;)</span><br><span class="line">#小说名字</span><br><span class="line">findTitle &#x3D; re.compile(&#39;&lt;li class&#x3D;&quot;two&quot;&gt;&lt;a href&#x3D;&quot;.*?&quot; target&#x3D;&quot;_blank&quot;&gt;(.*?)全文阅读&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;&#39;)</span><br><span class="line">#章节链接</span><br><span class="line">findChapter &#x3D; re.compile(&#39;&lt;a href&#x3D;&quot;(.*?)&quot;&gt;&#39;)</span><br><span class="line">#章节名字</span><br><span class="line">findChName &#x3D; re.compile(&#39;&lt;li&gt;&lt;a href&#x3D;&quot;.*?&quot;&gt;(.*?)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;&#39;)</span><br><span class="line">#小说内容</span><br><span class="line">findTxt &#x3D; re.compile(&#39;&lt;div id&#x3D;&quot;htmlContent&quot; class&#x3D;&quot;contentbox&quot; style&#x3D;&quot;font-size: 20px; color: rgb(0, 0, 0);&quot;&gt;(.*?)&lt;&#x2F;div&gt;&#39;)</span><br><span class="line">#爬取网页</span><br><span class="line">def getData(baseurl):</span><br><span class="line">    #一.爬取小说排行</span><br><span class="line">    datalist &#x3D; []</span><br><span class="line">    x &#x3D; 0       #小说标题计数</span><br><span class="line">    for i in range(0,1):                #下载的页数[开始页数，结束页数)</span><br><span class="line">        url1 &#x3D; baseurl +str(i+1)        #排行页面链接</span><br><span class="line">        html1 &#x3D; askURL(url1)</span><br><span class="line">        # print(html)</span><br><span class="line">    #2.1 解析数据</span><br><span class="line">        soup1 &#x3D; BeautifulSoup(html1,&quot;html.parser&quot;)</span><br><span class="line">        for item in soup1.find_all(&#39;li&#39;,class_&#x3D;&quot;two&quot;):</span><br><span class="line">             # print(item)</span><br><span class="line">            data &#x3D; []       #保存一部小说的链接以及名字</span><br><span class="line">            item &#x3D; str(item)</span><br><span class="line"></span><br><span class="line">            #获取小说链接</span><br><span class="line">            link &#x3D; re.findall(findLink,item)</span><br><span class="line">            data.append(link)   #保存小说链接</span><br><span class="line">            titles &#x3D; re.findall(findTitle,item)</span><br><span class="line">            titles &#x3D; str(titles)</span><br><span class="line">            titles &#x3D; titles.strip(&quot;[&quot;)  # 去掉[</span><br><span class="line">            titles &#x3D; titles.rstrip(&quot;]&quot;)  # 去掉]</span><br><span class="line">            titles &#x3D; re.sub(&quot; &quot;, &quot;&quot;, titles)  # 去掉空格</span><br><span class="line">            titles &#x3D; re.sub(&quot;\&#39;&quot;, &quot;&quot;, titles)  # 去掉多余的”</span><br><span class="line">            if(titles &#x3D;&#x3D; &#39;&#39;):continue</span><br><span class="line">            # print(titles)         #测试小说名字</span><br><span class="line">            data.append(titles)     #保存小说名字</span><br><span class="line">            datalist.append(data)</span><br><span class="line">    # print(datalist)       #测试小说排行</span><br><span class="line"></span><br><span class="line">    #二 .爬取小说章节</span><br><span class="line">    # i &#x3D; 1</span><br><span class="line">    for data in datalist:</span><br><span class="line">        url2 &#x3D; data[0]       #小说页面链接</span><br><span class="line">        url2 &#x3D; str(url2)</span><br><span class="line">        url2 &#x3D; url2.strip(&quot;[&quot;)          #去掉[</span><br><span class="line">        url2 &#x3D; url2.rstrip(&quot;]&quot;)         #去掉]</span><br><span class="line">        # url2 &#x3D; url2.strip()</span><br><span class="line">        # url2 &#x3D; url2.rstrip()</span><br><span class="line">        url2 &#x3D; re.sub(&quot; &quot;,&quot;&quot;,url2)      #去掉空格</span><br><span class="line">        url2 &#x3D; re.sub(&quot;\&#39;&quot;,&quot;&quot;,url2)     #去掉多余的”</span><br><span class="line">        if(url2 &#x3D;&#x3D; &quot;&quot;):continue</span><br><span class="line">        # print(&quot;%d : &quot;%i+url2)</span><br><span class="line">        # i &#x3D; i +1</span><br><span class="line">        #test : 多了“ “ 导致无法找到适配器</span><br><span class="line">        # html2 &#x3D; askURL(&quot;https:&#x2F;&#x2F;www.duquanben.com&#x2F;xiaoshuo&#x2F;28&#x2F;28536&#x2F;&quot;)</span><br><span class="line">        # url &#x3D; &quot;https:&#x2F;&#x2F;www.duquanben.com&#x2F;xiaoshuo&#x2F;28&#x2F;28536&#x2F;&quot;</span><br><span class="line">        # if(url &#x3D;&#x3D; url2):print(&quot;same&quot;)</span><br><span class="line">        # else:print(&quot;NO same&quot;)</span><br><span class="line">        # print(&quot;url:&quot;,url)</span><br><span class="line">        # print(&quot;url2:&quot;,url2)</span><br><span class="line">        html2 &#x3D; askURL(url2)</span><br><span class="line"></span><br><span class="line">        #2.2解析数据</span><br><span class="line">        soup2 &#x3D; BeautifulSoup(html2,&quot;html.parser&quot;)</span><br><span class="line">        datalist2 &#x3D; []</span><br><span class="line">        for item in soup2.find_all(&quot;li&quot;):</span><br><span class="line">            # print(item)</span><br><span class="line">            data2&#x3D;[]        #保存章节名以及链接</span><br><span class="line">            item &#x3D; str(item)</span><br><span class="line"></span><br><span class="line">            #获取章节链接</span><br><span class="line">            ChapterLink &#x3D;str(re.findall(findChapter,item))</span><br><span class="line">            ChapterLink &#x3D; ChapterLink.strip(&quot;[&quot;)  # 去掉[</span><br><span class="line">            ChapterLink &#x3D; ChapterLink.rstrip(&quot;]&quot;)  # 去掉]</span><br><span class="line">            if ChapterLink &#x3D;&#x3D; &quot;&quot;:continue</span><br><span class="line">            ChapterLink &#x3D; re.sub(&quot;&#39;&quot;,&quot;&quot;,ChapterLink)</span><br><span class="line">            ChapterLink &#x3D; url2 + ChapterLink    #获得章节完整链接</span><br><span class="line">            data2.append(ChapterLink)</span><br><span class="line"></span><br><span class="line">            #获取章节名字</span><br><span class="line">            chName &#x3D; re.findall(findChName,item)</span><br><span class="line">            chName &#x3D; str(chName)</span><br><span class="line">            chName &#x3D; chName.strip(&quot;[&quot;)</span><br><span class="line">            chName &#x3D; chName.strip(&quot;]&quot;)</span><br><span class="line">            chName &#x3D; re.sub(&quot;&#39;&quot;,&quot;&quot;,chName)</span><br><span class="line">            # print(chName)</span><br><span class="line">            data2.append(chName)</span><br><span class="line">            datalist2.append(data2)</span><br><span class="line">            # print(data2[1])</span><br><span class="line">        # print(datalist2)      #测试章节获取</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        # for data3 in datalist2:</span><br><span class="line">        #     name &#x3D; data3[1]</span><br><span class="line">        #     print(name)</span><br><span class="line">        # print(datalist2)</span><br><span class="line">        #三.爬取小说内容</span><br><span class="line">        z &#x3D; 0               #章节计数</span><br><span class="line">        print(&quot;第%d本&quot;%x+datalist[x][1])       #小说名字</span><br><span class="line">        for data in datalist2:</span><br><span class="line">            url3 &#x3D; data[0]      # 小说页面链接</span><br><span class="line">            url3 &#x3D; str(url3)</span><br><span class="line">            url3 &#x3D; url3.strip(&quot;[&quot;)  # 去掉[</span><br><span class="line">            url3 &#x3D; url3.rstrip(&quot;]&quot;)  # 去掉]</span><br><span class="line">            url3 &#x3D; re.sub(&quot; &quot;, &quot;&quot;, url3)  # 去掉空格</span><br><span class="line">            url3 &#x3D; re.sub(&quot;\&#39;&quot;, &quot;&quot;, url3)  # 去掉多余的”</span><br><span class="line">            if (url3 &#x3D;&#x3D; &quot;&quot;): continue</span><br><span class="line">            # print(&quot;%d:&quot;%i+url3)       #测试章节链接</span><br><span class="line">            html3 &#x3D; askURL(url3)</span><br><span class="line"></span><br><span class="line">            #2.3解析数据</span><br><span class="line">            soup3 &#x3D; BeautifulSoup(html3,&quot;html.parser&quot;)</span><br><span class="line">            # print(type(datalist2[1][1]))</span><br><span class="line">            for item in zip(soup3.find_all(&#39;div&#39;,class_&#x3D;&quot;contentbox&quot;)):  #得到小说一章的内容</span><br><span class="line">                item &#x3D; str(item)</span><br><span class="line">                item &#x3D; item.replace(&#39;&amp;nbsp;&#39;, &#39; &#39;)      #根据html规则手动转变文本</span><br><span class="line">                item &#x3D; item.replace(&#39;&lt;br&#x2F;&gt;&#39;, &#39;\n&#39;)</span><br><span class="line">                item &#x3D; item.replace(&#39;\n\n\n\n&#39;, &#39;\n&#39;)</span><br><span class="line">                item &#x3D; item.replace(&#39;,)&#39;,&#39;&#39;)</span><br><span class="line">                item &#x3D; re.sub(&#39;&lt;script.*?&gt;(.*?)&lt;&#x2F;script&gt;&#39;,&#39;&#39;,item)  #去掉多余内容</span><br><span class="line">                item &#x3D; re.sub(&#39;&lt;a .*?&gt;(.*?)&lt;&#x2F;a&gt;&#39;,&#39;&#39;,item)</span><br><span class="line">                item &#x3D; re.sub(r&#39;&lt;div .*?&gt;&#39;, &#39;&#39;, item)</span><br><span class="line">                item &#x3D; re.sub(r&#39;&lt;&#x2F;div&gt;&#39;, &#39;&#39;, item)</span><br><span class="line">                # print(item)     #测试小说内容</span><br><span class="line"></span><br><span class="line">                textTitle &#x3D; datalist2[z][1]</span><br><span class="line">                print(textTitle)      #测试章节名</span><br><span class="line">                z &#x3D; z + 1</span><br><span class="line">                item &#x3D; textTitle+&quot;\n&quot;+item</span><br><span class="line">                # print(item)      #测试整个章节</span><br><span class="line"></span><br><span class="line">                save(&quot;D:\小说\%s.txt&quot;%(datalist[x][1]),item)</span><br><span class="line"></span><br><span class="line">        x &#x3D; x + 1</span><br><span class="line">            # print(datalist3)</span><br><span class="line">            # break       #测试一章是否能打印成功</span><br><span class="line">        # break       #由于章节过多，循环一次进行测试</span><br><span class="line">#得到指定一个url的内容</span><br><span class="line"></span><br><span class="line">#保存小说</span><br><span class="line">def save(filename, contents):                       #（文件名，保存数据）</span><br><span class="line">    fh &#x3D; open(filename, &#39;a&#39;, encoding&#x3D;&#39;utf-8&#39;)      #在文本末尾写入</span><br><span class="line">    fh.write(contents)</span><br><span class="line">    fh.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def askURL(url):</span><br><span class="line">    head &#x3D;&#123;                     #模拟浏览器头部信息，向豆瓣服务器发送消息</span><br><span class="line">        &quot;User-Agent&quot;: &quot;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;84.0.4147.89 Safari&#x2F;537.36&quot;</span><br><span class="line">    &#125;</span><br><span class="line">                            #用户代理表示告诉豆瓣服务器，我们是什么类型的机器&#x2F;浏览器（本质上是告诉浏览器，我们可以接受什么水平的文件）</span><br><span class="line"></span><br><span class="line">    try:</span><br><span class="line">        r &#x3D; requests.get(url,headers&#x3D;head,timeout&#x3D;10)</span><br><span class="line">        # 如果状态不是200，引发HTTPError异常</span><br><span class="line">        r.raise_for_status()</span><br><span class="line">        r.encoding &#x3D; r.apparent_encoding</span><br><span class="line">        # print(r.text)</span><br><span class="line">    except urllib.error.URLError as e:</span><br><span class="line">        if hasattr(e,&quot;code&quot;):</span><br><span class="line">            print(e.code)</span><br><span class="line">        if hasattr(e,&quot;reason&quot;):</span><br><span class="line">            print(e.reason)</span><br><span class="line">        print(&quot;产生异常&quot;)</span><br><span class="line">    # print(r.text)</span><br><span class="line">    return r.text</span><br><span class="line"></span><br><span class="line">if __name__ &#x3D;&#x3D; &#39;__main__&#39;:</span><br><span class="line">    print(&quot;开始爬取......&quot;)</span><br><span class="line">    main()</span><br><span class="line">    print(&quot;爬取成功！&quot;)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/2020/08/03/39d371b6-7225-4d04-ad64-fda07c0d6728.png" alt="image.png"><br><img src="/images/2020/08/03/83e91688-7cba-4c19-bb07-938f4498346f.png" alt="image.png"></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='valine_container' class="valine_thread v"
+	data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    
+    ></div>
+
+
+    </div>
+    
+        <div class='side'>
+				
+        </div>
+    
+</div>
+
+
+        
+    <div class="blog-post-comments">
+      <section id="comment">
+        <div id="valine_container" class="valine_thread"></div>
+      </section>
+      <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+      <script src="https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js"></script>
+
+<style>
+  #comment{
+    width: 70%;
+    display: block;
+    border-radius: 20px;
+    margin: 0 auto;
+  }
+ .v #veditor{
+     min-height: 10rem;
+     background-image: url(https://cdn.jsdelivr.net/gh/cungudafa/img/images/girls2.png);
+     background-size: contain;
+     background-repeat: no-repeat;
+     background-position: right;
+     background-color: rgba(255,255,255,0);
+     resize: none;}
+
+ /*图片消失
+ #veditor:focus{
+	background-position-y: 200px;
+	transition: all 0.2s ease-in-out 0s;
+}  */  
+/*头像旋转*/
+img.vimg {
+     transition: all 1s   /* 旋转时间为 1s */
+}
+
+img.vimg:hover {
+     transform: rotate(360deg);
+     -webkit-transform: rotate(360deg);
+     -moz-transform: rotate(360deg);
+     -o-transform: rotate(360deg);
+     -ms-transform: rotate(360deg);
+}
+
+/*调整一下表情高度*/
+div.vcontent p  img.vemoji {
+    height: 30px;
+
+}
+</style>
+
+
+      <script>
+        var GUEST_INFO = ["nick", "mail", "link"];
+        var guest_info = "nick,mail,link"
+          .split(",")
+          .filter(function (item) {
+            return GUEST_INFO.indexOf(item) > -1;
+          });
+        var valine = new Valine();
+        valine.init({
+          el: "#valine_container",
+          admin_email: 'i@1l.fit',
+          appId: "iDHJ60Ufv3QjOR4sWuH4oL3r-9Nh9j0Va",
+          appKey: "S7rF0X45YIfNj5cNzdg4gMLl",
+          placeholder: "Just go go",
+          path: window.location.pathname,
+          pageSize: "15",
+          avatar: "monsterid",
+          lang: "",
+          pushType: "sc",
+          pushLink: "https://sc.ftqq.com/SCU106322T782cfcd867473745105f94e94de33c085f13bd947b6e3.send",
+          enableQQ: true,
+          master: 'eb4d5f16fb5a933662a768b5c2c85f20',   //博主邮箱md5
+          tagMeta: ["博主","小伙伴","访客"],     //标识字段名
+          friends:  ["4b278adff5fd7c28aedbf73dd9c52ae5","191434ebf724621793c3b2cb237b7e3d"],  //小伙伴邮箱Md5
+          emojiCDN: "https://mirrorcdn.bili33.top/",
+          // 表情title和图片映射
+          emojiMaps: {
+          "嘿嘿":"https://s-o.oss-cn-shanghai.aliyuncs.com/emoji/%E5%98%BF%E5%98%BF.jpg",    
+          "土豆":"https://s-o.oss-cn-shanghai.aliyuncs.com/emoji/tudou.gif",
+          "汗_":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200411023456.webp",
+          "点赞": "https://cdn.jsdelivr.net/gh/drew233/cdn/kawayi.webp",   
+          "傲娇":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409103906.webp",
+          "开心":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409104757.webp",
+          "扣手手":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130304.webp",
+          "仙女下凡":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130301.webp",
+          "得瑟":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130258.webp",
+          "揉左脸":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130254.webp",
+          "揉右脸":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130249.webp",
+          "滑稽":"https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_huaji.gif",
+          "彩虹滑稽":"https://cdn.jsdelivr.net/gh/drew233/cdn/caihongtiao.webp",
+          "呆滞":"https://cdn.jsdelivr.net/gh/drew233/cdn/daizhi.webp",
+          "躲进小被子":"https://cdn.jsdelivr.net/gh/drew233/cdn/djxbz.webp",
+          "给我也整一个":"https://cdn.jsdelivr.net/gh/drew233/cdn/gwyzyg.webp",
+          "草":"https://cdn.jsdelivr.net/gh/drew233/cdn/imgcao.webp",
+          "花":"https://cdn.jsdelivr.net/gh/drew233/cdn/imghua.webp",
+          "日":"https://cdn.jsdelivr.net/gh/drew233/cdn/imgri.webp",
+          "目瞪狗呆":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200412095243.webp",
+          "tql":"https://cdn.jsdelivr.net/gh/drew233/cdn/tql.webp",
+          "转圈圈":"https://cdn.jsdelivr.net/gh/drew233/cdn/zqq.webp",
+          
+         
+         "tv_doge": "bilibilitv/[tv_doge].png",
+         "tv_亲亲": "bilibilitv/[tv_亲亲].png",
+         "tv_偷笑": "bilibilitv/[tv_偷笑].png",
+         "tv_再见": "bilibilitv/[tv_再见].png",
+         "tv_冷漠": "bilibilitv/[tv_冷漠].png",
+         "tv_发怒": "bilibilitv/[tv_发怒].png",
+         "tv_发财": "bilibilitv/[tv_发财].png",
+         "tv_可爱": "bilibilitv/[tv_可爱].png",
+         "tv_吐血": "bilibilitv/[tv_吐血].png",
+         "tv_呆": "bilibilitv/[tv_呆].png",
+         "tv_呕吐": "bilibilitv/[tv_呕吐].png",
+         "tv_困": "bilibilitv/[tv_困].png",
+         "tv_坏笑": "bilibilitv/[tv_坏笑].png",
+         "tv_大佬": "bilibilitv/[tv_大佬].png",
+         "tv_大哭": "bilibilitv/[tv_大哭].png",
+         "tv_委屈": "bilibilitv/[tv_委屈].png",
+         "tv_害羞": "bilibilitv/[tv_害羞].png",
+         "tv_尴尬": "bilibilitv/[tv_尴尬].png",
+         "tv_微笑": "bilibilitv/[tv_微笑].png",
+         "tv_思考": "bilibilitv/[tv_思考].png",
+         "tv_惊吓": "bilibilitv/[tv_惊吓].png",
+         "tv_打脸": "bilibilitv/[tv_打脸].png",
+         "tv_抓狂": "bilibilitv/[tv_抓狂].png",
+         "tv_抠鼻": "bilibilitv/[tv_抠鼻].png",
+         "tv_斜眼笑": "bilibilitv/[tv_斜眼笑].png",
+         "tv_无奈": "bilibilitv/[tv_无奈].png",
+         "tv_晕": "bilibilitv/[tv_晕].png",
+         "tv_流汗": "bilibilitv/[tv_流汗].png",
+         "tv_流泪": "bilibilitv/[tv_流泪].png",
+         "tv_流鼻血": "bilibilitv/[tv_流鼻血].png",
+         "tv_点赞": "bilibilitv/[tv_点赞].png",
+         "tv_生气": "bilibilitv/[tv_生气].png",
+         "tv_生病": "bilibilitv/[tv_生病].png",
+         "tv_疑问": "bilibilitv/[tv_疑问].png",
+         "tv_白眼": "bilibilitv/[tv_白眼].png",
+         "tv_皱眉": "bilibilitv/[tv_皱眉].png",
+         "tv_目瞪口呆": "bilibilitv/[tv_目瞪口呆].png",
+         "tv_睡着": "bilibilitv/[tv_睡着].png",
+         "tv_笑哭": "bilibilitv/[tv_笑哭].png",
+         "tv_腼腆": "bilibilitv/[tv_腼腆].png",
+         "tv_色": "bilibilitv/[tv_色].png",
+         "tv_调侃": "bilibilitv/[tv_调侃].png",
+         "tv_调皮": "bilibilitv/[tv_调皮].png",
+         "tv_鄙视": "bilibilitv/[tv_鄙视].png",
+         "tv_闭嘴": "bilibilitv/[tv_闭嘴].png",
+         "tv_难过": "bilibilitv/[tv_难过].png",
+         "tv_馋": "bilibilitv/[tv_馋].png",
+         "tv_鬼脸": "bilibilitv/[tv_鬼脸].png",
+         "tv_黑人问号": "bilibilitv/[tv_黑人问号].png",
+         "tv_鼓掌": "bilibilitv/[tv_鼓掌].png",
+         "卖萌": "bilibili2233/[2233娘_卖萌].png",
+         "吃惊": "bilibili2233/[2233娘_吃惊].png",
+         "吐魂": "bilibili2233/[2233娘_吐魂].png",
+         "喝水": "bilibili2233/[2233娘_喝水].png",
+         "困惑": "bilibili2233/[2233娘_困惑].png",
+         "大哭": "bilibili2233/[2233娘_大哭].png",
+         "大笑": "bilibili2233/[2233娘_大笑].png",
+         "委屈": "bilibili2233/[2233娘_委屈].png",
+         "怒": "bilibili2233/[2233娘_怒].png",
+         "无言": "bilibili2233/[2233娘_无言].png",
+         "出汗": "bilibili2233/[2233娘_汗].png",
+         "疑问": "bilibili2233/[2233娘_疑问].png",
+         "第一": "bilibili2233/[2233娘_第一].png",
+         "耶": "bilibili2233/[2233娘_耶].png",
+         "郁闷": "bilibili2233/[2233娘_郁闷].png",
+         "妙": "bilibiliHotKey/1.jpg",
+         "危": "bilibiliHotKey/2.jpg",
+         "有内味儿了": "bilibiliHotKey/3.jpg",
+         "高产": "bilibiliHotKey/4.jpg",
+         "我枯了": "bilibiliHotKey/5.jpg",
+         "不愧是你": "bilibiliHotKey/6.jpg",
+         "狼火": "bilibiliHotKey/9.jpg",
+         "你细品": "bilibiliHotKey/10.jpg",
+         "锤": "bilibiliHotKey/11.jpg",
+         "秀": "bilibiliHotKey/12.jpg",
+         "这次一定": "bilibiliHotKey/14.jpg",
+         "酸了": "bilibiliHotKey/15.jpg",
+         "打卡": "bilibiliHotKey/16.jpg",
+         "我太南了": "bilibiliHotKey/18.jpg",
+         "吹爆": "bilibiliHotKey/19.jpg",
+         "奥力给": "bilibiliHotKey/20.jpg",
+         "awsl": "bilibiliHotKey/21.jpg",
+         "猛男必看": "bilibiliHotKey/22.jpg",
+         "害": "bilibiliHotKey/23.jpg",
+         "知识盲区": "bilibiliHotKey/24.jpg",
+         "我全都要": "bilibiliHotKey/25.jpg",
+         "咕咕咕": "bilibiliHotKey/26.jpg",
+         "可以": "bilibiliHotKey/27.jpg",
+         "真香": "bilibiliHotKey/28.jpg",
+         "完结": "bilibiliHotKey/29.jpg",
+         "有生之年": "bilibiliHotKey/30.jpg",
+         "大师球": "bilibiliHotKey/31.jpg",
+         "爷关更": "bilibiliHotKey/32.jpg",
+            
+            
+          },
+        });
+      </script>
+
+
+   
+      
+      <!-- 今日诗词：随机返回一句古诗词名句的接口，宅到用来做 Valine 的 placeholder 显示内容 -->
+      <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+      <script type="text/javascript">
+       jinrishici.load(function(result) {
+           var jrsc_plac =  result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author;
+           document.getElementById("veditor").setAttribute("placeholder",jrsc_plac);
+       })
+      </script>
+    </div>
+    
+<!--
+
+
+
+-->
+    </div>
+</div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7},"log":false});</script></body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '171639872', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<!-- 天气 -->
+<script type="text/javascript">
+WIDGET = {FID: '21I8HlZYjY'}
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+
+<script>
+   var title1="text=blog又有新评论啦~！--by Valine"
+var SCKEY_Server="SCU106322T782cfcd867473745105f94e94de33c085f13bd947b6e3"
+var ValineButton=document.getElementsByClassName("vsubmit vbtn")[0];
+function send_valine_Server(){
+    var text="desp=";
+    var pagename=document.title;
+    var wz=pagename.indexOf('|');
+    var res=pagename.substring(0,wz);
+    var pageurl=document.URL;
+    var ptime=new Date();
+    var vnick=document.getElementsByClassName("vnick vinput")[0].value;
+    var vmail=document.getElementsByClassName("vmail vinput")[0].value;
+    var vlink=document.getElementsByClassName("vlink vinput")[0].value;
+    var veditor=document.getElementsByClassName("veditor vinput")[0].value;
+    var data=text+"|昵称："+"|邮箱："+"|网站地址："+"|当前页面："+"|评论内容："+"|跳转链接："+"|评论时间"+"\n"+"|----|----|----|----|"+"\n"+"|   "+vnick+"   |   "+vmail+"  |  "+vlink+"|   "+res+"| "+veditor+"| "+pageurl+"|" +ptime.toLocaleString()+"|";
+    var httpRequest = new XMLHttpRequest();//第一步：创建需要的对象
+    httpRequest.open('POST', 'https://sc.ftqq.com/'+SCKEY_Server+'.send', true); //第二步：打开连接
+    httpRequest.setRequestHeader("Content-type","application/x-www-form-urlencoded");//设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+    httpRequest.send(title1+"&"+data);//发送请求 将情头体写在send中
+};
+ValineButton.onclick=send_valine_Server;
+  </script>
+</html>
