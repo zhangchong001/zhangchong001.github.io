@@ -1,0 +1,603 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Python实现数据可视化 - zc&#39;blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="ZC,"> 
+    <meta name="description" content="一、数据可视化介绍数据可视化是指将数据放在可视环境中、进一步理解数据的技术，可以通过它更加详细地了解隐藏在数据表面之下的模式、趋势和相关性。
+Python提供了很多数据可视化的库：
+
+matplot,"> 
+    <meta name="author" content="ZC"> 
+    <link rel="alternative" href="atom.xml" title="zc&#39;blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">zc&#39;blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://zc.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">Python实现数据可视化</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Python实现数据可视化</h1>
+        <div class="stuff">
+            <span>八月 31, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="一、数据可视化介绍"><a href="#一、数据可视化介绍" class="headerlink" title="一、数据可视化介绍"></a>一、数据可视化介绍</h1><p>数据可视化是指将数据放在可视环境中、进一步理解数据的技术，可以通过它更加详细地了解隐藏在数据表面之下的模式、趋势和相关性。</p>
+<p>Python提供了很多数据可视化的库：</p>
+<ul>
+<li>matplotlib<br>是Python基础的画图库，官网为<a href="https://matplotlib.org/，在案例地址https://matplotlib.org/gallery/index.html中介绍了很多种类的图和代码示例。" target="_blank" rel="noopener">https://matplotlib.org/，在案例地址https://matplotlib.org/gallery/index.html中介绍了很多种类的图和代码示例。</a></li>
+<li>pandas<br>是在matplotlib的基础上实现画图的，官网为<a href="https://pandas.pydata.org/。" target="_blank" rel="noopener">https://pandas.pydata.org/。</a></li>
+<li>matlpotlib和pandas结合<br>利用pandas进行数据读取、数据清洗和数据选取等操作，再使用matlpotlib显示数据。<h1 id="二、matplotlib和pandas画图"><a href="#二、matplotlib和pandas画图" class="headerlink" title="二、matplotlib和pandas画图"></a>二、matplotlib和pandas画图</h1><h2 id="1-matplotlib简介和简单使用"><a href="#1-matplotlib简介和简单使用" class="headerlink" title="1.matplotlib简介和简单使用"></a>1.matplotlib简介和简单使用</h2>matplotlib是Python最著名的绘图库，它提供了一整套和Matlab相似的命令API，十分适合<br>交互式地进行制图；也可以方便地将它作为绘图控件，嵌入GUI应用程序中。<br>文档相当完备，并且Gallery页面中有上百幅缩略图，打开之后都有源代码。如果需要绘制某种类型的图，只需要在这个页面中进行简单的浏览、复制、粘贴，就能实现画图。<br><a href="https://matplotlib.org/gallery.html中有大量的缩略图案例可以使用。" target="_blank" rel="noopener">https://matplotlib.org/gallery.html中有大量的缩略图案例可以使用。</a></li>
+</ul>
+<p>matplotlib画图的子库：</p>
+<ul>
+<li>pyplot子库<br>提供了和matlab类似的绘图API，方便用户快速绘制2D图表。</li>
+<li>pylab模块<br>其中包括了许多numpy和pyplot中常用的函数，方便用户快速进行计算和绘图，可以用于IPython中的快速交互式使用。<br>使用matplotlib快速绘图导入库和创建绘图对象如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import matplotlib.pyplot as plt</span><br><span class="line"></span><br><span class="line">plt.figure(figsize&#x3D;(8,4))</span><br></pre></td></tr></table></figure>
+创建绘图对象时，同时使它成为当前的绘图对象。<br>通过figsize参数可以指定绘图对象的宽度和高度，单位为英寸；<br>dpi参数指定绘图对象的分辨率，即每英寸多少个像素，缺省值为80。<br>因此本例中所创建的图表窗口的宽度为8 * 80 = 640像素。</li>
+</ul>
+<p>也可以不创建绘图对象直接调用plot方法绘图，matplotlib会自动创建一个绘图对象。<br>如果需要同时绘制多幅图表的话，可以给figure传递一个整数参数指定图标的序号，如果所指定序号的绘图对象已经存在的话，将不创建新的对象，而只是让它成为当前绘图对象。<br>pyplot画图简单使用如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import matplotlib.pyplot as plt # 首先载入matplotlib的绘图模块pyplot，并且重命名为plt</span><br><span class="line"></span><br><span class="line">x &#x3D; np.linspace(0, 10, 1000)  </span><br><span class="line"></span><br><span class="line">y &#x3D; np.sin(x)</span><br><span class="line">z &#x3D; np.cos(x**2)</span><br><span class="line"></span><br><span class="line">plt.figure(figsize&#x3D;(8,4))   #2 创建绘图对象</span><br><span class="line"></span><br><span class="line">plt.plot(x,y,label&#x3D;&quot;$sin(x)$&quot;,color&#x3D;&quot;red&quot;,linewidth&#x3D;2)</span><br><span class="line">plt.plot(x,z,&quot;b--&quot;,label&#x3D;&quot;$cos(x^2)$&quot;) </span><br><span class="line"></span><br><span class="line">plt.xlabel(&quot;Time(s)&quot;) </span><br><span class="line">plt.ylabel(&quot;Volt&quot;)</span><br><span class="line">plt.title(&quot;PyPlot First Example&quot;)</span><br><span class="line">plt.ylim(-1.2,1.2)</span><br><span class="line">plt.legend()</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/51d3094f-b776-42d7-ba40-a636054743bc.png" alt="image.png"><br>其中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plt.plot(x,y,label&#x3D;&quot;$sin(x)$&quot;,color&#x3D;&quot;red&quot;,linewidth&#x3D;2)</span><br><span class="line">plt.plot(x,z,&quot;b--&quot;,label&#x3D;&quot;$cos(x^2)$&quot;)</span><br></pre></td></tr></table></figure>
+<p>第一行将x、y数组传递给plot之后，用关键字参数指定各种属性：</p>
+<ul>
+<li>label<br>给所绘制的曲线取一个名字，用于在图示（legend）中显示；<br>在字符串前后添加$符号，就会使用内置的latex引擎绘制数学公式。</li>
+<li>color<br>指定曲线的颜色：颜色可以用英文单词，或者以#字符开头的三个16进制数，例如#ff0000表示红色，或者用值在0到1范围之内的三个元素的元组表示，例如(1.0, 0.0, 0.0)也表示红色。<br>linewidth<br>指定曲线的宽度，可以不是整数，也可以使用缩写形式的参数名lw。<br>曲线样式<br>第三个参数b–指定曲线的颜色和线型，它通过一些易记的符号指定曲线的样式，其中b表示蓝色，–表示线型为虚线。<br>在IPython中输入plt.plot?可以查看格式化字符串以及各个参数的详细说明。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">plt.xlabel(&quot;Time(s)&quot;) </span><br><span class="line">plt.ylabel(&quot;Volt&quot;)</span><br><span class="line">plt.title(&quot;PyPlot First Example&quot;)</span><br><span class="line">plt.ylim(-1.2,1.2)</span><br><span class="line">plt.legend()</span><br></pre></td></tr></table></figure>
+通过一系列函数设置当前Axes对象的各个属性：</li>
+</ul>
+<p>xlabel、ylabel<br>分别设置X、Y轴的标题文字。<br>title<br>设置子图的标题。<br>xlim、ylim<br>分别设置X、Y轴的显示范围。<br>legend<br>显示图示，即图中表示每条曲线的标签(label)和样式的矩形区域。<br>最后调用plt.show()显示出绘图窗口。</p>
+<p>一个绘图对象(figure)可以包含多个轴(axis)，在Matplotlib中用轴表示一个绘图区域，可以将其理解为子图。上面的第一个例子中，绘图对象只包括一个轴，因此只显示了一个轴（子图Axes）。可以使用subplot函数快速绘制有多个轴的图表。<br>subplot函数的调用形式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subplot(numRows, numCols, plotNum)</span><br></pre></td></tr></table></figure>
+<p>subplot将整个绘图区域等分为numRows行和numCols列个子区域，然后按照从左到右、从上到下的顺序对每个子区域进行编号，左上的子区域的编号为1。<br>如果numRows、numCols和plotNum这三个数都小于10的话，可以把它们缩写为一个整数，例如subplot(323)和subplot(3,2,3)是相同的。<br>subplot在plotNum指定的区域中创建一个轴对象，如果新创建的轴和之前创建的轴重叠，之前的轴将被删除。</p>
+<p>如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for idx, color in enumerate(&quot;rgbyck&quot;):</span><br><span class="line">    plt.subplot(320+idx+1, facecolor&#x3D;color)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p>显示：<br><img src="/images/2020/08/31/eb75c121-06b4-4bb5-887e-7010b481d9a7.png" alt="image.png"><br>可以看到：<br>创建3行2列共6个轴，通过facecolor参数给每个轴设置不同的背景颜色。</p>
+<p>如果希望某个轴占据整个行或者列的话，可以如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">plt.subplot(221) # 第一行的左图</span><br><span class="line">plt.subplot(222) # 第一行的右图</span><br><span class="line">plt.subplot(212) # 第二整行</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/694e276b-1366-495f-93df-e50400e4e0fc.png" alt="image.png"></p>
+<p>再举一个创建子图的例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(1) # 创建图表1</span><br><span class="line">plt.figure(2) # 创建图表2</span><br><span class="line">ax1 &#x3D; plt.subplot(211) # 在图表2中创建子图1</span><br><span class="line">ax2 &#x3D; plt.subplot(212) # 在图表2中创建子图2</span><br><span class="line"> </span><br><span class="line">x &#x3D; np.linspace(0, 3, 100)</span><br><span class="line">for i in range(5):</span><br><span class="line">    plt.figure(1) # 选择图表1</span><br><span class="line">    plt.plot(x, np.exp(i*x&#x2F;3))</span><br><span class="line">    plt.sca(ax1) # 选择图表2的子图1   Set the current Axes instance to ax.</span><br><span class="line">    plt.plot(x, np.sin(i*x))</span><br><span class="line">    plt.sca(ax2) # 选择图表2的子图2</span><br><span class="line">    plt.plot(x, np.cos(i*x))</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/e258b33a-ae23-4481-8248-2bf736945d5a.png" alt="image.png"><br>首先通过figure()创建了两个图表，它们的序号分别为1和2；<br>然后在图表2中创建了上下并排的两个子图，并用变量ax1和ax2保存。<br>在循环中：<br>先调用figure(1)让图表1成为当前图表，并在其中绘图。<br>然后调用sca(ax1)和sca(ax2)分别让子图ax1和ax2成为当前子图，并在其中绘图。<br>当它们成为当前子图时，包含它们的图表2也自动成为当前图表，因此不需要调用figure(2)依次在图表1和图表2的两个子图之间切换，逐步在其中添加新的曲线即可。</p>
+<p>其中，twinx()可以为图增加纵坐标轴，使用如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">x &#x3D; np.arange(1, 21, 0.1)</span><br><span class="line"> </span><br><span class="line">y1 &#x3D; x * x</span><br><span class="line">y2 &#x3D; np.log(x)</span><br><span class="line"> </span><br><span class="line">plt.plot(x, y1)</span><br><span class="line"> </span><br><span class="line"># 添加一条y轴的坐标轴</span><br><span class="line">plt.twinx()</span><br><span class="line">plt.plot(x, y2)</span><br><span class="line"> </span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/5dc989b6-220f-4301-a082-1277ec1d4acc.png" alt="image.png"></p>
+<p>进一步使用如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line"> </span><br><span class="line">x &#x3D; np.arange(1, 20, 1)</span><br><span class="line">y1 &#x3D; x * x</span><br><span class="line">y2 &#x3D; np.log(x)</span><br><span class="line"> </span><br><span class="line">fig &#x3D; plt.figure()</span><br><span class="line">ax1 &#x3D; fig.add_subplot(111)</span><br><span class="line"></span><br><span class="line">ax1.plot(x, y1, label &#x3D; &quot;$y1 &#x3D; x * x$&quot;, color &#x3D; &quot;r&quot;)</span><br><span class="line">ax1.legend(loc &#x3D; 0)</span><br><span class="line"># 设置对应坐标轴的名称</span><br><span class="line">ax1.set_ylabel(&quot;y1&quot;)</span><br><span class="line">ax1.set_xlabel(&quot;Compare y1 and y2&quot;)</span><br><span class="line"> </span><br><span class="line"># 设置x轴刻度的数量</span><br><span class="line">ax &#x3D; plt.gca()</span><br><span class="line">ax.locator_params(&quot;x&quot;, nbins &#x3D; 20)</span><br><span class="line"> </span><br><span class="line"># 添加坐标轴,并在新添加的坐标轴中画y2 &#x3D; log(x)图像</span><br><span class="line">ax2 &#x3D; plt.twinx()</span><br><span class="line">ax2.set_ylabel(&quot;y2&quot;)</span><br><span class="line">ax2.plot(x, y2, label &#x3D; &quot;$y2 &#x3D; log(x)$&quot;)</span><br><span class="line">ax2.legend(loc &#x3D; 0)</span><br><span class="line"> </span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/0906435b-ad74-4f36-a4c7-8078e99d56a4.png" alt="image.png"></p>
+<p>2.matplotlib常见作图类型<br>画图在工作中在所难免，尤其在进行数据探索时显得尤其重要，matplotlib常见的一些作图种类如下：</p>
+<p>散点图<br>条形图<br>饼图<br>三维图<br>先导入库和基础配置如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">from __future__ import division</span><br><span class="line">from numpy.random import randn</span><br><span class="line">import numpy as np</span><br><span class="line">import os</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">np.random.seed(12345)</span><br><span class="line">plt.rc(&#39;figure&#39;, figsize&#x3D;(10, 6))</span><br><span class="line">from pandas import Series, DataFrame</span><br><span class="line">import pandas as pd</span><br><span class="line">np.set_printoptions(precision&#x3D;4)</span><br><span class="line"></span><br><span class="line">get_ipython().magic(u&#39;matplotlib inline&#39;)</span><br><span class="line">get_ipython().magic(u&#39;pwd&#39;)</span><br></pre></td></tr></table></figure>
+<p>打印：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#39;XXX\\3_Visualization_Of_Data_Analysis\\basicuse&#39;</span><br></pre></td></tr></table></figure>
+<p>基础画图如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># matplotlib创建图表</span><br><span class="line">plt.plot([1,2,3,2,3,2,2,1])</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line">plt.plot([4,3,2,1],[1,2,3,4])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/dfad9baa-5179-4d80-9ea8-95a4ab052e86.png" alt="image.png"></p>
+<p>画三角函数曲线如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 画简单的图形</span><br><span class="line">from pylab import *</span><br><span class="line">x&#x3D;np.linspace(-np.pi,np.pi,256,endpoint&#x3D;True)</span><br><span class="line">c,s&#x3D;np.cos(x),np.sin(x)</span><br><span class="line">plot(x,c, color&#x3D;&quot;blue&quot;, linewidth&#x3D;2.5, linestyle&#x3D;&quot;-&quot;, label&#x3D;&quot;cosine&quot;)</span><br><span class="line">plot(x,s,color&#x3D;&quot;red&quot;, linewidth&#x3D;2.5, linestyle&#x3D;&quot;-&quot;, label&#x3D;&quot;sine&quot;)</span><br><span class="line">show()</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/2879e73e-f08c-4cb0-bb4c-6210ab1d4d21.png" alt="image.png"><br>画散点图如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 散点图</span><br><span class="line">from pylab import *</span><br><span class="line">n &#x3D; 1024</span><br><span class="line">X &#x3D; np.random.normal(0,1,n)</span><br><span class="line">Y &#x3D; np.random.normal(0,1,n)</span><br><span class="line">scatter(X,Y)</span><br><span class="line">show()</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/4388e6be-d730-4e11-8dd8-0193510800f4.png" alt="image.png"><br>画条形图如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#条形图</span><br><span class="line">from pylab import *</span><br><span class="line">n &#x3D; 12</span><br><span class="line">X &#x3D; np.arange(n)</span><br><span class="line">Y1 &#x3D; (1-X&#x2F;float(n)) * np.random.uniform(0.5,1.0,n)</span><br><span class="line">Y2 &#x3D; (1-X&#x2F;float(n)) * np.random.uniform(0.5,1.0,n)</span><br><span class="line">bar(X, +Y1, facecolor&#x3D;&#39;#9999ff&#39;, edgecolor&#x3D;&#39;white&#39;)</span><br><span class="line">bar(X, -Y2, facecolor&#x3D;&#39;#ff9999&#39;, edgecolor&#x3D;&#39;white&#39;)</span><br><span class="line">for x,y in zip(X,Y1):</span><br><span class="line"> text(x+0.4, y+0.05, &#39;%.2f&#39; % y, ha&#x3D;&#39;center&#39;, va&#x3D; &#39;bottom&#39;)</span><br><span class="line">ylim(-1.25,+1.25)</span><br><span class="line">show()</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/01df7f08-1556-48c2-8012-f09c8ec6fe5b.png" alt="image.png"><br>饼图如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#饼图</span><br><span class="line">from pylab import *</span><br><span class="line">n &#x3D; 20</span><br><span class="line">Z &#x3D; np.random.uniform(0,1,n)</span><br><span class="line">pie(Z)</span><br><span class="line">show()</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/3ceb614a-169b-4629-ba0f-6deb1eb69280.png" alt="image.png"><br>画立体图如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#画三维图</span><br><span class="line">import numpy as np</span><br><span class="line">from mpl_toolkits.mplot3d import Axes3D</span><br><span class="line">from pylab import *</span><br><span class="line">fig&#x3D;figure()</span><br><span class="line">ax&#x3D;Axes3D(fig)</span><br><span class="line">x&#x3D;np.arange(-4,4,0.1)</span><br><span class="line">y&#x3D;np.arange(-4,4,0.1)</span><br><span class="line">x,y&#x3D;np.meshgrid(x,y)</span><br><span class="line">R&#x3D;np.sqrt(x**2+y**2)</span><br><span class="line">z&#x3D;np.sin(R)</span><br><span class="line">ax.plot_surface(x,y,z,rstride&#x3D;1,cstride&#x3D;1,cmap&#x3D;&#39;hot&#39;)</span><br><span class="line">show()</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/58f522e4-e607-4124-abc2-fae51450c991.png" alt="image.png"><br>画其他简单图形如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#更多简单的图形</span><br><span class="line">x &#x3D; [1,2,3,4]</span><br><span class="line">y &#x3D; [5,4,3,2]</span><br><span class="line"></span><br><span class="line">plt.figure()</span><br><span class="line">plt.subplot(2,3,1)</span><br><span class="line">plt.plot(x, y)</span><br><span class="line"></span><br><span class="line">plt.subplot(232)</span><br><span class="line">plt.bar(x, y)</span><br><span class="line"></span><br><span class="line">plt.subplot(233)</span><br><span class="line">plt.barh(x, y)</span><br><span class="line"></span><br><span class="line">plt.subplot(234)</span><br><span class="line">plt.bar(x, y)</span><br><span class="line">y1 &#x3D; [7,8,5,3]</span><br><span class="line">plt.bar(x, y1, bottom&#x3D;y, color &#x3D; &#39;r&#39;)</span><br><span class="line"></span><br><span class="line">plt.subplot(235)</span><br><span class="line">plt.boxplot(x)</span><br><span class="line"></span><br><span class="line">plt.subplot(236)</span><br><span class="line">plt.scatter(x,y)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/2c4941bf-2640-438a-b2ab-ed8d5a7c13db.png" alt="image.png"></p>
+<h1 id="3-使用pandas画图"><a href="#3-使用pandas画图" class="headerlink" title="3.使用pandas画图"></a>3.使用pandas画图</h1><p>pandas中画图的主要类型包括：</p>
+<p>累和图<br>柱状图<br>散点图<br>饼图<br>矩阵散点图<br>先导入所需要的库：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">from __future__ import division</span><br><span class="line">from numpy.random import randn</span><br><span class="line">import numpy as np</span><br><span class="line">import os</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">np.random.seed(12345)</span><br><span class="line">from pandas import Series, DataFrame</span><br><span class="line">import pandas as pd</span><br><span class="line">%matplotlib inline</span><br></pre></td></tr></table></figure>
+<p>在pandas中，有行标签、列标签和分组信息等，如果使用matplotlib画图，可能需要一大堆的代码，现在调用Pandas的plot()方法即可简单实现。</p>
+<p>画简单线图如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#线图 </span><br><span class="line">s &#x3D; Series(np.random.randn(10).cumsum(), index&#x3D;np.arange(0, 100, 10))</span><br><span class="line">s.plot()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/65652617-6391-4837-8932-51197e082422.png" alt="image.png"><br>pandas.Series.plot()的常见参数及说明如下：</p>
+<p><img src="/images/2020/08/31/c934d298-7f69-41d5-af53-f82bba3a646d.png" alt="image.png"><br>Pandas的大部分绘图方法都有一个可选的ax参数，它可以是一个matplotlib的subplot对象，从而能够在网络布局中更为灵活地处理subplot的位置。DataFrame的plot方法会在一个subplot中为各列绘制一条线，并自动创建图例。</p>
+<p>画多列线图如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">df &#x3D; DataFrame(np.random.randn(10, 4).cumsum(0),</span><br><span class="line">               columns&#x3D;[&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;],</span><br><span class="line">               index&#x3D;np.arange(0, 100, 10))</span><br><span class="line">df.plot()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/b3dcbd65-e607-4ed4-a114-929ce319a073.png" alt="image.png"><br>相对于Series，DataFrame还有一些用于对列进行灵活处理的选项，例如要将所有列都绘制到一个subplot中还是创建各自的subplot等，具体如下：<br><img src="/images/2020/08/31/0a8e6444-0749-43e0-a9c1-aba3a92ba8ce.png" alt="image.png"><br>画简单累和图如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#线图 CUM</span><br><span class="line">plt.close(&#39;all&#39;)</span><br><span class="line"></span><br><span class="line">s &#x3D; Series(np.random.randn(10).cumsum(), index&#x3D;np.arange(0, 100, 10))</span><br><span class="line">s.plot()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/3c7bd5f5-2d87-4d88-96ce-1b11846cd22e.png" alt="image.png"></p>
+<p>画多列的类和图如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">df &#x3D; DataFrame(np.random.randn(10, 4).cumsum(0),</span><br><span class="line">               columns&#x3D;[&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;],</span><br><span class="line">               index&#x3D;np.arange(0, 100, 10))</span><br><span class="line">df.plot()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>显示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">![image.png](&#x2F;images&#x2F;2020&#x2F;08&#x2F;31&#x2F;d28a482e-5e8a-4784-a14c-be2ef24092fb.png)</span><br><span class="line">当提升了数据规模之后，累和图如下：</span><br><span class="line">s &#x3D; pd.Series([2, np.nan, 5, -1, 0])</span><br><span class="line">print(s)</span><br><span class="line"></span><br><span class="line">print(s.cumsum())</span><br><span class="line"></span><br><span class="line">#画累和图</span><br><span class="line">ts&#x3D;pd.Series(np.random.randn(1000),index&#x3D;pd.date_range(&#39;1&#x2F;1&#x2F;2000&#39;,periods&#x3D;1000))</span><br><span class="line">ts&#x3D;ts.cumsum()</span><br><span class="line">ts.plot()</span><br><span class="line">plt.show()</span><br><span class="line">df&#x3D;pd.DataFrame(np.random.randn(1000,4),index&#x3D;ts.index,columns&#x3D;list(&#39;ABCD&#39;))</span><br><span class="line"></span><br><span class="line"># cumulative意为累计、累积，这个函数可以返回一个累计值，经常会遇到月累计、年累计这种指标，会用这个函数</span><br><span class="line">df&#x3D;df.cumsum()</span><br><span class="line">df.plot()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>打印：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">0    2.0</span><br><span class="line">1    NaN</span><br><span class="line">2    5.0</span><br><span class="line">3   -1.0</span><br><span class="line">4    0.0</span><br><span class="line">dtype: float64</span><br><span class="line">0    2.0</span><br><span class="line">1    NaN</span><br><span class="line">2    7.0</span><br><span class="line">3    6.0</span><br><span class="line">4    6.0</span><br><span class="line">dtype: float64</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/c7dd0a54-754e-44db-a923-9e91ba8c6dfe.png" alt="image.png"><br>画Series柱状图如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#柱形图</span><br><span class="line">fig, axes &#x3D; plt.subplots(2, 1)</span><br><span class="line">data &#x3D; Series(np.random.rand(16), index&#x3D;list(&#39;abcdefghijklmnop&#39;))</span><br><span class="line">data.plot(kind&#x3D;&#39;bar&#39;, ax&#x3D;axes[0], color&#x3D;&#39;r&#39;, alpha&#x3D;0.7)</span><br><span class="line">data.plot(kind&#x3D;&#39;barh&#39;, ax&#x3D;axes[1], color&#x3D;&#39;g&#39;, alpha&#x3D;0.7)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/2d98966f-63ca-4d3f-966f-c5630bbdfb72.png" alt="image.png"><br>DataFrame画柱状图：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">df &#x3D; DataFrame(np.random.rand(6, 4),</span><br><span class="line">               index&#x3D;[&#39;one&#39;, &#39;two&#39;, &#39;three&#39;, &#39;four&#39;, &#39;five&#39;, &#39;six&#39;],</span><br><span class="line">               columns&#x3D;pd.Index([&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;], name&#x3D;&#39;Genus&#39;))</span><br><span class="line"></span><br><span class="line">df.plot(kind&#x3D;&#39;bar&#39;) #图例</span><br><span class="line"></span><br><span class="line">plt.figure()</span><br><span class="line"></span><br><span class="line">df.plot(kind&#x3D;&#39;barh&#39;, stacked&#x3D;True, alpha&#x3D;0.5)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/8981b2ba-6a2e-45f3-9e46-2a06fadca8f9.png" alt="image.png"><br>可以看到：<br>对于DataFrame，柱形图会将每一行的值分为一组；<br>DataFrame的各列名称都被用作了图例的标题；<br>设置stacked=True即可为DataFrame生成堆积柱形图，这样每行的值就会被堆积在一起。</p>
+<p>餐馆小费数据如下：<br><img src="/images/2020/08/31/c72ca676-d30d-400e-a2cc-f0b1e69ede2d.png" alt="image.png"><br>进行数据可视化如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ips &#x3D; pd.read_csv(&#39;tips.csv&#39;) # 各数据点的百分比</span><br><span class="line">party_counts &#x3D; pd.crosstab(tips.day, tips[&#39;size&#39;])  #size聚会人数</span><br><span class="line">print(party_counts)</span><br><span class="line"></span><br><span class="line">party_counts &#x3D; party_counts.iloc[:, 2:5] # 选取一部分数据</span><br><span class="line">print(party_counts)</span><br><span class="line"></span><br><span class="line">party_pcts &#x3D; party_counts.div(party_counts.sum(1).astype(float), axis&#x3D;0) # 转换成百分比, 1 代表维度 行的方向</span><br><span class="line">print(party_pcts)</span><br><span class="line">party_pcts.plot(kind&#x3D;&#39;bar&#39;, stacked&#x3D;True)   #每天的高度都是1</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>打印：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">size  1   2   3   4  5  6</span><br><span class="line">day                      </span><br><span class="line">Fri   1  16   1   1  0  0</span><br><span class="line">Sat   2  53  18  13  1  0</span><br><span class="line">Sun   0  39  15  18  3  1</span><br><span class="line">Thur  1  48   4   5  1  3</span><br><span class="line">size   3   4  5</span><br><span class="line">day            </span><br><span class="line">Fri    1   1  0</span><br><span class="line">Sat   18  13  1</span><br><span class="line">Sun   15  18  3</span><br><span class="line">Thur   4   5  1</span><br><span class="line">size         3        4         5</span><br><span class="line">day                              </span><br><span class="line">Fri   0.500000  0.50000  0.000000</span><br><span class="line">Sat   0.562500  0.40625  0.031250</span><br><span class="line">Sun   0.416667  0.50000  0.083333</span><br><span class="line">Thur  0.400000  0.50000  0.100000</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/a1fd3ccf-4e87-421a-a07a-8c3a22d43fd4.png" alt="image.png"><br>画较复杂的柱状图如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#画柱状图</span><br><span class="line">df2 &#x3D; pd.DataFrame(np.random.rand(10, 4), columns&#x3D;[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;])</span><br><span class="line">df2.plot(kind&#x3D;&#39;bar&#39;) #分开并列线束</span><br><span class="line">df2.plot(kind&#x3D;&#39;bar&#39;, stacked&#x3D;True) #四个在同一个里面显示 百分比的形式</span><br><span class="line">df2.plot(kind&#x3D;&#39;barh&#39;, stacked&#x3D;True)#纵向显示</span><br><span class="line">plt.show()</span><br><span class="line">df4&#x3D;pd.DataFrame(&#123;&#39;a&#39;:np.random.randn(1000)+1,&#39;b&#39;:np.random.randn(1000),&#39;c&#39;:np.random.randn(1000)-1&#125;,columns&#x3D;list(&#39;abc&#39;))</span><br><span class="line">df4.plot(kind&#x3D;&#39;hist&#39;, alpha&#x3D;0.5)</span><br><span class="line">df4.plot(kind&#x3D;&#39;hist&#39;, stacked&#x3D;True, bins&#x3D;20)</span><br><span class="line">df4[&#39;a&#39;].plot(kind&#x3D;&#39;hist&#39;, orientation&#x3D;&#39;horizontal&#39;,cumulative&#x3D;True) #cumulative是按顺序排序</span><br><span class="line">plt.show()</span><br><span class="line">#Area Plot</span><br><span class="line">df &#x3D; pd.DataFrame(np.random.rand(10, 4), columns&#x3D;[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;])</span><br><span class="line">df.plot(kind&#x3D;&#39;area&#39;)</span><br><span class="line">df.plot(kind&#x3D;&#39;area&#39;,stacked&#x3D;False)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/4f27e42a-927a-4dc5-b20f-90a57e580b44.png" alt="image.png"><br>直方图histogram：<br>是一种可以对值频率进行离散化显示的柱状图。数据点被拆分到离散的、间隔均匀的面元中，绘制的是各面元中数据点的数量。<br>调用Series.hist()即可实现，在之后调用plot时加上参数kind=’kde’即可生成一张密度图。</p>
+<p>根据小费数据画直方图如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 直方图--给小费占总费用的比例的分布图</span><br><span class="line">plt.figure()</span><br><span class="line"></span><br><span class="line">tips[&#39;tip_pct&#39;] &#x3D; tips[&#39;tip&#39;] &#x2F; tips[&#39;total_bill&#39;]  # 增加一个新的列</span><br><span class="line">tips[&#39;tip_pct&#39;].hist(bins&#x3D;50) # 分为50个区间 </span><br><span class="line"></span><br><span class="line">plt.figure()</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/ec219ac0-a362-42b3-ab26-26fd1643137c.png" alt="image.png"><br>在统计学中，核密度估计（KDE）是一种估计随机变量概率密度函数（PDF）的非参数方法，利用高斯核生成核密度估计图如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">comp1 &#x3D; np.random.normal(0, 1, size&#x3D;200)  # N(0, 1)  模拟出 0，1 的正态分布数据 0，期望值， 1 方差值</span><br><span class="line">comp2 &#x3D; np.random.normal(10, 2, size&#x3D;200)  # 10，期望值， 2 方差值  方差值大，跨度就大些</span><br><span class="line">values &#x3D; Series(np.concatenate([comp1, comp2]))</span><br><span class="line">values.hist(bins&#x3D;100, alpha&#x3D;0.3, color&#x3D;&#39;k&#39;, density&#x3D;True)</span><br><span class="line">values.plot(kind&#x3D;&#39;kde&#39;, style&#x3D;&#39;k--&#39;)</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/d01f7ef0-a369-4c35-9fe4-8ec0ca33162c.png" alt="image.png"><br>根据小费数据画密度图如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tips[&#39;tip_pct&#39;].plot(kind&#x3D;&#39;kde&#39;)  # 利用高斯核生成核密度估计图</span><br><span class="line"></span><br><span class="line">plt.figure()</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/80cd1041-8525-4e5d-9b98-26539d3c33e9.png" alt="image.png"><br>散点图scatter plot：<br>是观察两个一维数据序列之间的关系的有效手段，研究两个变量的关系，特别是是否有线性或曲线相关性。matplotlib的scatter方法是绘制散布图的主要方法。利用plt.scatter()即可轻松绘制一张简单的散布图。pandas也提供了能从DataFrame创建散步图矩阵的scatter_matrix()方法，还支持在对角线上放置变量的直方图或密度图。</p>
+<p>画简单散点图如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">df &#x3D; pd.DataFrame(np.random.rand(50, 4), columns&#x3D;[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;])</span><br><span class="line">df.plot(kind&#x3D;&#39;scatter&#39;, x&#x3D;&#39;a&#39;, y&#x3D;&#39;b&#39;)</span><br><span class="line">df.plot(kind&#x3D;&#39;scatter&#39;, x&#x3D;&#39;a&#39;, y&#x3D;&#39;b&#39;,color&#x3D;&#39;DarkBlue&#39;, label&#x3D;&#39;Group 1&#39;)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/30cfe49b-05d1-48c2-9657-f14e596bae82.png" alt="image.png"><br>画散点矩阵图和直方图如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df &#x3D; pd.DataFrame(np.random.randn(1000, 4), columns&#x3D;[&#39;A&#39;,&#39;B&#39;,&#39;C&#39;,&#39;D&#39;])</span><br><span class="line">pd.plotting.scatter_matrix(df, alpha&#x3D;0.2)</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/46b41329-f7e8-4176-b181-e9b857ec2273.png" alt="image.png"><br>宏观经济数据macrodata.csv如下：<img src="/images/2020/08/31/4cecd949-5d70-460a-a7ad-35062a2b1dd4.png" alt="image.png"><br>读取和选取数据如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">macro &#x3D; pd.read_csv(&quot;macrodata.csv&quot;)</span><br><span class="line">data &#x3D; macro[[&#39;cpi&#39;, &#39;m1&#39;, &#39;tbilrate&#39;, &#39;unemp&#39;]]</span><br><span class="line">trans_data &#x3D; np.log(data).diff().dropna()</span><br><span class="line">trans_data[-5:]</span><br><span class="line">print(trans_data[-5:])</span><br><span class="line">plt.figure()</span><br></pre></td></tr></table></figure>
+<p>打印：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">          cpi        m1  tbilrate     unemp</span><br><span class="line">198 -0.007904  0.045361 -0.396881  0.105361</span><br><span class="line">199 -0.021979  0.066753 -2.277267  0.139762</span><br><span class="line">200  0.002340  0.010286  0.606136  0.160343</span><br><span class="line">201  0.008419  0.037461 -0.200671  0.127339</span><br><span class="line">202  0.008894  0.012202 -0.405465  0.042560</span><br><span class="line"></span><br><span class="line">&lt;Figure size 432x288 with 0 Axes&gt;</span><br><span class="line"></span><br><span class="line">&lt;Figure size 432x288 with 0 Axes&gt;</span><br></pre></td></tr></table></figure>
+<p>画散点图和散点矩阵图如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">plt.scatter(trans_data[&#39;m1&#39;], trans_data[&#39;unemp&#39;])</span><br><span class="line">plt.title(&#39;Changes in log %s vs. log %s&#39; % (&#39;m1&#39;, &#39;unemp&#39;))</span><br><span class="line"></span><br><span class="line">pd.plotting.scatter_matrix(trans_data, diagonal&#x3D;&#39;kde&#39;, color&#x3D;&#39;k&#39;, alpha&#x3D;0.3)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/47c3165b-9000-4630-a0ff-985577ddf1bf.png" alt="image.png"><br>可以简单看出各经济变量之间是否存在关系。</p>
+<p>画饼图示意如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#饼图</span><br><span class="line">df &#x3D; pd.DataFrame(3 * np.random.rand(4, 2), index&#x3D;[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;], columns&#x3D;[&#39;x&#39;, &#39;y&#39;])</span><br><span class="line">df.plot(kind&#x3D;&#39;pie&#39;, subplots&#x3D;True, figsize&#x3D;(8, 4))</span><br><span class="line">df.plot(kind&#x3D;&#39;pie&#39;, subplots&#x3D;True,autopct&#x3D;&#39;%.2f&#39;,figsize&#x3D;(8, 4)) # 显示百分比</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>显示：</p>
+<p><img src="/images/2020/08/31/4c5306aa-8449-4498-9d66-dce7e58b0cdb.png" alt="image.png"></p>
+<h1 id="4-pandas中绘图与matplotlib结合使用"><a href="#4-pandas中绘图与matplotlib结合使用" class="headerlink" title="4.pandas中绘图与matplotlib结合使用"></a>4.pandas中绘图与matplotlib结合使用</h1><p>有时候想方便地集成的绘图方式，比如df.plot()，但是又想加上matplotlib的很多操<br>作来增强图片的表现力，这时可以将两者结合。</p>
+<p>构造数据如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df&#x3D;pd.DataFrame(np.random.randn(3,4),index&#x3D;list(&#39;123&#39;),columns&#x3D;list(&#39;ABCD&#39;))</span><br><span class="line">df2&#x3D;pd.DataFrame(np.random.randn(4,4),index&#x3D;list(&#39;1234&#39;),columns&#x3D;list(&#39;ABCD&#39;))</span><br><span class="line">display(df, df2)</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/86aac100-b34b-4aca-9ecd-5e469874fca2.png" alt="image.png"><br>可视化如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fig, axes &#x3D; plt.subplots(2, 1)</span><br><span class="line">df.plot(ax&#x3D;axes[0])</span><br><span class="line">df2.plot(ax&#x3D;axes[1])</span><br><span class="line">axes[0].set_title(&#39;3points&#39;)</span><br><span class="line">axes[1].set_title(&#39;4points&#39;)</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/7b962438-8a1c-456a-abdf-1d316a9672cd.png" alt="image.png"></p>
+<h1 id="三、订单数据分析展示"><a href="#三、订单数据分析展示" class="headerlink" title="三、订单数据分析展示"></a>三、订单数据分析展示</h1><p>主要作图包括订单与GMV趋势、商家趋势、订单来源分布、类目占比，涉及折线图、饼图、堆积柱形图、组合图等类型，目标是综合使用pandas和matplotlib。</p>
+<p>订单数据.csv如下：<br><img src="/images/2020/08/31/4dd386a4-1cab-40b8-bac0-71a6acc388c0.png" alt="image.png"><br>导库和读取数据如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#导入库</span><br><span class="line">import pandas as pd</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line"></span><br><span class="line"># plt.rcParams[&#39;font.sans-serif&#39;] &#x3D; [&#39;SimHei&#39;]  #显示中文标签</span><br><span class="line"># plt.rcParams[&#39;axes.unicode_minus&#39;] &#x3D; False  #显示符号</span><br><span class="line"></span><br><span class="line">#读取数据</span><br><span class="line">orders &#x3D; pd.read_excel(&quot;订单数据.xlsx&quot;)</span><br><span class="line">orders[&#39;付款时间&#39;] &#x3D; orders[&#39;付款时间&#39;].astype(&#39;str&#39;)  #方便作图，将日期改为字符串格式</span><br></pre></td></tr></table></figure>
+<p>不同日期订单金额折线图如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#折线图</span><br><span class="line">data1 &#x3D; orders.groupby(&#39;付款时间&#39;)[&#39;支付金额&#39;].sum()  #处理数据</span><br><span class="line">x &#x3D; data1.index   #x值</span><br><span class="line">y &#x3D; data1.values  #y值</span><br><span class="line"></span><br><span class="line">plt.title(&#39;GMV走势&#39;)  #图表标题</span><br><span class="line">plt.plot(x,y,label&#x3D;&#39;GMV&#39;,color&#x3D;&#39;red&#39;)    #label是图例，color是线条颜色</span><br><span class="line">plt.legend(loc&#x3D;1)  #显示图例,loc设置图例展示位置，默认为0（最优位置）、1右上角、2左上角</span><br><span class="line">plt.show()   #显示图</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/13dbed0b-f541-45ea-84f9-3502476fb18f.png" alt="image.png"><br>可以看出不同时间订单金额的变化趋势，找出哪些天订单金额较高、哪些天较低。</p>
+<p>还可以用柱状图显示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#柱形图</span><br><span class="line">data1 &#x3D; orders.groupby(&#39;付款时间&#39;)[&#39;支付金额&#39;].sum()  #处理数据</span><br><span class="line">x &#x3D; data1.index   #x值</span><br><span class="line">y &#x3D; data1.values  #y值</span><br><span class="line"></span><br><span class="line">plt.title(&#39;GMV走势&#39;)  #图表标题</span><br><span class="line">plt.bar(x,y,label&#x3D;&#39;GMV&#39;,color&#x3D;&#39;green&#39;)    #其实很简单，只要把plot换成bar</span><br><span class="line">plt.legend(loc&#x3D;1)  #显示图例,loc设置图例展示位置，默认为0（最优位置）、1右上角、2左上角</span><br><span class="line">plt.show()   #显示图</span><br></pre></td></tr></table></figure>
+<p>显示：<br><img src="/images/2020/08/31/d5822558-d2ae-48e4-8a25-bc91e4ff27f7.png" alt="image.png"><br>还可以用饼图直观看出各天所占的比例：<br>#饼图<br>data1 = orders.groupby(‘付款时间’)[‘支付金额’].sum()  #处理数据<br>x = data1.index   #x值<br>y = data1.values  #y值</p>
+<p>plt.title(‘GMV饼图’)  #图表标题<br>plt.axis(‘equal’)   #正圆，饼图会默认是椭圆<br>plt.pie(y,labels=x,autopct=’%1.1f%%’,<br>        colors=[‘green’,’red’,’skyblue’,’blue’])    #labels是标签，autopct是占比保留1位小数<br>plt.show()   #显示图<br>显示：<br><img src="/images/2020/08/31/3fb4884b-7f19-458a-b953-d37cc251f37d.png" alt="image.png"></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://music.163.com/song/media/outer/url?id=1463165983.mp3'></li>
+                        
+                    
+                        
+                            <li title='2' data-url='http://music.163.com/song/media/outer/url?id=1460682363.mp3'></li>
+                        
+                    
+                        
+                            <li title='3' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='valine_container' class="valine_thread v"
+	data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    
+    ></div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、数据可视化介绍"><span class="toc-number">1.</span> <span class="toc-text">一、数据可视化介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、matplotlib和pandas画图"><span class="toc-number">2.</span> <span class="toc-text">二、matplotlib和pandas画图</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-matplotlib简介和简单使用"><span class="toc-number">2.1.</span> <span class="toc-text">1.matplotlib简介和简单使用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-使用pandas画图"><span class="toc-number">3.</span> <span class="toc-text">3.使用pandas画图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-pandas中绘图与matplotlib结合使用"><span class="toc-number">4.</span> <span class="toc-text">4.pandas中绘图与matplotlib结合使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、订单数据分析展示"><span class="toc-number">5.</span> <span class="toc-text">三、订单数据分析展示</span></a></li></ol>	
+        </div>
+    
+</div>
+
+
+        
+    <div class="blog-post-comments">
+      <section id="comment">
+        <div id="valine_container" class="valine_thread"></div>
+      </section>
+      <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+      <script src="https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js"></script>
+
+<style>
+  #comment{
+    width: 70%;
+    display: block;
+    border-radius: 20px;
+    margin: 0 auto;
+  }
+ .v #veditor{
+     min-height: 10rem;
+     background-image: url(https://cdn.jsdelivr.net/gh/cungudafa/img/images/girls2.png);
+     background-size: contain;
+     background-repeat: no-repeat;
+     background-position: right;
+     background-color: rgba(255,255,255,0);
+     resize: none;}
+
+ /*图片消失
+ #veditor:focus{
+	background-position-y: 200px;
+	transition: all 0.2s ease-in-out 0s;
+}  */  
+/*头像旋转*/
+img.vimg {
+     transition: all 1s   /* 旋转时间为 1s */
+}
+
+img.vimg:hover {
+     transform: rotate(360deg);
+     -webkit-transform: rotate(360deg);
+     -moz-transform: rotate(360deg);
+     -o-transform: rotate(360deg);
+     -ms-transform: rotate(360deg);
+}
+
+/*调整一下表情高度*/
+div.vcontent p  img.vemoji {
+    height: 30px;
+
+}
+</style>
+
+
+      <script>
+        var GUEST_INFO = ["nick", "mail", "link"];
+        var guest_info = "nick,mail,link"
+          .split(",")
+          .filter(function (item) {
+            return GUEST_INFO.indexOf(item) > -1;
+          });
+        var valine = new Valine();
+        valine.init({
+          el: "#valine_container",
+          admin_email: 'i@1l.fit',
+          appId: "iDHJ60Ufv3QjOR4sWuH4oL3r-9Nh9j0Va",
+          appKey: "S7rF0X45YIfNj5cNzdg4gMLl",
+          placeholder: "Just go go",
+          path: window.location.pathname,
+          pageSize: "15",
+          avatar: "monsterid",
+          lang: "",
+          pushType: "sc",
+          pushLink: "https://sc.ftqq.com/SCU106322T782cfcd867473745105f94e94de33c085f13bd947b6e3.send",
+          enableQQ: true,
+          master: 'eb4d5f16fb5a933662a768b5c2c85f20',   //博主邮箱md5
+          tagMeta: ["博主","小伙伴","访客"],     //标识字段名
+          friends:  ["4b278adff5fd7c28aedbf73dd9c52ae5","191434ebf724621793c3b2cb237b7e3d"],  //小伙伴邮箱Md5
+          emojiCDN: "https://mirrorcdn.bili33.top/",
+          // 表情title和图片映射
+          emojiMaps: {
+          "嘿嘿":"https://s-o.oss-cn-shanghai.aliyuncs.com/emoji/%E5%98%BF%E5%98%BF.jpg",    
+          "土豆":"https://s-o.oss-cn-shanghai.aliyuncs.com/emoji/tudou.gif",
+          "汗_":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200411023456.webp",
+          "点赞": "https://cdn.jsdelivr.net/gh/drew233/cdn/kawayi.webp",   
+          "傲娇":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409103906.webp",
+          "开心":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409104757.webp",
+          "扣手手":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130304.webp",
+          "仙女下凡":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130301.webp",
+          "得瑟":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130258.webp",
+          "揉左脸":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130254.webp",
+          "揉右脸":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130249.webp",
+          "滑稽":"https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_huaji.gif",
+          "彩虹滑稽":"https://cdn.jsdelivr.net/gh/drew233/cdn/caihongtiao.webp",
+          "呆滞":"https://cdn.jsdelivr.net/gh/drew233/cdn/daizhi.webp",
+          "躲进小被子":"https://cdn.jsdelivr.net/gh/drew233/cdn/djxbz.webp",
+          "给我也整一个":"https://cdn.jsdelivr.net/gh/drew233/cdn/gwyzyg.webp",
+          "草":"https://cdn.jsdelivr.net/gh/drew233/cdn/imgcao.webp",
+          "花":"https://cdn.jsdelivr.net/gh/drew233/cdn/imghua.webp",
+          "日":"https://cdn.jsdelivr.net/gh/drew233/cdn/imgri.webp",
+          "目瞪狗呆":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200412095243.webp",
+          "tql":"https://cdn.jsdelivr.net/gh/drew233/cdn/tql.webp",
+          "转圈圈":"https://cdn.jsdelivr.net/gh/drew233/cdn/zqq.webp",
+          
+         
+         "tv_doge": "bilibilitv/[tv_doge].png",
+         "tv_亲亲": "bilibilitv/[tv_亲亲].png",
+         "tv_偷笑": "bilibilitv/[tv_偷笑].png",
+         "tv_再见": "bilibilitv/[tv_再见].png",
+         "tv_冷漠": "bilibilitv/[tv_冷漠].png",
+         "tv_发怒": "bilibilitv/[tv_发怒].png",
+         "tv_发财": "bilibilitv/[tv_发财].png",
+         "tv_可爱": "bilibilitv/[tv_可爱].png",
+         "tv_吐血": "bilibilitv/[tv_吐血].png",
+         "tv_呆": "bilibilitv/[tv_呆].png",
+         "tv_呕吐": "bilibilitv/[tv_呕吐].png",
+         "tv_困": "bilibilitv/[tv_困].png",
+         "tv_坏笑": "bilibilitv/[tv_坏笑].png",
+         "tv_大佬": "bilibilitv/[tv_大佬].png",
+         "tv_大哭": "bilibilitv/[tv_大哭].png",
+         "tv_委屈": "bilibilitv/[tv_委屈].png",
+         "tv_害羞": "bilibilitv/[tv_害羞].png",
+         "tv_尴尬": "bilibilitv/[tv_尴尬].png",
+         "tv_微笑": "bilibilitv/[tv_微笑].png",
+         "tv_思考": "bilibilitv/[tv_思考].png",
+         "tv_惊吓": "bilibilitv/[tv_惊吓].png",
+         "tv_打脸": "bilibilitv/[tv_打脸].png",
+         "tv_抓狂": "bilibilitv/[tv_抓狂].png",
+         "tv_抠鼻": "bilibilitv/[tv_抠鼻].png",
+         "tv_斜眼笑": "bilibilitv/[tv_斜眼笑].png",
+         "tv_无奈": "bilibilitv/[tv_无奈].png",
+         "tv_晕": "bilibilitv/[tv_晕].png",
+         "tv_流汗": "bilibilitv/[tv_流汗].png",
+         "tv_流泪": "bilibilitv/[tv_流泪].png",
+         "tv_流鼻血": "bilibilitv/[tv_流鼻血].png",
+         "tv_点赞": "bilibilitv/[tv_点赞].png",
+         "tv_生气": "bilibilitv/[tv_生气].png",
+         "tv_生病": "bilibilitv/[tv_生病].png",
+         "tv_疑问": "bilibilitv/[tv_疑问].png",
+         "tv_白眼": "bilibilitv/[tv_白眼].png",
+         "tv_皱眉": "bilibilitv/[tv_皱眉].png",
+         "tv_目瞪口呆": "bilibilitv/[tv_目瞪口呆].png",
+         "tv_睡着": "bilibilitv/[tv_睡着].png",
+         "tv_笑哭": "bilibilitv/[tv_笑哭].png",
+         "tv_腼腆": "bilibilitv/[tv_腼腆].png",
+         "tv_色": "bilibilitv/[tv_色].png",
+         "tv_调侃": "bilibilitv/[tv_调侃].png",
+         "tv_调皮": "bilibilitv/[tv_调皮].png",
+         "tv_鄙视": "bilibilitv/[tv_鄙视].png",
+         "tv_闭嘴": "bilibilitv/[tv_闭嘴].png",
+         "tv_难过": "bilibilitv/[tv_难过].png",
+         "tv_馋": "bilibilitv/[tv_馋].png",
+         "tv_鬼脸": "bilibilitv/[tv_鬼脸].png",
+         "tv_黑人问号": "bilibilitv/[tv_黑人问号].png",
+         "tv_鼓掌": "bilibilitv/[tv_鼓掌].png",
+         "卖萌": "bilibili2233/[2233娘_卖萌].png",
+         "吃惊": "bilibili2233/[2233娘_吃惊].png",
+         "吐魂": "bilibili2233/[2233娘_吐魂].png",
+         "喝水": "bilibili2233/[2233娘_喝水].png",
+         "困惑": "bilibili2233/[2233娘_困惑].png",
+         "大哭": "bilibili2233/[2233娘_大哭].png",
+         "大笑": "bilibili2233/[2233娘_大笑].png",
+         "委屈": "bilibili2233/[2233娘_委屈].png",
+         "怒": "bilibili2233/[2233娘_怒].png",
+         "无言": "bilibili2233/[2233娘_无言].png",
+         "出汗": "bilibili2233/[2233娘_汗].png",
+         "疑问": "bilibili2233/[2233娘_疑问].png",
+         "第一": "bilibili2233/[2233娘_第一].png",
+         "耶": "bilibili2233/[2233娘_耶].png",
+         "郁闷": "bilibili2233/[2233娘_郁闷].png",
+         "妙": "bilibiliHotKey/1.jpg",
+         "危": "bilibiliHotKey/2.jpg",
+         "有内味儿了": "bilibiliHotKey/3.jpg",
+         "高产": "bilibiliHotKey/4.jpg",
+         "我枯了": "bilibiliHotKey/5.jpg",
+         "不愧是你": "bilibiliHotKey/6.jpg",
+         "狼火": "bilibiliHotKey/9.jpg",
+         "你细品": "bilibiliHotKey/10.jpg",
+         "锤": "bilibiliHotKey/11.jpg",
+         "秀": "bilibiliHotKey/12.jpg",
+         "这次一定": "bilibiliHotKey/14.jpg",
+         "酸了": "bilibiliHotKey/15.jpg",
+         "打卡": "bilibiliHotKey/16.jpg",
+         "我太南了": "bilibiliHotKey/18.jpg",
+         "吹爆": "bilibiliHotKey/19.jpg",
+         "奥力给": "bilibiliHotKey/20.jpg",
+         "awsl": "bilibiliHotKey/21.jpg",
+         "猛男必看": "bilibiliHotKey/22.jpg",
+         "害": "bilibiliHotKey/23.jpg",
+         "知识盲区": "bilibiliHotKey/24.jpg",
+         "我全都要": "bilibiliHotKey/25.jpg",
+         "咕咕咕": "bilibiliHotKey/26.jpg",
+         "可以": "bilibiliHotKey/27.jpg",
+         "真香": "bilibiliHotKey/28.jpg",
+         "完结": "bilibiliHotKey/29.jpg",
+         "有生之年": "bilibiliHotKey/30.jpg",
+         "大师球": "bilibiliHotKey/31.jpg",
+         "爷关更": "bilibiliHotKey/32.jpg",
+            
+            
+          },
+        });
+      </script>
+
+
+   
+      
+      <!-- 今日诗词：随机返回一句古诗词名句的接口，宅到用来做 Valine 的 placeholder 显示内容 -->
+      <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+      <script type="text/javascript">
+       jinrishici.load(function(result) {
+           var jrsc_plac =  result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author;
+           document.getElementById("veditor").setAttribute("placeholder",jrsc_plac);
+       })
+      </script>
+    </div>
+    
+<!--
+
+
+
+-->
+    </div>
+</div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7},"log":false});</script></body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '171639872', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<!-- 天气 -->
+<script type="text/javascript">
+WIDGET = {FID: '21I8HlZYjY'}
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+
+<script>
+   var title1="text=blog又有新评论啦~！--by Valine"
+var SCKEY_Server="SCU106322T782cfcd867473745105f94e94de33c085f13bd947b6e3"
+var ValineButton=document.getElementsByClassName("vsubmit vbtn")[0];
+function send_valine_Server(){
+    var text="desp=";
+    var pagename=document.title;
+    var wz=pagename.indexOf('|');
+    var res=pagename.substring(0,wz);
+    var pageurl=document.URL;
+    var ptime=new Date();
+    var vnick=document.getElementsByClassName("vnick vinput")[0].value;
+    var vmail=document.getElementsByClassName("vmail vinput")[0].value;
+    var vlink=document.getElementsByClassName("vlink vinput")[0].value;
+    var veditor=document.getElementsByClassName("veditor vinput")[0].value;
+    var data=text+"|昵称："+"|邮箱："+"|网站地址："+"|当前页面："+"|评论内容："+"|跳转链接："+"|评论时间"+"\n"+"|----|----|----|----|"+"\n"+"|   "+vnick+"   |   "+vmail+"  |  "+vlink+"|   "+res+"| "+veditor+"| "+pageurl+"|" +ptime.toLocaleString()+"|";
+    var httpRequest = new XMLHttpRequest();//第一步：创建需要的对象
+    httpRequest.open('POST', 'https://sc.ftqq.com/'+SCKEY_Server+'.send', true); //第二步：打开连接
+    httpRequest.setRequestHeader("Content-type","application/x-www-form-urlencoded");//设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+    httpRequest.send(title1+"&"+data);//发送请求 将情头体写在send中
+};
+ValineButton.onclick=send_valine_Server;
+  </script>
+</html>
