@@ -1,0 +1,645 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>06.DockerFile解析 - zc&#39;blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="ZC,"> 
+    <meta name="description" content="
+1. 什么是 DockerFile
+2. DockerFile 构建过程解析
+DockerFile 基础知识
+Docker执行Dockerfile的大致流程
+
+
+3. DockerFile 体系结,"> 
+    <meta name="author" content="ZC"> 
+    <link rel="alternative" href="atom.xml" title="zc&#39;blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">zc&#39;blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://zc.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">06.DockerFile解析</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">06.DockerFile解析</h1>
+        <div class="stuff">
+            <span>九月 01, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Docker/" rel="tag">Docker</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <ul>
+<li><a href="#1-什么是-dockerfile">1. 什么是 DockerFile</a></li>
+<li><a href="#2-dockerfile-构建过程解析">2. DockerFile 构建过程解析</a><ul>
+<li><a href="#dockerfile-基础知识">DockerFile 基础知识</a></li>
+<li><a href="#docker执行dockerfile的大致流程">Docker执行Dockerfile的大致流程</a></li>
+</ul>
+</li>
+<li><a href="#3-dockerfile-体系结构保留字">3. DockerFile 体系结构(保留字)</a></li>
+<li><a href="#4-dockerfile-实战案例">4. DockerFile 实战案例</a><ul>
+<li><a href="#一-自定义-centos-镜像案例">一. 自定义 CentOS 镜像案例</a></li>
+<li><a href="#二-cmdentrypoint-镜像案例">二. CMD/ENTRYPOINT 镜像案例</a></li>
+<li><a href="#三-自定义-tomcat9-镜像重要">三. 自定义 Tomcat9 镜像(重要)</a></li>
+<li><a href="#四-总结">四. 总结</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="1-什么是-DockerFile"><a href="#1-什么是-DockerFile" class="headerlink" title="1. 什么是 DockerFile"></a>1. 什么是 DockerFile</h1><p>Dockerfile是用来构建Docker镜像的构建文件，是由一系列命令和参数构成的脚本。</p>
+<p>通常使用 DockerFile 的三个步骤都是:</p>
+<ol>
+<li>编写 DockerFile 文件</li>
+<li>执行 docker build 编译命令</li>
+<li>执行docker run 启动容器命令</li>
+</ol>
+<p>以 CentOS 为例, Docker Hub 上的 CentOS 的 DockerFile 文件如下</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526132103.png" alt=""></p>
+<h1 id="2-DockerFile-构建过程解析"><a href="#2-DockerFile-构建过程解析" class="headerlink" title="2. DockerFile 构建过程解析"></a>2. DockerFile 构建过程解析</h1><h2 id="DockerFile-基础知识"><a href="#DockerFile-基础知识" class="headerlink" title="DockerFile 基础知识"></a>DockerFile 基础知识</h2><p>以上面的 CentOS DockerFile 文件为例</p>
+<ol>
+<li>每条保留字指令(红色字体)都必须为大写字母且后面要跟随至少一个参数</li>
+<li>指令按照从上到下，顺序执行</li>
+<li>#表示注释</li>
+<li>每条指令都会创建一个新的镜像层，并对镜像进行提交</li>
+</ol>
+<h2 id="Docker执行Dockerfile的大致流程"><a href="#Docker执行Dockerfile的大致流程" class="headerlink" title="Docker执行Dockerfile的大致流程"></a>Docker执行Dockerfile的大致流程</h2><ol>
+<li>docker从基础镜像运行一个容器</li>
+<li>执行一条指令并对容器作出修改</li>
+<li>执行类似docker commit的操作提交一个新的镜像层</li>
+<li>docker再基于刚提交的镜像运行一个新容器</li>
+<li>执行dockerfile中的下一条指令直到所有指令都执行完成</li>
+</ol>
+<p>总结:</p>
+<p>从应用软件的角度来看，Dockerfile、Docker镜像与Docker容器分别代表软件的三个不同阶段，</p>
+<ul>
+<li>Dockerfile是软件的原材料</li>
+<li>Docker镜像是软件的交付品</li>
+<li>Docker容器则可以认为是软件的运行态。 Dockerfile面向开发，Docker镜像成为交付标准，Docker容器则涉及部署与运维，三者缺一不可，合力充当Docker体系的基石。</li>
+</ul>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526132228.png" alt=""></p>
+<p>Dockerfile：需要定义一个Dockerfile，Dockerfile定义了进程需要的一切东西。Dockerfile涉及的内容包括执行代码或者是文件、环境变量、依赖包、运行时环境、动态链接库、操作系统的发行版、服务进程和内核进程(当应用进程需要和系统服务和内核进程打交道，这时需要考虑如何设计namespace的权限控制)等等;</p>
+<p>Docker镜像：在用Dockerfile定义一个文件之后，docker build时会产生一个Docker镜像，当运行 Docker镜像时，会真正开始提供服务;</p>
+<p>Docker容器：直接提供服务.</p>
+<h1 id="3-DockerFile-体系结构-保留字"><a href="#3-DockerFile-体系结构-保留字" class="headerlink" title="3. DockerFile 体系结构(保留字)"></a>3. DockerFile 体系结构(保留字)</h1><ul>
+<li><p>FROM : 基础镜像，当前新镜像是基于哪个镜像的</p>
+</li>
+<li><p>MAINTAINER : 镜像维护者的姓名和邮箱地址</p>
+</li>
+<li><p>RUN : 容器构建时需要运行的命令</p>
+</li>
+<li><p>EXPOSE : 当前容器对外暴露出的端口</p>
+</li>
+<li><p>WORKDIR : 指定在创建容器后，终端默认登陆的进来工作目录，一个落脚点</p>
+</li>
+<li><p>ENV : 用来在构建镜像过程中设置环境变量</p>
+<p>ENV MY_PATH /usr/mytest 这个环境变量可以在后续的任何RUN指令中使用，这就如同在命令前面指定了环境变量前缀一样； 也可以在其它指令中直接使用这些环境变量，</p>
+<p>比如：WORKDIR $MY_PATH</p>
+</li>
+<li><p>ADD : 将宿主机目录下的文件拷贝进镜像且ADD命令会自动处理URL和解压tar压缩包</p>
+</li>
+<li><p>COPY : 类似ADD，拷贝文件和目录到镜像中。 将从构建上下文目录中 &lt;源路径&gt; 的文件/目录复制到新的一层的镜像内的 &lt;目标路径&gt; 位置</p>
+</li>
+<li><p>VOLUME : 容器数据卷，用于数据保存和持久化工作</p>
+</li>
+<li><p>CMD : 指定一个容器启动时要运行的命令</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526132533.png" alt=""></p>
+</li>
+</ul>
+<p>  注意: Dockerfile 中可以有多个 CMD 指令，但只有最后一个生效，CMD 会被 docker run 之后的参数替换</p>
+<ul>
+<li><p>ENTRYPOINT : 指定一个容器启动时要运行的命令;ENTRYPOINT 的目的和 CMD 一样，都是在指定容器启动程序及参数,但是不会被 docker run 后面的参数替换,而是追加</p>
+</li>
+<li><p>ONBUILD : 当构建一个被继承的Dockerfile时运行命令，父镜像在被子继承后父镜像的onbuild被触发</p>
+</li>
+</ul>
+<p>总结:</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526132641.png" alt=""></p>
+<h1 id="4-DockerFile-实战案例"><a href="#4-DockerFile-实战案例" class="headerlink" title="4. DockerFile 实战案例"></a>4. DockerFile 实战案例</h1><h2 id="一-自定义-CentOS-镜像案例"><a href="#一-自定义-CentOS-镜像案例" class="headerlink" title="一. 自定义 CentOS 镜像案例"></a>一. 自定义 CentOS 镜像案例</h2><p>首先,我们需要知道Docker Hub 中 99% 的镜像都是通过在 base 镜像中安装和配置需要的软件构建出来的</p>
+<p>而这个 base 镜像就是scratch 镜像。</p>
+<p>首先停止所有正在运行的 Docker 容器</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526135142.png" alt=""></p>
+<p>然后看看从阿里云下载的基础版 CentOS 缺失了哪些功能</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526140938.png" alt=""></p>
+<p>现在我们的目标就是通过编写 DockerFile 为基础版本的 CentOS 镜像加上这些缺失的功能</p>
+<p>DockerFile如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">FROM centos</span><br><span class="line">MAINTAINER krislin_zhao</span><br><span class="line"> </span><br><span class="line">ENV MYPATH /usr/local</span><br><span class="line">WORKDIR $MYPATH</span><br><span class="line"> </span><br><span class="line">RUN yum -y install vim</span><br><span class="line">RUN yum -y install net-tools</span><br><span class="line"> </span><br><span class="line">EXPOSE 80</span><br><span class="line"> </span><br><span class="line">CMD echo $MYPATH</span><br><span class="line">CMD echo "success--------------ok"</span><br><span class="line">CMD /bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>开始构建</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -f centosDockerFile -t krislin/centos:1.1 .</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526141551.png" alt=""></p>
+<p>构建成功,开始运行容器</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526142157.png" alt=""></p>
+<p>除此之外,还可以查看 Docker 镜像的修改历史</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526142337.png" alt=""></p>
+<h2 id="二-CMD-ENTRYPOINT-镜像案例"><a href="#二-CMD-ENTRYPOINT-镜像案例" class="headerlink" title="二. CMD/ENTRYPOINT 镜像案例"></a>二. CMD/ENTRYPOINT 镜像案例</h2><p>CMD 示例:</p>
+<p>Dockerfile 中可以有多个 CMD 指令，但只有最后一个生效，CMD 会被 docker run 之后的参数替换</p>
+<p>以 Tomcat 为例</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526142809.png" alt=""></p>
+<p>原因就在于我们的 ls -l 参数替换掉了原来的启动参数,如下</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526142848.png" alt=""></p>
+<p>相当于在这行参数后面又添加了 <code>CMD ls -l</code></p>
+<p>那么容器启动时就会执行最后的 ls -l 命令</p>
+<p>如果是 ENTRYPOINT</p>
+<p>docker run 之后的参数会被当做参数传递给 ENTRYPOINT，之后形成新的命令组合</p>
+<p>示例如下</p>
+<p>编写 DockerFile</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">FROM centos</span><br><span class="line">RUN yum install -y curl</span><br><span class="line">ENTRYPOINT [ "curl", "-s", "http://ip.cn" ]</span><br></pre></td></tr></table></figure>
+
+<p>然后构建</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -f centosDockerFile2 -t krislin/ipcentos .</span><br></pre></td></tr></table></figure>
+
+<p>以添加参数的形式启动容器</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526143614.png" alt=""></p>
+<p><strong>ONBUILD 示例</strong></p>
+<p>类似于触发器,在镜像编译以及子镜像编译的时候触发</p>
+<p>新建一个 DockerFile , centosDockerFileFather</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> centos</span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> yum install -y curl</span></span><br><span class="line"><span class="keyword">ENTRYPOINT</span><span class="bash"> [ <span class="string">"curl"</span>, <span class="string">"-s"</span>, <span class="string">"http://ip.cn"</span> ]</span></span><br><span class="line"><span class="keyword">ONBUILD</span> <span class="keyword">RUN</span><span class="bash"> <span class="built_in">echo</span> <span class="string">"father is building --------------&gt;"</span></span></span><br></pre></td></tr></table></figure>
+
+<p>进行编译后,又新建一个子 DockerFile, centosDockerFileSon</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> cris/ipcentos_father</span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> yum install -y curl</span></span><br><span class="line"><span class="keyword">ENTRYPOINT</span><span class="bash"> [ <span class="string">"curl"</span>, <span class="string">"-s"</span>, <span class="string">"http://ip.cn"</span> ]</span></span><br></pre></td></tr></table></figure>
+
+<p>cris/ipcentos_father 就是上面编译完成的父镜像</p>
+<p>当我们开始编译子镜像时,就会触发 ONBUILD 操作</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526143938.png" alt=""></p>
+<h2 id="三-自定义-Tomcat9-镜像-重要"><a href="#三-自定义-Tomcat9-镜像-重要" class="headerlink" title="三. 自定义 Tomcat9 镜像(重要)"></a>三. 自定义 Tomcat9 镜像(重要)</h2><p>在新建目录,并且添加以下文件</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526153354.png" alt=""></p>
+<p>Dockerfile 内容如下</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span>         centos</span><br><span class="line"><span class="keyword">MAINTAINER</span>    krislin_zhao</span><br><span class="line"><span class="comment">#把宿主机当前上下文的c.txt拷贝到容器/usr/local/路径下</span></span><br><span class="line"><span class="keyword">COPY</span><span class="bash"> copy.txt /usr/<span class="built_in">local</span>/cincontainer.txt</span></span><br><span class="line"><span class="comment">#把java与tomcat添加到容器中</span></span><br><span class="line"><span class="keyword">ADD</span><span class="bash"> jdk-8u171-linux-x64.tar.gz /usr/<span class="built_in">local</span>/</span></span><br><span class="line"><span class="keyword">ADD</span><span class="bash"> apache-tomcat-9.0.35.tar.gz /usr/<span class="built_in">local</span>/</span></span><br><span class="line"><span class="comment">#安装vim编辑器</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> yum -y install vim</span></span><br><span class="line"><span class="comment">#设置工作访问时候的WORKDIR路径，登录落脚点</span></span><br><span class="line"><span class="keyword">ENV</span> MYPATH /usr/local</span><br><span class="line"><span class="keyword">WORKDIR</span><span class="bash"> <span class="variable">$MYPATH</span></span></span><br><span class="line"><span class="comment">#配置java与tomcat环境变量</span></span><br><span class="line"><span class="keyword">ENV</span> JAVA_HOME /usr/local/jdk1.<span class="number">8.0</span>_171</span><br><span class="line"><span class="keyword">ENV</span> CLASSPATH $JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br><span class="line"><span class="keyword">ENV</span> CATALINA_HOME /usr/local/apache-tomcat-<span class="number">9.0</span>.<span class="number">35</span></span><br><span class="line"><span class="keyword">ENV</span> CATALINA_BASE /usr/local/apache-tomcat-<span class="number">9.0</span>.<span class="number">35</span></span><br><span class="line"><span class="keyword">ENV</span> PATH $PATH:$JAVA_HOME/bin:$CATALINA_HOME/lib:$CATALINA_HOME/bin</span><br><span class="line"><span class="comment">#容器运行时监听的端口</span></span><br><span class="line"><span class="keyword">EXPOSE</span>  <span class="number">8080</span></span><br><span class="line"><span class="comment">#启动时运行tomcat</span></span><br><span class="line"><span class="comment"># ENTRYPOINT ["/usr/local/apache-tomcat-9.0.35/bin/startup.sh" ]</span></span><br><span class="line"><span class="comment"># CMD ["/usr/local/apache-tomcat-9.0.35/bin/catalina.sh","run"]</span></span><br><span class="line"><span class="keyword">CMD</span><span class="bash"> /usr/<span class="built_in">local</span>/apache-tomcat-9.0.35/bin/startup.sh &amp;&amp; tail -F /usr/<span class="built_in">local</span>/apache-tomcat-9.0.35/bin/logs/catalina.out</span></span><br></pre></td></tr></table></figure>
+
+<p>然后开始编译</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t krislin_tomcat9 .</span><br></pre></td></tr></table></figure>
+
+<p>如果不加 -f 参数,默认从当前目录下的 Dockerfile 文件开始编译</p>
+<p>编译成功后,直接运行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 9090:8080 --name krisslintomcat9 </span><br><span class="line">-v /root/mytomcat/test:/usr/local/apache-tomcat-9.0.35/webapps/test </span><br><span class="line">-v /root/mytomcat/logs:/usr/local/apache-tomcat-9.0.35/logs  </span><br><span class="line">--privileged=true </span><br><span class="line">krislin_tomcat9</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526154158.png" alt=""></p>
+<p>查看数据卷对应的目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker inspect krislintomcat9</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526154333.png" alt=""></p>
+<p>验证 Tomcat 是否启动</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526154532.png" alt=""></p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526155722.png" alt=""></p>
+<p><strong>测试web 工程发布</strong></p>
+<p>我们在宿主机的目录上新建一个简单的 web 工程</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526160229.png" alt=""></p>
+<p>test.jsp</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=UTF-8"</span> pageEncoding=<span class="string">"UTF-8"</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html PUBLIC <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span> <span class="string">"http://www.w3.org/TR/html4/loose.dtd"</span>&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=UTF-8"</span>&gt;</span><br><span class="line">    &lt;title&gt;Insert title here&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    -----------welcome------------</span><br><span class="line">    &lt;%=<span class="string">"i am in docker tomcat self "</span>%&gt;</span><br><span class="line">    &lt;br&gt;</span><br><span class="line">    &lt;br&gt;</span><br><span class="line">    &lt;% System.out.println(<span class="string">"=============docker tomcat self"</span>);%&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>然后是 WEB-INF 目录下的 web.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">xmlns</span>=<span class="string">"http://java.sun.com/xml/ns/javaee"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">id</span>=<span class="string">"WebApp_ID"</span> <span class="attr">version</span>=<span class="string">"2.5"</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="tag">&lt;<span class="name">display-name</span>&gt;</span>test<span class="tag">&lt;/<span class="name">display-name</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>最后重启容器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker restart krislintomcat9</span><br></pre></td></tr></table></figure>
+
+<p>测试</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526160538.png" alt=""></p>
+<p>我们在宿主机修改 jsp</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=UTF-8"</span> pageEncoding=<span class="string">"UTF-8"</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html PUBLIC <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span> <span class="string">"http://www.w3.org/TR/html4/loose.dtd"</span>&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=UTF-8"</span>&gt;</span><br><span class="line">    &lt;title&gt;Insert title here&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    -----------welcome------------</span><br><span class="line">    &lt;br&gt;</span><br><span class="line">    &lt;%=<span class="string">"i am in docker tomcat self krislin "</span>%&gt;</span><br><span class="line">    &lt;br&gt;</span><br><span class="line">    &lt;br&gt;</span><br><span class="line">    &lt;% System.out.println(<span class="string">"=============docker tomcat self"</span>);%&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526160800.png" alt=""></p>
+<h2 id="四-总结"><a href="#四-总结" class="headerlink" title="四. 总结"></a>四. 总结</h2><p><img src="https://user-gold-cdn.xitu.io/2019/4/19/16a34edc0a8c65e1?imageslim" alt="img"></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://music.163.com/song/media/outer/url?id=1463165983.mp3'></li>
+                        
+                    
+                        
+                            <li title='2' data-url='http://music.163.com/song/media/outer/url?id=1460682363.mp3'></li>
+                        
+                    
+                        
+                            <li title='3' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='valine_container' class="valine_thread v"
+	data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    
+    ></div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-什么是-DockerFile"><span class="toc-number">1.</span> <span class="toc-text">1. 什么是 DockerFile</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-DockerFile-构建过程解析"><span class="toc-number">2.</span> <span class="toc-text">2. DockerFile 构建过程解析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#DockerFile-基础知识"><span class="toc-number">2.1.</span> <span class="toc-text">DockerFile 基础知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker执行Dockerfile的大致流程"><span class="toc-number">2.2.</span> <span class="toc-text">Docker执行Dockerfile的大致流程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-DockerFile-体系结构-保留字"><span class="toc-number">3.</span> <span class="toc-text">3. DockerFile 体系结构(保留字)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-DockerFile-实战案例"><span class="toc-number">4.</span> <span class="toc-text">4. DockerFile 实战案例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一-自定义-CentOS-镜像案例"><span class="toc-number">4.1.</span> <span class="toc-text">一. 自定义 CentOS 镜像案例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二-CMD-ENTRYPOINT-镜像案例"><span class="toc-number">4.2.</span> <span class="toc-text">二. CMD&#x2F;ENTRYPOINT 镜像案例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三-自定义-Tomcat9-镜像-重要"><span class="toc-number">4.3.</span> <span class="toc-text">三. 自定义 Tomcat9 镜像(重要)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四-总结"><span class="toc-number">4.4.</span> <span class="toc-text">四. 总结</span></a></li></ol></li></ol>	
+        </div>
+    
+</div>
+
+
+        
+    <div class="blog-post-comments">
+      <section id="comment">
+        <div id="valine_container" class="valine_thread"></div>
+      </section>
+      <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+      <script src="https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js"></script>
+
+<style>
+  #comment{
+    width: 70%;
+    display: block;
+    border-radius: 20px;
+    margin: 0 auto;
+  }
+ .v #veditor{
+     min-height: 10rem;
+     background-image: url(https://cdn.jsdelivr.net/gh/cungudafa/img/images/girls2.png);
+     background-size: contain;
+     background-repeat: no-repeat;
+     background-position: right;
+     background-color: rgba(255,255,255,0);
+     resize: none;}
+
+ /*图片消失
+ #veditor:focus{
+	background-position-y: 200px;
+	transition: all 0.2s ease-in-out 0s;
+}  */  
+/*头像旋转*/
+img.vimg {
+     transition: all 1s   /* 旋转时间为 1s */
+}
+
+img.vimg:hover {
+     transform: rotate(360deg);
+     -webkit-transform: rotate(360deg);
+     -moz-transform: rotate(360deg);
+     -o-transform: rotate(360deg);
+     -ms-transform: rotate(360deg);
+}
+
+/*调整一下表情高度*/
+div.vcontent p  img.vemoji {
+    height: 30px;
+
+}
+</style>
+
+
+      <script>
+        var GUEST_INFO = ["nick", "mail", "link"];
+        var guest_info = "nick,mail,link"
+          .split(",")
+          .filter(function (item) {
+            return GUEST_INFO.indexOf(item) > -1;
+          });
+        var valine = new Valine();
+        valine.init({
+          el: "#valine_container",
+          admin_email: 'i@1l.fit',
+          appId: "iDHJ60Ufv3QjOR4sWuH4oL3r-9Nh9j0Va",
+          appKey: "S7rF0X45YIfNj5cNzdg4gMLl",
+          placeholder: "Just go go",
+          path: window.location.pathname,
+          pageSize: "15",
+          avatar: "monsterid",
+          lang: "",
+          pushType: "sc",
+          pushLink: "https://sc.ftqq.com/SCU106322T782cfcd867473745105f94e94de33c085f13bd947b6e3.send",
+          enableQQ: true,
+          master: 'eb4d5f16fb5a933662a768b5c2c85f20',   //博主邮箱md5
+          tagMeta: ["博主","小伙伴","访客"],     //标识字段名
+          friends:  ["4b278adff5fd7c28aedbf73dd9c52ae5","191434ebf724621793c3b2cb237b7e3d"],  //小伙伴邮箱Md5
+          emojiCDN: "https://mirrorcdn.bili33.top/",
+          // 表情title和图片映射
+          emojiMaps: {
+          "嘿嘿":"https://s-o.oss-cn-shanghai.aliyuncs.com/emoji/%E5%98%BF%E5%98%BF.jpg",    
+          "土豆":"https://s-o.oss-cn-shanghai.aliyuncs.com/emoji/tudou.gif",
+          "汗_":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200411023456.webp",
+          "点赞": "https://cdn.jsdelivr.net/gh/drew233/cdn/kawayi.webp",   
+          "傲娇":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409103906.webp",
+          "开心":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409104757.webp",
+          "扣手手":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130304.webp",
+          "仙女下凡":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130301.webp",
+          "得瑟":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130258.webp",
+          "揉左脸":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130254.webp",
+          "揉右脸":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130249.webp",
+          "滑稽":"https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_huaji.gif",
+          "彩虹滑稽":"https://cdn.jsdelivr.net/gh/drew233/cdn/caihongtiao.webp",
+          "呆滞":"https://cdn.jsdelivr.net/gh/drew233/cdn/daizhi.webp",
+          "躲进小被子":"https://cdn.jsdelivr.net/gh/drew233/cdn/djxbz.webp",
+          "给我也整一个":"https://cdn.jsdelivr.net/gh/drew233/cdn/gwyzyg.webp",
+          "草":"https://cdn.jsdelivr.net/gh/drew233/cdn/imgcao.webp",
+          "花":"https://cdn.jsdelivr.net/gh/drew233/cdn/imghua.webp",
+          "日":"https://cdn.jsdelivr.net/gh/drew233/cdn/imgri.webp",
+          "目瞪狗呆":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200412095243.webp",
+          "tql":"https://cdn.jsdelivr.net/gh/drew233/cdn/tql.webp",
+          "转圈圈":"https://cdn.jsdelivr.net/gh/drew233/cdn/zqq.webp",
+          
+         
+         "tv_doge": "bilibilitv/[tv_doge].png",
+         "tv_亲亲": "bilibilitv/[tv_亲亲].png",
+         "tv_偷笑": "bilibilitv/[tv_偷笑].png",
+         "tv_再见": "bilibilitv/[tv_再见].png",
+         "tv_冷漠": "bilibilitv/[tv_冷漠].png",
+         "tv_发怒": "bilibilitv/[tv_发怒].png",
+         "tv_发财": "bilibilitv/[tv_发财].png",
+         "tv_可爱": "bilibilitv/[tv_可爱].png",
+         "tv_吐血": "bilibilitv/[tv_吐血].png",
+         "tv_呆": "bilibilitv/[tv_呆].png",
+         "tv_呕吐": "bilibilitv/[tv_呕吐].png",
+         "tv_困": "bilibilitv/[tv_困].png",
+         "tv_坏笑": "bilibilitv/[tv_坏笑].png",
+         "tv_大佬": "bilibilitv/[tv_大佬].png",
+         "tv_大哭": "bilibilitv/[tv_大哭].png",
+         "tv_委屈": "bilibilitv/[tv_委屈].png",
+         "tv_害羞": "bilibilitv/[tv_害羞].png",
+         "tv_尴尬": "bilibilitv/[tv_尴尬].png",
+         "tv_微笑": "bilibilitv/[tv_微笑].png",
+         "tv_思考": "bilibilitv/[tv_思考].png",
+         "tv_惊吓": "bilibilitv/[tv_惊吓].png",
+         "tv_打脸": "bilibilitv/[tv_打脸].png",
+         "tv_抓狂": "bilibilitv/[tv_抓狂].png",
+         "tv_抠鼻": "bilibilitv/[tv_抠鼻].png",
+         "tv_斜眼笑": "bilibilitv/[tv_斜眼笑].png",
+         "tv_无奈": "bilibilitv/[tv_无奈].png",
+         "tv_晕": "bilibilitv/[tv_晕].png",
+         "tv_流汗": "bilibilitv/[tv_流汗].png",
+         "tv_流泪": "bilibilitv/[tv_流泪].png",
+         "tv_流鼻血": "bilibilitv/[tv_流鼻血].png",
+         "tv_点赞": "bilibilitv/[tv_点赞].png",
+         "tv_生气": "bilibilitv/[tv_生气].png",
+         "tv_生病": "bilibilitv/[tv_生病].png",
+         "tv_疑问": "bilibilitv/[tv_疑问].png",
+         "tv_白眼": "bilibilitv/[tv_白眼].png",
+         "tv_皱眉": "bilibilitv/[tv_皱眉].png",
+         "tv_目瞪口呆": "bilibilitv/[tv_目瞪口呆].png",
+         "tv_睡着": "bilibilitv/[tv_睡着].png",
+         "tv_笑哭": "bilibilitv/[tv_笑哭].png",
+         "tv_腼腆": "bilibilitv/[tv_腼腆].png",
+         "tv_色": "bilibilitv/[tv_色].png",
+         "tv_调侃": "bilibilitv/[tv_调侃].png",
+         "tv_调皮": "bilibilitv/[tv_调皮].png",
+         "tv_鄙视": "bilibilitv/[tv_鄙视].png",
+         "tv_闭嘴": "bilibilitv/[tv_闭嘴].png",
+         "tv_难过": "bilibilitv/[tv_难过].png",
+         "tv_馋": "bilibilitv/[tv_馋].png",
+         "tv_鬼脸": "bilibilitv/[tv_鬼脸].png",
+         "tv_黑人问号": "bilibilitv/[tv_黑人问号].png",
+         "tv_鼓掌": "bilibilitv/[tv_鼓掌].png",
+         "卖萌": "bilibili2233/[2233娘_卖萌].png",
+         "吃惊": "bilibili2233/[2233娘_吃惊].png",
+         "吐魂": "bilibili2233/[2233娘_吐魂].png",
+         "喝水": "bilibili2233/[2233娘_喝水].png",
+         "困惑": "bilibili2233/[2233娘_困惑].png",
+         "大哭": "bilibili2233/[2233娘_大哭].png",
+         "大笑": "bilibili2233/[2233娘_大笑].png",
+         "委屈": "bilibili2233/[2233娘_委屈].png",
+         "怒": "bilibili2233/[2233娘_怒].png",
+         "无言": "bilibili2233/[2233娘_无言].png",
+         "出汗": "bilibili2233/[2233娘_汗].png",
+         "疑问": "bilibili2233/[2233娘_疑问].png",
+         "第一": "bilibili2233/[2233娘_第一].png",
+         "耶": "bilibili2233/[2233娘_耶].png",
+         "郁闷": "bilibili2233/[2233娘_郁闷].png",
+         "妙": "bilibiliHotKey/1.jpg",
+         "危": "bilibiliHotKey/2.jpg",
+         "有内味儿了": "bilibiliHotKey/3.jpg",
+         "高产": "bilibiliHotKey/4.jpg",
+         "我枯了": "bilibiliHotKey/5.jpg",
+         "不愧是你": "bilibiliHotKey/6.jpg",
+         "狼火": "bilibiliHotKey/9.jpg",
+         "你细品": "bilibiliHotKey/10.jpg",
+         "锤": "bilibiliHotKey/11.jpg",
+         "秀": "bilibiliHotKey/12.jpg",
+         "这次一定": "bilibiliHotKey/14.jpg",
+         "酸了": "bilibiliHotKey/15.jpg",
+         "打卡": "bilibiliHotKey/16.jpg",
+         "我太南了": "bilibiliHotKey/18.jpg",
+         "吹爆": "bilibiliHotKey/19.jpg",
+         "奥力给": "bilibiliHotKey/20.jpg",
+         "awsl": "bilibiliHotKey/21.jpg",
+         "猛男必看": "bilibiliHotKey/22.jpg",
+         "害": "bilibiliHotKey/23.jpg",
+         "知识盲区": "bilibiliHotKey/24.jpg",
+         "我全都要": "bilibiliHotKey/25.jpg",
+         "咕咕咕": "bilibiliHotKey/26.jpg",
+         "可以": "bilibiliHotKey/27.jpg",
+         "真香": "bilibiliHotKey/28.jpg",
+         "完结": "bilibiliHotKey/29.jpg",
+         "有生之年": "bilibiliHotKey/30.jpg",
+         "大师球": "bilibiliHotKey/31.jpg",
+         "爷关更": "bilibiliHotKey/32.jpg",
+            
+            
+          },
+        });
+      </script>
+
+
+   
+      
+      <!-- 今日诗词：随机返回一句古诗词名句的接口，宅到用来做 Valine 的 placeholder 显示内容 -->
+      <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+      <script type="text/javascript">
+       jinrishici.load(function(result) {
+           var jrsc_plac =  result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author;
+           document.getElementById("veditor").setAttribute("placeholder",jrsc_plac);
+       })
+      </script>
+    </div>
+    
+<!--
+
+
+
+-->
+    </div>
+</div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7},"log":false});</script></body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '171639872', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<!-- 天气 -->
+<script type="text/javascript">
+WIDGET = {FID: '21I8HlZYjY'}
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+
+<script>
+   var title1="text=blog又有新评论啦~！--by Valine"
+var SCKEY_Server="SCU106322T782cfcd867473745105f94e94de33c085f13bd947b6e3"
+var ValineButton=document.getElementsByClassName("vsubmit vbtn")[0];
+function send_valine_Server(){
+    var text="desp=";
+    var pagename=document.title;
+    var wz=pagename.indexOf('|');
+    var res=pagename.substring(0,wz);
+    var pageurl=document.URL;
+    var ptime=new Date();
+    var vnick=document.getElementsByClassName("vnick vinput")[0].value;
+    var vmail=document.getElementsByClassName("vmail vinput")[0].value;
+    var vlink=document.getElementsByClassName("vlink vinput")[0].value;
+    var veditor=document.getElementsByClassName("veditor vinput")[0].value;
+    var data=text+"|昵称："+"|邮箱："+"|网站地址："+"|当前页面："+"|评论内容："+"|跳转链接："+"|评论时间"+"\n"+"|----|----|----|----|"+"\n"+"|   "+vnick+"   |   "+vmail+"  |  "+vlink+"|   "+res+"| "+veditor+"| "+pageurl+"|" +ptime.toLocaleString()+"|";
+    var httpRequest = new XMLHttpRequest();//第一步：创建需要的对象
+    httpRequest.open('POST', 'https://sc.ftqq.com/'+SCKEY_Server+'.send', true); //第二步：打开连接
+    httpRequest.setRequestHeader("Content-type","application/x-www-form-urlencoded");//设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+    httpRequest.send(title1+"&"+data);//发送请求 将情头体写在send中
+};
+ValineButton.onclick=send_valine_Server;
+  </script>
+</html>

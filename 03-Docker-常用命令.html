@@ -1,0 +1,657 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>03.Docker 常用命令 - zc&#39;blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="ZC,"> 
+    <meta name="description" content="
+1. 帮助命令
+2. 镜像命令
+3. 容器命令
+4. 常用命令总结1. 帮助命令
+
+
+docker version
+
+
+docker info
+
+
+docker –help(-h)
+
+
+
+2. 镜,"> 
+    <meta name="author" content="ZC"> 
+    <link rel="alternative" href="atom.xml" title="zc&#39;blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">zc&#39;blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://zc.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">03.Docker 常用命令</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">03.Docker 常用命令</h1>
+        <div class="stuff">
+            <span>九月 01, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Docker/" rel="tag">Docker</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <ul>
+<li><a href="#1-帮助命令">1. 帮助命令</a></li>
+<li><a href="#2-镜像命令">2. 镜像命令</a></li>
+<li><a href="#3-容器命令">3. 容器命令</a></li>
+<li><a href="#4-常用命令总结">4. 常用命令总结</a><h1 id="1-帮助命令"><a href="#1-帮助命令" class="headerlink" title="1. 帮助命令"></a>1. 帮助命令</h1></li>
+</ul>
+<ul>
+<li><p>docker version</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200525150924.png" alt=""></p>
+</li>
+<li><p>docker info</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200525151007.png" alt=""></p>
+</li>
+<li><p>docker –help(-h)</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200525151103.png" alt=""></p>
+</li>
+</ul>
+<h1 id="2-镜像命令"><a href="#2-镜像命令" class="headerlink" title="2. 镜像命令"></a>2. 镜像命令</h1><ol>
+<li><p>docker images         列出本地主机上的镜像</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200525152014.png" alt=""></p>
+<ul>
+<li><p>REPOSITORY：表示镜像的仓库源</p>
+</li>
+<li><p>TAG：镜像的标签</p>
+</li>
+<li><p>IMAGE ID：镜像ID</p>
+</li>
+<li><p>CREATED：镜像创建时间</p>
+</li>
+<li><p>SIZE：镜像大小</p>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code>同一仓库源可以有多个 TAG，代表这个仓库源的不同个版本，我们使用 REPOSITORY:TAG 来定义不同的镜像。 如果你不指定一个镜像的版本标签，例如你只使用 ubuntu，docker 将默认使用 ubuntu:latest 镜像</code></pre><ul>
+<li><p>images 命令 的 option 参数</p>
+<ul>
+<li><p>-a:列出本地所有的镜像（含中间映像层）</p>
+</li>
+<li><p>-q :只显示镜像ID</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200525152339.png" alt=""></p>
+</li>
+<li><p>–digests :显示镜像的摘要信息</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200525152552.png" alt=""></p>
+</li>
+<li><p>–no-trunc :显示完整的镜像信息</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200525152638.png" alt=""></p>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li><p>docker search 镜像名           从 Docker hub 官网搜索镜像</p>
+<p>以 tomcat 为例</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200525152813.png" alt=""></p>
+<p>和在官网搜索的结果一模一样</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200525152954.png" alt=""></p>
+</li>
+</ol>
+<ul>
+<li><p>参数说明</p>
+<ul>
+<li><p>-s : 列出收藏数不小于指定值的镜像</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200525153109.png" alt=""></p>
+<p>只搜索点赞数大于30的镜像</p>
+</li>
+<li><p>–no-trunc : 显示完整的镜像描述</p>
+</li>
+<li><p>–automated : 只列出 automated build类型的镜像</p>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li><p>docker pull 镜像名:tag     拉取镜像(从前面我们已经设置的阿里云的镜像加速地址)</p>
+<p>如果 <code>docker pull 镜像名</code> 后面不加参数,默认下载最新版本</p>
+<p>即 docker pull tomcat 等价于 docker pull tomcat:latest</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull tomcat</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200525153705.png" alt=""></p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200525153806.png" alt=""></p>
+</li>
+<li><p>docker rmi 镜像名/镜像id          删除 Docker 镜像</p>
+<p>ps: <code>docker rmi 镜像名</code> 默认会删除标签为 :latest 的镜像,如果要删除指定标签的镜像,在镜像名后面指定 tag 即可</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200525153922.png" alt=""></p>
+<p>如果无法删除,出现如上提示,表示我们的镜像正在使用中,可以使用 -f 强制删除</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200525153954.png" alt=""></p>
+<p>如果想要删除多个镜像</p>
+<p>docker rmi -f 镜像名1:tag 镜像名2:tag</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker rmi -f hello-world tomcat</span><br></pre></td></tr></table></figure>
+
+<p>删除全部镜像</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker rmi -f $(docker images -qa)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h1 id="3-容器命令"><a href="#3-容器命令" class="headerlink" title="3. 容器命令"></a>3. 容器命令</h1><ol>
+<li><p>以 CentOS 为例,从阿里云下载一个 CentOS 的镜像</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526090859.png" alt=""></p>
+</li>
+<li><p>新建并启动容器(以 Docker 里面的 CentOS 镜像为例)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run [options] image [command] [arg...]</span><br></pre></td></tr></table></figure>
+
+<p>options 这里常用的有:</p>
+<p>–name=”容器新名字”: 为容器指定一个名称； -d: 后台运行容器，并返回容器ID，也即启动守护式容器； -i：以交互模式运行容器，通常与 -t 同时使用； -t：为容器重新分配一个伪输入终端，通常与 -i 同时使用； -P: 随机端口映射； -p: 指定端口映射，有以下四种格式 </p>
+<p><code>1.ip:hostPort:containerPort  2.ip::containerPort  3.hostPort:containerPort 4.containerPort</code></p>
+<p>我们使用 -it 参数来启动 CentOS 容器</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526092354.png" alt=""></p>
+<p>root@ 后面跟着的就是该容器的 id</p>
+</li>
+</ol>
+<ol start="3">
+<li><p>查看所有运行的容器命令</p>
+<p>docker ps [options]</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526092457.png" alt=""></p>
+<p>参数说明:</p>
+<p>-a :列出当前所有正在运行的容器+历史上运行过的容器 -l :显示最近运行的容器。 -n number：显示最近 number 个创建的容器。 -q :静默模式，只显示容器编号。 –no-trunc :不截断输出。</p>
+</li>
+</ol>
+<ol start="4">
+<li><p>退出容器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit: 容器停止并退出</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>ctrl+p+q: 容器不停止退出<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">5. 启动已经创建的容器</span><br></pre></td></tr></table></figure><br>docker start 容器id/容器名<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">6. 重启容器</span><br></pre></td></tr></table></figure><br>docker restart 容器id/容器名<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">7. 停止容器</span><br></pre></td></tr></table></figure><br>docker stop 容器id/容器名<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">8. 强制关闭容器</span><br></pre></td></tr></table></figure><br>docker kill 容器id/容器名<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">9. 删除已停止的容器</span><br></pre></td></tr></table></figure><br>   docker rm 容器id/容器名<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">一次性删除多个已经停止的容器</span><br></pre></td></tr></table></figure><br>   docker rm -f $(docker ps -qa) 或者 docker ps -a -q | xargs docker rm<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">10. 交互式容器和守护式容器</span><br><span class="line"></span><br><span class="line">    前面启动 CentOS 容器使用的 -it 参数就是表示交互式命令,通过终端来保持和容器的交互</span><br><span class="line"></span><br><span class="line">    如果要启动守护式容器,那么需要加上 -d 参数</span><br><span class="line"></span><br><span class="line">    ![](https:&#x2F;&#x2F;gitee.com&#x2F;krislin_zhao&#x2F;IMGcloud&#x2F;raw&#x2F;master&#x2F;img&#x2F;20200526093221.png)</span><br><span class="line"></span><br><span class="line">    但是此时查询正在运行的容器，没有发现以后台模式运行的 Docker 容器</span><br><span class="line"></span><br><span class="line">    ![](https:&#x2F;&#x2F;gitee.com&#x2F;krislin_zhao&#x2F;IMGcloud&#x2F;raw&#x2F;master&#x2F;img&#x2F;20200526093331.png)</span><br><span class="line"></span><br><span class="line">    发现该容器已经自动退出了</span><br><span class="line"></span><br><span class="line">    &gt; 问题：docker ps -a 进行查看, 会发现容器已经退出 很重要的一点: Docker容器后台运行,就必须有一个前台进程. 容器运行的命令如果不是那些一直挂起的命令（比如运行top，tail），是会自动退出的。</span><br><span class="line">    &gt;</span><br><span class="line">    &gt; 这个是docker的机制问题,比如你的web容器,我们以nginx为例，正常情况下,我们配置启动服务只需要启动响应的service即可。例如 service nginx start 但是,这样做,nginx为后台进程模式运行,就导致docker前台没有运行的应用, 这样的容器后台启动后,会立即自杀因为他觉得他没事可做了. 所以，最佳的解决方案是,将你要运行的程序以前台进程的形式运行</span><br><span class="line"></span><br><span class="line">11. 容器日志</span><br><span class="line"></span><br><span class="line">    对于后台运行的容器,可以以下面的方式来启动</span><br><span class="line"></span><br><span class="line">    &#96;&#96;&#96;shell</span><br><span class="line">    docker run -d --name centos02 centos &#x2F;bin&#x2F;sh -c &quot;while true;do echo hello world;sleep 2;done&quot;</span><br></pre></td></tr></table></figure></p>
+<pre><code>![](https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526093745.png)
+
+即便是后台启动,但是因为前台一直打印日志,Docker 容器也不会自动关闭
+
+如果此时我们想去查看 Docker 容器的日志,可以通过以下命令
+
+docker logs -f -t --tail 容器ID/容器名
+
+- -t 是加入时间戳
+
+- -f 跟随最新的日志打印
+
+- --tail 数字 显示最后多少条
+
+  ![](https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526094051.png)</code></pre><ol start="12">
+<li><p>查看容器内运行的进程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker top 容器ID&#x2F;容器名</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526094217.png" alt=""></p>
+</li>
+<li><p>查看容器内部细节</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker inspect 容器ID&#x2F;容器名</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526094333.png" alt=""></p>
+</li>
+<li><p>进入正在运行的容器并以命令行交互</p>
+<p>重新进入正在运行的容器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker attach 容器ID/容器名</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526094831.png" alt=""></p>
+<p>还有一种方式是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it 容器ID&#x2F;容器名 bash(功能更加强大,可以直接返回结果到客户端)</span><br></pre></td></tr></table></figure>
+
+<p>区别在于:</p>
+<p>attach 命令直接进入容器启动命令的终端，不会启动新的进程</p>
+<p>exec 命令是在容器中打开新的终端，并且可以启动新的进程</p>
+</li>
+<li><p>从容器内拷贝文件到主机上</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker cp 容器ID(或容器名):容器内路径 目的主机路径</span><br></pre></td></tr></table></figure>
+
+<p>示例如下</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526095315.png" alt=""></p>
+</li>
+</ol>
+<h1 id="4-常用命令总结"><a href="#4-常用命令总结" class="headerlink" title="4. 常用命令总结"></a>4. 常用命令总结</h1><p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200526095411.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">attach    Attach to a running container                 # 当前 shell 下 attach 连接指定运行镜像</span><br><span class="line"></span><br><span class="line">build     Build an image from a Dockerfile              # 通过 Dockerfile 定制镜像</span><br><span class="line"></span><br><span class="line">commit    Create a new image from a container changes   # 提交当前容器为新的镜像</span><br><span class="line"></span><br><span class="line">cp        Copy files&#x2F;folders from the containers filesystem to the host path   #从容器中拷贝指定文件或者目录到宿主机中</span><br><span class="line"></span><br><span class="line">create    Create a new container                        # 创建一个新的容器，同 run，但不启动容器</span><br><span class="line"></span><br><span class="line">diff      Inspect changes on a container&#39;s filesystem   # 查看 docker 容器变化</span><br><span class="line"></span><br><span class="line">events    Get real time events from the server          # 从 docker 服务获取容器实时事件</span><br><span class="line"></span><br><span class="line">exec      Run a command in an existing container        # 在已存在的容器上运行命令</span><br><span class="line"></span><br><span class="line">export    Stream the contents of a container as a tar archive   # 导出容器的内容流作为一个 tar 归档文件[对应 import ]</span><br><span class="line"></span><br><span class="line">history   Show the history of an image                  # 展示一个镜像形成历史</span><br><span class="line"></span><br><span class="line">images    List images                                   # 列出系统当前镜像</span><br><span class="line"></span><br><span class="line">import    Create a new filesystem image from the contents of a tarball # 从tar包中的内容创建一个新的文件系统映像[对应export]</span><br><span class="line"></span><br><span class="line">info      Display system-wide information               # 显示系统相关信息</span><br><span class="line"></span><br><span class="line">inspect   Return low-level information on a container   # 查看容器详细信息</span><br><span class="line"></span><br><span class="line">kill      Kill a running container                      # kill 指定 docker 容器</span><br><span class="line"></span><br><span class="line">load      Load an image from a tar archive              # 从一个 tar 包中加载一个镜像[对应 save]</span><br><span class="line"></span><br><span class="line">login     Register or Login to the docker registry server    # 注册或者登陆一个 docker 源服务器</span><br><span class="line"></span><br><span class="line">logout    Log out from a Docker registry server          # 从当前 Docker registry 退出</span><br><span class="line"></span><br><span class="line">logs      Fetch the logs of a container                 # 输出当前容器日志信息</span><br><span class="line"></span><br><span class="line">port      Lookup the public-facing port which is NAT-ed to PRIVATE_PORT    # 查看映射端口对应的容器内部源端口</span><br><span class="line"></span><br><span class="line">pause     Pause all processes within a container        # 暂停容器</span><br><span class="line"></span><br><span class="line">ps        List containers                               # 列出容器列表</span><br><span class="line"></span><br><span class="line">pull      Pull an image or a repository from the docker registry server   # 从docker镜像源服务器拉取指定镜像或者库镜像</span><br><span class="line"></span><br><span class="line">push      Push an image or a repository to the docker registry server    # 推送指定镜像或者库镜像至docker源服务器</span><br><span class="line"></span><br><span class="line">restart   Restart a running container                   # 重启运行的容器</span><br><span class="line"></span><br><span class="line">rm        Remove one or more containers                 # 移除一个或者多个容器</span><br><span class="line"></span><br><span class="line">rmi       Remove one or more images             # 移除一个或多个镜像[无容器使用该镜像才可删除，否则需删除相关容器才可继续或 -f 强制删除]</span><br><span class="line"></span><br><span class="line">run       Run a command in a new container              # 创建一个新的容器并运行一个命令</span><br><span class="line"></span><br><span class="line">save      Save an image to a tar archive                # 保存一个镜像为一个 tar 包[对应 </span><br><span class="line"></span><br><span class="line">load]</span><br><span class="line"></span><br><span class="line">search    Search for an image on the Docker Hub         # 在 docker hub 中搜索镜像</span><br><span class="line"></span><br><span class="line">start     Start a stopped containers                    # 启动容器</span><br><span class="line"></span><br><span class="line">stop      Stop a running containers                     # 停止容器</span><br><span class="line"></span><br><span class="line">tag       Tag an image into a repository                # 给源中镜像打标签</span><br><span class="line"></span><br><span class="line">top       Lookup the running processes of a container   # 查看容器中运行的进程信息</span><br><span class="line"></span><br><span class="line">unpause   Unpause a paused container                    # 取消暂停容器</span><br><span class="line"></span><br><span class="line">version   Show the docker version information           # 查看 docker 版本号</span><br><span class="line"></span><br><span class="line">wait      Block until a container stops, then print its exit code   # 截取容器停止时的退出状态值</span><br></pre></td></tr></table></figure>
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://music.163.com/song/media/outer/url?id=1463165983.mp3'></li>
+                        
+                    
+                        
+                            <li title='2' data-url='http://music.163.com/song/media/outer/url?id=1460682363.mp3'></li>
+                        
+                    
+                        
+                            <li title='3' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='valine_container' class="valine_thread v"
+	data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    
+    ></div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-帮助命令"><span class="toc-number">1.</span> <span class="toc-text">1. 帮助命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-镜像命令"><span class="toc-number">2.</span> <span class="toc-text">2. 镜像命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-容器命令"><span class="toc-number">3.</span> <span class="toc-text">3. 容器命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-常用命令总结"><span class="toc-number">4.</span> <span class="toc-text">4. 常用命令总结</span></a></li></ol>	
+        </div>
+    
+</div>
+
+
+        
+    <div class="blog-post-comments">
+      <section id="comment">
+        <div id="valine_container" class="valine_thread"></div>
+      </section>
+      <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+      <script src="https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js"></script>
+
+<style>
+  #comment{
+    width: 70%;
+    display: block;
+    border-radius: 20px;
+    margin: 0 auto;
+  }
+ .v #veditor{
+     min-height: 10rem;
+     background-image: url(https://cdn.jsdelivr.net/gh/cungudafa/img/images/girls2.png);
+     background-size: contain;
+     background-repeat: no-repeat;
+     background-position: right;
+     background-color: rgba(255,255,255,0);
+     resize: none;}
+
+ /*图片消失
+ #veditor:focus{
+	background-position-y: 200px;
+	transition: all 0.2s ease-in-out 0s;
+}  */  
+/*头像旋转*/
+img.vimg {
+     transition: all 1s   /* 旋转时间为 1s */
+}
+
+img.vimg:hover {
+     transform: rotate(360deg);
+     -webkit-transform: rotate(360deg);
+     -moz-transform: rotate(360deg);
+     -o-transform: rotate(360deg);
+     -ms-transform: rotate(360deg);
+}
+
+/*调整一下表情高度*/
+div.vcontent p  img.vemoji {
+    height: 30px;
+
+}
+</style>
+
+
+      <script>
+        var GUEST_INFO = ["nick", "mail", "link"];
+        var guest_info = "nick,mail,link"
+          .split(",")
+          .filter(function (item) {
+            return GUEST_INFO.indexOf(item) > -1;
+          });
+        var valine = new Valine();
+        valine.init({
+          el: "#valine_container",
+          admin_email: 'i@1l.fit',
+          appId: "iDHJ60Ufv3QjOR4sWuH4oL3r-9Nh9j0Va",
+          appKey: "S7rF0X45YIfNj5cNzdg4gMLl",
+          placeholder: "Just go go",
+          path: window.location.pathname,
+          pageSize: "15",
+          avatar: "monsterid",
+          lang: "",
+          pushType: "sc",
+          pushLink: "https://sc.ftqq.com/SCU106322T782cfcd867473745105f94e94de33c085f13bd947b6e3.send",
+          enableQQ: true,
+          master: 'eb4d5f16fb5a933662a768b5c2c85f20',   //博主邮箱md5
+          tagMeta: ["博主","小伙伴","访客"],     //标识字段名
+          friends:  ["4b278adff5fd7c28aedbf73dd9c52ae5","191434ebf724621793c3b2cb237b7e3d"],  //小伙伴邮箱Md5
+          emojiCDN: "https://mirrorcdn.bili33.top/",
+          // 表情title和图片映射
+          emojiMaps: {
+          "嘿嘿":"https://s-o.oss-cn-shanghai.aliyuncs.com/emoji/%E5%98%BF%E5%98%BF.jpg",    
+          "土豆":"https://s-o.oss-cn-shanghai.aliyuncs.com/emoji/tudou.gif",
+          "汗_":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200411023456.webp",
+          "点赞": "https://cdn.jsdelivr.net/gh/drew233/cdn/kawayi.webp",   
+          "傲娇":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409103906.webp",
+          "开心":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409104757.webp",
+          "扣手手":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130304.webp",
+          "仙女下凡":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130301.webp",
+          "得瑟":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130258.webp",
+          "揉左脸":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130254.webp",
+          "揉右脸":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130249.webp",
+          "滑稽":"https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_huaji.gif",
+          "彩虹滑稽":"https://cdn.jsdelivr.net/gh/drew233/cdn/caihongtiao.webp",
+          "呆滞":"https://cdn.jsdelivr.net/gh/drew233/cdn/daizhi.webp",
+          "躲进小被子":"https://cdn.jsdelivr.net/gh/drew233/cdn/djxbz.webp",
+          "给我也整一个":"https://cdn.jsdelivr.net/gh/drew233/cdn/gwyzyg.webp",
+          "草":"https://cdn.jsdelivr.net/gh/drew233/cdn/imgcao.webp",
+          "花":"https://cdn.jsdelivr.net/gh/drew233/cdn/imghua.webp",
+          "日":"https://cdn.jsdelivr.net/gh/drew233/cdn/imgri.webp",
+          "目瞪狗呆":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200412095243.webp",
+          "tql":"https://cdn.jsdelivr.net/gh/drew233/cdn/tql.webp",
+          "转圈圈":"https://cdn.jsdelivr.net/gh/drew233/cdn/zqq.webp",
+          
+         
+         "tv_doge": "bilibilitv/[tv_doge].png",
+         "tv_亲亲": "bilibilitv/[tv_亲亲].png",
+         "tv_偷笑": "bilibilitv/[tv_偷笑].png",
+         "tv_再见": "bilibilitv/[tv_再见].png",
+         "tv_冷漠": "bilibilitv/[tv_冷漠].png",
+         "tv_发怒": "bilibilitv/[tv_发怒].png",
+         "tv_发财": "bilibilitv/[tv_发财].png",
+         "tv_可爱": "bilibilitv/[tv_可爱].png",
+         "tv_吐血": "bilibilitv/[tv_吐血].png",
+         "tv_呆": "bilibilitv/[tv_呆].png",
+         "tv_呕吐": "bilibilitv/[tv_呕吐].png",
+         "tv_困": "bilibilitv/[tv_困].png",
+         "tv_坏笑": "bilibilitv/[tv_坏笑].png",
+         "tv_大佬": "bilibilitv/[tv_大佬].png",
+         "tv_大哭": "bilibilitv/[tv_大哭].png",
+         "tv_委屈": "bilibilitv/[tv_委屈].png",
+         "tv_害羞": "bilibilitv/[tv_害羞].png",
+         "tv_尴尬": "bilibilitv/[tv_尴尬].png",
+         "tv_微笑": "bilibilitv/[tv_微笑].png",
+         "tv_思考": "bilibilitv/[tv_思考].png",
+         "tv_惊吓": "bilibilitv/[tv_惊吓].png",
+         "tv_打脸": "bilibilitv/[tv_打脸].png",
+         "tv_抓狂": "bilibilitv/[tv_抓狂].png",
+         "tv_抠鼻": "bilibilitv/[tv_抠鼻].png",
+         "tv_斜眼笑": "bilibilitv/[tv_斜眼笑].png",
+         "tv_无奈": "bilibilitv/[tv_无奈].png",
+         "tv_晕": "bilibilitv/[tv_晕].png",
+         "tv_流汗": "bilibilitv/[tv_流汗].png",
+         "tv_流泪": "bilibilitv/[tv_流泪].png",
+         "tv_流鼻血": "bilibilitv/[tv_流鼻血].png",
+         "tv_点赞": "bilibilitv/[tv_点赞].png",
+         "tv_生气": "bilibilitv/[tv_生气].png",
+         "tv_生病": "bilibilitv/[tv_生病].png",
+         "tv_疑问": "bilibilitv/[tv_疑问].png",
+         "tv_白眼": "bilibilitv/[tv_白眼].png",
+         "tv_皱眉": "bilibilitv/[tv_皱眉].png",
+         "tv_目瞪口呆": "bilibilitv/[tv_目瞪口呆].png",
+         "tv_睡着": "bilibilitv/[tv_睡着].png",
+         "tv_笑哭": "bilibilitv/[tv_笑哭].png",
+         "tv_腼腆": "bilibilitv/[tv_腼腆].png",
+         "tv_色": "bilibilitv/[tv_色].png",
+         "tv_调侃": "bilibilitv/[tv_调侃].png",
+         "tv_调皮": "bilibilitv/[tv_调皮].png",
+         "tv_鄙视": "bilibilitv/[tv_鄙视].png",
+         "tv_闭嘴": "bilibilitv/[tv_闭嘴].png",
+         "tv_难过": "bilibilitv/[tv_难过].png",
+         "tv_馋": "bilibilitv/[tv_馋].png",
+         "tv_鬼脸": "bilibilitv/[tv_鬼脸].png",
+         "tv_黑人问号": "bilibilitv/[tv_黑人问号].png",
+         "tv_鼓掌": "bilibilitv/[tv_鼓掌].png",
+         "卖萌": "bilibili2233/[2233娘_卖萌].png",
+         "吃惊": "bilibili2233/[2233娘_吃惊].png",
+         "吐魂": "bilibili2233/[2233娘_吐魂].png",
+         "喝水": "bilibili2233/[2233娘_喝水].png",
+         "困惑": "bilibili2233/[2233娘_困惑].png",
+         "大哭": "bilibili2233/[2233娘_大哭].png",
+         "大笑": "bilibili2233/[2233娘_大笑].png",
+         "委屈": "bilibili2233/[2233娘_委屈].png",
+         "怒": "bilibili2233/[2233娘_怒].png",
+         "无言": "bilibili2233/[2233娘_无言].png",
+         "出汗": "bilibili2233/[2233娘_汗].png",
+         "疑问": "bilibili2233/[2233娘_疑问].png",
+         "第一": "bilibili2233/[2233娘_第一].png",
+         "耶": "bilibili2233/[2233娘_耶].png",
+         "郁闷": "bilibili2233/[2233娘_郁闷].png",
+         "妙": "bilibiliHotKey/1.jpg",
+         "危": "bilibiliHotKey/2.jpg",
+         "有内味儿了": "bilibiliHotKey/3.jpg",
+         "高产": "bilibiliHotKey/4.jpg",
+         "我枯了": "bilibiliHotKey/5.jpg",
+         "不愧是你": "bilibiliHotKey/6.jpg",
+         "狼火": "bilibiliHotKey/9.jpg",
+         "你细品": "bilibiliHotKey/10.jpg",
+         "锤": "bilibiliHotKey/11.jpg",
+         "秀": "bilibiliHotKey/12.jpg",
+         "这次一定": "bilibiliHotKey/14.jpg",
+         "酸了": "bilibiliHotKey/15.jpg",
+         "打卡": "bilibiliHotKey/16.jpg",
+         "我太南了": "bilibiliHotKey/18.jpg",
+         "吹爆": "bilibiliHotKey/19.jpg",
+         "奥力给": "bilibiliHotKey/20.jpg",
+         "awsl": "bilibiliHotKey/21.jpg",
+         "猛男必看": "bilibiliHotKey/22.jpg",
+         "害": "bilibiliHotKey/23.jpg",
+         "知识盲区": "bilibiliHotKey/24.jpg",
+         "我全都要": "bilibiliHotKey/25.jpg",
+         "咕咕咕": "bilibiliHotKey/26.jpg",
+         "可以": "bilibiliHotKey/27.jpg",
+         "真香": "bilibiliHotKey/28.jpg",
+         "完结": "bilibiliHotKey/29.jpg",
+         "有生之年": "bilibiliHotKey/30.jpg",
+         "大师球": "bilibiliHotKey/31.jpg",
+         "爷关更": "bilibiliHotKey/32.jpg",
+            
+            
+          },
+        });
+      </script>
+
+
+   
+      
+      <!-- 今日诗词：随机返回一句古诗词名句的接口，宅到用来做 Valine 的 placeholder 显示内容 -->
+      <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+      <script type="text/javascript">
+       jinrishici.load(function(result) {
+           var jrsc_plac =  result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author;
+           document.getElementById("veditor").setAttribute("placeholder",jrsc_plac);
+       })
+      </script>
+    </div>
+    
+<!--
+
+
+
+-->
+    </div>
+</div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7},"log":false});</script></body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '171639872', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<!-- 天气 -->
+<script type="text/javascript">
+WIDGET = {FID: '21I8HlZYjY'}
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+
+<script>
+   var title1="text=blog又有新评论啦~！--by Valine"
+var SCKEY_Server="SCU106322T782cfcd867473745105f94e94de33c085f13bd947b6e3"
+var ValineButton=document.getElementsByClassName("vsubmit vbtn")[0];
+function send_valine_Server(){
+    var text="desp=";
+    var pagename=document.title;
+    var wz=pagename.indexOf('|');
+    var res=pagename.substring(0,wz);
+    var pageurl=document.URL;
+    var ptime=new Date();
+    var vnick=document.getElementsByClassName("vnick vinput")[0].value;
+    var vmail=document.getElementsByClassName("vmail vinput")[0].value;
+    var vlink=document.getElementsByClassName("vlink vinput")[0].value;
+    var veditor=document.getElementsByClassName("veditor vinput")[0].value;
+    var data=text+"|昵称："+"|邮箱："+"|网站地址："+"|当前页面："+"|评论内容："+"|跳转链接："+"|评论时间"+"\n"+"|----|----|----|----|"+"\n"+"|   "+vnick+"   |   "+vmail+"  |  "+vlink+"|   "+res+"| "+veditor+"| "+pageurl+"|" +ptime.toLocaleString()+"|";
+    var httpRequest = new XMLHttpRequest();//第一步：创建需要的对象
+    httpRequest.open('POST', 'https://sc.ftqq.com/'+SCKEY_Server+'.send', true); //第二步：打开连接
+    httpRequest.setRequestHeader("Content-type","application/x-www-form-urlencoded");//设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+    httpRequest.send(title1+"&"+data);//发送请求 将情头体写在send中
+};
+ValineButton.onclick=send_valine_Server;
+  </script>
+</html>

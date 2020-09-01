@@ -1,0 +1,571 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>02.Docker 安装 - zc&#39;blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="ZC,"> 
+    <meta name="description" content="
+1. 前提
+2. Docker三要素
+3. 安装Docker
+1. 删除旧版本
+2. 三种方法
+3. Docker版本
+4. 启动 Docker
+
+
+4. Docker 镜像加速
+5. hello,"> 
+    <meta name="author" content="ZC"> 
+    <link rel="alternative" href="atom.xml" title="zc&#39;blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">zc&#39;blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://zc.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">02.Docker 安装</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">02.Docker 安装</h1>
+        <div class="stuff">
+            <span>九月 01, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Docker/" rel="tag">Docker</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <ul>
+<li><a href="#1-前提">1. 前提</a></li>
+<li><a href="#2-docker三要素">2. Docker三要素</a></li>
+<li><a href="#3-安装docker">3. 安装Docker</a><ul>
+<li><a href="#1-删除旧版本">1. 删除旧版本</a></li>
+<li><a href="#2-三种方法">2. 三种方法</a></li>
+<li><a href="#3-docker版本">3. Docker版本</a></li>
+<li><a href="#4-启动-docker">4. 启动 Docker</a></li>
+</ul>
+</li>
+<li><a href="#4-docker-镜像加速">4. Docker 镜像加速</a></li>
+<li><a href="#5-hello-world">5. hello world</a></li>
+<li><a href="#6-docker-和-vm-比较">6. Docker 和 VM 比较</a><h1 id="1-前提"><a href="#1-前提" class="headerlink" title="1. 前提"></a>1. 前提</h1></li>
+</ul>
+<p>当前 Docker 基本都装在 Linux 环境下,以 CentOS 为例,建议 CentOS6.5 以上版本,目前主流 CentOS6.8 和 CentOS7.x 都支持</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200525141301.png" alt=""></p>
+<h1 id="2-Docker三要素"><a href="#2-Docker三要素" class="headerlink" title="2. Docker三要素"></a>2. Docker三要素</h1><ul>
+<li><p>镜像(Image)</p>
+<p>Docker 镜像（Image）就是一个只读的模板。镜像可以用来创建 Docker 容器，一个镜像可以创建很多容器。</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200525141456.png" alt=""></p>
+</li>
+<li><p>容器(Container)</p>
+<p>Docker 利用容器（Container）独立运行一个或一组应用。容器是用镜像创建的运行实例。</p>
+<p>它可以被启动、开始、停止、删除。每个容器都是相互隔离的、保证安全的平台。</p>
+<p>可以把容器看做是一个简易版的 Linux 环境（包括root用户权限、进程空间、用户空间和网络空间等）和运行在其中的应用程序。</p>
+<p>容器的定义和镜像几乎一模一样，也是一堆层的统一视角，唯一区别在于容器的最上面那一层是可读可写的。</p>
+</li>
+<li><p>仓库（Repository）</p>
+<p>仓库（Repository）是集中存放镜像文件的场所。</p>
+<p><em>仓库(Repository)和仓库注册服务器（Registry）是有区别的。仓库注册服务器上往往存放着多个仓库，每个仓库中又包含了多个镜像，每个镜像有不同的标签（tag）。</em></p>
+<p>仓库分为公开仓库（Public）和私有仓库（Private）两种形式。 最大的公开仓库是 Docker Hub(<a href="https://hub.docker.com/" target="_blank" rel="noopener">hub.docker.com/</a>)， 存放了数量庞大的镜像供用户下载。国内的公开仓库包括阿里云 、网易云等</p>
+</li>
+</ul>
+<blockquote>
+<p>需要正确的理解仓库/镜像/容器这几个概念:</p>
+<p>Docker 本身是一个容器运行载体或称之为管理引擎。我们把应用程序和配置依赖打包好形成一个可交付的运行环境，这个打包好的运行环境就是 image镜像文件。只有通过这个镜像文件才能生成容器。image 文件可以看作是容器的模板。Docker 根据 image 文件生成容器的实例。同一个 image 文件，可以生成多个同时运行的容器实例。</p>
+<ul>
+<li>image 文件生成容器实例，称为镜像文件。</li>
+<li>一个容器运行一种服务，当我们需要的时候，就可以通过docker客户端创建一个对应的运行实例，也就是我们的容器</li>
+<li>至于仓库，就是放了一堆镜像的地方，我们可以把镜像发布到仓储中，需要的时候从仓储中拉下来就可以了。</li>
+</ul>
+</blockquote>
+<p>Docker 简易流程图</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200525141906.png" alt=""></p>
+<h1 id="3-安装Docker"><a href="#3-安装Docker" class="headerlink" title="3. 安装Docker"></a>3. 安装Docker</h1><p>可以参考<a href="https://docs.docker.com/engine/install/centos/" target="_blank" rel="noopener">官方文档</a></p>
+<h2 id="1-删除旧版本"><a href="#1-删除旧版本" class="headerlink" title="1. 删除旧版本"></a>1. 删除旧版本</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo yum remove docker \</span><br><span class="line">                  docker-client \</span><br><span class="line">                  docker-client-latest \</span><br><span class="line">                  docker-common \</span><br><span class="line">                  docker-latest \</span><br><span class="line">                  docker-latest-logrotate \</span><br><span class="line">                  docker-logrotate \</span><br><span class="line">                  docker-engine</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-三种方法"><a href="#2-三种方法" class="headerlink" title="2. 三种方法"></a>2. 三种方法</h2><p>可以参考<a href="https://docs.docker.com/engine/install/centos/" target="_blank" rel="noopener">官方文档</a>中的三种方法任选一种进行下载。</p>
+<p>我用的是第三种方式：脚本下载</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com -o get-docker.sh</span><br><span class="line">sudo sh get-docker.sh</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-Docker版本"><a href="#3-Docker版本" class="headerlink" title="3. Docker版本"></a>3. Docker版本</h2><p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200525144151.png" alt=""></p>
+<h2 id="4-启动-Docker"><a href="#4-启动-Docker" class="headerlink" title="4. 启动 Docker"></a>4. 启动 Docker</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start docker</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200525144532.png" alt=""></p>
+<h1 id="4-Docker-镜像加速"><a href="#4-Docker-镜像加速" class="headerlink" title="4. Docker 镜像加速"></a>4. Docker 镜像加速</h1><p>以阿里云为例,首先注册一个阿里云账号,然后进入镜像加速页面</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200525145414.png" alt=""></p>
+<p>配置本机的 Docker 文件</p>
+<p>如果没有<code>/etc/docker/daemon.json</code>就自己创建</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim `/etc/docker/daemon.json`</span><br></pre></td></tr></table></figure>
+
+<p>重启 Docker 服务</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-hello-world"><a href="#5-hello-world" class="headerlink" title="5. hello world"></a>5. hello world</h1><p>直接通过 <code>docker run hello-world</code> 命令,我们可以直接从阿里云拉取 hello-world 镜像并创建容器自动运行(在本地没有找到 hello-world 的镜像时)</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200525145905.png" alt=""></p>
+<p>docker run 命令运行流程图</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200525145919.png" alt=""></p>
+<h1 id="6-Docker-和-VM-比较"><a href="#6-Docker-和-VM-比较" class="headerlink" title="6. Docker 和 VM 比较"></a>6. Docker 和 VM 比较</h1><ul>
+<li><p>Docker 工作原理</p>
+<p>Docker是一个Client-Server结构的系统，Docker守护进程运行在主机上，然后通过Socket连接从客户端访问，守护进程从客户端接受命令并管理运行在主机上的容器。容器，是一个运行时环境，就是我们前面说到的集装箱。</p>
+<p>例如下面 Docker 图标(一只鲸鱼背上拖着很多个集装箱, 鲸鱼类似于 Docker,一个个的集装箱就是软件开发环境中的各种软件)</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200525150049.png" alt=""></p>
+<p>以下为 Docker 运行架构图</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200525150122.png" alt=""></p>
+</li>
+<li><p>为什么 Docker 运行速度远大于 VM?</p>
+<ol>
+<li><p>Docker有着比虚拟机更少的抽象层。由于docker不需要Hypervisor实现硬件资源虚拟化,运行在docker容器上的程序直接使用的都是实际物理机的硬件资源。因此在CPU、内存利用率上docker将会在效率上有明显优势。</p>
+</li>
+<li><p>Docker利用的是宿主机的内核,而不需要CentOS。因此,当新建一个容器时,docker不需要和虚拟机一样重新加载一个操作系统内核。从而避免加载操作系统内核这个比较费时费资源的过程,当新建一个虚拟机时,虚拟机软件需要加载CentOS,整个新建过程是分钟级别的。而docker由于直接利用宿主机的操作系统,因此新建一个docker容器只需要几秒钟。</p>
+</li>
+</ol>
+</li>
+<li><p>Docker 和 VM 对比图</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200525150538.png" alt=""></p>
+</li>
+<li><p>Docker 和 VM 特点对比图</p>
+<p><img src="https://gitee.com/krislin_zhao/IMGcloud/raw/master/img/20200525150633.png" alt=""></p>
+</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://music.163.com/song/media/outer/url?id=1463165983.mp3'></li>
+                        
+                    
+                        
+                            <li title='2' data-url='http://music.163.com/song/media/outer/url?id=1460682363.mp3'></li>
+                        
+                    
+                        
+                            <li title='3' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='valine_container' class="valine_thread v"
+	data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    
+    ></div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-前提"><span class="toc-number">1.</span> <span class="toc-text">1. 前提</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-Docker三要素"><span class="toc-number">2.</span> <span class="toc-text">2. Docker三要素</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-安装Docker"><span class="toc-number">3.</span> <span class="toc-text">3. 安装Docker</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-删除旧版本"><span class="toc-number">3.1.</span> <span class="toc-text">1. 删除旧版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-三种方法"><span class="toc-number">3.2.</span> <span class="toc-text">2. 三种方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Docker版本"><span class="toc-number">3.3.</span> <span class="toc-text">3. Docker版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-启动-Docker"><span class="toc-number">3.4.</span> <span class="toc-text">4. 启动 Docker</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-Docker-镜像加速"><span class="toc-number">4.</span> <span class="toc-text">4. Docker 镜像加速</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-hello-world"><span class="toc-number">5.</span> <span class="toc-text">5. hello world</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-Docker-和-VM-比较"><span class="toc-number">6.</span> <span class="toc-text">6. Docker 和 VM 比较</span></a></li></ol>	
+        </div>
+    
+</div>
+
+
+        
+    <div class="blog-post-comments">
+      <section id="comment">
+        <div id="valine_container" class="valine_thread"></div>
+      </section>
+      <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+      <script src="https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js"></script>
+
+<style>
+  #comment{
+    width: 70%;
+    display: block;
+    border-radius: 20px;
+    margin: 0 auto;
+  }
+ .v #veditor{
+     min-height: 10rem;
+     background-image: url(https://cdn.jsdelivr.net/gh/cungudafa/img/images/girls2.png);
+     background-size: contain;
+     background-repeat: no-repeat;
+     background-position: right;
+     background-color: rgba(255,255,255,0);
+     resize: none;}
+
+ /*图片消失
+ #veditor:focus{
+	background-position-y: 200px;
+	transition: all 0.2s ease-in-out 0s;
+}  */  
+/*头像旋转*/
+img.vimg {
+     transition: all 1s   /* 旋转时间为 1s */
+}
+
+img.vimg:hover {
+     transform: rotate(360deg);
+     -webkit-transform: rotate(360deg);
+     -moz-transform: rotate(360deg);
+     -o-transform: rotate(360deg);
+     -ms-transform: rotate(360deg);
+}
+
+/*调整一下表情高度*/
+div.vcontent p  img.vemoji {
+    height: 30px;
+
+}
+</style>
+
+
+      <script>
+        var GUEST_INFO = ["nick", "mail", "link"];
+        var guest_info = "nick,mail,link"
+          .split(",")
+          .filter(function (item) {
+            return GUEST_INFO.indexOf(item) > -1;
+          });
+        var valine = new Valine();
+        valine.init({
+          el: "#valine_container",
+          admin_email: 'i@1l.fit',
+          appId: "iDHJ60Ufv3QjOR4sWuH4oL3r-9Nh9j0Va",
+          appKey: "S7rF0X45YIfNj5cNzdg4gMLl",
+          placeholder: "Just go go",
+          path: window.location.pathname,
+          pageSize: "15",
+          avatar: "monsterid",
+          lang: "",
+          pushType: "sc",
+          pushLink: "https://sc.ftqq.com/SCU106322T782cfcd867473745105f94e94de33c085f13bd947b6e3.send",
+          enableQQ: true,
+          master: 'eb4d5f16fb5a933662a768b5c2c85f20',   //博主邮箱md5
+          tagMeta: ["博主","小伙伴","访客"],     //标识字段名
+          friends:  ["4b278adff5fd7c28aedbf73dd9c52ae5","191434ebf724621793c3b2cb237b7e3d"],  //小伙伴邮箱Md5
+          emojiCDN: "https://mirrorcdn.bili33.top/",
+          // 表情title和图片映射
+          emojiMaps: {
+          "嘿嘿":"https://s-o.oss-cn-shanghai.aliyuncs.com/emoji/%E5%98%BF%E5%98%BF.jpg",    
+          "土豆":"https://s-o.oss-cn-shanghai.aliyuncs.com/emoji/tudou.gif",
+          "汗_":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200411023456.webp",
+          "点赞": "https://cdn.jsdelivr.net/gh/drew233/cdn/kawayi.webp",   
+          "傲娇":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409103906.webp",
+          "开心":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409104757.webp",
+          "扣手手":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130304.webp",
+          "仙女下凡":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130301.webp",
+          "得瑟":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130258.webp",
+          "揉左脸":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130254.webp",
+          "揉右脸":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200409130249.webp",
+          "滑稽":"https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_huaji.gif",
+          "彩虹滑稽":"https://cdn.jsdelivr.net/gh/drew233/cdn/caihongtiao.webp",
+          "呆滞":"https://cdn.jsdelivr.net/gh/drew233/cdn/daizhi.webp",
+          "躲进小被子":"https://cdn.jsdelivr.net/gh/drew233/cdn/djxbz.webp",
+          "给我也整一个":"https://cdn.jsdelivr.net/gh/drew233/cdn/gwyzyg.webp",
+          "草":"https://cdn.jsdelivr.net/gh/drew233/cdn/imgcao.webp",
+          "花":"https://cdn.jsdelivr.net/gh/drew233/cdn/imghua.webp",
+          "日":"https://cdn.jsdelivr.net/gh/drew233/cdn/imgri.webp",
+          "目瞪狗呆":"https://cdn.jsdelivr.net/gh/drew233/cdn/20200412095243.webp",
+          "tql":"https://cdn.jsdelivr.net/gh/drew233/cdn/tql.webp",
+          "转圈圈":"https://cdn.jsdelivr.net/gh/drew233/cdn/zqq.webp",
+          
+         
+         "tv_doge": "bilibilitv/[tv_doge].png",
+         "tv_亲亲": "bilibilitv/[tv_亲亲].png",
+         "tv_偷笑": "bilibilitv/[tv_偷笑].png",
+         "tv_再见": "bilibilitv/[tv_再见].png",
+         "tv_冷漠": "bilibilitv/[tv_冷漠].png",
+         "tv_发怒": "bilibilitv/[tv_发怒].png",
+         "tv_发财": "bilibilitv/[tv_发财].png",
+         "tv_可爱": "bilibilitv/[tv_可爱].png",
+         "tv_吐血": "bilibilitv/[tv_吐血].png",
+         "tv_呆": "bilibilitv/[tv_呆].png",
+         "tv_呕吐": "bilibilitv/[tv_呕吐].png",
+         "tv_困": "bilibilitv/[tv_困].png",
+         "tv_坏笑": "bilibilitv/[tv_坏笑].png",
+         "tv_大佬": "bilibilitv/[tv_大佬].png",
+         "tv_大哭": "bilibilitv/[tv_大哭].png",
+         "tv_委屈": "bilibilitv/[tv_委屈].png",
+         "tv_害羞": "bilibilitv/[tv_害羞].png",
+         "tv_尴尬": "bilibilitv/[tv_尴尬].png",
+         "tv_微笑": "bilibilitv/[tv_微笑].png",
+         "tv_思考": "bilibilitv/[tv_思考].png",
+         "tv_惊吓": "bilibilitv/[tv_惊吓].png",
+         "tv_打脸": "bilibilitv/[tv_打脸].png",
+         "tv_抓狂": "bilibilitv/[tv_抓狂].png",
+         "tv_抠鼻": "bilibilitv/[tv_抠鼻].png",
+         "tv_斜眼笑": "bilibilitv/[tv_斜眼笑].png",
+         "tv_无奈": "bilibilitv/[tv_无奈].png",
+         "tv_晕": "bilibilitv/[tv_晕].png",
+         "tv_流汗": "bilibilitv/[tv_流汗].png",
+         "tv_流泪": "bilibilitv/[tv_流泪].png",
+         "tv_流鼻血": "bilibilitv/[tv_流鼻血].png",
+         "tv_点赞": "bilibilitv/[tv_点赞].png",
+         "tv_生气": "bilibilitv/[tv_生气].png",
+         "tv_生病": "bilibilitv/[tv_生病].png",
+         "tv_疑问": "bilibilitv/[tv_疑问].png",
+         "tv_白眼": "bilibilitv/[tv_白眼].png",
+         "tv_皱眉": "bilibilitv/[tv_皱眉].png",
+         "tv_目瞪口呆": "bilibilitv/[tv_目瞪口呆].png",
+         "tv_睡着": "bilibilitv/[tv_睡着].png",
+         "tv_笑哭": "bilibilitv/[tv_笑哭].png",
+         "tv_腼腆": "bilibilitv/[tv_腼腆].png",
+         "tv_色": "bilibilitv/[tv_色].png",
+         "tv_调侃": "bilibilitv/[tv_调侃].png",
+         "tv_调皮": "bilibilitv/[tv_调皮].png",
+         "tv_鄙视": "bilibilitv/[tv_鄙视].png",
+         "tv_闭嘴": "bilibilitv/[tv_闭嘴].png",
+         "tv_难过": "bilibilitv/[tv_难过].png",
+         "tv_馋": "bilibilitv/[tv_馋].png",
+         "tv_鬼脸": "bilibilitv/[tv_鬼脸].png",
+         "tv_黑人问号": "bilibilitv/[tv_黑人问号].png",
+         "tv_鼓掌": "bilibilitv/[tv_鼓掌].png",
+         "卖萌": "bilibili2233/[2233娘_卖萌].png",
+         "吃惊": "bilibili2233/[2233娘_吃惊].png",
+         "吐魂": "bilibili2233/[2233娘_吐魂].png",
+         "喝水": "bilibili2233/[2233娘_喝水].png",
+         "困惑": "bilibili2233/[2233娘_困惑].png",
+         "大哭": "bilibili2233/[2233娘_大哭].png",
+         "大笑": "bilibili2233/[2233娘_大笑].png",
+         "委屈": "bilibili2233/[2233娘_委屈].png",
+         "怒": "bilibili2233/[2233娘_怒].png",
+         "无言": "bilibili2233/[2233娘_无言].png",
+         "出汗": "bilibili2233/[2233娘_汗].png",
+         "疑问": "bilibili2233/[2233娘_疑问].png",
+         "第一": "bilibili2233/[2233娘_第一].png",
+         "耶": "bilibili2233/[2233娘_耶].png",
+         "郁闷": "bilibili2233/[2233娘_郁闷].png",
+         "妙": "bilibiliHotKey/1.jpg",
+         "危": "bilibiliHotKey/2.jpg",
+         "有内味儿了": "bilibiliHotKey/3.jpg",
+         "高产": "bilibiliHotKey/4.jpg",
+         "我枯了": "bilibiliHotKey/5.jpg",
+         "不愧是你": "bilibiliHotKey/6.jpg",
+         "狼火": "bilibiliHotKey/9.jpg",
+         "你细品": "bilibiliHotKey/10.jpg",
+         "锤": "bilibiliHotKey/11.jpg",
+         "秀": "bilibiliHotKey/12.jpg",
+         "这次一定": "bilibiliHotKey/14.jpg",
+         "酸了": "bilibiliHotKey/15.jpg",
+         "打卡": "bilibiliHotKey/16.jpg",
+         "我太南了": "bilibiliHotKey/18.jpg",
+         "吹爆": "bilibiliHotKey/19.jpg",
+         "奥力给": "bilibiliHotKey/20.jpg",
+         "awsl": "bilibiliHotKey/21.jpg",
+         "猛男必看": "bilibiliHotKey/22.jpg",
+         "害": "bilibiliHotKey/23.jpg",
+         "知识盲区": "bilibiliHotKey/24.jpg",
+         "我全都要": "bilibiliHotKey/25.jpg",
+         "咕咕咕": "bilibiliHotKey/26.jpg",
+         "可以": "bilibiliHotKey/27.jpg",
+         "真香": "bilibiliHotKey/28.jpg",
+         "完结": "bilibiliHotKey/29.jpg",
+         "有生之年": "bilibiliHotKey/30.jpg",
+         "大师球": "bilibiliHotKey/31.jpg",
+         "爷关更": "bilibiliHotKey/32.jpg",
+            
+            
+          },
+        });
+      </script>
+
+
+   
+      
+      <!-- 今日诗词：随机返回一句古诗词名句的接口，宅到用来做 Valine 的 placeholder 显示内容 -->
+      <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+      <script type="text/javascript">
+       jinrishici.load(function(result) {
+           var jrsc_plac =  result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author;
+           document.getElementById("veditor").setAttribute("placeholder",jrsc_plac);
+       })
+      </script>
+    </div>
+    
+<!--
+
+
+
+-->
+    </div>
+</div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7},"log":false});</script></body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '171639872', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<!-- 天气 -->
+<script type="text/javascript">
+WIDGET = {FID: '21I8HlZYjY'}
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+
+<script>
+   var title1="text=blog又有新评论啦~！--by Valine"
+var SCKEY_Server="SCU106322T782cfcd867473745105f94e94de33c085f13bd947b6e3"
+var ValineButton=document.getElementsByClassName("vsubmit vbtn")[0];
+function send_valine_Server(){
+    var text="desp=";
+    var pagename=document.title;
+    var wz=pagename.indexOf('|');
+    var res=pagename.substring(0,wz);
+    var pageurl=document.URL;
+    var ptime=new Date();
+    var vnick=document.getElementsByClassName("vnick vinput")[0].value;
+    var vmail=document.getElementsByClassName("vmail vinput")[0].value;
+    var vlink=document.getElementsByClassName("vlink vinput")[0].value;
+    var veditor=document.getElementsByClassName("veditor vinput")[0].value;
+    var data=text+"|昵称："+"|邮箱："+"|网站地址："+"|当前页面："+"|评论内容："+"|跳转链接："+"|评论时间"+"\n"+"|----|----|----|----|"+"\n"+"|   "+vnick+"   |   "+vmail+"  |  "+vlink+"|   "+res+"| "+veditor+"| "+pageurl+"|" +ptime.toLocaleString()+"|";
+    var httpRequest = new XMLHttpRequest();//第一步：创建需要的对象
+    httpRequest.open('POST', 'https://sc.ftqq.com/'+SCKEY_Server+'.send', true); //第二步：打开连接
+    httpRequest.setRequestHeader("Content-type","application/x-www-form-urlencoded");//设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+    httpRequest.send(title1+"&"+data);//发送请求 将情头体写在send中
+};
+ValineButton.onclick=send_valine_Server;
+  </script>
+</html>
