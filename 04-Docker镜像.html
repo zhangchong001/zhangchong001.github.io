@@ -10,12 +10,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="ZC,"> 
-    <meta name="description" content="
-1. UnionFS 联合文件系统
-2. Docker 镜像加载原理
-3. Docker 镜像 commit 操作
-
-镜像是一种轻量级、可执行的独立软件包，用来打包软件运行环境和基于运行环境开发，,"> 
+    <meta name="description" content="镜像是一种轻量级、可执行的独立软件包，用来打包软件运行环境和基于运行环境开发，它包含运行某个软件所需的所有内容，包括代码、运行时、库、环境变量和配置文件。
+而 Docker 镜像的底层实现原理是 U,"> 
     <meta name="author" content="ZC"> 
     <link rel="alternative" href="atom.xml" title="zc&#39;blog" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -68,12 +64,7 @@
 
         </div>
         <div class="content markdown">
-            <ul>
-<li><a href="#1-unionfs-联合文件系统">1. UnionFS 联合文件系统</a></li>
-<li><a href="#2-docker-镜像加载原理">2. Docker 镜像加载原理</a></li>
-<li><a href="#3-docker-镜像-commit-操作">3. Docker 镜像 commit 操作</a></li>
-</ul>
-<p>镜像是一种轻量级、可执行的独立软件包，用来打包软件运行环境和基于运行环境开发，它包含运行某个软件所需的所有内容，包括代码、运行时、库、环境变量和配置文件。</p>
+            <p>镜像是一种轻量级、可执行的独立软件包，用来打包软件运行环境和基于运行环境开发，它包含运行某个软件所需的所有内容，包括代码、运行时、库、环境变量和配置文件。</p>
 <p>而 Docker 镜像的底层实现原理是 UnionFS 联合文件系统</p>
 <h1 id="1-UnionFS-联合文件系统"><a href="#1-UnionFS-联合文件系统" class="headerlink" title="1. UnionFS 联合文件系统"></a>1. UnionFS 联合文件系统</h1><p>UnionFS（联合文件系统）：Union文件系统（UnionFS）是一种分层、轻量级并且高性能的文件系统，它支持对文件系统的修改作为一次提交来一层层的叠加，同时可以将不同目录挂载到同一个虚拟文件系统下(unite several directories into a single virtual filesystem)。Union 文件系统是 Docker 镜像的基础。镜像可以通过分层来进行继承，基于基础镜像（没有父镜像），可以制作各种具体的应用镜像。</p>
 <p>类似于花卷这种常见的早餐,文件系统可以通过一层一层的嵌套,对外暴露统一的”表面层”来供使用者操作</p>

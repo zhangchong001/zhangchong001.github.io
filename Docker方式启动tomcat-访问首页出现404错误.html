@@ -10,16 +10,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="ZC,"> 
-    <meta name="description" content="
-场景
-初步解决
-1. 进入容器的tomcat目录
-2. 进入webapps文件夹
-3.把webapps.dist中的内容复制到webapps中
-
-
-彻底解决
-1. ctrl+p+q不退出容器的方式,"> 
+    <meta name="description" content="场景docker启动tomcat(版本是从阿里云上拉下的:9.0.35)时,访问tomcat首页时出现404错误
+初步解决1. 进入容器的tomcat目录使用命令: docker exec -it ,"> 
     <meta name="author" content="ZC"> 
     <link rel="alternative" href="atom.xml" title="zc&#39;blog" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -72,22 +64,7 @@
 
         </div>
         <div class="content markdown">
-            <ul>
-<li><a href="#场景">场景</a></li>
-<li><a href="#初步解决">初步解决</a><ul>
-<li><a href="#1-进入容器的tomcat目录">1. 进入容器的tomcat目录</a></li>
-<li><a href="#2-进入webapps文件夹">2. 进入webapps文件夹</a></li>
-<li><a href="#3把webappsdist中的内容复制到webapps中">3.把webapps.dist中的内容复制到webapps中</a></li>
-</ul>
-</li>
-<li><a href="#彻底解决">彻底解决</a><ul>
-<li><a href="#1-ctrlpq不退出容器的方式返回到宿主机目录下">1. ctrl+p+q不退出容器的方式返回到宿主机目录下</a></li>
-<li><a href="#2-使用docker-commit命令将修改后的容器生成新的镜像">2. 使用docker commit命令将修改后的容器生成新的镜像</a></li>
-<li><a href="#3运行新的镜像">3.运行新的镜像</a></li>
-</ul>
-</li>
-</ul>
-<h1 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h1><p>docker启动tomcat(版本是从阿里云上拉下的:9.0.35)时,访问tomcat首页时出现404错误</p>
+            <h1 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h1><p>docker启动tomcat(版本是从阿里云上拉下的:9.0.35)时,访问tomcat首页时出现404错误</p>
 <h1 id="初步解决"><a href="#初步解决" class="headerlink" title="初步解决"></a>初步解决</h1><h2 id="1-进入容器的tomcat目录"><a href="#1-进入容器的tomcat目录" class="headerlink" title="1. 进入容器的tomcat目录"></a>1. 进入容器的tomcat目录</h2><p>使用命令: <code>docker exec -it 运行的tomcat容器ID /bin/bash</code>进入到tomcat的目录</p>
 <p><img src="https://cdn.jsdelivr.net/gh/krislinzhao/IMGcloud/img/20200514180618.png" alt=""></p>
 <h2 id="2-进入webapps文件夹"><a href="#2-进入webapps文件夹" class="headerlink" title="2. 进入webapps文件夹"></a>2. 进入webapps文件夹</h2><p>发现里面是空的(tomcat默认的欢迎页面实际上放在的路径应该是:webapps/ROOT/index.jsp或者index.html)</p>
