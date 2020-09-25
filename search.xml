@@ -2516,4 +2516,21 @@ docker logs -f -t --tail 容器ID/容器名
         <tag>python</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Tomcat安装及配置教程</title>
+    <url>/Tomcat%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>步骤一：下载Tomcat<br>      链接如下：<a href="https://tomcat.apache.org/" target="_blank" rel="noopener">https://tomcat.apache.org/</a><br><img src="/images/2020/09/25/f75c9dba-da03-47f5-9f6f-e2c903f8e7e4.png" alt="image.png"><br>注意：要根据自己的JDK版本选择Tomcat的版本。<br><img src="/images/2020/09/25/b4bd44b2-0462-433f-8aa6-cc295b069a31.png" alt="image.png"><br>因本人java版本为10.0.2，故选择Tomcat9.0.31版本（Windows请自行选择64位或32位）<br>步骤二：配置环境变量<br>新建系统环境变量：<br><img src="/images/2020/09/25/5193973f-dd73-484d-b8de-283bd785aa1e.png" alt="image.png"><br>修改系统Path(变量值末尾添加%CATALINA_HOME%\bin;):<br><img src="/images/2020/09/25/314fe953-5609-4a7a-92d0-c4f510b280b5.png" alt="image.png"><br>保存即可。<br>步骤三：查询环境是否配置成功<br><img src="/images/2020/09/25/ad94ddc3-a5ac-4ba2-91fd-ca25979ce87c.png" alt="image.png"><br>ps:若出现上述内容，则环境配置成功<br>步骤四：启动Tomcat：使用命令：startup.bat<br>==(此处可能出现闪退，导致启动不成功，请滑至文章结尾处查看解决办法)==<br><img src="/images/2020/09/25/33740a05-a7d7-4e1a-8483-1537ca33a904.png" alt="image.png">ps:当出现Tomcat的命令框且在浏览器中输入<a href="http://localhost:8080/出现下述界面（注意，此时上述两个命令框不要关闭）：" target="_blank" rel="noopener">http://localhost:8080/出现下述界面（注意，此时上述两个命令框不要关闭）：</a><br><img src="/images/2020/09/25/2cf1e48c-c64f-4765-a665-ed9fdf42e8a4.png" alt="image.png"><br>大功告成，Tomcat搭建成功！！！！<br>&lt;问题&gt;</p>
+<p>Q：出现闪退怎么办（即：启动tomcatw.exe出现unable to open the service tomcat怎么办）？</p>
+<p><img src="/images/2020/09/25/6ab19449-ec11-469d-a31a-72eac6b366b8.png" alt="image.png"></p>
+<p>A：打开命令行，输入命令service.bat install</p>
+<p><img src="/images/2020/09/25/bad1f6f5-5b5a-486d-93f9-76a4b74f0913.png" alt="image.png"></p>
+<p>再回到步骤四，重新启动Tomcat。</p>
+]]></content>
+      <categories>
+        <category>服务器</category>
+      </categories>
+      <tags>
+        <tag>服务器</tag>
+      </tags>
+  </entry>
 </search>
