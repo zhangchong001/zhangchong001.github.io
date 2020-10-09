@@ -2533,4 +2533,119 @@ docker logs -f -t --tail 容器ID/容器名
         <tag>服务器</tag>
       </tags>
   </entry>
+  <entry>
+    <title>10 个节省时间和改善工作流的 Git 技巧</title>
+    <url>/10-%E4%B8%AA%E8%8A%82%E7%9C%81%E6%97%B6%E9%97%B4%E5%92%8C%E6%94%B9%E5%96%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%9A%84-Git-%E6%8A%80%E5%B7%A7.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><ul>
+<li><a href="#技巧1优化配置">技巧1:优化配置</a><ul>
+<li><a href="#查找顺序">查找顺序</a></li>
+<li><a href="#修改配置">修改配置</a></li>
+<li><a href="#显示当前设置">显示当前设置</a></li>
+<li><a href="#一些有用的配置">一些有用的配置</a></li>
+</ul>
+</li>
+<li><a href="#技巧2别名alias">技巧2:别名(alias)</a><ul>
+<li><a href="#一些有用的别名">一些有用的别名</a></li>
+</ul>
+</li>
+<li><a href="#技巧-3查找-commits-和更改">技巧 3：查找 Commits 和更改</a><ul>
+<li><a href="#通过commits信息查找">通过commits信息查找</a></li>
+<li><a href="#通过更改查找">通过更改查找</a></li>
+<li><a href="#通过日期查找">通过日期查找</a></li>
+</ul>
+</li>
+<li><a href="#技巧4添加hunk">技巧4:添加hunk</a></li>
+<li><a href="#技巧-5-储藏stash更改而不提交">技巧 5： 储藏（stash）更改而不提交</a><ul>
+<li><a href="#创建">创建</a></li>
+<li><a href="#罗列">罗列</a></li>
+<li><a href="#浏览">浏览</a></li>
+<li><a href="#应用">应用</a></li>
+<li><a href="#清理">清理</a></li>
+</ul>
+</li>
+<li><a href="#技巧-6空运行dry-run">技巧 6：空运行（Dry Run）</a></li>
+<li><a href="#技巧-7安全强制推送">技巧 7：安全强制推送</a></li>
+<li><a href="#技巧-8修改-commit-信息">技巧 8：修改 commit 信息</a></li>
+<li><a href="#技巧-9修改历史">技巧 9：修改历史</a></li>
+<li><a href="#技巧-10存档跟踪文件">技巧 10：存档跟踪文件</a></li>
+<li><a href="#额外提醒单破折号">额外提醒：单破折号</a></li>
+</ul>
+<p><a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">Git Pro</a></p>
+<h1 id="技巧1-优化配置"><a href="#技巧1-优化配置" class="headerlink" title="技巧1:优化配置"></a>技巧1:优化配置</h1><p>Git 在全局、用户和本地级别上都是高度可配置的。</p>
+<p><a href="https://git-scm.com/docs/git-config" target="_blank" rel="noopener">git配置文档</a></p>
+<h2 id="查找顺序"><a href="#查找顺序" class="headerlink" title="查找顺序"></a>查找顺序</h2><p>每个设置都可以被覆盖：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">本地级别:</span><br><span class="line">项目文件夹&#x2F;.git&#x2F;config</span><br><span class="line">用户级别:</span><br><span class="line">用户目录&#x2F;.config&#x2F;git</span><br><span class="line">用户目录&#x2F;.gitconfig</span><br><span class="line">全局级别：</span><br><span class="line">git目录&#x2F;etc&#x2F;gitconfig</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 全局设置</span></span><br><span class="line">git config --global &lt;keypath&gt; &lt;value&gt;</span><br><span class="line"><span class="comment"># 本地设置</span></span><br><span class="line">git config &lt;keypath&gt; &lt;value&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="显示当前设置"><a href="#显示当前设置" class="headerlink" title="显示当前设置"></a>显示当前设置</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 显示当前设置及其来源</span></span><br><span class="line">git config --list --show-origin</span><br></pre></td></tr></table></figure>
+
+<h2 id="一些有用的配置"><a href="#一些有用的配置" class="headerlink" title="一些有用的配置"></a>一些有用的配置</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 设定身份</span></span><br><span class="line">git config --global user.name<span class="string">"&lt;your name&gt;"</span></span><br><span class="line">git config --global user.email &lt;your email&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="技巧2-别名-alias"><a href="#技巧2-别名-alias" class="headerlink" title="技巧2:别名(alias)"></a>技巧2:别名(alias)</h1><p><a href="[https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-Git-%E5%88%AB%E5%90%8D](https://git-scm.com/book/zh/v2/Git-基础-Git-别名)">Git 别名</a></p>
+<p>创建别名来保存常用的git命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建别名</span></span><br><span class="line">git config --global <span class="built_in">alias</span>.&lt;<span class="built_in">alias</span>-name&gt; <span class="string">"&lt;git command&gt;"</span></span><br><span class="line"><span class="comment"># 使用别名</span></span><br><span class="line">git &lt;<span class="built_in">alias</span>-name&gt; &lt;more optional arguments&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="一些有用的别名"><a href="#一些有用的别名" class="headerlink" title="一些有用的别名"></a>一些有用的别名</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 撤销上次提交</span></span><br><span class="line">git config --global alias.undo <span class="string">"reset --soft HEAD^"</span></span><br><span class="line"><span class="comment"># 将暂存区更新修订到上次提交 (不改变提交信息)</span></span><br><span class="line">git config --global alias.amend <span class="string">"commit --amend --no-edit"</span></span><br><span class="line"><span class="comment"># 压缩的状态输出</span></span><br><span class="line">git config --global alias.st <span class="string">"status -sb"</span></span><br><span class="line"><span class="comment"># 用 GRAPH 为日志着色</span></span><br><span class="line">git config --global alias.lg <span class="string">"log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset'"</span></span><br><span class="line"><span class="comment"># 删除所有已合并的分支</span></span><br><span class="line">git config --global alias.rmb <span class="string">"!git branch --merged | grep -v '*' | xargs -n 1 git branch -d"</span></span><br><span class="line"><span class="comment"># 贡献排行</span></span><br><span class="line">git config --global alias.rank <span class="string">"shortlog -n -s --no-merges"</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="技巧-3：查找-Commits-和更改"><a href="#技巧-3：查找-Commits-和更改" class="headerlink" title="技巧 3：查找 Commits 和更改"></a>技巧 3：查找 Commits 和更改</h1><h2 id="通过commits信息查找"><a href="#通过commits信息查找" class="headerlink" title="通过commits信息查找"></a>通过commits信息查找</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 通过 commit 信息查找 (所有分支)</span></span><br><span class="line">git <span class="built_in">log</span> --all --grep=<span class="string">'&lt;search term&gt;'</span></span><br><span class="line"><span class="comment"># 通过 commit 信息查找 (包含 reflog)</span></span><br><span class="line">git <span class="built_in">log</span>-g --grep=<span class="string">'&lt;search term&gt;'</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="通过更改查找"><a href="#通过更改查找" class="headerlink" title="通过更改查找"></a>通过更改查找</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 通过更新的内容查找</span></span><br><span class="line">git <span class="built_in">log</span> -S <span class="string">'&lt;search term&gt;'</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="通过日期查找"><a href="#通过日期查找" class="headerlink" title="通过日期查找"></a>通过日期查找</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 通过日期范围查找</span></span><br><span class="line">git <span class="built_in">log</span> --after=<span class="string">'DEC 152019'</span> --until=<span class="string">'JAN 102020'</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="技巧4-添加hunk"><a href="#技巧4-添加hunk" class="headerlink" title="技巧4:添加hunk"></a>技巧4:添加hunk</h1><p>git add <filepath> 不仅能添加文件的所有变更， –path / -p 参数还可以交互式暂存区块。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 补丁命令</span></span><br><span class="line">y = 暂存区块</span><br><span class="line">n = 不暂存这个区块</span><br><span class="line">q = 退出</span><br><span class="line">a = 暂存当前文件的此区块以及所有剩余区块</span><br><span class="line">d = 不暂存当前文件的此区块以及所有剩余区块</span><br><span class="line">/ = 查找区块 (正则表达式)</span><br><span class="line">s = 划分成更小的区块</span><br><span class="line">e = 手动编辑区块</span><br><span class="line">? = 打印帮助说明</span><br><span class="line">g = 选择要前往的区块</span><br><span class="line">j = 将区块设为未定，查看下一个未定区块</span><br><span class="line">J = 将区块设为未定，查看下一个区块</span><br><span class="line">k = 将区块设为未定，查看上一个未定区块</span><br><span class="line">J = 将区块设为未定，查看下一个区块</span><br></pre></td></tr></table></figure>
+
+<h1 id="技巧-5：-储藏（stash）更改而不提交"><a href="#技巧-5：-储藏（stash）更改而不提交" class="headerlink" title="技巧 5： 储藏（stash）更改而不提交"></a>技巧 5： 储藏（stash）更改而不提交</h1><p>stash 将当前的更改临时搁置起来。在它的帮助下，可以返回当前状态的索引，并能在稍后应用已储藏的更改。</p>
+<p>默认情况下，仅储藏当前跟踪文件中的更改，新文件将被忽略。</p>
+<p>我们可以独立地创建和应用多个 stash。</p>
+<p><a href="[https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%82%A8%E8%97%8F%E4%B8%8E%E6%B8%85%E7%90%86](https://git-scm.com/book/zh/v2/Git-工具-储藏与清理)">Git 工具 - 储藏与清理</a></p>
+<h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建新的 STASH</span></span><br><span class="line">git stash</span><br><span class="line"><span class="comment"># 创建新的 STASH (包含未追踪的更改)</span></span><br><span class="line">git stash -u/--include-untracked</span><br><span class="line"><span class="comment"># 创建新的 STASH 并命名</span></span><br><span class="line">git stash save<span class="string">"&lt;stash name&gt;"</span></span><br><span class="line"><span class="comment"># 交互式储藏</span></span><br><span class="line">git stash -p</span><br></pre></td></tr></table></figure>
+
+<h2 id="罗列"><a href="#罗列" class="headerlink" title="罗列"></a>罗列</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 列出所有的 STASH (为其他命令提供 "n")</span></span><br><span class="line">git stash list</span><br></pre></td></tr></table></figure>
+
+<h2 id="浏览"><a href="#浏览" class="headerlink" title="浏览"></a>浏览</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 浏览 STASH 内容</span></span><br><span class="line">git stash show</span><br><span class="line"><span class="comment"># 浏览 STASH 差异</span></span><br><span class="line">git stash show -p</span><br></pre></td></tr></table></figure>
+
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 应用上一个 STASH (删除 stash)</span></span><br><span class="line">git stash pop</span><br><span class="line"><span class="comment"># 应用上一个 STASH (保留 stash)</span></span><br><span class="line">git stash apply</span><br><span class="line"><span class="comment"># 应用特定的 STASH (n = stash 列表序号)</span></span><br><span class="line">git stash pop/apply stash@&#123;n&#125;</span><br><span class="line"><span class="comment"># 从 STASH 创建新的分支 (n = stash 列表序号)</span></span><br><span class="line">git stash branch &lt;newbranch name&gt; stash@&#123;n&#125;</span><br><span class="line"><span class="comment"># 从 STASH 应用单个文件 (n = stash 列表序号)</span></span><br><span class="line">git checkout stash@&#123;n&#125; -- &lt;filepath&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="清理"><a href="#清理" class="headerlink" title="清理"></a>清理</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除特定的 STASH (n = stash 列表序号)</span></span><br><span class="line">git stash drop stash@&#123;n&#125;</span><br><span class="line"><span class="comment"># 删除所有的 STASH</span></span><br><span class="line">git stash clear</span><br></pre></td></tr></table></figure>
+
+<h1 id="技巧-6：空运行（Dry-Run）"><a href="#技巧-6：空运行（Dry-Run）" class="headerlink" title="技巧 6：空运行（Dry Run）"></a>技巧 6：空运行（Dry Run）</h1><p>许多 git 操作可能具有破坏性，例如， git clean -f 将删除所有未跟踪的文件，而且无法恢复。</p>
+<p>要避免出现这种灾难性的结果，许多命令都支持 <em>dry-run</em> ，可以在实际产生结果前对其进行检查。不过遗憾的是，使用的选项不完全一致：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git clean -n/--dry-run</span><br><span class="line">git add -n/--dry-run</span><br><span class="line">git rm -n/--dry-run</span><br><span class="line"><span class="comment"># GIT MERGE 模拟 DRY-RUN</span></span><br><span class="line">git merge --no-commit --no-ff &lt;branch&gt;</span><br><span class="line">git diff --cached</span><br><span class="line">git merge --abort</span><br></pre></td></tr></table></figure>
+
+<h1 id="技巧-7：安全强制推送"><a href="#技巧-7：安全强制推送" class="headerlink" title="技巧 7：安全强制推送"></a>技巧 7：安全强制推送</h1><p>在处理旧的 commit、创建新的 head 等情况时时很容易弄乱分支。 git push –force 可以覆盖远程变更，但不应该这样做！</p>
+<p>git push –force 是一种具有破坏性且危险的操作，因为它无条件生效，并且会破坏其他提交者已经推送的所有 commit。这对于其他人的代码仓库来说不一定是致命的，但是改变历史记录并影响其他人并不是一个好主意。</p>
+<p>更好的选择是使用 git push –force-with-lease 。</p>
+<p>git 不会无条件地覆盖上游的远程仓库，而是检查是否有本地不可用的远程更改。如果有，它会失败并显示一条“stale info”消息，并告诉我们需要先运行 git fetch 。</p>
+<p><a href="https://git-scm.com/docs/git-push#Documentation/git-push.txt---force-with-leaseltrefnamegt" target="_blank" rel="noopener">git push</a></p>
+<h1 id="技巧-8：修改-commit-信息"><a href="#技巧-8：修改-commit-信息" class="headerlink" title="技巧 8：修改 commit 信息"></a>技巧 8：修改 commit 信息</h1><p>Commit 是不可变的，且不能更改。不过可以用一条新的 commit 信息修订现有的 commit，这会覆盖原始 commit，因此请勿在已推送的 commit 中使用它。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit --amend -m <span class="string">"&lt;new commit message&gt;"</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="技巧-9：修改历史"><a href="#技巧-9：修改历史" class="headerlink" title="技巧 9：修改历史"></a>技巧 9：修改历史</h1><p>修改代码仓库的历史不仅限于修改上次提交信息，使用 git rebase 可以修改多个提交：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 提交的范围</span></span><br><span class="line">git rebase -i/--interactive HEAD~&lt;number of commits&gt;</span><br><span class="line"><span class="comment"># 该 hash 之后的所有提交</span></span><br><span class="line">git rebase -i/--interactive &lt;commit <span class="built_in">hash</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在配置的编辑器中倒序列出所有的 commit，像这样：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#&lt;command&gt;&lt;commit hash&gt;&lt;commit message&gt;</span></span><br><span class="line">pick5df8fbc revamped logic</span><br><span class="line">pick ca5154e README typos fixed</span><br><span class="line">pick a104aff added awesome new feature</span><br></pre></td></tr></table></figure>
+
+<p>通过更改编辑器中的实际内容，可以为 git 提供一个方案，来说明如何进行 rebase：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># p, pick = 使用提交而不更改</span></span><br><span class="line"><span class="comment"># r, reword = 修改提交信息</span></span><br><span class="line"><span class="comment"># e, edit = 编辑提交</span></span><br><span class="line"><span class="comment"># s, squash = 汇合提交</span></span><br><span class="line"><span class="comment"># f, fixup = 类似 "squash"，但是会丢弃提交信息</span></span><br><span class="line"><span class="comment"># x, exec = 运行命令 (其余行)</span></span><br><span class="line"><span class="comment"># d, drop = 移除提交</span></span><br></pre></td></tr></table></figure>
+
+<p>保存编辑器后，git 将运行该方案以重写历史记录。</p>
+<p>e, edit 会暂停 rebase，就可以编辑代码仓库的当前状态。完成编辑后，运行 git rebase –continue 。</p>
+<p>如果过程中出现问题（例如合并冲突），我们需要重新开始，可以使用 git rebase –abort 。</p>
+<p><a href="https://git-scm.com/docs/git-rebase" target="_blank" rel="noopener">git-rebase</a></p>
+<h1 id="技巧-10：存档跟踪文件"><a href="#技巧-10：存档跟踪文件" class="headerlink" title="技巧 10：存档跟踪文件"></a>技巧 10：存档跟踪文件</h1><p>可以使用不同格式（ zip 或 tar ）来压缩特定引用的跟踪文件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">git archive --format&lt;format&gt; --output&lt;filename&gt; &lt;ref&gt;</span><br></pre></td></tr></table></figure>
+
+<p><ref> 可以是一个分支、commit hash 或者一个标签。</p>
+<p><a href="https://git-scm.com/docs/git-archive" target="_blank" rel="noopener">git-archive</a></p>
+<h1 id="额外提醒：单破折号"><a href="#额外提醒：单破折号" class="headerlink" title="额外提醒：单破折号"></a>额外提醒：单破折号</h1><p>有一个快捷方式可以表示刚用过的分支：一个单破折号 -</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout my-branch</span><br><span class="line"><span class="comment"># 当前分支：my-branch</span></span><br><span class="line">&lt;dosome git operations, e.g. adding/commiting&gt;</span><br><span class="line">git checkout develop</span><br><span class="line"><span class="comment"># 当前分支：develop</span></span><br><span class="line">git merge -</span><br><span class="line"><span class="comment"># 将 my-branch 合并到 develop</span></span><br></pre></td></tr></table></figure>
+
+<p>单破折号等同于 @{-1} 。</p>
+<p><a href="https://git-scm.com/docs/git-checkout#Documentation/git-checkout.txt-ltbranchgt" target="_blank" rel="noopener">git-checkout</a></p>
+]]></content>
+  </entry>
 </search>
