@@ -2648,4 +2648,27 @@ docker logs -f -t --tail 容器ID/容器名
 <p><a href="https://git-scm.com/docs/git-checkout#Documentation/git-checkout.txt-ltbranchgt" target="_blank" rel="noopener">git-checkout</a></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>微信地图导航</title>
+    <url>/%E5%BE%AE%E4%BF%A1%E5%9C%B0%E5%9B%BE%E5%AF%BC%E8%88%AA.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>☀️ wxmap是一款整合了高德地图、腾讯地图、和风天气、一言、腾讯同声传译插件（计划）的实用型微信小程序。</p>
+</hr>
+
+<h1 id="在线体验"><a href="#在线体验" class="headerlink" title="在线体验"></a>在线体验</h1><p><img src="/images/2020/11/06/7519b4da-ee97-4e24-9a3e-9985d4cbbd54.jpg" alt="小程序码.jpg"></p>
+<h1 id="效果预览"><a href="#效果预览" class="headerlink" title="效果预览"></a>效果预览</h1><p><img src="https://img-blog.csdnimg.cn/20200528112530994.gif" alt="Image text"></p>
+<h1 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h1><h4 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h4><ul>
+<li>Node.js</li>
+<li>注册微信小程序开发者<h4 id="API工具准备"><a href="#API工具准备" class="headerlink" title="API工具准备"></a>API工具准备</h4></li>
+<li><a href="http://lbs.qq.com/miniProgram/jsSdk/jsSdkGuide/jsSdkOverview" target="_blank">注册qqmap开发者</a></li>
+<li><a href="https://console.amap.com/dev/key/app" target="_blank">注册高德地图开发者</a></li>
+<li><a href="https://dev.heweather.com/" target="_blank">注册和风天气开发者</a></li>
+<li><a href="https://developer.hitokoto.cn/sentence/" target="_blank">一言接口使用文档</a></hr>
+
+</li>
+</ul>
+<h4 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h4><ul>
+<li><a href="https://blog.csdn.net/tomatocc/article/details/106402276" target="_blank">项目部署步骤</a></li>
+</ul>
+]]></content>
+  </entry>
 </search>
