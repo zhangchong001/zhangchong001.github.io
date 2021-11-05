@@ -2859,37 +2859,22 @@ docker logs -f -t --tail 容器ID/容器名
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting/dist/Meting.min.js"></script><p>FTP用于在Internet上控制文件的双向传输。同时，它也是一个应用程序。基于不同的操作系统有不同的FTP应用程序，而所有这些应用程序都遵循同一种协议以传输文件。在FTP的使用中，用户经常遇到两个概念：“下载”和“上传”下载文件就是从远程主机复制文件到自己的电脑上💻；上传文件就是将自己电脑上💻的文件复制到远程计算机。</p>
 <h1 id="任务一"><a href="#任务一" class="headerlink" title="任务一"></a>任务一</h1><p><code>配置企业文件下载服务器</code><br>某公司视频网站处于经营初期，为了提高公司的知名度，争取更多的用户资源，预把自己拥有的视频资源分享给互联网用户。具体要求如下<br><strong>(1)</strong>配置FTP匿名用户的主目录为/var/ftp/anon,下载带宽限制为100KB/S.<br><strong>(2)</strong>建立一个名为abc、口令为xyz的FTP账户，下载带宽限制为500KB/S.<br><strong>(3)</strong>设置FTP服务器，同时登录到FTP服务器的最大链接数为100；每个IP最大链接数为3；用户空闲时间超过限值为5分钟。<br><strong>(4)</strong>服务器IP地址为192.168.131.129<br>任务实施</p>
 <h2 id="设置IP地址"><a href="#设置IP地址" class="headerlink" title="设置IP地址"></a>设置IP地址</h2><p>使用<code>setup</code>或者<code>vim /etc/sysconfig/network-scripts/ifcfg-eth0</code>来修改服务器的IP地址，然后使用<code>service network restart</code>重启网络服务。</p>
-<h2 id="安装vsftpd文件"><a href="#安装vsftpd文件" class="headerlink" title="安装vsftpd文件"></a>安装vsftpd文件</h2><p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+<h2 id="安装vsftpd文件"><a href="#安装vsftpd文件" class="headerlink" title="安装vsftpd文件"></a>安装vsftpd文件</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum install -y vsftpd #安装vsftpd</span><br><span class="line">rpm -qa |grep vsftpd #查询安装信息</span><br></pre></td></tr></table></figure>
 
-<p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum install -y vsftpd #安装vsftpd</span><br><span class="line">rpm -qa |grep vsftpd #查询安装信息</span><br></pre></td></tr></table></figure>
 
-<p>|<br>| - | - |</p>
-<h2 id="建立匿名用户主目录以及abc用户"><a href="#建立匿名用户主目录以及abc用户" class="headerlink" title="建立匿名用户主目录以及abc用户"></a>建立匿名用户主目录以及abc用户</h2><p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
 
-<p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir &#x2F;var&#x2F;ftp&#x2F;anon</span><br><span class="line">useradd -s &#x2F;sbin&#x2F;nologin abc #建立用户不允许本地登录</span><br><span class="line">passwd abc</span><br></pre></td></tr></table></figure>
+<h2 id="建立匿名用户主目录以及abc用户"><a href="#建立匿名用户主目录以及abc用户" class="headerlink" title="建立匿名用户主目录以及abc用户"></a>建立匿名用户主目录以及abc用户</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir &#x2F;var&#x2F;ftp&#x2F;anon</span><br><span class="line">useradd -s &#x2F;sbin&#x2F;nologin abc #建立用户不允许本地登录</span><br><span class="line">passwd abc</span><br></pre></td></tr></table></figure>
 
 <p>|<br>| - | - |</p>
 <h2 id="编辑配置文件"><a href="#编辑配置文件" class="headerlink" title="编辑配置文件"></a>编辑配置文件</h2><p>编辑配置文件前首先使用<code>cp -p /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.bak</code>命令备份配置文件,然后使用<code>vim /etc/vsftpd/vsftpd.conf</code>命令编辑vsftpd配置文件，主要修改的内容如下:<br><code>注意</code>有的是需要修改的,有的是需要添加的</p>
 <p>anonymous_enable=yes<br>anon_root=/var/ftp/anon<br>anon_max_rate=100000<br>local_enable=yes<br>local_max_rate=500000<br>max_clinets=100<br>max_per_ip=3<br>connect_timeout=300</p>
-<h2 id="配置vsftpd在系统中运行"><a href="#配置vsftpd在系统中运行" class="headerlink" title="配置vsftpd在系统中运行"></a>配置vsftpd在系统中运行</h2><p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
-
-<p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">chkconfig --levels 2335 vsftpd on #开机运行</span><br><span class="line">service vsftpd restart #重启服务</span><br></pre></td></tr></table></figure>
+<h2 id="配置vsftpd在系统中运行"><a href="#配置vsftpd在系统中运行" class="headerlink" title="配置vsftpd在系统中运行"></a>配置vsftpd在系统中运行</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">chkconfig --levels 2335 vsftpd on #开机运行</span><br><span class="line">service vsftpd restart #重启服务</span><br></pre></td></tr></table></figure>
 
 <p>|<br>| - | - |</p>
 <h2 id="了解配置文件"><a href="#了解配置文件" class="headerlink" title="了解配置文件"></a>了解配置文件</h2><p>anonymous_enable=yes #允许匿名用户登录<br>local_enable=yes #用户本地用户登录<br>write_enable=yes #允许本地用户具有写的权限<br>local_umask=022<br>#设置本地用户的文件生成掩码为022，默认为077；文件写入格式<br>anon_mkdir_write_enable=yes #允许匿名用户具有写的权限<br>dirmessage_enable=yes #激活上传/下载日子，当远程用户更改时提示<br>ascii_download_enable=yes #允许用户用ASCII格式来上传/下载文件<br>ftp_banner=welcome to you! #用户登录时提示欢迎词<br>userlist_enable=yes<br>#用户列表是否启用,当用户加入到/etc/vsftpd/ftpusers文件时，用户将不能访问FTP服务</p>
 <p>经过测试abc用户和匿名用户均可访问FTP服务器资源。</p>
 <h1 id="任务二"><a href="#任务二" class="headerlink" title="任务二"></a>任务二</h1><p><code>配置企业内部文件FTP配额</code><br>背景某工厂制造加工企业，接到一笔较大的生产订单，需要多部分联合开发配合完成，部门之间需要交换公共文件，同时也需要部门之间有各自保密的文件。<br><strong>(1)</strong>新建一个分区，10GB空间，ext3文件系统，挂载到/ftp下，作为FTP服务器数据存放的地方。<br><strong>(2)</strong>四个部门：dep1、dep2、dep3、dep4，分别对应目录<code>/ftp/dep1,/ftp/dep2,/ftp/dep3,/ftp/dep4</code>.另外设定一个公共目录/ftp/public<br><strong>(3)</strong>五个用户:admin,user1,user2,user3,user4。user1,user2,user3,user4对应的部门分别是dep1,dep2,dep3,dep4,他们只能访问属于自己部门的目录和public目录。admin管理员用户可以访问服务器上的任意一个目录。<br><strong>(4)</strong>用户访问权限控制:user1,user2,user3,user4在所能访问的目录，具有上传文件、下载文件的功能，但是不具有删除文件、更改文件权限等功能。admin管理员对所有目录有文件上传、下载、删除、权限更改等功能。<br><strong>(5)</strong>对每个部门定制一个quota，设置该账户的文件配额为1000个，磁盘配额为2GB。<br><strong>(6)</strong>禁止匿名用户访问</p>
 <h2 id="磁盘分区与挂载"><a href="#磁盘分区与挂载" class="headerlink" title="磁盘分区与挂载"></a>磁盘分区与挂载</h2><p>增加一块硬盘，然后使用下面命令进行分区，并把分区挂载情况写入/etc/fstab</p>
-<p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
-
-<p>|</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fdisk &#x2F;dev&#x2F;sdb</span><br><span class="line">mkfs.ext3 &#x2F;dev&#x2F;sdb1</span><br><span class="line">mkdir &#x2F;ftp</span><br><span class="line">mount &#x2F;dev&#x2F;sdb1 &#x2F;ftp -o usrquota,grpquota #挂载分区</span><br></pre></td></tr></table></figure>
 
 <p>|<br>| - | - |</p>
@@ -2901,36 +2886,20 @@ docker logs -f -t --tail 容器ID/容器名
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;dev&#x2F;sdb1 &#x2F;ftp ext3 defaults,usrquota,grpquota 0 0</span><br></pre></td></tr></table></figure>
 
 <p>|<br>| - | - |</p>
-<h2 id="建立用户与用户组并设置权限"><a href="#建立用户与用户组并设置权限" class="headerlink" title="建立用户与用户组并设置权限"></a>建立用户与用户组并设置权限</h2><p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td></tr></table></figure>
-
-<p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">groupadd dep1</span><br><span class="line">groupadd dep2</span><br><span class="line">groupadd dep3</span><br><span class="line">groupadd dep4</span><br><span class="line">groupadd market</span><br><span class="line">useradd -G dep1,market user1</span><br><span class="line">useradd -G dep2,market user2</span><br><span class="line">useradd -G dep3,market user3</span><br><span class="line">useradd -G dep4,market user4</span><br><span class="line">useradd -G dep1,dep2,dep3,dep4,market admin</span><br><span class="line">passwd user1</span><br><span class="line">passwd user2</span><br><span class="line">passwd user3</span><br><span class="line">passwd user4</span><br><span class="line">passwd admin</span><br><span class="line">mkdir &#x2F;ftp&#x2F;dep1</span><br><span class="line">mkdir &#x2F;ftp&#x2F;dep2</span><br><span class="line">mkdir &#x2F;ftp&#x2F;dep3</span><br><span class="line">mkdir &#x2F;ftp&#x2F;dep4</span><br><span class="line">mkdir &#x2F;ftp&#x2F;public</span><br><span class="line">chown user1:dep1 &#x2F;ftp&#x2F;dep1</span><br><span class="line">chown user2:dep2 &#x2F;ftp&#x2F;dep2</span><br><span class="line">chown user3:dep3 &#x2F;ftp&#x2F;dep3</span><br><span class="line">chown user4:dep4 &#x2F;ftp&#x2F;dep4</span><br><span class="line">chown admin:market &#x2F;ftp&#x2F;public</span><br><span class="line">chmod 770 &#x2F;ftp&#x2F;dep1</span><br><span class="line">chmod 770 &#x2F;ftp&#x2F;dep2</span><br><span class="line">chmod 770 &#x2F;ftp&#x2F;dep3</span><br><span class="line">chmod 770 &#x2F;ftp&#x2F;dep4</span><br><span class="line">chmod 770 &#x2F;ftp&#x2F;public</span><br></pre></td></tr></table></figure>
+<h2 id="建立用户与用户组并设置权限"><a href="#建立用户与用户组并设置权限" class="headerlink" title="建立用户与用户组并设置权限"></a>建立用户与用户组并设置权限</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">groupadd dep1</span><br><span class="line">groupadd dep2</span><br><span class="line">groupadd dep3</span><br><span class="line">groupadd dep4</span><br><span class="line">groupadd market</span><br><span class="line">useradd -G dep1,market user1</span><br><span class="line">useradd -G dep2,market user2</span><br><span class="line">useradd -G dep3,market user3</span><br><span class="line">useradd -G dep4,market user4</span><br><span class="line">useradd -G dep1,dep2,dep3,dep4,market admin</span><br><span class="line">passwd user1</span><br><span class="line">passwd user2</span><br><span class="line">passwd user3</span><br><span class="line">passwd user4</span><br><span class="line">passwd admin</span><br><span class="line">mkdir &#x2F;ftp&#x2F;dep1</span><br><span class="line">mkdir &#x2F;ftp&#x2F;dep2</span><br><span class="line">mkdir &#x2F;ftp&#x2F;dep3</span><br><span class="line">mkdir &#x2F;ftp&#x2F;dep4</span><br><span class="line">mkdir &#x2F;ftp&#x2F;public</span><br><span class="line">chown user1:dep1 &#x2F;ftp&#x2F;dep1</span><br><span class="line">chown user2:dep2 &#x2F;ftp&#x2F;dep2</span><br><span class="line">chown user3:dep3 &#x2F;ftp&#x2F;dep3</span><br><span class="line">chown user4:dep4 &#x2F;ftp&#x2F;dep4</span><br><span class="line">chown admin:market &#x2F;ftp&#x2F;public</span><br><span class="line">chmod 770 &#x2F;ftp&#x2F;dep1</span><br><span class="line">chmod 770 &#x2F;ftp&#x2F;dep2</span><br><span class="line">chmod 770 &#x2F;ftp&#x2F;dep3</span><br><span class="line">chmod 770 &#x2F;ftp&#x2F;dep4</span><br><span class="line">chmod 770 &#x2F;ftp&#x2F;public</span><br></pre></td></tr></table></figure>
 
 <p>|<br>| - | - |</p>
 <p>最终新建的用户、用户组、文件夹以及权限如下图所示<br><a href="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/ftp.png" target="_blank" rel="noopener"><img src="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/ftp.png" alt=""></a></p>
 <h2 id="创建quota，配置磁盘配额"><a href="#创建quota，配置磁盘配额" class="headerlink" title="创建quota，配置磁盘配额"></a>创建quota，配置磁盘配额</h2><p>使用<code>setenforce 0</code>关闭SELinux</p>
-<p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
-
-<p>|</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">quotacheck -cuvg &#x2F;dev&#x2F;sdb1</span><br><span class="line">quotaon -a</span><br><span class="line">edquota -g dep1</span><br></pre></td></tr></table></figure>
 
 <p>|<br>| - | - |</p>
 <p><a href="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/edquota.png" target="_blank" rel="noopener"><img src="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/edquota.png" alt=""></a><br>使用<code>edquota -p dep1 -g dep2 dep3 dep4</code>命令把quota属性设置套用到其余用户组。</p>
 <h2 id="编辑配置文件-1"><a href="#编辑配置文件-1" class="headerlink" title="编辑配置文件"></a>编辑配置文件</h2><p>使用<code>vim /etc/vsftpd/vsftpd.conf</code>修改或添加如下几处内容</p>
-<p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
-
-<p>|</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">anonymous_enable&#x3D;NO</span><br><span class="line">local_root&#x3D;&#x2F;ftp</span><br><span class="line">user_config_dir&#x3D;&#x2F;etc&#x2F;vsftpd&#x2F;ftp_config_dir</span><br><span class="line">chroot_list_file&#x3D;&#x2F;etc&#x2F;vsftpd&#x2F;chroot_list</span><br></pre></td></tr></table></figure>
 
 <p>|<br>| - | - |</p>
 <h2 id="建立用户独立文件"><a href="#建立用户独立文件" class="headerlink" title="建立用户独立文件"></a>建立用户独立文件</h2><p>使用<code>mkdir /etc/vsftpd/ftp_config_dir</code>命令建立每个用户独立文件存放的目录。使用<code>vim /etc/vsftpd/ftp_config_dir/user1</code>命令建立用户配置文件，内容如下</p>
-<p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br></pre></td></tr></table></figure>
-
-<p>|</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cmds_allowed&#x3D;ABOR,ACCT,APPE,CWD,CDUP,HELP,LIST,MODE,MDTM,NOOP,NLST,PASS,PASV,PORT,PWD,QUIT,REIN,RETR,SITE,SIZE,STOR,STAT,STOU,STRU,SYST,TYPE,USER</span><br></pre></td></tr></table></figure>
 
 <p>|<br>| - | - |</p>
@@ -2939,35 +2908,20 @@ docker logs -f -t --tail 容器ID/容器名
 <h3 id="user1-4"><a href="#user1-4" class="headerlink" title="user1~4"></a>user1~4</h3><p><a href="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/FTP/user1.png" target="_blank" rel="noopener"><img src="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/FTP/user1.png" alt=""></a><br>因为操作都一样所以就截了一张图<br>查看windows客户端下载的文件<br><a href="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/FTP/windows.png" target="_blank" rel="noopener"><img src="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/FTP/windows.png" alt=""></a><br><code>1~4</code>和<code>public</code>均为从服务器上下载下来的文件，<br>查看Linux服务器被上传的文件<br><a href="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/FTP/Linux.png" target="_blank" rel="noopener"><img src="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/FTP/Linux.png" alt=""></a><br>测试客户端是否能删除文件<br><a href="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/FTP/delete.png" target="_blank" rel="noopener"><img src="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/FTP/delete.png" alt=""></a>如图显示是无法删除的，到此为止测试各个部门的上传下载以及删除权限已经测试完毕。<br>测试用户的配额是否配置成功❓<br>可以搞一个这里搞一个centos的系统镜像来测试，大小为4.16GB.最终发现是无法放入的</p>
 <h3 id="admin"><a href="#admin" class="headerlink" title="admin"></a>admin</h3><p><a href="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/FTP/admin1.png" target="_blank" rel="noopener"><img src="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/FTP/admin1.png" alt=""></a><br>这里管理员用户对于四个部门的目录均具有上传、下载、删除的权限，理所当然对于公共目录public也同样具有最高的权限。</p>
 <h1 id="任务三"><a href="#任务三" class="headerlink" title="任务三"></a>任务三</h1><p><code>配置vsftp虚拟用户访问</code></p>
-<h2 id="安装相关文件"><a href="#安装相关文件" class="headerlink" title="安装相关文件"></a>安装相关文件</h2><p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
-
-<p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum install pam* -y</span><br><span class="line">yum install db4* -y</span><br></pre></td></tr></table></figure>
+<h2 id="安装相关文件"><a href="#安装相关文件" class="headerlink" title="安装相关文件"></a>安装相关文件</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum install pam* -y</span><br><span class="line">yum install db4* -y</span><br></pre></td></tr></table></figure>
 
 <p>|<br>| - | - |</p>
 <h2 id="建立用户"><a href="#建立用户" class="headerlink" title="建立用户"></a>建立用户</h2><p>建vsftpd服务宿主用户</p>
-<p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br></pre></td></tr></table></figure>
-
-<p>|</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">useradd vsftpdadmin -s &#x2F;sbin&#x2F;nologin</span><br></pre></td></tr></table></figure>
 
 <p>|<br>| - | - |</p>
 <p>建立vsftpd服务的宿主用户用来替换root用户，并不需要登录所以指定不可用shell。</p>
 <p>建立FTP虚拟宿主账户</p>
 <p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br></pre></td></tr></table></figure>
-
-<p>|</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">useradd ftpuser -s &#x2F;sbin&#x2F;nologin</span><br></pre></td></tr></table></figure>
 
 <p>|<br>| - | - |</p>
 <h2 id="配置vsftpd-conf文件"><a href="#配置vsftpd-conf文件" class="headerlink" title="配置vsftpd.conf文件"></a>配置vsftpd.conf文件</h2><p>使用vim命令进行编辑，编辑前记得备份使用<code>cp /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.bak</code>来备份，vsftpd主配置文件，主要修改下面部分：</p>
-<p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
-
-<p>|</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">anonymous_enable&#x3D;NO </span><br><span class="line">chroot_list_enable&#x3D;YES </span><br><span class="line">chroot_list_file&#x3D;&#x2F;etc&#x2F;vsftpd&#x2F;chroot_list</span><br></pre></td></tr></table></figure>
 
 <p>|<br>| - | - |</p>
@@ -2979,64 +2933,32 @@ docker logs -f -t --tail 容器ID/容器名
 </blockquote>
 <p>userlist_deny=NO</p>
 <p>TCP_wrappers=YES #限制主机对VSFTP服务器的访问<br>tcp_wrapper=YES<br>chroot_local_user=NO<br>guest_enable=YES #设定启用虚拟用户功能<br>guest_username=ftpuser #指定虚拟用户的宿主用户<br>virtual_use_local_privs=YES #设定虚拟用户的权限符合其宿主用户<br>user_config_dir=/etc/vsftpd/vconf #设定虚拟用户个人vsftp的配置文件存放路径</p>
-<h2 id="建立日志文件并修改权限"><a href="#建立日志文件并修改权限" class="headerlink" title="建立日志文件并修改权限"></a>建立日志文件并修改权限</h2><p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
-
-<p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">touch &#x2F;var&#x2F;log&#x2F;vsftpd.log</span><br><span class="line">chown vsftpdadmin.vsftpdadmin &#x2F;var&#x2F;log&#x2F;vsftpd.log</span><br></pre></td></tr></table></figure>
+<h2 id="建立日志文件并修改权限"><a href="#建立日志文件并修改权限" class="headerlink" title="建立日志文件并修改权限"></a>建立日志文件并修改权限</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">touch &#x2F;var&#x2F;log&#x2F;vsftpd.log</span><br><span class="line">chown vsftpdadmin.vsftpdadmin &#x2F;var&#x2F;log&#x2F;vsftpd.log</span><br></pre></td></tr></table></figure>
 
 <p>|<br>| - | - |</p>
-<h2 id="建立虚拟用户文件"><a href="#建立虚拟用户文件" class="headerlink" title="建立虚拟用户文件"></a>建立虚拟用户文件</h2><p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
-
-<p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir &#x2F;etc&#x2F;vsftpd&#x2F;vconf</span><br><span class="line">touch &#x2F;etc&#x2F;vsftpd&#x2F;vconf&#x2F;vir_user</span><br></pre></td></tr></table></figure>
+<h2 id="建立虚拟用户文件"><a href="#建立虚拟用户文件" class="headerlink" title="建立虚拟用户文件"></a>建立虚拟用户文件</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir &#x2F;etc&#x2F;vsftpd&#x2F;vconf</span><br><span class="line">touch &#x2F;etc&#x2F;vsftpd&#x2F;vconf&#x2F;vir_user</span><br></pre></td></tr></table></figure>
 
 <p>|<br>| - | - |</p>
 <h2 id="建立虚拟用户"><a href="#建立虚拟用户" class="headerlink" title="建立虚拟用户"></a>建立虚拟用户</h2><p>使用<code>vim /etc/vstfpd/vconf/vir_user</code>命令来编辑虚拟用户文件，添加如下内容。</p>
-<p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
-
-<p>|</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">virtualuser #账号</span><br><span class="line">123456      #密码</span><br></pre></td></tr></table></figure>
 
 <p>|<br>| - | - |</p>
 <p>使用<code>vim /etc/vsftpd/chroot_list</code>命令来锁定用户目录的配置文件</p>
-<p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
-
-<p>|</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">virtualuser</span><br><span class="line">virtual2</span><br></pre></td></tr></table></figure>
 
 <p>|<br>| - | - |</p>
-<h2 id="生成数据库"><a href="#生成数据库" class="headerlink" title="生成数据库"></a>生成数据库</h2><p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br></pre></td></tr></table></figure>
-
-<p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">db_load -T -t hash -f &#x2F;etc&#x2F;vsftpd&#x2F;vconf&#x2F;vir_user &#x2F;etc&#x2F;vsftpd&#x2F;vconf&#x2F;vir_user.db</span><br></pre></td></tr></table></figure>
+<h2 id="生成数据库"><a href="#生成数据库" class="headerlink" title="生成数据库"></a>生成数据库</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">db_load -T -t hash -f &#x2F;etc&#x2F;vsftpd&#x2F;vconf&#x2F;vir_user &#x2F;etc&#x2F;vsftpd&#x2F;vconf&#x2F;vir_user.db</span><br></pre></td></tr></table></figure>
 
 <p>|<br>| - | - |</p>
-<h2 id="设置数据文件的访问权限"><a href="#设置数据文件的访问权限" class="headerlink" title="设置数据文件的访问权限"></a>设置数据文件的访问权限</h2><p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
-
-<p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">chmod 600 &#x2F;etc&#x2F;vsftpd&#x2F;vconf&#x2F;vir_user</span><br><span class="line">chmod 600 &#x2F;etc&#x2F;vsftpd&#x2F;vconf&#x2F;vir_user.db</span><br></pre></td></tr></table></figure>
+<h2 id="设置数据文件的访问权限"><a href="#设置数据文件的访问权限" class="headerlink" title="设置数据文件的访问权限"></a>设置数据文件的访问权限</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">chmod 600 &#x2F;etc&#x2F;vsftpd&#x2F;vconf&#x2F;vir_user</span><br><span class="line">chmod 600 &#x2F;etc&#x2F;vsftpd&#x2F;vconf&#x2F;vir_user.db</span><br></pre></td></tr></table></figure>
 
 <p>|<br>| - | - |</p>
 <h2 id="修改-etc-pam-d-vsftpd内容"><a href="#修改-etc-pam-d-vsftpd内容" class="headerlink" title="修改/etc/pam.d/vsftpd内容"></a>修改/etc/pam.d/vsftpd内容</h2><p>使用<code>vim /etc/pam.d/vsftpd</code>命令编辑文件，内容如下所示</p>
-<p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
-
-<p>|</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#%PAM-1.0</span><br><span class="line">auth sufficient pam_userdb.so db&#x3D;&#x2F;etc&#x2F;vsftpd&#x2F;vconf&#x2F;vir_user</span><br><span class="line">account sufficient pam_userdb.so db&#x3D;&#x2F;etc&#x2F;vsftpd&#x2F;vconf&#x2F;vir_user</span><br></pre></td></tr></table></figure>
 
 <p>|<br>| - | - |</p>
 <p><strong>备注</strong>：auth是对于用户的用户名口令进行验证，account是对于用户的账户有哪些权限、哪些限制进行验证，sufficent表示充分条件，pam_userdb.so表示该条审核将调用库函数pam_userdb.so进行。db=/etc/vsftpd/vconf/vir_user指定验证库函数将到这个指定的数据库中调用数据进行验证。</p>
 <h2 id="创建用户的配置文件"><a href="#创建用户的配置文件" class="headerlink" title="创建用户的配置文件"></a>创建用户的配置文件</h2><p>使用<code>vim /etc/vsftpd/vconf/virtualuser</code>创建用户配置文件。输入如下所示内容</p>
-<p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td></tr></table></figure>
-
-<p>|</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">local_root&#x3D;&#x2F;home&#x2F;share</span><br><span class="line">anonymous_enable&#x3D;NO</span><br><span class="line">write_enable&#x3D;YES</span><br><span class="line">local_umask&#x3D;0333</span><br><span class="line">anon_umask&#x3D;0777</span><br><span class="line">file_open_mode&#x3D;0777</span><br><span class="line">anon_upload_enable&#x3D;YES</span><br><span class="line">anon_mkdir_write_enable&#x3D;YES</span><br><span class="line">anon_other_write_enable&#x3D;YES</span><br><span class="line">cmds_allowed&#x3D;STOR,FEAT,REST,ABOR,CWD,LIST,MDTM,NLST,PASS,PASV,PORT,PWD,QUIT,RMD,RNFR,SIZE,TYPE,USER,ACCT,APPE,CDUP,HELP,MODE,NOOP,REIN,STAT,STOU,STRU,SYST,RETR</span><br><span class="line">idle_session_timeout&#x3D;600</span><br><span class="line">data_connection_timeout&#x3D;120</span><br><span class="line">max_clients&#x3D;10</span><br><span class="line">max_per_ip&#x3D;5</span><br><span class="line">local_max_rate&#x3D;1048576</span><br></pre></td></tr></table></figure>
 
 <p>|<br>| - | - |</p>
@@ -3069,10 +2991,6 @@ docker logs -f -t --tail 容器ID/容器名
 <p>service vsftpd start</p>
 </blockquote>
 <p>测试前关闭selinux和防火墙</p>
-<p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
-
-<p>|</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">service iptables stop</span><br><span class="line">setenforce 0</span><br></pre></td></tr></table></figure>
 
 <p>|<br>| - | - |</p>
@@ -3094,10 +3012,6 @@ docker logs -f -t --tail 容器ID/容器名
 <p>选择暴力方法使用<code>chmod 777 /var/ftp</code>将权限设为最大，然后回到客户机登录发现直接报错了。因为我们把/ftp这个目录权限设为最大，这样匿名用户就可以为所欲为了。为了避免类事情的发生为安全起见所以vsfptd设置了不允许登录。</p>
 <p><a href="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/FTP/c.png" target="_blank" rel="noopener"><img src="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/FTP/c.png" alt=""></a></p>
 <p>4.正确配置文件夹的权限</p>
-<p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td></tr></table></figure>
-
-<p>|</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">chmod 755 &#x2F;var&#x2F;ftp #把权限改为默认的755</span><br><span class="line">cd &#x2F;var&#x2F;ftp 	#进入ftp目录</span><br><span class="line">mkdir anon		#在目录下新建目录</span><br><span class="line">chmod 777 anon  #修改目录权限</span><br><span class="line">cp 1.txt anon	#复制文件到anon目录下</span><br><span class="line">cd anon			#进入anon目录</span><br><span class="line">ls -l			#查看1.txt的权限</span><br><span class="line">chmod 666 test.txt #修改文件权限为可写</span><br></pre></td></tr></table></figure>
 
 <p>|<br>| - | - |</p>
@@ -3123,38 +3037,22 @@ docker logs -f -t --tail 容器ID/容器名
 <p>备注这里登录失败的原因是应为把upload写进了user_list这个文件中，这个拒绝用户登录之所以生效是因为<code>/etc/vsftpd/vsftpd.conf</code>配置文件中默认有“user_list_enalbe=YES”这行设置，如果把此配置改成“user_list_enable=YES”那么就只有写进user_list文件中的用户才可以登录。</p>
 <h2 id="配置虚拟用户FTP访问"><a href="#配置虚拟用户FTP访问" class="headerlink" title="配置虚拟用户FTP访问"></a>配置虚拟用户FTP访问</h2><p>在vsftp服务器中，系统用户就是vsftp用户,那么vsftp账户也能够登录系统，为了系统安全考虑，运维人员往往需要只建立vsftp用户，而不希望登录系统，这时就需要用到vsftp服务器的虚拟账户功能。</p>
 <h3 id="新建虚拟用户名文件"><a href="#新建虚拟用户名文件" class="headerlink" title="新建虚拟用户名文件"></a>新建虚拟用户名文件</h3><p>使用<code>vim /etc/vsftpd/vuser</code>命令创建用于存放虚拟用户的文件。文件中奇数行为用户名，偶数行为密码。先在创建两个名分别为Tom和Jack,密码为qwe123的虚拟用户。</p>
-<h3 id="将文件转换成数据库文件"><a href="#将文件转换成数据库文件" class="headerlink" title="将文件转换成数据库文件"></a>将文件转换成数据库文件</h3><p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
-
-<p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd &#x2F;etc&#x2F;vsftpd</span><br><span class="line">db_load -T -thash -f vuser vuser.db</span><br></pre></td></tr></table></figure>
+<h3 id="将文件转换成数据库文件"><a href="#将文件转换成数据库文件" class="headerlink" title="将文件转换成数据库文件"></a>将文件转换成数据库文件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd &#x2F;etc&#x2F;vsftpd</span><br><span class="line">db_load -T -thash -f vuser vuser.db</span><br></pre></td></tr></table></figure>
 
 <p>|<br>| - | - |</p>
 <p>参数-T指定转换后的文件类型为hash，参数-f指定转换后的文件名为vuser.db。可以使用<code>file vuser.db</code>来查看文件的类型。</p>
 <p><a href="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/FTP/h.png" target="_blank" rel="noopener"><img src="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/FTP/h.png" alt=""></a></p>
 <h3 id="修改用户文件权限"><a href="#修改用户文件权限" class="headerlink" title="修改用户文件权限"></a>修改用户文件权限</h3><p>为了安全，不能让其他用户拥有vuser和vuser.db文件的任何权限。</p>
-<p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
-
-<p>|</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">chmod 600 &#x2F;etc&#x2F;vsftpd&#x2F;vuser</span><br><span class="line">chmod 600 &#x2F;etc&#x2F;vsftpd&#x2F;vuser.db</span><br></pre></td></tr></table></figure>
 
 <p>|<br>| - | - |</p>
 <h3 id="创建虚拟用户的映射账户"><a href="#创建虚拟用户的映射账户" class="headerlink" title="创建虚拟用户的映射账户"></a>创建虚拟用户的映射账户</h3><p>虚拟用户创建之后，要给虚拟用户映射到一个系统账号，使用<code>useradd -d /opt/vuser -s /sbin/nologin vuser</code>命令新建一个虚拟用户的映射账号vuser,指定宿主目录为<code>/opt/vuser</code>,并指定不能登录系统。</p>
 <h3 id="配置用户认证信息"><a href="#配置用户认证信息" class="headerlink" title="配置用户认证信息"></a>配置用户认证信息</h3><p>使用<code>vim /etc/pam.d/vsftpd.vu</code>命令为虚拟用户创建pam认证模块，名字为vsftpd.vu。在认证文件中加入如下内容</p>
-<p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
-
-<p>|</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auth required pam_userdb.so db&#x3D;&#x2F;etc&#x2F;vsftpd&#x2F;vuser</span><br><span class="line">account required pam_userdb.so db&#x3D;&#x2F;etc&#x2F;vsftpd&#x2F;vuser</span><br></pre></td></tr></table></figure>
 
 <p>|<br>| - | - |</p>
 <p>这里的vuser其实是vuser.db,这里省略了.db，否则会报错。</p>
 <h3 id="开启虚拟用户访问"><a href="#开启虚拟用户访问" class="headerlink" title="开启虚拟用户访问"></a>开启虚拟用户访问</h3><p>使用<code>vim /etc/vsftpd/vsftpd.conf</code>编辑配置文件，在文件的最后添加如下内容，注释掉<code>pam_service_name=vsftpd</code>。如下图所示</p>
-<p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
-
-<p>|</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">guest_enable&#x3D;YES</span><br><span class="line">guest_username&#x3D;vuser</span><br><span class="line">pam_service_name&#x3D;vsftpd.vu</span><br></pre></td></tr></table></figure>
 
 <p>|<br>| - | - |</p>
@@ -3164,18 +3062,10 @@ docker logs -f -t --tail 容器ID/容器名
 <p>使用<code>ls -l /opt/vuser</code>命令查看上传的文件的属主,发现属主均为vuser。</p>
 <p><a href="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/FTP/k.png" target="_blank" rel="noopener"><img src="https://b-l.oss-cn-hongkong.aliyuncs.com/photos/FTP/k.png" alt=""></a></p>
 <h2 id="配置虚拟用户拥有不同的文件权限"><a href="#配置虚拟用户拥有不同的文件权限" class="headerlink" title="配置虚拟用户拥有不同的文件权限"></a>配置虚拟用户拥有不同的文件权限</h2><h3 id="开启单独配置文件功能"><a href="#开启单独配置文件功能" class="headerlink" title="开启单独配置文件功能"></a>开启单独配置文件功能</h3><p>打开vsftpd.conf配置文件，加入以下一行内容，告诉配置文件在vu_dir目录下找用户的单独权限配置文件</p>
-<p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br></pre></td></tr></table></figure>
-
-<p>|</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">user_config_dir&#x3D;&#x2F;etc&#x2F;vsftpd&#x2F;vu_dir</span><br></pre></td></tr></table></figure>
 
 <p>|<br>| - | - |</p>
-<h3 id="建立用户权限文件"><a href="#建立用户权限文件" class="headerlink" title="建立用户权限文件"></a>建立用户权限文件</h3><p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
-
-<p>|</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir -p &#x2F;etc&#x2F;vsftpd&#x2F;vu_dir #新建vu_dir目录</span><br><span class="line">cd &#x2F;etc&#x2F;vsftpd&#x2F;vu_dir #进入vu_dir目录</span><br><span class="line">touch Jack</span><br></pre></td></tr></table></figure>
+<h3 id="建立用户权限文件"><a href="#建立用户权限文件" class="headerlink" title="建立用户权限文件"></a>建立用户权限文件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir -p &#x2F;etc&#x2F;vsftpd&#x2F;vu_dir #新建vu_dir目录</span><br><span class="line">cd &#x2F;etc&#x2F;vsftpd&#x2F;vu_dir #进入vu_dir目录</span><br><span class="line">touch Jack</span><br></pre></td></tr></table></figure>
 
 <p>|<br>| - | - |</p>
 <p>使用man命令发现anon_umask(匿名上传)的默认权限为600，如国要改变Jack的上传权限为644的话，就把这个值设置为022即可。使用<code>vim Jack</code>命令编辑文件在文件中写入<code>anon_umask=022</code></p>
